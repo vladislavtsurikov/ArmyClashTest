@@ -88,7 +88,7 @@ namespace VladislavTsurikov.IMGUIUtility.Editor.ElementStack
                     continue;
                 }
 
-                if (settingsType.GetAttribute<PersistentNodeAttribute>() != null ||
+                if (settingsType.GetAttribute<PersistentAttribute>() != null ||
                     settingsType.GetAttribute<DontShowInAddMenuAttribute>() != null)
                 {
                     continue;

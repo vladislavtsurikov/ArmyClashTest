@@ -39,7 +39,7 @@ namespace VladislavTsurikov.EntityDataAction.Editor.Core
                     continue;
                 }
 
-                if (actionType.GetAttribute<PersistentNodeAttribute>() != null ||
+                if (actionType.GetAttribute<PersistentAttribute>() != null ||
                     actionType.GetAttribute<DontShowInAddMenuAttribute>() != null)
                 {
                     continue;

@@ -77,7 +77,7 @@ namespace VladislavTsurikov.Nody.Runtime.Core
 
         public bool IsDeletable()
         {
-            if (GetType().GetAttribute<PersistentNodeAttribute>() != null)
+            if (GetType().GetAttribute<PersistentAttribute>() != null)
             {
                 return false;
             }

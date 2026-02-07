@@ -25,7 +25,7 @@ namespace VladislavTsurikov.Nody.Runtime.AdvancedNodeStack
                 .ForEach(type => CreateElementIfMissingType(type));
 
             AllTypesDerivedFrom<T>.Types
-                .Where(type => type.GetAttribute<PersistentNodeAttribute>() != null)
+                .Where(type => type.GetAttribute<PersistentAttribute>() != null)
                 .ForEach(type => CreateElementIfMissingType(type));
         }
 

@@ -7,7 +7,7 @@ namespace VladislavTsurikov.Nody.Runtime.AdvancedNodeStack
     ///     Also, this node will be created itself if somehow this node is not in the collection
     /// </summary>
     [AttributeUsage(AttributeTargets.Class)]
-    public sealed class PersistentNodeAttribute : Attribute
+    public sealed class PersistentAttribute : Attribute
     {
     }
 }

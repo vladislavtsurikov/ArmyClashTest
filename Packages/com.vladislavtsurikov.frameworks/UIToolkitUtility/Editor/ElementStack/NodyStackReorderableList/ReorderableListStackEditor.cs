@@ -214,7 +214,7 @@ namespace VladislavTsurikov.IMGUIUtility.Editor.ElementStack.UIToolkitReorderabl
                 if (componentType.GetAttribute(typeof(DontCreateAttribute)) != null)
                     continue;
 
-                if (componentType.GetAttribute<PersistentNodeAttribute>() != null ||
+                if (componentType.GetAttribute<PersistentAttribute>() != null ||
                     componentType.GetAttribute<DontShowInAddMenuAttribute>() != null)
                     continue;
 
