@@ -16,5 +16,28 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
         [field: SerializeField, ShowIf(nameof(UseMin), true)] public float MinValue { get; private set; }
         [field: SerializeField, ShowIf(nameof(ClampEnabled), true)] public bool UseMax { get; private set; }
         [field: SerializeField, ShowIf(nameof(UseMax), true)] public float MaxValue { get; private set; }
+
+        public float ApplyClamp(float value)
+        {
+            if (ClampEnabled)
+            {
+                if (UseMin)
+                {
+                    value = Mathf.Max(value, MinValue);
+                }
+
+                if (UseMax)
+                {
+                    value = Mathf.Min(value, MaxValue);
+                }
+            }
+
+            return value;
+        }
+
+        public void SetBaseValue(float value)
+        {
+            BaseValue = ApplyClamp(value);
+        }
     }
 }
