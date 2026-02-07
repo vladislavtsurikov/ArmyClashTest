@@ -6,7 +6,7 @@ using VladislavTsurikov.ReflectionUtility;
 
 namespace VladislavTsurikov.ActionFlow.Runtime.Stats
 {
-    [PersistentNode]
+    [Persistent]
     [Name("Stats/Value")]
     public sealed class StatValueComponent : Node
     {

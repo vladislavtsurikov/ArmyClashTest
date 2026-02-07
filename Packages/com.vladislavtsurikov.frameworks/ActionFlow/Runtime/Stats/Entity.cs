@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace VladislavTsurikov.ActionFlow.Runtime.Stats
@@ -7,9 +9,9 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
     {
         [SerializeField] private StatCollection _stats = new();
 
-        public IReadOnlyList<StatValue> Stats => _stats.Stats;
+        public IReadOnlyList<Stat> Stats => _stats.Stats;
 
-        public bool AddStat(StatValue stat)
+        public bool AddStat(Stat stat)
         {
             if (stat == null || _stats.Stats.Contains(stat))
             {
@@ -20,7 +22,7 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
             return true;
         }
 
-        public bool RemoveStat(StatValue stat) => _stats.RemoveStat(stat);
+        public bool RemoveStat(Stat stat) => _stats.RemoveStat(stat);
 
         public void ClearStats() => _stats.Clear();
     }

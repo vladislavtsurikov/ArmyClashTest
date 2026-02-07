@@ -15,24 +15,30 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Actions.Stats
             Subtract
         }
 
-        [SerializeField] private StatValue _statValue;
+        [SerializeField] private Stat _stat;
         [SerializeField] private Operation _operation = Operation.Add;
         [SerializeField] private float _amount;
 
-        public override string Name => _statValue == null
+        public override string Name => _stat == null
             ? "Modify Stat Value"
-            : $"{_operation} {_amount} to {_statValue.name}";
+            : $"{_operation} {_amount} to {_stat.name}";
 
         protected override UniTask<bool> Run(CancellationToken token)
         {
-            if (_statValue == null)
+            if (_stat == null)
             {
                 return UniTask.FromResult(false);
             }
 
-            float value = _statValue.Value;
+            StatValueComponent valueComponent = _stat.ComponentStack.GetElement<StatValueComponent>();
+            if (valueComponent == null)
+            {
+                return UniTask.FromResult(false);
+            }
+
+            float value = valueComponent.BaseValue;
             value = _operation == Operation.Add ? value + _amount : value - _amount;
-            _statValue.Value = value;
+            valueComponent.SetBaseValue(value);
 
             return UniTask.FromResult(true);
         }

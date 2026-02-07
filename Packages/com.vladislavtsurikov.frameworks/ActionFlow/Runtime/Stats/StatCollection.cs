@@ -5,11 +5,11 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
     [System.Serializable]
     public sealed class StatCollection
     {
-        [UnityEngine.SerializeField] private List<StatValue> _stats = new();
+        [UnityEngine.SerializeField] private List<Stat> _stats = new();
 
-        public IReadOnlyList<StatValue> Stats => _stats;
+        public IReadOnlyList<Stat> Stats => _stats;
 
-        public bool AddStat(StatValue stat)
+        public bool AddStat(Stat stat)
         {
             if (stat == null || _stats.Contains(stat))
             {
@@ -20,7 +20,7 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
             return true;
         }
 
-        public bool RemoveStat(StatValue stat) => _stats.Remove(stat);
+        public bool RemoveStat(Stat stat) => _stats.Remove(stat);
 
         public void Clear() => _stats.Clear();
     }
