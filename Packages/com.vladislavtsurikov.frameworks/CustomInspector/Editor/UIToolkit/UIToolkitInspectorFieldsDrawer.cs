@@ -43,66 +43,22 @@ namespace VladislavTsurikov.CustomInspector.Editor.UIToolkit
 
             foreach (var processedField in GetProcessedFields(target))
             {
-                UIToolkitFieldDrawer drawer = processedField.Drawer;
-                FieldInfo field = processedField.Field;
-                string fieldName = processedField.FieldName;
-                object value = processedField.Value;
+                var context = new UIToolkitInspectorNodeContext(
+                    target,
+                    processedField.Field,
+                    processedField.FieldName,
+                    processedField.Tooltip,
+                    processedField.Value,
+                    processedField.DecoratorsBase,
+                    processedField.VisibilityProcessors,
+                    processedField.StateProcessors,
+                    processedField.StyleProcessors,
+                    processedField.ValueProcessors,
+                    container,
+                    _recursiveFieldsDrawer,
+                    (nestedTarget, nestedContainer) => DrawFieldsRecursive(nestedTarget, nestedContainer, elementIndex));
 
-                foreach (UIToolkitDecoratorDrawer decorator in processedField.Decorators)
-                {
-                    var decoratorElement = decorator.CreateElement(field, target);
-                    if (decoratorElement != null)
-                    {
-                        container.Add(decoratorElement);
-                    }
-                }
-
-                if (drawer != null)
-                {
-                    var processedValue = ApplyProcessorsAndAssignIfNeeded(
-                        field,
-                        target,
-                        value,
-                        value,
-                        processedField.ValueProcessors,
-                        false);
-                    value = processedValue;
-
-                    var fieldElement = drawer.CreateField(fieldName, field.FieldType, value, newValue =>
-                    {
-                        ApplyProcessorsAndAssignIfNeeded(
-                            field,
-                            target,
-                            newValue,
-                            newValue,
-                            processedField.ValueProcessors,
-                            true);
-                    });
-
-                    using (CreateFieldPresentationScope(
-                               field,
-                               target,
-                               processedField.StateProcessors,
-                               processedField.StyleProcessors,
-                               fieldElement))
-                    {
-                        if (!string.IsNullOrEmpty(processedField.Tooltip))
-                        {
-                            fieldElement.tooltip = processedField.Tooltip;
-                        }
-
-                        container.Add(fieldElement);
-                    }
-                }
-                else
-                {
-                    var recursiveElement = _recursiveFieldsDrawer.DrawRecursiveFields(
-                        value,
-                        field,
-                        (nestedTarget, nestedContainer) => DrawFieldsRecursive(nestedTarget, nestedContainer, elementIndex));
-
-                    container.Add(recursiveElement);
-                }
+                processedField.Graph.Execute(context);
             }
         }
 
@@ -112,6 +68,36 @@ namespace VladislavTsurikov.CustomInspector.Editor.UIToolkit
             object fieldElement)
         {
             return new UIToolkitFieldPresentationScope(state, style, fieldElement as VisualElement);
+        }
+
+        protected override FieldGraph CreateFieldGraph(ProcessedField processedField)
+        {
+            var graph = new FieldGraph();
+            InspectorNode previousNode = null;
+
+            foreach (UIToolkitDecoratorDrawer decorator in processedField.Decorators)
+            {
+                var node = new UIToolkitDecoratorNode(decorator);
+                graph.AddNode(node);
+                if (previousNode != null)
+                {
+                    graph.Connect(previousNode, node);
+                }
+
+                previousNode = node;
+            }
+
+            InspectorNode finalNode = processedField.Drawer != null
+                ? new UIToolkitDrawerNode(this, processedField.Drawer)
+                : new UIToolkitRecursiveDrawerNode(_recursiveFieldsDrawer);
+
+            graph.AddNode(finalNode);
+            if (previousNode != null)
+            {
+                graph.Connect(previousNode, finalNode);
+            }
+
+            return graph;
         }
     }
 }

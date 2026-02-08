@@ -87,7 +87,7 @@ namespace VladislavTsurikov.CustomInspector.Editor.Core
                 var tooltipAttribute = field.GetCustomAttribute<TooltipAttribute>();
                 string tooltip = tooltipAttribute?.tooltip ?? "";
 
-                processedFields.Add(new ProcessedField(
+                var processedField = new ProcessedField(
                     field,
                     fieldName,
                     drawer,
@@ -96,7 +96,11 @@ namespace VladislavTsurikov.CustomInspector.Editor.Core
                     stateProcessors,
                     styleProcessors,
                     valueProcessors,
-                    tooltip));
+                    tooltip);
+
+                processedField.Graph = CreateFieldGraph(processedField);
+
+                processedFields.Add(processedField);
             }
 
             _cachedFields[targetType] = processedFields;
@@ -142,6 +146,7 @@ namespace VladislavTsurikov.CustomInspector.Editor.Core
                 FieldName = fieldName;
                 Drawer = drawer;
                 Decorators = decorators;
+                DecoratorsBase = ConvertDecorators(decorators);
                 VisibilityProcessors = visibilityProcessors;
                 StateProcessors = stateProcessors;
                 StyleProcessors = styleProcessors;
@@ -153,13 +158,33 @@ namespace VladislavTsurikov.CustomInspector.Editor.Core
             public string FieldName { get; }
             public TFieldDrawer Drawer { get; }
             public List<TDecoratorDrawer> Decorators { get; }
+            public List<DecoratorDrawer> DecoratorsBase { get; }
             public List<FieldVisibilityProcessor> VisibilityProcessors { get; }
             public List<FieldStateProcessor> StateProcessors { get; }
             public List<FieldStyleProcessor> StyleProcessors { get; }
             public List<FieldValueProcessor> ValueProcessors { get; }
             public string Tooltip { get; }
             public object Value { get; set; }
+            public FieldGraph Graph { get; set; }
+
+            private static List<DecoratorDrawer> ConvertDecorators(List<TDecoratorDrawer> decorators)
+            {
+                if (decorators == null || decorators.Count == 0)
+                {
+                    return new List<DecoratorDrawer>();
+                }
+
+                var result = new List<DecoratorDrawer>(decorators.Count);
+                foreach (TDecoratorDrawer decorator in decorators)
+                {
+                    result.Add(decorator);
+                }
+
+                return result;
+            }
         }
+
+        protected abstract FieldGraph CreateFieldGraph(ProcessedField processedField);
 
         protected FieldState GetFieldState(
             FieldInfo field,
@@ -199,7 +224,7 @@ namespace VladislavTsurikov.CustomInspector.Editor.Core
             return style;
         }
 
-        protected FieldPresentationScope CreateFieldPresentationScope(
+        internal FieldPresentationScope CreateFieldPresentationScope(
             FieldInfo field,
             object target,
             List<FieldStateProcessor> stateProcessors,
@@ -249,7 +274,7 @@ namespace VladislavTsurikov.CustomInspector.Editor.Core
             return processedValue;
         }
 
-        protected object ApplyProcessorsAndAssignIfNeeded(
+        internal object ApplyProcessorsAndAssignIfNeeded(
             FieldInfo field,
             object target,
             object value,

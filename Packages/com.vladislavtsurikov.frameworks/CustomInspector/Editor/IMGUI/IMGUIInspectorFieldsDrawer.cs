@@ -46,60 +46,26 @@ namespace VladislavTsurikov.CustomInspector.Editor.IMGUI
 
             foreach (var processedField in GetProcessedFields(target))
             {
-                IMGUIFieldDrawer drawer = processedField.Drawer;
-                FieldInfo field = processedField.Field;
-                object value = processedField.Value;
+                var context = new IMGUIInspectorNodeContext(
+                    target,
+                    processedField.Field,
+                    processedField.FieldName,
+                    processedField.Tooltip,
+                    processedField.Value,
+                    processedField.DecoratorsBase,
+                    processedField.VisibilityProcessors,
+                    processedField.StateProcessors,
+                    processedField.StyleProcessors,
+                    processedField.ValueProcessors,
+                    rect,
+                    _totalHeight,
+                    _imguiRecursiveFieldsDrawer,
+                    (nestedTarget, nestedRect) => DrawFieldsRecursive(nestedTarget, nestedRect, elementIndex));
 
-                foreach (IMGUIDecoratorDrawer decorator in processedField.Decorators)
-                {
-                    float decoratorHeight = decorator.GetHeight(field, target);
-                    Rect decoratorRect = new Rect(rect.x, rect.y, rect.width, decoratorHeight);
+                processedField.Graph.Execute(context);
 
-                    decorator.Draw(decoratorRect, field, target);
-
-                    rect.y += decoratorHeight;
-                    _totalHeight += decoratorHeight;
-                }
-
-                var fieldLabel = new GUIContent(processedField.FieldName, processedField.Tooltip);
-
-                if (drawer != null)
-                {
-                    var fieldHeight = drawer.GetFieldsHeight(target, field, value);
-                    Rect fieldRect = EditorGUI.IndentedRect(new Rect(rect.x, rect.y, rect.width, fieldHeight));
-
-                    using (CreateFieldPresentationScope(
-                               field,
-                               target,
-                               processedField.StateProcessors,
-                               processedField.StyleProcessors,
-                               null))
-                    {
-                        EditorGUI.BeginChangeCheck();
-
-                        var newValue = drawer.Draw(fieldRect, fieldLabel, field, target, value);
-                        bool uiChanged = EditorGUI.EndChangeCheck();
-                        newValue = ApplyProcessorsAndAssignIfNeeded(
-                            field,
-                            target,
-                            newValue,
-                            value,
-                            processedField.ValueProcessors,
-                            uiChanged);
-                    }
-
-                    rect.y += fieldHeight;
-                    _totalHeight += fieldHeight;
-                }
-                else
-                {
-                    var recursiveFieldsHeight =
-                        _imguiRecursiveFieldsDrawer.DrawRecursiveFields(value, field, rect,
-                            (nestedTarget, nestedRect) => DrawFieldsRecursive(nestedTarget, nestedRect, elementIndex));
-
-                    rect.y += recursiveFieldsHeight;
-                    _totalHeight += recursiveFieldsHeight;
-                }
+                rect = context.Rect;
+                _totalHeight = context.TotalHeight;
             }
         }
 
@@ -150,6 +116,36 @@ namespace VladislavTsurikov.CustomInspector.Editor.IMGUI
             object fieldElement)
         {
             return new IMGUIFieldPresentationScope(state, style);
+        }
+
+        protected override FieldGraph CreateFieldGraph(ProcessedField processedField)
+        {
+            var graph = new FieldGraph();
+            InspectorNode previousNode = null;
+
+            foreach (IMGUIDecoratorDrawer decorator in processedField.Decorators)
+            {
+                var node = new IMGUIDecoratorNode(decorator);
+                graph.AddNode(node);
+                if (previousNode != null)
+                {
+                    graph.Connect(previousNode, node);
+                }
+
+                previousNode = node;
+            }
+
+            InspectorNode finalNode = processedField.Drawer != null
+                ? new IMGUIDrawerNode(this, processedField.Drawer)
+                : new IMGUIRecursiveDrawerNode(_imguiRecursiveFieldsDrawer);
+
+            graph.AddNode(finalNode);
+            if (previousNode != null)
+            {
+                graph.Connect(previousNode, finalNode);
+            }
+
+            return graph;
         }
     }
 }

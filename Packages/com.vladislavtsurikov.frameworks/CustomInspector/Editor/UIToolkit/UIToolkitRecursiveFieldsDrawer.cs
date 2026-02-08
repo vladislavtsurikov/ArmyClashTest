@@ -9,7 +9,7 @@ namespace VladislavTsurikov.CustomInspector.Editor.UIToolkit
 {
     public class UIToolkitRecursiveFieldsDrawer : RecursiveFieldsDrawer
     {
-        public VisualElement DrawRecursiveFields(
+        public RecursiveElementResult DrawRecursiveFields(
             object value,
             FieldInfo fieldInfo,
             Action<object, VisualElement> drawField)
@@ -47,7 +47,19 @@ namespace VladislavTsurikov.CustomInspector.Editor.UIToolkit
             container.Add(foldout);
             container.Add(contentContainer);
 
-            return container;
+            return new RecursiveElementResult(container, foldout.value);
+        }
+
+        public readonly struct RecursiveElementResult
+        {
+            public RecursiveElementResult(VisualElement element, bool isExpanded)
+            {
+                Element = element;
+                IsExpanded = isExpanded;
+            }
+
+            public VisualElement Element { get; }
+            public bool IsExpanded { get; }
         }
     }
 }

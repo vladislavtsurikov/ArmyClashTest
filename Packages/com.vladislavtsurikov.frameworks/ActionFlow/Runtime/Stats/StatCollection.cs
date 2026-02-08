@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace VladislavTsurikov.ActionFlow.Runtime.Stats
 {
-    [System.Serializable]
-    public sealed class StatCollection
+    [CreateAssetMenu(menuName = "ActionFlow/Stats/Stat Collection", fileName = "StatCollection")]
+    public sealed class StatCollection : ScriptableObject
     {
-        [UnityEngine.SerializeField] private List<Stat> _stats = new();
+        [SerializeField] private List<Stat> _stats = new();
 
         public IReadOnlyList<Stat> Stats => _stats;
 

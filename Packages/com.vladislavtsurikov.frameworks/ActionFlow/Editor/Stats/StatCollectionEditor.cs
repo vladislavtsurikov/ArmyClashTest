@@ -5,23 +5,23 @@ using VladislavTsurikov.CustomInspector.Editor.IMGUI;
 
 namespace VladislavTsurikov.ActionFlow.Editor.Stats
 {
-    [CustomEditor(typeof(Runtime.Stats.Entity))]
-    public sealed class EntityEditor : UnityEditor.Editor
+    [CustomEditor(typeof(Runtime.Stats.StatCollection))]
+    public sealed class StatCollectionEditor : UnityEditor.Editor
     {
         private readonly IMGUIInspectorFieldsDrawer _fieldsDrawer = new IMGUIInspectorFieldsDrawer();
-        private Runtime.Stats.Entity _entity;
+        private Runtime.Stats.StatCollection _collection;
 
         public override void OnInspectorGUI()
         {
-            _entity ??= target as Runtime.Stats.Entity;
-            if (_entity == null)
+            _collection ??= target as Runtime.Stats.StatCollection;
+            if (_collection == null)
             {
                 return;
             }
 
-            float fieldsHeight = _fieldsDrawer.GetFieldsHeight(_entity);
+            float fieldsHeight = _fieldsDrawer.GetFieldsHeight(_collection);
             Rect fieldsRect = EditorGUILayout.GetControlRect(false, fieldsHeight);
-            _fieldsDrawer.DrawFields(_entity, fieldsRect);
+            _fieldsDrawer.DrawFields(_collection, fieldsRect);
         }
     }
 }

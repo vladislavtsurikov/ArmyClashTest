@@ -9,7 +9,7 @@ namespace VladislavTsurikov.CustomInspector.Editor.IMGUI
 {
     public class IMGUIRecursiveFieldsDrawer : RecursiveFieldsDrawer
     {
-        public float DrawRecursiveFields(
+        public RecursiveDrawResult DrawRecursiveFields(
             object value,
             FieldInfo fieldInfo,
             Rect fieldRect,
@@ -34,7 +34,19 @@ namespace VladislavTsurikov.CustomInspector.Editor.IMGUI
 
             EditorGUI.indentLevel--;
 
-            return foldoutHeight;
+            return new RecursiveDrawResult(foldoutHeight, foldoutState);
+        }
+
+        public readonly struct RecursiveDrawResult
+        {
+            public RecursiveDrawResult(float height, bool isExpanded)
+            {
+                Height = height;
+                IsExpanded = isExpanded;
+            }
+
+            public float Height { get; }
+            public bool IsExpanded { get; }
         }
     }
 }
