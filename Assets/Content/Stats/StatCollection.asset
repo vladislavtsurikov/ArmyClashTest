@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae7f55cced1b934ab392a71d6c41ece, type: 3}
+  m_Name: StatCollection
+  m_EditorClassIdentifier: VladislavTsurikov.ActionFlow::VladislavTsurikov.ActionFlow.Runtime.Stats.StatCollection
+  _stats:
+  - {fileID: 11400000, guid: 0bafa3464dd336c46b4b75d95faaab96, type: 2}
+  - {fileID: 11400000, guid: 6206e55167bbcf64f87f9831a321f584, type: 2}
+  - {fileID: 11400000, guid: 86e65a61390e84343bd098fde4286d42, type: 2}
+  - {fileID: 11400000, guid: 24f1337d1bfc6894e84eb6db1bc5529b, type: 2}
