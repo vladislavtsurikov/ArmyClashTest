@@ -9,9 +9,13 @@ using VladislavTsurikov.MegaWorld.Runtime.Core.GlobalSettings.ElementsSystem;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeTerrainObject;
 using VladislavTsurikov.ReflectionUtility;
+#if RENDERER_STACK
 using VladislavTsurikov.RendererStack.Runtime.TerrainObjectRenderer.Data;
+#endif
 using VladislavTsurikov.Undo.Editor.GameObject;
+#if RENDERER_STACK
 using VladislavTsurikov.Undo.Editor.TerrainObjectRenderer;
+#endif
 
 namespace VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem
 {
@@ -60,11 +64,13 @@ namespace VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem
                 var go = (GameObject)EditTool.FindObject.Obj;
                 Undo.Editor.Undo.RegisterUndoAfterMouseUp(new GameObjectTransform(go));
             }
+#if RENDERER_STACK
             else if (EditTool.FindObject.PrototypeType == typeof(PrototypeTerrainObject))
             {
                 var instance = (TerrainObjectInstance)EditTool.FindObject.Obj;
                 Undo.Editor.Undo.RegisterUndoAfterMouseUp(new TerrainObjectTransform(instance));
             }
+#endif
         }
 
         protected override void OnObjectFound() => SetStartValue();

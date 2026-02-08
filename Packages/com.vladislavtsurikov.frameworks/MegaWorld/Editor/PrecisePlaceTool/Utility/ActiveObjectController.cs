@@ -3,15 +3,17 @@ using UnityEngine;
 using VladislavTsurikov.MegaWorld.Runtime.Common;
 using VladislavTsurikov.MegaWorld.Runtime.Core.GlobalSettings.ElementsSystem;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject;
+#if RENDERER_STACK
 using VladislavTsurikov.RendererStack.Runtime.TerrainObjectRenderer;
 using VladislavTsurikov.RendererStack.Runtime.TerrainObjectRenderer.Data;
+#endif
 using VladislavTsurikov.Undo.Editor.GameObject;
+#if RENDERER_STACK
 using VladislavTsurikov.Undo.Editor.TerrainObjectRenderer;
+#endif
 using PrototypeTerrainObject =
     VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeTerrainObject.
     PrototypeTerrainObject;
-#if RENDERER_STACK
-#endif
 
 namespace VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool
 {

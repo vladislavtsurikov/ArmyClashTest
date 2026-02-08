@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+#if RENDERER_STACK
+using System.Collections.Generic;
 using UnityEngine;
 using VladislavTsurikov.PhysicsSimulator.Runtime;
 using VladislavTsurikov.RendererStack.Runtime.TerrainObjectRenderer.Data;
@@ -19,3 +20,5 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter
         }
     }
 }
+#endif
+

@@ -24,7 +24,9 @@ using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.U
 using VladislavTsurikov.MegaWorld.Runtime.Core.Utility;
 using VladislavTsurikov.ReflectionUtility;
 using VladislavTsurikov.Undo.Editor.GameObject;
+#if RENDERER_STACK
 using VladislavTsurikov.Undo.Editor.TerrainObjectRenderer;
+#endif
 using VladislavTsurikov.UnityUtility.Runtime;
 using GameObjectUtility = VladislavTsurikov.UnityUtility.Runtime.GameObjectUtility;
 using Object = UnityEngine.Object;

@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using VladislavTsurikov.GameObjectCollider.Editor;
+#if RENDERER_STACK
 using VladislavTsurikov.RendererStack.Editor.Sectorize.GameObjectColliderIntegration;
+#endif
 using VladislavTsurikov.UnityUtility.Runtime;
 using GameObjectColliderUtility = VladislavTsurikov.GameObjectCollider.Editor.GameObjectColliderUtility;
-#if UNITY_EDITOR
-#endif
 
 namespace VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject
 {
