@@ -1,0 +1,13 @@
+using VladislavTsurikov.Nody.Runtime.Core;
+using VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter.Settings;
+using VladislavTsurikov.ReflectionUtility;
+
+namespace VladislavTsurikov.MegaWorld.Editor.BrushPhysicsTool
+{
+    [Name("Brush Physics Tool Settings")]
+    public class BrushPhysicsToolSettings : Node
+    {
+        public PhysicsEffects PhysicsEffects = new();
+        public float PositionOffsetY = 30;
+    }
+}
