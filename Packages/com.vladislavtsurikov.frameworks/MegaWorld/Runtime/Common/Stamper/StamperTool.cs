@@ -75,7 +75,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Stamper
         {
         }
 
-        private protected virtual void OnStamperEnable()
+        protected virtual void OnStamperEnable()
         {
         }
 

@@ -97,7 +97,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GravitySpawner
             }
         }
 
-        private protected override void OnStamperEnable()
+        protected override void OnStamperEnable()
         {
             _terrainsMaskManager = new TerrainsMaskManager();
 

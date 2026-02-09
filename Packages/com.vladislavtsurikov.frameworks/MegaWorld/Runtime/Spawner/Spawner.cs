@@ -67,7 +67,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Spawner
             }
         }
 
-        private protected override void OnStamperEnable() => Area.SetAreaBoundsIfNecessary(this, true);
+        protected override void OnStamperEnable() => Area.SetAreaBoundsIfNecessary(this, true);
 
         protected override void OnUpdate() => Area.SetAreaBoundsIfNecessary(this);
 

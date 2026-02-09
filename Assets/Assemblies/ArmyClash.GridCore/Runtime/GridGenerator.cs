@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace ArmyClash.Grid
 {
@@ -69,13 +72,19 @@ namespace ArmyClash.Grid
                 sizeScale = Mathf.Max(0.01f, settings.GizmoSizeScale);
             }
 
-            Gizmos.color = color;
             float size = Mathf.Max(0.05f, _config.CellSize) * sizeScale;
             var cubeSize = new Vector3(size, height, size);
+            float lineWidth = settings != null ? settings.LinePixelWidth : 2f;
+
+#if UNITY_EDITOR
+            Handles.color = color;
+#else
+            Gizmos.color = color;
+#endif
 
             for (int i = 0; i < slots.Count; i++)
             {
-                Gizmos.DrawWireCube(slots[i].Position, cubeSize);
+                DrawCell(slots[i].Position, cubeSize, color, lineWidth);
             }
         }
 
@@ -88,6 +97,26 @@ namespace ArmyClash.Grid
 
             _config ??= new GridConfig();
             _config.CopyFrom(config);
+        }
+
+        private static void DrawCell(Vector3 center, Vector3 size, Color color, float lineWidth)
+        {
+            float halfX = size.x * 0.5f;
+            float halfZ = size.z * 0.5f;
+            var p0 = new Vector3(center.x - halfX, center.y, center.z - halfZ);
+            var p1 = new Vector3(center.x + halfX, center.y, center.z - halfZ);
+            var p2 = new Vector3(center.x + halfX, center.y, center.z + halfZ);
+            var p3 = new Vector3(center.x - halfX, center.y, center.z + halfZ);
+
+#if UNITY_EDITOR
+            Handles.DrawAAPolyLine(Mathf.Max(0.5f, lineWidth), p0, p1, p2, p3, p0);
+#else
+            Gizmos.color = color;
+            Gizmos.DrawLine(p0, p1);
+            Gizmos.DrawLine(p1, p2);
+            Gizmos.DrawLine(p2, p3);
+            Gizmos.DrawLine(p3, p0);
+#endif
         }
     }
 }

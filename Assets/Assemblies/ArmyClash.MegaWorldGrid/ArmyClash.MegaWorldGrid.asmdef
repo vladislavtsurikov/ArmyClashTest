@@ -1,0 +1,23 @@
+{
+    "name": "ArmyClash.MegaWorldGrid",
+    "rootNamespace": "ArmyClash.MegaWorldGrid",
+    "references": [
+        "VladislavTsurikov.MegaWorld",
+        "ArmyClash.GridCore",
+        "VladislavTsurikov.ReflectionUtility",
+        "OdinSerializer",
+        "VladislavTsurikov.ComponentStack",
+        "UniTask",
+        "ArmyClash.GridWrapper",
+        "VladislavTsurikov.Utility"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

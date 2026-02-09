@@ -11,5 +11,6 @@ namespace ArmyClash.Grid
         public Color GizmoColor = new Color(0.1f, 0.6f, 1f, 0.8f);
         public float GizmoHeight = 0.02f;
         public float GizmoSizeScale = 1f;
+        public float LinePixelWidth = 2f;
     }
 }

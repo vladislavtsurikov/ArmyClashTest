@@ -102,7 +102,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.TerrainSpawner
 #endif
         }
 
-        private protected override void OnStamperEnable()
+        protected override void OnStamperEnable()
         {
 #if UNITY_EDITOR
             void Action()

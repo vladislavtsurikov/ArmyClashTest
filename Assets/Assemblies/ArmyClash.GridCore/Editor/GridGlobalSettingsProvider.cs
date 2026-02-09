@@ -32,6 +32,7 @@ namespace ArmyClash.Grid
 
                     settings.GizmoHeight = EditorGUILayout.FloatField("Gizmo Height", settings.GizmoHeight);
                     settings.GizmoSizeScale = EditorGUILayout.FloatField("Gizmo Size Scale", settings.GizmoSizeScale);
+                    settings.LinePixelWidth = EditorGUILayout.FloatField("Line Pixel Width", settings.LinePixelWidth);
 
                     if (GUI.changed)
                     {

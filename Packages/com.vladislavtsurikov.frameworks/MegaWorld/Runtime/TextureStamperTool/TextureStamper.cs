@@ -77,7 +77,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.TextureStamperTool
 #endif
         }
 
-        private protected override void OnStamperEnable() => Area.SetAreaBoundsIfNecessary(this, true);
+        protected override void OnStamperEnable() => Area.SetAreaBoundsIfNecessary(this, true);
 
         protected override void OnUpdate() => Area.SetAreaBoundsIfNecessary(this);
 
