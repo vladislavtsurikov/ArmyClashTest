@@ -4,7 +4,7 @@ using UnityEngine;
 namespace VladislavTsurikov.ActionFlow.Runtime.Stats
 {
     [CreateAssetMenu(menuName = "Stats/Effect", fileName = "StatEffect")]
-    public sealed class StatEffect : ScriptableObject
+    public class StatEffect : ScriptableObject
     {
         [System.Serializable]
         public struct Entry

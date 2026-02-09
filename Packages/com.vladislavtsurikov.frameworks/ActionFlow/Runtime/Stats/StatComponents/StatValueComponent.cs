@@ -1,3 +1,4 @@
+using OdinSerializer;
 using UnityEngine;
 using VladislavTsurikov.CustomInspector.Runtime;
 using VladislavTsurikov.Nody.Runtime.AdvancedNodeStack;
@@ -10,12 +11,26 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
     [Name("Stats/Value")]
     public sealed class StatValueComponent : Node
     {
-        [field: SerializeField] public float BaseValue { get; private set; }
-        [field: SerializeField] public bool ClampEnabled { get; private set; }
-        [field: SerializeField, ShowIf(nameof(ClampEnabled), true)] public bool UseMin { get; private set; }
-        [field: SerializeField, ShowIf(nameof(UseMin), true)] public float MinValue { get; private set; }
-        [field: SerializeField, ShowIf(nameof(ClampEnabled), true)] public bool UseMax { get; private set; }
-        [field: SerializeField, ShowIf(nameof(UseMax), true)] public float MaxValue { get; private set; }
+        [OdinSerialize]
+        private float _baseValue;
+        [OdinSerialize]
+        private bool _clampEnabled;
+
+        [OdinSerialize, ShowIf(nameof(ClampEnabled), true)]
+        private bool _useMin;
+        [OdinSerialize, ShowIf(nameof(UseMin), true)]
+        private float _minValue;
+        [OdinSerialize, ShowIf(nameof(ClampEnabled), true)]
+        private bool _useMax;
+        [OdinSerialize, ShowIf(nameof(UseMax), true)]
+        private float _maxValue;
+
+        public float BaseValue => _baseValue;
+        public bool ClampEnabled => _clampEnabled;
+        public bool UseMin => _useMin;
+        public float MinValue => _minValue;
+        public bool UseMax => _useMax;
+        public float MaxValue => _maxValue;
 
         public float ApplyClamp(float value)
         {
@@ -37,7 +52,7 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
 
         public void SetBaseValue(float value)
         {
-            BaseValue = ApplyClamp(value);
+            _baseValue = ApplyClamp(value);
         }
     }
 }

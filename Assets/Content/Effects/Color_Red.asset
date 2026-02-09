@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f010936c1690e1439ef8c98d19d122a, type: 3}
+  m_Script: {fileID: 11500000, guid: f064cf076bf85c04aa0ef968582af250, type: 3}
   m_Name: Color_Red
-  m_EditorClassIdentifier: VladislavTsurikov.ActionFlow::VladislavTsurikov.ActionFlow.Runtime.Stats.StatEffect
+  m_EditorClassIdentifier: VladislavTsurikov.ActionFlow::VladislavTsurikov.ActionFlow.Runtime.Stats.ModifierStatEffect
   _entries:
   - Stat: {fileID: 11400000, guid: 0bafa3464dd336c46b4b75d95faaab96, type: 2}
     Delta: 200
@@ -19,3 +19,4 @@ MonoBehaviour:
     Delta: 40
   - Stat: {fileID: 11400000, guid: 86e65a61390e84343bd098fde4286d42, type: 2}
     Delta: -9
+  _modifier: {fileID: 11400000, guid: 88d431330a7394047b681a542ba0c66e, type: 2}
