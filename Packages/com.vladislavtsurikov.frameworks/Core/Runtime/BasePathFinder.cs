@@ -35,9 +35,20 @@ namespace VladislavTsurikov.Core.Runtime
                 DirectoryInfo baseDir = fileInfo.Directory;
                 Debug.Assert(baseDir != null, nameof(baseDir) + " != null");
                 var baseDirPath = CleanPath(baseDir.ToString());
-                var index = baseDirPath.IndexOf("Assets/", StringComparison.Ordinal);
-                Assert.IsTrue(index >= 0);
-                baseDirPath = baseDirPath.Substring(index);
+                var assetsIndex = baseDirPath.IndexOf("Assets/", StringComparison.Ordinal);
+                var packagesIndex = baseDirPath.IndexOf("Packages/", StringComparison.Ordinal);
+                if (assetsIndex >= 0)
+                {
+                    baseDirPath = baseDirPath.Substring(assetsIndex);
+                }
+                else if (packagesIndex >= 0)
+                {
+                    baseDirPath = baseDirPath.Substring(packagesIndex);
+                }
+                else
+                {
+                    Debug.Assert(false, $"Unexpected base path: {baseDirPath}");
+                }
                 s_foundPath = baseDirPath;
                 if (DebugMode)
                 {
