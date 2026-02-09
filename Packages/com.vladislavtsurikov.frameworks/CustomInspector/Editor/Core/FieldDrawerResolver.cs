@@ -166,7 +166,17 @@ namespace VladislavTsurikov.CustomInspector.Editor.Core
                 return field;
             }
 
-            var holderType = typeof(TypeOnlyField<>).MakeGenericType(fieldType);
+            var holderTypeDefinition = typeof(TypeOnlyField<>);
+            var holderTypeArgsCount = holderTypeDefinition.GetGenericArguments().Length;
+            Type holderType;
+            if (holderTypeArgsCount == 1)
+            {
+                holderType = holderTypeDefinition.MakeGenericType(fieldType);
+            }
+            else
+            {
+                holderType = holderTypeDefinition.MakeGenericType(typeof(TDrawer), fieldType);
+            }
             field = holderType.GetField(nameof(TypeOnlyField<int>.Value), BindingFlags.Public | BindingFlags.Static);
             _typeOnlyFields[fieldType] = field;
             return field;

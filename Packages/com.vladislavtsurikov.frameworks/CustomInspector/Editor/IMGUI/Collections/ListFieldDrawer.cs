@@ -59,14 +59,14 @@ namespace VladislavTsurikov.CustomInspector.Editor.Collections
 
         public override float GetFieldsHeight(object target, FieldInfo field, object value)
         {
-            if (target is not IList list)
+            if (value is not IList list)
             {
                 return EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
             }
 
             if (_reorderableList == null || !ReferenceEquals(_list, list))
             {
-                Setup(list, target.GetType(), _label ?? GUIContent.none);
+                Setup(list, field.FieldType, _label ?? GUIContent.none);
             }
 
             return _reorderableList != null

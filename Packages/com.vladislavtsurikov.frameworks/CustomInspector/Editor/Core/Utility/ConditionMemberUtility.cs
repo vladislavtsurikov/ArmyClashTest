@@ -12,12 +12,19 @@ namespace VladislavTsurikov.CustomInspector.Editor.Core
                 return false;
             }
 
-            FieldInfo field = target.GetType().GetField(memberName,
-                BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+            var bindingFlags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance;
+            FieldInfo field = target.GetType().GetField(memberName, bindingFlags);
 
             if (field == null)
             {
-                return false;
+                PropertyInfo property = target.GetType().GetProperty(memberName, bindingFlags);
+                if (property == null)
+                {
+                    return false;
+                }
+
+                value = property.GetValue(target);
+                return true;
             }
 
             value = field.GetValue(target);
