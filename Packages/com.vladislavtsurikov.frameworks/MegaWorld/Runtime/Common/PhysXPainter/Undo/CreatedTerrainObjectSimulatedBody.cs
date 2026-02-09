@@ -1,4 +1,5 @@
 ﻿#if UNITY_EDITOR
+#if RENDERER_STACK
 using System.Collections.Generic;
 using UnityEngine;
 using VladislavTsurikov.Undo.Editor;
@@ -37,4 +38,5 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter.Undo
         }
     }
 }
+#endif
 #endif

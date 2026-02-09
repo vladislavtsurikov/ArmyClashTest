@@ -5,7 +5,6 @@ using VladislavTsurikov.ColliderSystem.Runtime;
 using VladislavTsurikov.MegaWorld.Runtime.Common.Area;
 using VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter;
 using VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter.Settings;
-using VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter.Undo;
 using VladislavTsurikov.MegaWorld.Runtime.Core.GlobalSettings.ElementsSystem;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject;
