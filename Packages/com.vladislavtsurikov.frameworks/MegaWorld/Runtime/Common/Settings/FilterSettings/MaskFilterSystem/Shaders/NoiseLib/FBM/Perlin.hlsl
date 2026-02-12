@@ -15,8 +15,8 @@
 
 =========================================================================*/
 
-#include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib/Implementation/PerlinImpl.hlsl"
-#include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib/NoiseCommon.hlsl"
+#include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib/Implementation/PerlinImpl.hlsl"
+#include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib/NoiseCommon.hlsl"
 
 
 

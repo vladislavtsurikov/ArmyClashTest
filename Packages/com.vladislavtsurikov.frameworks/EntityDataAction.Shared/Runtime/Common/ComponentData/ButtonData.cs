@@ -1,8 +1,8 @@
 ﻿using System;
 using OdinSerializer;
 using UnityEngine.UI;
-using VladislavTsurikov.EntityDataAction.Runtime;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
+using VladislavTsurikov.Nody.Runtime.Core;
 using VladislavTsurikov.ReflectionUtility;
 
 namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Common
@@ -35,8 +35,7 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Common
 
         private void HandleClick()
         {
-            int subscriberCount = OnClick?.GetInvocationList()?.Length ?? 0;
-            OnClick?.Invoke(Entity);
+            OnClick?.Invoke(this.GetEntity());
         }
     }
 }

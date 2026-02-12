@@ -15,8 +15,8 @@
 
 =========================================================================*/
 
-#include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib/Implementation/RidgeImpl.hlsl"
-#include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib/NoiseCommon.hlsl"
+#include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib/Implementation/RidgeImpl.hlsl"
+#include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib/NoiseCommon.hlsl"
 
 
 

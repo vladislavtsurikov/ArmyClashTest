@@ -1,3 +1,4 @@
+using VladislavTsurikov.Nody.Runtime.Core;
 # EntityDataActionFramework — Common Patterns
 
 This document collects common architectural patterns used in the project.

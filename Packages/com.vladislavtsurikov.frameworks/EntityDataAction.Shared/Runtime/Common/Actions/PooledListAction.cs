@@ -61,7 +61,7 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Common
                 return true;
             }
 
-            await UpdateInstances(requiredCount, token);
+            UpdateInstances(requiredCount, token);
             return true;
         }
 
@@ -76,7 +76,7 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Common
         {
         }
 
-        private async UniTask UpdateInstances(int requiredCount, CancellationToken token)
+        private void UpdateInstances(int requiredCount, CancellationToken token)
         {
             int currentCount = _activeInstances.Count;
 

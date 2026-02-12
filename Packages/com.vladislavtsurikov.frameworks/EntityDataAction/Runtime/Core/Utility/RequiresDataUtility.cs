@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using VladislavTsurikov.Nody.Runtime.Core;
 using System.Collections.Generic;
 using VladislavTsurikov.AttributeUtility.Runtime;
 using VladislavTsurikov.Nody.Runtime.AdvancedNodeStack;

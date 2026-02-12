@@ -56,7 +56,7 @@ Shader "Hidden/TerrainTools/Noise/NoiseBlit/NoiseBlitFbm"
         //     #pragma vertex vert
         //     #pragma fragment frag
 
-        //     #include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Perlin.hlsl"
+        //     #include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Perlin.hlsl"
 
         //     float4 frag( v2f i ) : SV_Target
         //     {
@@ -80,7 +80,7 @@ Shader "Hidden/TerrainTools/Noise/NoiseBlit/NoiseBlitFbm"
             #pragma fragment frag
             #pragma shader_feature USE_NOISE_TEXTURE
 
-            #include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Perlin.hlsl"
+            #include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Perlin.hlsl"
 
 #if USE_NOISE_TEXTURE
 
@@ -122,7 +122,7 @@ Shader "Hidden/TerrainTools/Noise/NoiseBlit/NoiseBlitFbm"
             #pragma fragment frag
             #pragma shader_feature _ USE_NOISE_TEXTURE
 
-            #include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Perlin.hlsl"
+            #include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Perlin.hlsl"
 
 #if USE_NOISE_TEXTURE
 
@@ -164,7 +164,7 @@ Shader "Hidden/TerrainTools/Noise/NoiseBlit/NoiseBlitFbm"
         //     #pragma vertex vert
         //     #pragma fragment frag
 
-        //     #include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Ridge.hlsl"
+        //     #include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Ridge.hlsl"
 
         //     float4 frag( v2f i ) : SV_Target
         //     {
@@ -188,7 +188,7 @@ Shader "Hidden/TerrainTools/Noise/NoiseBlit/NoiseBlitFbm"
             #pragma fragment frag
             #pragma shader_feature USE_NOISE_TEXTURE
 
-            #include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Ridge.hlsl"
+            #include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Ridge.hlsl"
 
 #if USE_NOISE_TEXTURE
 
@@ -230,7 +230,7 @@ Shader "Hidden/TerrainTools/Noise/NoiseBlit/NoiseBlitFbm"
             #pragma fragment frag
             #pragma shader_feature _ USE_NOISE_TEXTURE
 
-            #include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Ridge.hlsl"
+            #include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Ridge.hlsl"
 
 #if USE_NOISE_TEXTURE
 
@@ -272,7 +272,7 @@ Shader "Hidden/TerrainTools/Noise/NoiseBlit/NoiseBlitFbm"
         //     #pragma vertex vert
         //     #pragma fragment frag
 
-        //     #include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Value.hlsl"
+        //     #include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Value.hlsl"
 
         //     float4 frag( v2f i ) : SV_Target
         //     {
@@ -296,7 +296,7 @@ Shader "Hidden/TerrainTools/Noise/NoiseBlit/NoiseBlitFbm"
             #pragma fragment frag
             #pragma shader_feature USE_NOISE_TEXTURE
 
-            #include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Value.hlsl"
+            #include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Value.hlsl"
 
 #if USE_NOISE_TEXTURE
 
@@ -338,7 +338,7 @@ Shader "Hidden/TerrainTools/Noise/NoiseBlit/NoiseBlitFbm"
             #pragma fragment frag
             #pragma shader_feature _ USE_NOISE_TEXTURE
 
-            #include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Value.hlsl"
+            #include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Value.hlsl"
 
 #if USE_NOISE_TEXTURE
 
@@ -380,7 +380,7 @@ Shader "Hidden/TerrainTools/Noise/NoiseBlit/NoiseBlitFbm"
         //     #pragma vertex vert
         //     #pragma fragment frag
 
-        //     #include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Voronoi.hlsl"
+        //     #include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Voronoi.hlsl"
 
         //     float4 frag( v2f i ) : SV_Target
         //     {
@@ -404,7 +404,7 @@ Shader "Hidden/TerrainTools/Noise/NoiseBlit/NoiseBlitFbm"
             #pragma fragment frag
             #pragma shader_feature USE_NOISE_TEXTURE
 
-            #include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Voronoi.hlsl"
+            #include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Voronoi.hlsl"
 
 #if USE_NOISE_TEXTURE
 
@@ -446,7 +446,7 @@ Shader "Hidden/TerrainTools/Noise/NoiseBlit/NoiseBlitFbm"
             #pragma fragment frag
             #pragma shader_feature _ USE_NOISE_TEXTURE
 
-            #include "Assets/VladislavTsurikov/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Voronoi.hlsl"
+            #include "Packages/com.vladislavtsurikov.frameworks/MegaWorld/Runtime/Common/Settings/FilterSettings/MaskFilterSystem/Shaders/NoiseLib//Fbm/Voronoi.hlsl"
 
 #if USE_NOISE_TEXTURE
 

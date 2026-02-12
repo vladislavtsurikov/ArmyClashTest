@@ -1,6 +1,6 @@
 using UnityEngine;
 using VladislavTsurikov.Nody.Runtime.AdvancedNodeStack;
-using VladislavTsurikov.EntityDataAction.Runtime.Core;
+using VladislavTsurikov.Nody.Runtime.Core;
 
 namespace VladislavTsurikov.ActionFlow.Runtime.Stats
 {

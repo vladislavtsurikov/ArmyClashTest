@@ -2,8 +2,8 @@
 using UnityEditor;
 using UnityEngine;
 using VladislavTsurikov.CustomInspector.Editor.IMGUI;
-using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.IMGUIUtility.Editor.ElementStack.ReorderableList;
+using VladislavTsurikov.Nody.Runtime.Core;
 
 namespace VladislavTsurikov.ActionFlow.Editor.Stats
 {
