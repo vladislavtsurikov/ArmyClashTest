@@ -1,0 +1,28 @@
+{
+    "name": "ArmyClash.Runtime",
+    "rootNamespace": "ArmyClash",
+    "references": [
+        "VladislavTsurikov.EntityDataAction",
+        "VladislavTsurikov.EntityDataAction.Shared",
+        "VladislavTsurikov.ActionFlow",
+        "VladislavTsurikov.Nody",
+        "VladislavTsurikov.ReflectionUtility",
+        "OdinSerializer",
+        "UniTask",
+        "ArmyClash.MegaWorldGrid",
+        "ArmyClash.GridCore",
+        "ArmyClash.GridWrapper",
+        "VladislavTsurikov.MegaWorld",
+        "ArmyClash.UIToolkit",
+        "UnityEngine.UIElements"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

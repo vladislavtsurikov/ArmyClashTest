@@ -46,5 +46,44 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
 
             await UniTask.CompletedTask;
         }
+
+        public static async UniTask<List<GameObject>> SpawnGroupWithInstances(CancellationToken token, Group group,
+            IReadOnlyList<GridSlot> slots)
+        {
+            var instances = new List<GameObject>();
+
+            if (!group.HasAllActivePrototypes())
+            {
+                return instances;
+            }
+
+            if (group.PrototypeType != typeof(PrototypeGameObject))
+            {
+                return instances;
+            }
+
+            var randomSeedSettings = (RandomSeedSettings)group.GetElement(typeof(RandomSeedSettings));
+            randomSeedSettings.GenerateRandomSeedIfNecessary();
+
+            for (int i = 0; i < slots.Count; i++)
+            {
+                token.ThrowIfCancellationRequested();
+
+                var proto = (PrototypeGameObject)GetRandomPrototype.GetMaxSuccessProto(group.PrototypeList);
+                if (proto == null || proto.Active == false || proto.Prefab == null)
+                {
+                    continue;
+                }
+
+                var slot = slots[i];
+                var instance = Object.Instantiate(proto.Prefab, slot.Position, slot.Rotation);
+                group.GetDefaultElement<ContainerForGameObjects>().ParentGameObject(instance);
+
+                instances.Add(instance);
+            }
+
+            await UniTask.CompletedTask;
+            return instances;
+        }
     }
 }
