@@ -11,7 +11,7 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Style
     [RunOnDirtyData(typeof(StyleStateData))]
     [RequiresData(typeof(StyleStateData))]
     [Name("UI/Common/Style/SetStyleButtonInteractableAction")]
-    public sealed class SetStyleButtonInteractableAction : EntityAction
+    public sealed class SetStyleButtonInteractableAction : EntityMonoBehaviourAction
     {
         [OdinSerialize]
         private Button _target;

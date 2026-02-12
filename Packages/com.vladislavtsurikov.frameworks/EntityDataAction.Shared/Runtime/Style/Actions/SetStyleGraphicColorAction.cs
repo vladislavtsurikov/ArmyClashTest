@@ -12,7 +12,7 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Style
     [RunOnDirtyData(typeof(StyleStateData))]
     [RequiresData(typeof(StyleStateData))]
     [Name("UI/Common/Style/SetStyleGraphicColorAction")]
-    public sealed class SetStyleGraphicColorAction : EntityAction
+    public sealed class SetStyleGraphicColorAction : EntityMonoBehaviourAction
     {
         [OdinSerialize]
         private Graphic _target;

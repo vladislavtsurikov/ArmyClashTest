@@ -2,7 +2,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 {
     public partial class Entity
     {
-        protected void OnEnable()
+        public void Enable()
         {
             Setup();
 
@@ -11,25 +11,22 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
                 return;
             }
 
-            if (_actions != null)
+            if (!_actionsAwakeCalled)
             {
-                if (!_actionsAwakeCalled)
-                {
-                    _actionsAwakeCalled = true;
-                    _actions.InvokeAwake();
-                }
+                _actionsAwakeCalled = true;
+                _actions.InvokeAwake();
+            }
 
-                _actions.InvokeOnEnable();
+            _actions.InvokeOnEnable();
 
-                if (!_actionsStartCalled)
-                {
-                    _actionsStartCalled = true;
-                    _actions.InvokeStart();
-                }
+            if (!_actionsStartCalled)
+            {
+                _actionsStartCalled = true;
+                _actions.InvokeStart();
             }
         }
 
-        protected void OnDisable()
+        public void Disable()
         {
             _actions?.InvokeOnDisable();
 
@@ -45,7 +42,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             IsSetup = false;
         }
 
-        protected void Update()
+        public void Update()
         {
             if (!Active)
             {
@@ -55,7 +52,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             _actions?.InvokeUpdate();
         }
 
-        protected void FixedUpdate()
+        public void FixedUpdate()
         {
             if (!Active)
             {
@@ -65,7 +62,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             _actions?.InvokeFixedUpdate();
         }
 
-        protected void LateUpdate()
+        public void LateUpdate()
         {
             if (!Active)
             {
@@ -75,19 +72,19 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             _actions?.InvokeLateUpdate();
         }
 
-        protected void OnDestroy()
+        public void Destroy()
         {
             _actions?.InvokeOnDestroy();
         }
 
 #if UNITY_EDITOR
-        protected void OnValidate()
+        public void Validate()
         {
             _actions?.InvokeOnValidate();
         }
 #endif
 
-        protected void OnApplicationFocus(bool hasFocus)
+        public void OnApplicationFocus(bool hasFocus)
         {
             if (!Active)
             {
@@ -97,7 +94,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             _actions?.InvokeOnApplicationFocus(hasFocus);
         }
 
-        protected void OnApplicationPause(bool pauseStatus)
+        public void OnApplicationPause(bool pauseStatus)
         {
             if (!Active)
             {

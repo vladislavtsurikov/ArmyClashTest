@@ -11,7 +11,7 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Style
     [RunOnDirtyData(typeof(StyleStateData))]
     [RequiresData(typeof(StyleStateData))]
     [Name("UI/Common/Style/SetStyleGameObjectActiveAction")]
-    public sealed class SetStyleGameObjectActiveAction : EntityAction
+    public sealed class SetStyleGameObjectActiveAction : EntityMonoBehaviourAction
     {
         [OdinSerialize]
         private GameObject _target;

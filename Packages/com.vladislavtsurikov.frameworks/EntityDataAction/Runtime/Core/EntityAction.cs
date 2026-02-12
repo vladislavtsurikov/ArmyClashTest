@@ -1,6 +1,4 @@
-using System;
 using VladislavTsurikov.Nody.Runtime.Core;
-using UnityEngine;
 using Action = VladislavTsurikov.ActionFlow.Runtime.Actions.Action;
 
 namespace VladislavTsurikov.EntityDataAction.Runtime.Core
@@ -73,16 +71,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             }
 
             return (T)Entity.Data.GetElement(typeof(T));
-        }
-
-        protected TComponent[] GetComponentsInChildren<TComponent>(bool includeInactive) where TComponent : MonoBehaviour
-        {
-            if (Entity == null)
-            {
-                return Array.Empty<TComponent>();
-            }
-
-            return Entity.GetComponentsInChildren<TComponent>(includeInactive);
         }
 
         internal void InvokeAwake()

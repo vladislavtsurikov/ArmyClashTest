@@ -11,7 +11,7 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.ProgressBar
     [RunOnDirtyData(typeof(ProgressBarData))]
     [RequiresData(typeof(ProgressBarData))]
     [Name("UI/Common/SetProgressBarFillAction")]
-    public sealed class SetProgressBarFillAction : EntityAction
+    public sealed class SetProgressBarFillAction : EntityMonoBehaviourAction
     {
         [OdinSerialize]
         private RectTransform _fill;

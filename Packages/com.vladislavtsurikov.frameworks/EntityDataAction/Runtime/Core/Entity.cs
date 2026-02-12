@@ -1,13 +1,11 @@
 using System;
-using VladislavTsurikov.Nody.Runtime.Core;
 using Cysharp.Threading.Tasks;
 using OdinSerializer;
-using UnityEngine;
+using VladislavTsurikov.Nody.Runtime.Core;
 
 namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 {
-    [ExecuteInEditMode]
-    public partial class Entity : SerializedMonoBehaviour
+    public partial class Entity
     {
         [OdinSerialize]
         private EntityDataCollection _data;
@@ -18,11 +16,18 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 
         private bool _actionsAwakeCalled;
         private bool _actionsStartCalled;
+        private object[] _setupData;
 
         internal DirtyActionRunner DirtyRunner;
 
+        internal Func<Type[]> ComponentDataTypesProvider;
+        internal Func<Type[]> ActionTypesProvider;
+        internal Action<Entity> AfterCreateDataAndActionsCallback;
+        internal Action<Entity> SetupEntityCallback;
+
         public EntityDataCollection Data => _data;
         public EntityActionCollection Actions => _actions;
+        public object[] SetupData => _setupData;
 
         public bool IsSetup { get; private set; }
 
@@ -47,31 +52,19 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             set => EntityDataActionGlobalSettings.Active = value;
         }
 
-        internal bool Active
-        {
-            get
-            {
-#if UNITY_EDITOR
-                if (UnityEditor.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage() != null)
-                {
-                    return false;
-                }
-#endif
+        public bool Active => _localActive && EntityDataActionGlobalSettings.Active;
 
-                return _localActive && EntityDataActionGlobalSettings.Active;
-            }
-            set
-            {
-                LocalActive = value;
-            }
+        public void SetSetupData(object[] setupData)
+        {
+            _setupData = setupData;
         }
 
         protected virtual void OnSetupEntity()
         {
             if (Active)
             {
-                _data.Setup();
-                _actions.Setup();
+                _data.Setup(true, _setupData);
+                _actions.Setup(true, _setupData);
 
                 _data.ElementAdded += HandleDataChanged;
                 _data.ElementRemoved += HandleDataChanged;
@@ -80,8 +73,13 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             }
         }
 
-        internal void Setup()
+        public void Setup()
         {
+            if (IsSetup)
+            {
+                return;
+            }
+
             EntityDataActionGlobalSettings.ActiveChanged -= HandleActiveChanged;
             EntityDataActionGlobalSettings.ActiveChanged += HandleActiveChanged;
 
@@ -96,37 +94,19 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             CreateDefaultData();
             CreateDefaultActions();
 
+            AfterCreateDataAndActionsCallback?.Invoke(this);
             OnAfterCreateDataAndActions();
 
-            OnSetupEntity();
-
-            IsSetup = true;
-        }
-
-        private void HandleActiveChanged()
-        {
-            if (!isActiveAndEnabled)
+            if (SetupEntityCallback != null)
             {
-                return;
-            }
-
-#if UNITY_EDITOR
-            if (UnityEditor.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage() != null)
-            {
-                OnDisable();
-                return;
-            }
-#endif
-
-            if (_localActive && EntityDataActionGlobalSettings.Active)
-            {
-                OnDisable();
-                OnEnable();
+                SetupEntityCallback(this);
             }
             else
             {
-                OnDisable();
+                OnSetupEntity();
             }
+
+            IsSetup = true;
         }
 
         protected virtual Type[] ComponentDataTypesToCreate()
@@ -153,14 +133,17 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             return Actions.GetElement<T>();
         }
 
-        protected void HandleDataChanged(int index)
+        internal void HandleDataChanged(int index)
         {
             DirtyRunner?.TriggerAll();
         }
 
         private void CreateDefaultData()
         {
-            Type[] types = ComponentDataTypesToCreate();
+            Type[] types = ComponentDataTypesProvider != null
+                ? ComponentDataTypesProvider()
+                : ComponentDataTypesToCreate();
+
             if (types == null)
             {
                 return;
@@ -176,13 +159,29 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
                 return;
             }
 
-            Type[] types = ActionTypesToCreate();
+            Type[] types = ActionTypesProvider != null
+                ? ActionTypesProvider()
+                : ActionTypesToCreate();
+
             if (types == null)
             {
                 return;
             }
 
             _actions.SyncToTypes(types);
+        }
+
+        private void HandleActiveChanged()
+        {
+            if (_localActive && EntityDataActionGlobalSettings.Active)
+            {
+                Disable();
+                Enable();
+            }
+            else
+            {
+                Disable();
+            }
         }
     }
 }

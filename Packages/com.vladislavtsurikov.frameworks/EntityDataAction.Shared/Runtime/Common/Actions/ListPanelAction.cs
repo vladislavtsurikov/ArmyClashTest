@@ -1,10 +1,9 @@
 using System.Collections.Generic;
-using VladislavTsurikov.EntityDataAction.Runtime;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 
 namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Common
 {
-    public abstract class ListPanelAction<TItem, TView> : EntityAction where TView : Entity
+    public abstract class ListPanelAction<TItem, TView> : EntityAction where TView : EntityMonoBehaviour
     {
         protected abstract List<TView> Views { get; }
 

@@ -2,14 +2,13 @@ using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using VladislavTsurikov.EntityDataAction.Runtime;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.EntityDataAction.Shared.Runtime.Style;
 using VladislavTsurikov.ObjectPool.Runtime;
 
 namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Common
 {
-    public abstract class PooledListAction<TItem> : EntityAction where TItem : Entity
+    public abstract class PooledListAction<TItem> : EntityAction where TItem : EntityMonoBehaviour
     {
         private List<TItem> _activeInstances;
         private MonoBehaviourPool<TItem> _pool;
@@ -112,7 +111,7 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Common
 
                 if (isNewInstance)
                 {
-                    Entity[] entities = instance.GetComponentsInChildren<Entity>(true);
+                    EntityMonoBehaviour[] entities = instance.GetComponentsInChildren<EntityMonoBehaviour>(true);
                     for (int entityIndex = 0; entityIndex < entities.Length; entityIndex++)
                     {
                         entities[entityIndex].LocalActive = true;

@@ -7,21 +7,21 @@ using VladislavTsurikov.IMGUIUtility.Editor.ElementStack.ReorderableList;
 
 namespace VladislavTsurikov.EntityDataAction.Editor.Core
 {
-    [CustomEditor(typeof(Entity), true)]
+    [CustomEditor(typeof(EntityMonoBehaviour), true)]
     public sealed class EntityEditor : UnityEditor.Editor
     {
-        private Entity _entity;
+        private EntityMonoBehaviour _entity;
 
         private ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor> _dataEditor;
         private ActionReorderableListStackEditor _actionsEditor;
 
         private void OnEnable()
         {
-            _entity = (Entity)target;
+            _entity = (EntityMonoBehaviour)target;
 
             if (!_entity.IsSetup && !Application.isPlaying)
             {
-                _entity.Setup();
+                _entity.Entity.Setup();
             }
 
             _dataEditor = new ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor>(
@@ -38,7 +38,7 @@ namespace VladislavTsurikov.EntityDataAction.Editor.Core
             EditorGUI.BeginChangeCheck();
 
             GUILayout.Space(3);
-            bool isDerived = _entity.GetType() != typeof(Entity);
+            bool isDerived = _entity.GetType() != typeof(EntityMonoBehaviour);
             if (isDerived)
             {
                 _dataEditor.DisplayPlusButton = false;
@@ -77,7 +77,7 @@ namespace VladislavTsurikov.EntityDataAction.Editor.Core
 
         private void DrawDirtyRunnerButton()
         {
-            DirtyActionRunner runner = _entity.DirtyRunner;
+            DirtyActionRunner runner = _entity.Entity.DirtyRunner;
             if (runner == null)
             {
                 return;

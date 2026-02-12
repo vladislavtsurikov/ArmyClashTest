@@ -13,7 +13,7 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Style
     [RunOnDirtyData(typeof(StyleStateData))]
     [RequiresData(typeof(StyleStateData))]
     [Name("UI/Common/Style/SetStyleMPImageOutlineAction")]
-    public sealed class SetStyleMPImageOutlineAction : EntityAction
+    public sealed class SetStyleMPImageOutlineAction : EntityMonoBehaviourAction
     {
         [OdinSerialize]
         private MPImage _target;
