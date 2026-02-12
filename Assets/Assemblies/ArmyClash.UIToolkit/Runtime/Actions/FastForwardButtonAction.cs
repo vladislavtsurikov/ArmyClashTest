@@ -1,5 +1,3 @@
-using OdinSerializer;
-using UnityEngine.UIElements;
 using ArmyClash.UIToolkit.Data;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration;
@@ -8,29 +6,25 @@ using VladislavTsurikov.ReflectionUtility;
 namespace ArmyClash.UIToolkit.Actions
 {
     [RunOnDirtyData(typeof(BattleSpeedData))]
-    [RequiresData(typeof(BattleSpeedData))]
+    [RequiresData(typeof(BattleSpeedData), typeof(BattleUiViewData))]
     [Name("UI/ArmyClash/FastForwardButtonAction")]
     public sealed class FastForwardButtonAction : UIToolkitAction
     {
-        [OdinSerialize]
-        private string _fastForwardButtonName = "fastForwardButton";
-
-        private Button _button;
-
         protected override void OnFirstSetupComponentUi(object[] setupData = null)
         {
-            _button = Query<Button>(_fastForwardButtonName);
-            if (_button != null)
+            var view = Get<BattleUiViewData>();
+            if (view != null && view.FastForwardButton != null)
             {
-                _button.clicked += OnClicked;
+                view.FastForwardButton.clicked += OnClicked;
             }
         }
 
         protected override void OnDisable()
         {
-            if (_button != null)
+            var view = Get<BattleUiViewData>();
+            if (view != null && view.FastForwardButton != null)
             {
-                _button.clicked -= OnClicked;
+                view.FastForwardButton.clicked -= OnClicked;
             }
         }
 
@@ -59,18 +53,20 @@ namespace ArmyClash.UIToolkit.Actions
 
         private void UpdateVisual(bool isFast)
         {
-            if (_button == null)
+            var view = Get<BattleUiViewData>();
+            var button = view != null ? view.FastForwardButton : null;
+            if (button == null)
             {
                 return;
             }
 
             if (isFast)
             {
-                _button.AddToClassList("is-fast");
+                button.AddToClassList("is-fast");
             }
             else
             {
-                _button.RemoveFromClassList("is-fast");
+                button.RemoveFromClassList("is-fast");
             }
         }
     }

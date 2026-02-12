@@ -1,5 +1,3 @@
-using OdinSerializer;
-using UnityEngine.UIElements;
 using ArmyClash.UIToolkit.Data;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration;
@@ -7,29 +5,25 @@ using VladislavTsurikov.ReflectionUtility;
 
 namespace ArmyClash.UIToolkit.Actions
 {
-    [RequiresData(typeof(RandomizeRequestData))]
+    [RequiresData(typeof(RandomizeRequestData), typeof(BattleUiViewData))]
     [Name("UI/ArmyClash/RandomizeButtonAction")]
     public sealed class RandomizeButtonAction : UIToolkitAction
     {
-        [OdinSerialize]
-        private string _randomizeButtonName = "randomizeButton";
-
-        private Button _button;
-
         protected override void OnFirstSetupComponentUi(object[] setupData = null)
         {
-            _button = Query<Button>(_randomizeButtonName);
-            if (_button != null)
+            var view = Get<BattleUiViewData>();
+            if (view != null && view.RandomizeButton != null)
             {
-                _button.clicked += OnClicked;
+                view.RandomizeButton.clicked += OnClicked;
             }
         }
 
         protected override void OnDisable()
         {
-            if (_button != null)
+            var view = Get<BattleUiViewData>();
+            if (view != null && view.RandomizeButton != null)
             {
-                _button.clicked -= OnClicked;
+                view.RandomizeButton.clicked -= OnClicked;
             }
         }
 

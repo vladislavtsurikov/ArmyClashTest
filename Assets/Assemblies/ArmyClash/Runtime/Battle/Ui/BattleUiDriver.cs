@@ -57,7 +57,8 @@ namespace ArmyClash.Battle.Ui
                 typeof(RandomizeRequestData),
                 typeof(SimulationStateData),
                 typeof(ArmyCountData),
-                typeof(BattleSpeedData)
+                typeof(BattleSpeedData),
+                typeof(BattleUiViewData)
             };
         }
 

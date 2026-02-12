@@ -1,6 +1,5 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using OdinSerializer;
 using UnityEngine.UIElements;
 using ArmyClash.UIToolkit.Data;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
@@ -10,25 +9,10 @@ using VladislavTsurikov.ReflectionUtility;
 namespace ArmyClash.UIToolkit.Actions
 {
     [RunOnDirtyData(typeof(SimulationStateData))]
-    [RequiresData(typeof(SimulationStateData))]
+    [RequiresData(typeof(SimulationStateData), typeof(BattleUiViewData))]
     [Name("UI/ArmyClash/SetButtonsVisibilityAction")]
     public sealed class SetButtonsVisibilityAction : UIToolkitAction
     {
-        [OdinSerialize]
-        private string _randomizeButtonName = "randomizeButton";
-
-        [OdinSerialize]
-        private string _startButtonName = "startButton";
-
-        private VisualElement _randomizeButton;
-        private VisualElement _startButton;
-
-        protected override void OnFirstSetupComponentUi(object[] setupData = null)
-        {
-            _randomizeButton = Query<VisualElement>(_randomizeButtonName);
-            _startButton = Query<VisualElement>(_startButtonName);
-        }
-
         protected override UniTask<bool> Run(CancellationToken token)
         {
             SimulationStateData data = Get<SimulationStateData>();
@@ -39,8 +23,12 @@ namespace ArmyClash.UIToolkit.Actions
 
             bool show = data.State != SimulationState.Running;
 
-            SetVisible(_randomizeButton, show);
-            SetVisible(_startButton, show);
+            var view = Get<BattleUiViewData>();
+            if (view != null)
+            {
+                SetVisible(view.RandomizeButton, show);
+                SetVisible(view.StartButton, show);
+            }
 
             return UniTask.FromResult(true);
         }
