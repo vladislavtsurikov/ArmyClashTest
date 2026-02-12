@@ -3,7 +3,7 @@ using VladislavTsurikov.ActionFlow.Runtime;
 
 namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 {
-    public class EntityActionCollection : ActionCollection
+    public partial class EntityActionCollection : ActionCollection
     {
         [NonSerialized]
         private Entity _entity;

@@ -6,7 +6,7 @@ using UnityEngine;
 namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 {
     [ExecuteInEditMode]
-    public class Entity : SerializedMonoBehaviour
+    public partial class Entity : SerializedMonoBehaviour
     {
         [OdinSerialize]
         private EntityDataCollection _data;
@@ -14,6 +14,9 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
         private EntityActionCollection _actions;
         [OdinSerialize]
         private bool _localActive = true;
+
+        private bool _actionsAwakeCalled;
+        private bool _actionsStartCalled;
 
         internal DirtyActionRunner DirtyRunner;
 
@@ -76,11 +79,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             }
         }
 
-        protected void OnEnable()
-        {
-            Setup();
-        }
-
         internal void Setup()
         {
             EntityDataActionGlobalSettings.ActiveChanged -= HandleActiveChanged;
@@ -102,20 +100,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             OnSetupEntity();
 
             IsSetup = true;
-        }
-
-        protected void OnDisable()
-        {
-            EntityDataActionGlobalSettings.ActiveChanged -= HandleActiveChanged;
-            _data.ElementAdded -= HandleDataChanged;
-            _data.ElementRemoved -= HandleDataChanged;
-
-            _data.OnDisable();
-            _actions.OnDisable();
-
-            DirtyRunner?.OnDisable();
-
-            IsSetup = false;
         }
 
         private void HandleActiveChanged()
