@@ -35,6 +35,7 @@ namespace VladislavTsurikov.IMGUIUtility.Editor.ElementStack.ReorderableList
         public bool RemoveSupport = true;
         public bool ReorderSupport = true;
         public string[] AllowedNamePrefixes;
+        public string[] AllowedGroupAttributes;
 
         public ReorderableListStackEditor(AdvancedNodeStack<T> stack) : base(stack)
         {
@@ -81,6 +82,11 @@ namespace VladislavTsurikov.IMGUIUtility.Editor.ElementStack.ReorderableList
 
                 var context = nameAttribute.Name;
 
+                if (!IsGroupAllowed(settingsType))
+                {
+                    continue;
+                }
+
                 if (!IsNameAllowed(context))
                 {
                     continue;
@@ -112,6 +118,11 @@ namespace VladislavTsurikov.IMGUIUtility.Editor.ElementStack.ReorderableList
 
         protected bool IsNameAllowed(string name)
         {
+            if (AllowedGroupAttributes != null && AllowedGroupAttributes.Length > 0)
+            {
+                return true;
+            }
+
             if (AllowedNamePrefixes == null || AllowedNamePrefixes.Length == 0)
             {
                 return true;
@@ -122,6 +133,33 @@ namespace VladislavTsurikov.IMGUIUtility.Editor.ElementStack.ReorderableList
                 if (name.StartsWith(AllowedNamePrefixes[i], StringComparison.Ordinal))
                 {
                     return true;
+                }
+            }
+
+            return false;
+        }
+
+        protected bool IsGroupAllowed(Type settingsType)
+        {
+            if (AllowedGroupAttributes == null || AllowedGroupAttributes.Length == 0)
+            {
+                return true;
+            }
+
+            var groupAttributes = settingsType.GetAttributes<GroupAttribute>();
+            foreach (var group in groupAttributes)
+            {
+                if (group == null || string.IsNullOrWhiteSpace(group.Name))
+                {
+                    continue;
+                }
+
+                for (int i = 0; i < AllowedGroupAttributes.Length; i++)
+                {
+                    if (string.Equals(group.Name, AllowedGroupAttributes[i], StringComparison.Ordinal))
+                    {
+                        return true;
+                    }
                 }
             }
 

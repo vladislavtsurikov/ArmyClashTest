@@ -2,8 +2,8 @@
 using UnityEditor;
 using UnityEngine;
 using VladislavTsurikov.CustomInspector.Editor.IMGUI;
+using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.IMGUIUtility.Editor.ElementStack.ReorderableList;
-using VladislavTsurikov.Nody.Runtime.Core;
 
 namespace VladislavTsurikov.ActionFlow.Editor.Stats
 {
@@ -11,7 +11,7 @@ namespace VladislavTsurikov.ActionFlow.Editor.Stats
     public sealed class StatEditor : UnityEditor.Editor
     {
         private readonly IMGUIInspectorFieldsDrawer _fieldsDrawer = new IMGUIInspectorFieldsDrawer();
-        private ReorderableListStackEditor<Node, ReorderableListComponentEditor> _stackEditor;
+        private ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor> _stackEditor;
         private Runtime.Stats.Stat _stat;
 
         public override void OnInspectorGUI()
@@ -42,9 +42,9 @@ namespace VladislavTsurikov.ActionFlow.Editor.Stats
                 return;
             }
 
-            _stackEditor = new ReorderableListStackEditor<Node, ReorderableListComponentEditor>(_stat.ComponentStack)
+            _stackEditor = new ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor>(_stat.ComponentStack)
             {
-                AllowedNamePrefixes = new[] { "Stats/" },
+                AllowedGroupAttributes = new[] { "Stats", "CommonUI" },
                 DisplayHeaderText = true
             };
         }

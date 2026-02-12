@@ -6,7 +6,7 @@ using VladislavTsurikov.ReflectionUtility;
 
 namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats
 {
-    [Name("Stats/CollectionData")]
+    [Name("Stats/StatsEntity")]
     public sealed class StatsEntityData : ComponentData
     {
         [OdinSerialize] private StatCollection _collection;

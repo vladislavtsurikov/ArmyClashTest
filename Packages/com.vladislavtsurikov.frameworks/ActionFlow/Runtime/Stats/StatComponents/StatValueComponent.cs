@@ -2,14 +2,15 @@ using OdinSerializer;
 using UnityEngine;
 using VladislavTsurikov.CustomInspector.Runtime;
 using VladislavTsurikov.Nody.Runtime.AdvancedNodeStack;
-using VladislavTsurikov.Nody.Runtime.Core;
+using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.ReflectionUtility;
 
 namespace VladislavTsurikov.ActionFlow.Runtime.Stats
 {
     [Persistent]
     [Name("Stats/Value")]
-    public sealed class StatValueComponent : Node
+    [Group("Stats")]
+    public sealed class StatValueComponent : ComponentData
     {
         [OdinSerialize]
         private float _baseValue;

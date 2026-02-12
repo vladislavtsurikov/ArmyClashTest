@@ -1,11 +1,12 @@
 using UnityEngine;
-using VladislavTsurikov.Nody.Runtime.Core;
+using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.ReflectionUtility;
 
-namespace VladislavTsurikov.ActionFlow.Runtime.Stats
+namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Common
 {
-    [Name("Stats/UI/IconColor")]
-    public sealed class StatIconColorComponent : Node
+    [Name("Common/IconColor")]
+    [Group("CommonUI")]
+    public sealed class IconColorComponent : ComponentData
     {
         [field: SerializeField] public Sprite Icon { get; private set; }
         [field: SerializeField] public Color Color { get; private set; } = Color.white;
