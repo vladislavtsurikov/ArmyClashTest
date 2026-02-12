@@ -1,0 +1,22 @@
+{
+    "name": "ArmyClash.UIToolkit",
+    "rootNamespace": "",
+    "references": [
+        "VladislavTsurikov.EntityDataAction",
+        "VladislavTsurikov.Nody",
+        "VladislavTsurikov.AttributeUtility",
+        "VladislavTsurikov.ReflectionUtility",
+        "OdinSerializer",
+        "UniTask",
+        "UnityEngine.UIElements"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

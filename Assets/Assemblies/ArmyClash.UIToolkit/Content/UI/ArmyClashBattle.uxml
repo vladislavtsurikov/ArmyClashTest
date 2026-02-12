@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:Style src="ArmyClashBattle.uss" />
+
+    <ui:VisualElement name="root" class="root">
+        <ui:VisualElement name="topBar" class="top-bar">
+            <ui:VisualElement name="leftCountPill" class="count-pill left">
+                <ui:Label name="leftCount" class="count-text" text="20" />
+            </ui:VisualElement>
+
+            <ui:Label name="vsLabel" class="vs-text" text="VS" />
+
+            <ui:VisualElement name="rightCountPill" class="count-pill right">
+                <ui:Label name="rightCount" class="count-text" text="20" />
+            </ui:VisualElement>
+
+            <ui:Button name="fastForwardButton" class="fast-forward" text="FAST
+FORWARD ▶▶" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="arena" class="arena">
+            <ui:VisualElement name="leftSide" class="arena-side left">
+                <ui:VisualElement name="leftArmyContainer" class="army-container" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="divider" class="arena-divider" />
+
+            <ui:VisualElement name="rightSide" class="arena-side right">
+                <ui:VisualElement name="rightArmyContainer" class="army-container" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="bottomBar" class="bottom-bar">
+            <ui:Button name="randomizeButton" class="primary-button blue" text="RANDOMIZE" />
+            <ui:Button name="startButton" class="primary-button orange" text="START" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
