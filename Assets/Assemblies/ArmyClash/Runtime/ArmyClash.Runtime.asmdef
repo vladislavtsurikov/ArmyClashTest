@@ -14,7 +14,8 @@
         "ArmyClash.GridWrapper",
         "VladislavTsurikov.MegaWorld",
         "ArmyClash.UIToolkit",
-        "UnityEngine.UIElements"
+        "UnityEngine.UIElements",
+        "VladislavTsurikov.ComponentStack"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

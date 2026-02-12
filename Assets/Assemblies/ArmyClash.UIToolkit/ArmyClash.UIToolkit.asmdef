@@ -8,7 +8,9 @@
         "VladislavTsurikov.ReflectionUtility",
         "OdinSerializer",
         "UniTask",
-        "UnityEngine.UIElements"
+        "UnityEngine.UIElements",
+        "VladislavTsurikov.ComponentStack",
+        "VladislavTsurikov.ActionFlow"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
