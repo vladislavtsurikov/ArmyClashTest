@@ -7,11 +7,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration
     {
         private readonly VisualElement _root;
         private readonly UIToolkitEntity _entity;
-        private readonly int _updateIntervalMs;
-        private readonly int _fixedUpdateIntervalMs;
-
-        private IVisualElementScheduledItem _updateItem;
-        private IVisualElementScheduledItem _fixedItem;
         private bool _isAttached;
 
         public UIToolkitEntity Entity => _entity;
@@ -23,28 +18,22 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration
             _entity = new UIToolkitEntity(dataTypes, actionTypes);
             _entity.SetSetupData(new object[] { _root });
 
-            _updateIntervalMs = updateIntervalMs;
-            _fixedUpdateIntervalMs = fixedUpdateIntervalMs;
-
             _root.RegisterCallback<AttachToPanelEvent>(OnAttachToPanel);
             _root.RegisterCallback<DetachFromPanelEvent>(OnDetachFromPanel);
 
             if (_root.panel != null)
             {
                 _isAttached = true;
-                _entity.Enable();
-                StartSchedules();
+                EnableInternal();
             }
         }
 
         public void Dispose()
         {
-            StopSchedules();
+            DisableInternal();
 
             _root.UnregisterCallback<AttachToPanelEvent>(OnAttachToPanel);
             _root.UnregisterCallback<DetachFromPanelEvent>(OnDetachFromPanel);
-
-            _entity.Destroy();
         }
 
         private void OnAttachToPanel(AttachToPanelEvent evt)
@@ -56,8 +45,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration
 
             _isAttached = true;
 
-            _entity.Enable();
-            StartSchedules();
+            EnableInternal();
         }
 
         private void OnDetachFromPanel(DetachFromPanelEvent evt)
@@ -69,31 +57,17 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration
 
             _isAttached = false;
 
-            StopSchedules();
+            DisableInternal();
+        }
+
+        private void EnableInternal()
+        {
+            _entity.Enable();
+        }
+
+        private void DisableInternal()
+        {
             _entity.Disable();
-        }
-
-        private void StartSchedules()
-        {
-            _updateItem = _root.schedule.Execute(TickUpdate).Every(_updateIntervalMs);
-            _fixedItem = _root.schedule.Execute(TickFixedUpdate).Every(_fixedUpdateIntervalMs);
-        }
-
-        private void StopSchedules()
-        {
-            _updateItem?.Pause();
-            _fixedItem?.Pause();
-        }
-
-        private void TickUpdate()
-        {
-            _entity.Update();
-            _entity.LateUpdate();
-        }
-
-        private void TickFixedUpdate()
-        {
-            _entity.FixedUpdate();
         }
     }
 }

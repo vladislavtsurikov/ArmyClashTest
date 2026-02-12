@@ -13,7 +13,9 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
                 return;
             }
 
+            InvokeAwakeIfNeeded();
             Entity.Enable();
+            InvokeStartIfNeeded();
         }
 
         protected void OnDisable()
@@ -26,66 +28,38 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             Entity.Disable();
         }
 
-        protected void Update()
-        {
-            if (!Active)
-            {
-                return;
-            }
+        protected void Update() => InvokeIfActive(action => action.InvokeUpdate());
 
-            Entity.Update();
-        }
+        protected void FixedUpdate() => InvokeIfActive(action => action.InvokeFixedUpdate());
 
-        protected void FixedUpdate()
-        {
-            if (!Active)
-            {
-                return;
-            }
-
-            Entity.FixedUpdate();
-        }
-
-        protected void LateUpdate()
-        {
-            if (!Active)
-            {
-                return;
-            }
-
-            Entity.LateUpdate();
-        }
+        protected void LateUpdate() => InvokeIfActive(action => action.InvokeLateUpdate());
 
         protected void OnDestroy()
         {
-            _entity?.Destroy();
+            if (_entity == null)
+            {
+                return;
+            }
+
+            ForEachAction(action => action.InvokeOnDestroy());
         }
 
 #if UNITY_EDITOR
         protected void OnValidate()
         {
-            _entity?.Validate();
+            if (_entity == null)
+            {
+                return;
+            }
+
+            ForEachAction(action => action.InvokeOnValidate());
         }
 #endif
 
-        protected void OnApplicationFocus(bool hasFocus)
-        {
-            if (!Active)
-            {
-                return;
-            }
+        protected void OnApplicationFocus(bool hasFocus) =>
+            InvokeIfActive(action => action.InvokeOnApplicationFocus(hasFocus));
 
-            Entity.OnApplicationFocus(hasFocus);
-        }
-
-        protected void OnApplicationPause(bool pauseStatus)
-        {
-            if (!Active)
-            {
-                return;
-            }
-
-            Entity.OnApplicationPause(pauseStatus);
-        }
+        protected void OnApplicationPause(bool pauseStatus) =>
+            InvokeIfActive(action => action.InvokeOnApplicationPause(pauseStatus));
     }
 }

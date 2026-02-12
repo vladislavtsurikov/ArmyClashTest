@@ -14,8 +14,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
         [OdinSerialize]
         private bool _localActive = true;
 
-        private bool _actionsAwakeCalled;
-        private bool _actionsStartCalled;
         private object[] _setupData;
 
         internal DirtyActionRunner DirtyRunner;
@@ -171,6 +169,34 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             _actions.SyncToTypes(types);
         }
 
+        public void Enable()
+        {
+            Setup();
+
+            if (!Active)
+            {
+                return;
+            }
+
+            InvokeOnEnable();
+        }
+
+        public void Disable()
+        {
+            InvokeOnDisable();
+
+            EntityDataActionGlobalSettings.ActiveChanged -= HandleActiveChanged;
+            _data.ElementAdded -= HandleDataChanged;
+            _data.ElementRemoved -= HandleDataChanged;
+
+            _data.OnDisable();
+            _actions.OnDisable();
+
+            DirtyRunner?.OnDisable();
+
+            IsSetup = false;
+        }
+
         private void HandleActiveChanged()
         {
             if (_localActive && EntityDataActionGlobalSettings.Active)
@@ -181,6 +207,25 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             else
             {
                 Disable();
+            }
+        }
+
+        private void InvokeOnEnable() => ForEachAction(action => action.InvokeOnEnable());
+        private void InvokeOnDisable() => ForEachAction(action => action.InvokeOnDisable());
+
+        private void ForEachAction(Action<EntityAction> handler)
+        {
+            if (handler == null || _actions == null)
+            {
+                return;
+            }
+
+            for (int i = 0; i < _actions.ElementList.Count; i++)
+            {
+                if (_actions.ElementList[i] is EntityAction action)
+                {
+                    handler(action);
+                }
             }
         }
     }

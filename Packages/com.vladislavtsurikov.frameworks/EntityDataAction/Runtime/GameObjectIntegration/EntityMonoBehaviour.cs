@@ -11,6 +11,8 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
     {
         [OdinSerialize]
         private Entity _entity;
+        private bool _actionsAwakeCalled;
+        private bool _actionsStartCalled;
 
         public Entity Entity
         {
@@ -118,6 +120,60 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             Entity.ActionTypesProvider = ActionTypesToCreate;
             Entity.AfterCreateDataAndActionsCallback = _ => OnAfterCreateDataAndActions();
             Entity.SetupEntityCallback = _ => OnSetupEntity();
+        }
+
+        private void InvokeAwakeIfNeeded()
+        {
+            if (_actionsAwakeCalled)
+            {
+                return;
+            }
+
+            _actionsAwakeCalled = true;
+            ForEachAction(action => action.InvokeAwake());
+        }
+
+        private void InvokeStartIfNeeded()
+        {
+            if (_actionsStartCalled)
+            {
+                return;
+            }
+
+            _actionsStartCalled = true;
+            ForEachAction(action => action.InvokeStart());
+        }
+
+        private void InvokeIfActive(Action<EntityAction> handler)
+        {
+            if (!Active)
+            {
+                return;
+            }
+
+            ForEachAction(handler);
+        }
+
+        private void ForEachAction(Action<EntityAction> handler)
+        {
+            if (handler == null)
+            {
+                return;
+            }
+
+            var actions = Entity.Actions;
+            if (actions == null)
+            {
+                return;
+            }
+
+            for (int i = 0; i < actions.ElementList.Count; i++)
+            {
+                if (actions.ElementList[i] is EntityAction action)
+                {
+                    handler(action);
+                }
+            }
         }
     }
 }
