@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using VladislavTsurikov.Nody.Runtime.AdvancedNodeStack;
+using VladislavTsurikov.Nody.Runtime.Core;
 
 namespace VladislavTsurikov.ActionFlow.Runtime.Stats
 {
@@ -14,7 +16,22 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
         }
 
         [SerializeField] private List<Entry> _entries = new();
+        [SerializeField]
+        [HideInInspector]
+        private StatsComponentStack _componentStack = new();
 
         public IReadOnlyList<Entry> Entries => _entries;
+        public StatsComponentStack ComponentStack => _componentStack;
+
+        private void OnEnable()
+        {
+            _componentStack ??= new StatsComponentStack();
+            _componentStack.Setup(true, new object[] { this });
+        }
+
+        private void OnDisable()
+        {
+            _componentStack?.OnDisable();
+        }
     }
 }

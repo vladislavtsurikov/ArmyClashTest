@@ -5,6 +5,7 @@ using OdinSerializer;
 using OdinSerializer.Utilities;
 using VladislavTsurikov.AttributeUtility.Runtime;
 using VladislavTsurikov.Nody.Runtime.Core.Ports;
+using VladislavTsurikov.ReflectionUtility.Runtime;
 using VladislavTsurikov.Utility.Runtime;
 
 namespace VladislavTsurikov.Nody.Runtime.Core
@@ -23,6 +24,11 @@ namespace VladislavTsurikov.Nody.Runtime.Core
         public IReadOnlyList<T> ElementList => _elementList;
 
         public bool IsSetup { get; private set; }
+
+        [NonSerialized]
+        protected string[] _allowedGroupAttributes;
+
+        public string[] AllowedGroupAttributes => _allowedGroupAttributes;
 
         public T SelectedElement => _elementList.FirstOrDefault(t => t.Selected);
 
@@ -312,7 +318,32 @@ namespace VladislavTsurikov.Nody.Runtime.Core
         {
         }
 
-        protected virtual bool AllowCreate(Type type) => true;
+        protected virtual bool AllowCreate(Type type)
+        {
+            if (_allowedGroupAttributes == null || _allowedGroupAttributes.Length == 0)
+            {
+                return true;
+            }
+
+            var groupAttributes = type.GetAttributes<GroupAttribute>();
+            foreach (var group in groupAttributes)
+            {
+                if (group == null || string.IsNullOrWhiteSpace(group.Name))
+                {
+                    continue;
+                }
+
+                for (int i = 0; i < _allowedGroupAttributes.Length; i++)
+                {
+                    if (string.Equals(group.Name, _allowedGroupAttributes[i], StringComparison.Ordinal))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
 
         private protected virtual void CreateElements()
         {

@@ -12,14 +12,14 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
 
         [SerializeField]
         [HideInInspector]
-        private NodeStackOnlyDifferentTypes<ComponentData> _componentStack = new();
+        private StatsComponentStack _componentStack = new();
 
         public string Id => _id;
-        public NodeStackOnlyDifferentTypes<ComponentData> ComponentStack => _componentStack;
+        public StatsComponentStack ComponentStack => _componentStack;
 
         private void OnEnable()
         {
-            _componentStack ??= new NodeStackOnlyDifferentTypes<ComponentData>();
+            _componentStack ??= new StatsComponentStack();
             _componentStack.Setup(true, new object[] { this });
         }
 
