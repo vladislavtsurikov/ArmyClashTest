@@ -4,9 +4,10 @@ using UnityEngine;
 
 namespace ArmyClash.Grid
 {
-    public class GridLayoutBuilder
+    public static class GridLayoutBuilder
     {
-        public IReadOnlyList<GridSlot> Build(GridConfig config, Vector3 origin, Vector3 rightAxis, Vector3 forwardAxis, Quaternion rotation)
+        public static IReadOnlyList<GridSlot> Build(GridConfig config, Vector3 origin, Vector3 rightAxis, Vector3 forwardAxis,
+            Quaternion rotation)
         {
             if (config == null)
             {

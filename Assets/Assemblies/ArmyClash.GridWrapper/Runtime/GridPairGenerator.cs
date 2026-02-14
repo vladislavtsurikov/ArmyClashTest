@@ -20,11 +20,11 @@ namespace ArmyClash.Grid
         [SerializeField] private bool _generateOnAwake = true;
         [SerializeField] private bool _autoUpdateInEditor = true;
 
-        [SerializeField] private GridGenerator _leftGenerator;
-        [SerializeField] private GridGenerator _rightGenerator;
+        [SerializeField] private GridGeneratorComponent _leftGenerator;
+        [SerializeField] private GridGeneratorComponent _rightGenerator;
 
-        public GridGenerator Left => _leftGenerator;
-        public GridGenerator Right => _rightGenerator;
+        public GridGeneratorComponent Left => _leftGenerator;
+        public GridGeneratorComponent Right => _rightGenerator;
 
         private void Awake()
         {
@@ -56,8 +56,8 @@ namespace ArmyClash.Grid
             EnsureGenerators();
             ApplyConfig();
             UpdateTransforms();
-            _leftGenerator?.Generate();
-            _rightGenerator?.Generate();
+            _leftGenerator?.Generate(null);
+            _rightGenerator?.Generate(null);
         }
 
         private void EnsureGenerators()
@@ -78,7 +78,7 @@ namespace ArmyClash.Grid
             }
         }
 
-        private GridGenerator FindOrCreateGenerator(string name)
+        private GridGeneratorComponent FindOrCreateGenerator(string name)
         {
             var child = transform.Find(name);
             if (child == null)
@@ -88,10 +88,10 @@ namespace ArmyClash.Grid
                 child = go.transform;
             }
 
-            var generator = child.GetComponent<GridGenerator>();
+            var generator = child.GetComponent<GridGeneratorComponent>();
             if (generator == null)
             {
-                generator = child.gameObject.AddComponent<GridGenerator>();
+                generator = child.gameObject.AddComponent<GridGeneratorComponent>();
             }
 
             return generator;

@@ -9,7 +9,8 @@
         "VladislavTsurikov.ComponentStack",
         "UniTask",
         "ArmyClash.GridWrapper",
-        "VladislavTsurikov.Utility"
+        "VladislavTsurikov.Utility",
+        "VladislavTsurikov.ColliderSystem"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

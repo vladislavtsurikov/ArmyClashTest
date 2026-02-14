@@ -6,9 +6,21 @@ namespace ArmyClash.MegaWorldGrid
 {
     public class GridSpawnerPair : MonoBehaviour
     {
-        [SerializeField] private GridPairGenerator _gridPair;
-        [SerializeField] private bool _autoCreatePair = true;
-        [SerializeField] private string _pairName = "Grid Pair";
+        [Header("Grid Settings")]
+        [SerializeField] private GridConfig _config = new GridConfig();
+        [SerializeField] private Color _gizmoColor = new Color(0.1f, 0.6f, 1f, 0.8f);
+
+        [Header("Children")]
+        [SerializeField] private bool _autoCreateChildren = true;
+        [SerializeField] private string _leftName = "Left Grid Spawner";
+        [SerializeField] private string _rightName = "Right Grid Spawner";
+
+        [Header("Placement")]
+        [SerializeField] private bool _useManualPositions = false;
+        [SerializeField] private Vector3 _leftPosition = new Vector3(-5f, 0f, 0f);
+        [SerializeField] private Vector3 _rightPosition = new Vector3(5f, 0f, 0f);
+        [SerializeField] private float _distance = 10f;
+        [SerializeField] private bool _mirrorRightRotation = true;
 
         [Header("Generation")]
         [SerializeField] private bool _generateOnAwake = true;
@@ -22,8 +34,9 @@ namespace ArmyClash.MegaWorldGrid
 
         private void Awake()
         {
-            EnsurePair();
             EnsureSpawners();
+            ApplyConfig();
+            UpdateTransforms();
 
             if (_generateOnAwake)
             {
@@ -38,80 +51,94 @@ namespace ArmyClash.MegaWorldGrid
                 return;
             }
 
-            EnsurePair();
             EnsureSpawners();
+            ApplyConfig();
+            UpdateTransforms();
         }
 
         [ContextMenu("Spawn Both")]
         public void SpawnBoth()
         {
-            EnsurePair();
             EnsureSpawners();
+            ApplyConfig();
+            UpdateTransforms();
 
             _leftSpawner?.SpawnStamper();
             _rightSpawner?.SpawnStamper();
         }
 
-        private void EnsurePair()
-        {
-            if (_gridPair != null)
-            {
-                return;
-            }
-
-            if (!_autoCreatePair)
-            {
-                return;
-            }
-
-            var child = transform.Find(_pairName);
-            if (child == null)
-            {
-                var go = new GameObject(_pairName);
-                go.transform.SetParent(transform, false);
-                child = go.transform;
-            }
-
-            _gridPair = child.GetComponent<GridPairGenerator>();
-            if (_gridPair == null)
-            {
-                _gridPair = child.gameObject.AddComponent<GridPairGenerator>();
-            }
-        }
-
         private void EnsureSpawners()
         {
-            if (_gridPair == null)
-            {
-                return;
-            }
-
             if (_leftSpawner == null)
             {
-                _leftSpawner = EnsureSpawner(_gridPair.Left);
+                _leftSpawner = FindOrCreateSpawner(_leftName);
             }
 
             if (_rightSpawner == null)
             {
-                _rightSpawner = EnsureSpawner(_gridPair.Right);
+                _rightSpawner = FindOrCreateSpawner(_rightName);
             }
         }
 
-        private static GridSpawner EnsureSpawner(GridGenerator generator)
+        private GridSpawner FindOrCreateSpawner(string name)
         {
-            if (generator == null)
+            if (!_autoCreateChildren)
             {
                 return null;
             }
 
-            var spawner = generator.GetComponent<GridSpawner>();
-            if (spawner == null)
+            var child = transform.Find(name);
+            if (child == null)
             {
-                spawner = generator.gameObject.AddComponent<GridSpawner>();
+                var go = new GameObject(name);
+                go.transform.SetParent(transform, false);
+                child = go.transform;
             }
 
-            spawner.GridGenerator = generator;
+            var spawner = child.GetComponent<GridSpawner>();
+            if (spawner == null)
+            {
+                spawner = child.gameObject.AddComponent<GridSpawner>();
+            }
+
             return spawner;
+        }
+
+        private void ApplyConfig()
+        {
+            _config ??= new GridConfig();
+            _leftSpawner?.ApplyConfig(_config);
+            _rightSpawner?.ApplyConfig(_config);
+            _leftSpawner?.ApplyGizmoColor(_gizmoColor);
+            _rightSpawner?.ApplyGizmoColor(_gizmoColor);
+        }
+
+        private void UpdateTransforms()
+        {
+            if (_leftSpawner == null || _rightSpawner == null)
+            {
+                return;
+            }
+
+            var center = transform.position;
+            var right = transform.right;
+            var leftRotation = transform.rotation;
+            var rightRotation = _mirrorRightRotation ? transform.rotation * Quaternion.Euler(0f, 180f, 0f) : transform.rotation;
+
+            if (_useManualPositions)
+            {
+                _leftSpawner.transform.position = _leftPosition;
+                _rightSpawner.transform.position = _rightPosition;
+            }
+            else
+            {
+                float half = Mathf.Max(0f, _distance) * 0.5f;
+                _leftSpawner.transform.position = center - right * half;
+                _rightSpawner.transform.position = center + right * half;
+            }
+
+            _leftSpawner.transform.rotation = leftRotation;
+            _rightSpawner.transform.rotation = rightRotation;
         }
     }
 }

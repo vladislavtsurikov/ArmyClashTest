@@ -1,122 +1,73 @@
 using System.Collections.Generic;
 using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 namespace ArmyClash.Grid
 {
-    public class GridGenerator : MonoBehaviour
+    public class GridGenerator
     {
-        [SerializeField] private GridConfig _config = new GridConfig();
-        [SerializeField] private bool _generateOnAwake = true;
-        [SerializeField] private Color _gizmoColor = new Color(0.1f, 0.6f, 1f, 0.8f);
+        private List<GridSlot> _slots = new();
+        private GridConfig _config;
+        private Vector3 _origin;
+        private Vector3 _rightAxis;
+        private Vector3 _forwardAxis;
+        private Quaternion _rotation = Quaternion.identity;
 
-        private readonly GridLayoutBuilder _builder = new GridLayoutBuilder();
-        private List<GridSlot> _slots = new List<GridSlot>();
-
-        public GridConfig Config => _config;
         public IReadOnlyList<GridSlot> Slots => _slots;
+        public GridConfig Config => _config;
+        public Vector3 Origin => _origin;
+        public Vector3 RightAxis => _rightAxis;
+        public Vector3 ForwardAxis => _forwardAxis;
+        public Quaternion Rotation => _rotation;
 
-        private void Awake()
-        {
-            if (_generateOnAwake)
-            {
-                Generate();
-            }
-        }
-
-        public IReadOnlyList<GridSlot> Generate()
-        {
-            _config ??= new GridConfig();
-            _slots = new List<GridSlot>(_builder.Build(_config, transform.position, transform.right, transform.forward, transform.rotation));
-            return _slots;
-        }
-
-        public IReadOnlyList<GridSlot> GetOrGenerate()
-        {
-            if (_slots.Count == 0)
-            {
-                return Generate();
-            }
-
-            return _slots;
-        }
-
-        private void OnDrawGizmos()
-        {
-            if (_config == null)
-            {
-                return;
-            }
-
-            var settings = GridGlobalSettings.Instance;
-            if (settings != null && !settings.ShowGizmos)
-            {
-                return;
-            }
-
-            var slots = _builder.Build(_config, transform.position, transform.right, transform.forward, transform.rotation);
-            Color color = _gizmoColor;
-            float height = 0.02f;
-            float sizeScale = 1f;
-
-            if (settings != null)
-            {
-                if (settings.OverrideGizmoColor)
-                {
-                    color = settings.GizmoColor;
-                }
-
-                height = Mathf.Max(0.001f, settings.GizmoHeight);
-                sizeScale = Mathf.Max(0.01f, settings.GizmoSizeScale);
-            }
-
-            float size = Mathf.Max(0.05f, _config.CellSize) * sizeScale;
-            var cubeSize = new Vector3(size, height, size);
-            float lineWidth = settings != null ? settings.LinePixelWidth : 2f;
-
-#if UNITY_EDITOR
-            Handles.color = color;
-#else
-            Gizmos.color = color;
-#endif
-
-            for (int i = 0; i < slots.Count; i++)
-            {
-                DrawCell(slots[i].Position, cubeSize, color, lineWidth);
-            }
-        }
-
-        public void ApplyConfig(GridConfig config)
+        public IReadOnlyList<GridSlot> Build(GridConfig config, Vector3 origin, Vector3 rightAxis, Vector3 forwardAxis,
+            Quaternion rotation)
         {
             if (config == null)
             {
-                return;
+                _slots = new List<GridSlot>();
+                _config = null;
+                _origin = Vector3.zero;
+                _rightAxis = Vector3.right;
+                _forwardAxis = Vector3.forward;
+                _rotation = Quaternion.identity;
+                return _slots;
             }
 
-            _config ??= new GridConfig();
-            _config.CopyFrom(config);
+            _config = config;
+            _origin = origin;
+            _rightAxis = rightAxis;
+            _forwardAxis = forwardAxis;
+            _rotation = rotation;
+
+            _slots = new List<GridSlot>(GridLayoutBuilder.Build(config, origin, rightAxis, forwardAxis, rotation));
+            return _slots;
         }
 
-        private static void DrawCell(Vector3 center, Vector3 size, Color color, float lineWidth)
+        public List<Vector2> GetSlotPoints2D()
         {
-            float halfX = size.x * 0.5f;
-            float halfZ = size.z * 0.5f;
-            var p0 = new Vector3(center.x - halfX, center.y, center.z - halfZ);
-            var p1 = new Vector3(center.x + halfX, center.y, center.z - halfZ);
-            var p2 = new Vector3(center.x + halfX, center.y, center.z + halfZ);
-            var p3 = new Vector3(center.x - halfX, center.y, center.z + halfZ);
+            var points = new List<Vector2>(_slots.Count);
+            for (int i = 0; i < _slots.Count; i++)
+            {
+                Vector3 position = _slots[i].Position;
+                points.Add(new Vector2(position.x, position.z));
+            }
 
-#if UNITY_EDITOR
-            Handles.DrawAAPolyLine(Mathf.Max(0.5f, lineWidth), p0, p1, p2, p3, p0);
-#else
-            Gizmos.color = color;
-            Gizmos.DrawLine(p0, p1);
-            Gizmos.DrawLine(p1, p2);
-            Gizmos.DrawLine(p2, p3);
-            Gizmos.DrawLine(p3, p0);
-#endif
+            return points;
+        }
+
+        public float GetAreaSize()
+        {
+            if (_config == null)
+            {
+                return 1f;
+            }
+
+            int rows = Mathf.Max(1, _config.Rows);
+            int columns = Mathf.Max(1, _config.Columns);
+
+            float width = (columns - 1) * _config.ColumnStep + _config.CellSize;
+            float height = (rows - 1) * _config.RowStep + _config.CellSize;
+            return Mathf.Max(0.1f, Mathf.Max(width, height));
         }
     }
 }

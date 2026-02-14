@@ -2,53 +2,22 @@ using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using ArmyClash.Grid;
+using ArmyClash.MegaWorldGrid.Utility.Spawn;
 using UnityEngine;
-using VladislavTsurikov.MegaWorld.Runtime.Common.Settings;
+using VladislavTsurikov.ColliderSystem.Runtime;
+using VladislavTsurikov.MegaWorld.Runtime.Common.Area;
 using VladislavTsurikov.MegaWorld.Runtime.Common.Stamper;
+using VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem;
 using VladislavTsurikov.MegaWorld.Runtime.Common.Utility;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject;
-using VladislavTsurikov.MegaWorld.Runtime.Core.Utility;
 
 namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
 {
     public static class GridSpawnUtility
     {
-        public static async UniTask SpawnGroup(CancellationToken token, Group group, IReadOnlyList<GridSlot> slots)
-        {
-            if (!group.HasAllActivePrototypes())
-            {
-                return;
-            }
-
-            if (group.PrototypeType != typeof(PrototypeGameObject))
-            {
-                return;
-            }
-
-            var randomSeedSettings = (RandomSeedSettings)group.GetElement(typeof(RandomSeedSettings));
-            randomSeedSettings.GenerateRandomSeedIfNecessary();
-
-            for (int i = 0; i < slots.Count; i++)
-            {
-                token.ThrowIfCancellationRequested();
-
-                var proto = (PrototypeGameObject)GetRandomPrototype.GetMaxSuccessProto(group.PrototypeList);
-                if (proto == null || proto.Active == false || proto.Prefab == null)
-                {
-                    continue;
-                }
-
-                var slot = slots[i];
-                var instance = Object.Instantiate(proto.Prefab, slot.Position, slot.Rotation);
-                group.GetDefaultElement<ContainerForGameObjects>().ParentGameObject(instance);
-            }
-
-            await UniTask.CompletedTask;
-        }
-
-        public static async UniTask<List<GameObject>> SpawnGroupWithInstances(CancellationToken token, Group group,
-            IReadOnlyList<GridSlot> slots)
+        public static async UniTask<List<GameObject>> SpawnGroup(CancellationToken token, Group group,
+            GridGenerator gridGenerator)
         {
             var instances = new List<GameObject>();
 
@@ -65,24 +34,58 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
             var randomSeedSettings = (RandomSeedSettings)group.GetElement(typeof(RandomSeedSettings));
             randomSeedSettings.GenerateRandomSeedIfNecessary();
 
-            for (int i = 0; i < slots.Count; i++)
+            var slots = gridGenerator?.Slots;
+            if (slots == null || slots.Count == 0)
             {
-                token.ThrowIfCancellationRequested();
+                return instances;
+            }
 
+            var scatterSettings = (ScatterComponentSettings)group.GetElement(typeof(ScatterComponentSettings));
+            if (scatterSettings == null || scatterSettings.ScatterStack == null)
+            {
+                for (int i = 0; i < slots.Count; i++)
+                {
+                    token.ThrowIfCancellationRequested();
+
+                    var proto = (PrototypeGameObject)GetRandomPrototype.GetMaxSuccessProto(group.PrototypeList);
+                    if (proto == null || proto.Active == false || proto.Prefab == null)
+                    {
+                        continue;
+                    }
+
+                    var instance = SpawnPrototype.SpawnGameObject(group, proto, slots[i].Position,
+                        gridGenerator.Rotation);
+                    if (instance != null)
+                    {
+                        instances.Add(instance);
+                    }
+                }
+
+                return instances;
+            }
+
+            var scatterStack = scatterSettings.ScatterStack;
+            scatterStack.Setup(true, new object[] { new GridScatterContext(slots) });
+
+            float size = gridGenerator.GetAreaSize();
+            var hit = new RayHit(null, Vector3.up, gridGenerator.Origin, 0f);
+            var boxArea = new BoxArea(hit, size);
+
+            await scatterStack.Samples(boxArea, sample =>
+            {
                 var proto = (PrototypeGameObject)GetRandomPrototype.GetMaxSuccessProto(group.PrototypeList);
                 if (proto == null || proto.Active == false || proto.Prefab == null)
                 {
-                    continue;
+                    return;
                 }
 
-                var slot = slots[i];
-                var instance = Object.Instantiate(proto.Prefab, slot.Position, slot.Rotation);
-                group.GetDefaultElement<ContainerForGameObjects>().ParentGameObject(instance);
+                var instance = SpawnPrototype.SpawnGameObject(group, proto, sample, gridGenerator.Rotation);
+                if (instance != null)
+                {
+                    instances.Add(instance);
+                }
+            }, token);
 
-                instances.Add(instance);
-            }
-
-            await UniTask.CompletedTask;
             return instances;
         }
     }

@@ -3,6 +3,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using VladislavTsurikov.MegaWorld.Runtime.Common.Settings;
+using VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem;
 using VladislavTsurikov.MegaWorld.Runtime.Common.Stamper;
 using VladislavTsurikov.MegaWorld.Runtime.Core.MonoBehaviour;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Attributes;
@@ -20,9 +21,12 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
     [SupportedPrototypeTypes(new[] { typeof(PrototypeGameObject) })]
     [AddMonoBehaviourComponents(new[] { typeof(GridStamperControllerSettings) })]
     [AddGeneralPrototypeComponents(typeof(PrototypeGameObject), new[] { typeof(SuccessSettings) })]
-    [AddGeneralGroupComponents(new[] { typeof(PrototypeGameObject) }, new[] { typeof(RandomSeedSettings) })]
+    [AddGeneralGroupComponents(new[] { typeof(PrototypeGameObject) },
+        new[] { typeof(RandomSeedSettings), typeof(ScatterComponentSettings) })]
     public class GridSpawner : StamperTool
     {
+        private GridGenerator _gridGenerator;
+
         [NonSerialized]
         private GridStamperControllerSettings _stamperControllerSettings;
 
@@ -42,17 +46,55 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
 
         public GridGenerator GridGenerator
         {
-            get => _stamperControllerSettings != null ? _stamperControllerSettings.GridGenerator : null;
-            set
+            get
             {
-                if (_stamperControllerSettings != null)
-                {
-                    _stamperControllerSettings.GridGenerator = value;
-                }
+                _gridGenerator ??= new GridGenerator();
+                return _gridGenerator;
             }
         }
 
-        protected override void OnStamperEnable()
+        public GridConfig Config
+        {
+            get
+            {
+                var settings = (GridStamperControllerSettings)StamperControllerSettings;
+                if (settings == null)
+                {
+                    return null;
+                }
+
+                settings.Config ??= new GridConfig();
+                return settings.Config;
+            }
+        }
+
+        public Color GizmoColor
+        {
+            get
+            {
+                var settings = (GridStamperControllerSettings)StamperControllerSettings;
+                return settings != null ? settings.GizmoColor : new Color(0.1f, 0.6f, 1f, 0.8f);
+            }
+        }
+
+        public void ApplyConfig(GridConfig config)
+        {
+            if (config == null)
+            {
+                return;
+            }
+
+            var settings = (GridStamperControllerSettings)StamperControllerSettings;
+            if (settings == null)
+            {
+                return;
+            }
+
+            settings.Config ??= new GridConfig();
+            settings.Config.CopyFrom(config);
+        }
+
+        public void ApplyGizmoColor(Color color)
         {
             var settings = (GridStamperControllerSettings)StamperControllerSettings;
             if (settings == null)
@@ -60,25 +102,20 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
                 return;
             }
 
-            if (settings.GridGenerator == null)
-            {
-                settings.GridGenerator = GetComponent<GridGenerator>();
-            }
-        }
-
-        protected override void OnUpdate()
-        {
+            settings.GizmoColor = color;
         }
 
         protected override async UniTask Spawn(CancellationToken token, bool displayProgressBar)
         {
-            var gridGenerator = GridGenerator;
-            if (gridGenerator == null)
+            var config = Config;
+            if (config == null)
             {
                 return;
             }
 
-            var slots = gridGenerator.GetOrGenerate();
+            var gridGenerator = GridGenerator;
+            var slots = gridGenerator.Build(config, transform.position, transform.right, transform.forward,
+                transform.rotation);
             if (slots.Count == 0)
             {
                 return;
@@ -94,12 +131,23 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
                 UpdateDisplayProgressBar("Running", "Running " + Data.GroupList[typeIndex].name);
 #endif
 
-                await GridSpawnUtility.SpawnGroup(token, Data.GroupList[typeIndex], slots);
+                await GridSpawnUtility.SpawnGroup(token, Data.GroupList[typeIndex], gridGenerator);
 
                 completedTypes++;
                 SpawnProgress = completedTypes / (float)maxTypes;
             }
         }
 
+        private void OnDrawGizmos()
+        {
+            var config = Config;
+            if (config == null)
+            {
+                return;
+            }
+
+            GridGizmoDrawer.Draw(config, transform.position, transform.right, transform.forward, transform.rotation,
+                GizmoColor);
+        }
     }
 }
