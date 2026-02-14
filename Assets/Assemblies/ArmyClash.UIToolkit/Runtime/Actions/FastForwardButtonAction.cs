@@ -6,13 +6,13 @@ using VladislavTsurikov.ReflectionUtility;
 namespace ArmyClash.UIToolkit.Actions
 {
     [RunOnDirtyData(typeof(BattleSpeedData))]
-    [RequiresData(typeof(BattleSpeedData), typeof(BattleUiViewData))]
+    [RequiresData(typeof(BattleSpeedData), typeof(BattleUIViewData))]
     [Name("UI/ArmyClash/FastForwardButtonAction")]
     public sealed class FastForwardButtonAction : UIToolkitAction
     {
         protected override void OnFirstSetupComponentUi(object[] setupData = null)
         {
-            var view = Get<BattleUiViewData>();
+            var view = Get<BattleUIViewData>();
             if (view != null && view.FastForwardButton != null)
             {
                 view.FastForwardButton.clicked += OnClicked;
@@ -21,7 +21,7 @@ namespace ArmyClash.UIToolkit.Actions
 
         protected override void OnDisable()
         {
-            var view = Get<BattleUiViewData>();
+            var view = Get<BattleUIViewData>();
             if (view != null && view.FastForwardButton != null)
             {
                 view.FastForwardButton.clicked -= OnClicked;
@@ -53,7 +53,7 @@ namespace ArmyClash.UIToolkit.Actions
 
         private void UpdateVisual(bool isFast)
         {
-            var view = Get<BattleUiViewData>();
+            var view = Get<BattleUIViewData>();
             var button = view != null ? view.FastForwardButton : null;
             if (button == null)
             {

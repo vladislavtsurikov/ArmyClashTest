@@ -5,13 +5,13 @@ using VladislavTsurikov.ReflectionUtility;
 
 namespace ArmyClash.UIToolkit.Actions
 {
-    [RequiresData(typeof(RandomizeRequestData), typeof(BattleUiViewData))]
+    [RequiresData(typeof(RandomizeRequestData), typeof(BattleUIViewData))]
     [Name("UI/ArmyClash/RandomizeButtonAction")]
     public sealed class RandomizeButtonAction : UIToolkitAction
     {
         protected override void OnFirstSetupComponentUi(object[] setupData = null)
         {
-            var view = Get<BattleUiViewData>();
+            var view = Get<BattleUIViewData>();
             if (view != null && view.RandomizeButton != null)
             {
                 view.RandomizeButton.clicked += OnClicked;
@@ -20,7 +20,7 @@ namespace ArmyClash.UIToolkit.Actions
 
         protected override void OnDisable()
         {
-            var view = Get<BattleUiViewData>();
+            var view = Get<BattleUIViewData>();
             if (view != null && view.RandomizeButton != null)
             {
                 view.RandomizeButton.clicked -= OnClicked;

@@ -8,9 +8,9 @@ using VladislavTsurikov.ReflectionUtility;
 namespace ArmyClash.UIToolkit.Actions
 {
     [RunOnDirtyData(typeof(ArmyCountData))]
-    [RequiresData(typeof(ArmyCountData), typeof(BattleUiViewData))]
+    [RequiresData(typeof(ArmyCountData), typeof(BattleUIViewData))]
     [Name("UI/ArmyClash/SetArmyCountUiAction")]
-    public sealed class SetArmyCountUiAction : UIToolkitAction
+    public sealed class SetArmyCountUIAction : UIToolkitAction
     {
         protected override UniTask<bool> Run(CancellationToken token)
         {
@@ -20,7 +20,7 @@ namespace ArmyClash.UIToolkit.Actions
                 return UniTask.FromResult(true);
             }
 
-            var view = Get<BattleUiViewData>();
+            var view = Get<BattleUIViewData>();
             if (view != null)
             {
                 if (view.LeftCountLabel != null)

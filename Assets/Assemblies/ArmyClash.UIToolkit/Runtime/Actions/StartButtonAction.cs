@@ -5,13 +5,13 @@ using VladislavTsurikov.ReflectionUtility;
 
 namespace ArmyClash.UIToolkit.Actions
 {
-    [RequiresData(typeof(StartRequestData), typeof(BattleUiViewData))]
+    [RequiresData(typeof(StartRequestData), typeof(BattleUIViewData))]
     [Name("UI/ArmyClash/StartButtonAction")]
     public sealed class StartButtonAction : UIToolkitAction
     {
         protected override void OnFirstSetupComponentUi(object[] setupData = null)
         {
-            var view = Get<BattleUiViewData>();
+            var view = Get<BattleUIViewData>();
             if (view != null && view.StartButton != null)
             {
                 view.StartButton.clicked += OnClicked;
@@ -20,7 +20,7 @@ namespace ArmyClash.UIToolkit.Actions
 
         protected override void OnDisable()
         {
-            var view = Get<BattleUiViewData>();
+            var view = Get<BattleUIViewData>();
             if (view != null && view.StartButton != null)
             {
                 view.StartButton.clicked -= OnClicked;

@@ -7,7 +7,7 @@ using VladislavTsurikov.ReflectionUtility;
 namespace ArmyClash.UIToolkit.Data
 {
     [Name("UI/ArmyClash/BattleUiViewData")]
-    public sealed class BattleUiViewData : UIToolkitViewData
+    public sealed class BattleUIViewData : UIToolkitViewData
     {
         [OdinSerialize] private string _startButtonName = "startButton";
         [OdinSerialize] private string _randomizeButtonName = "randomizeButton";

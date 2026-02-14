@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xmlns:ac="ArmyClash.Battle.Ui">
     <ui:Style src="ArmyClashBattle.uss" />
 
-    <ui:VisualElement name="root" class="root">
+    <ac:BattleUIView name="battleView" class="root">
         <ui:VisualElement name="topBar" class="top-bar">
             <ui:VisualElement name="leftCountPill" class="count-pill left">
                 <ui:Label name="leftCount" class="count-text" text="20" />
@@ -34,5 +34,5 @@ FORWARD ▶▶" />
             <ui:Button name="randomizeButton" class="primary-button blue" text="RANDOMIZE" />
             <ui:Button name="startButton" class="primary-button orange" text="START" />
         </ui:VisualElement>
-    </ui:VisualElement>
+    </ac:BattleUIView>
 </ui:UXML>

@@ -9,7 +9,7 @@ using VladislavTsurikov.ReflectionUtility;
 namespace ArmyClash.UIToolkit.Actions
 {
     [RunOnDirtyData(typeof(SimulationStateData))]
-    [RequiresData(typeof(SimulationStateData), typeof(BattleUiViewData))]
+    [RequiresData(typeof(SimulationStateData), typeof(BattleUIViewData))]
     [Name("UI/ArmyClash/SetButtonsVisibilityAction")]
     public sealed class SetButtonsVisibilityAction : UIToolkitAction
     {
@@ -23,7 +23,7 @@ namespace ArmyClash.UIToolkit.Actions
 
             bool show = data.State != SimulationState.Running;
 
-            var view = Get<BattleUiViewData>();
+            var view = Get<BattleUIViewData>();
             if (view != null)
             {
                 SetVisible(view.RandomizeButton, show);
