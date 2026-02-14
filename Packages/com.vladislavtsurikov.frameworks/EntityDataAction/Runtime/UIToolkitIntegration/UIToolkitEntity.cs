@@ -1,27 +1,60 @@
 using System;
+using UnityEngine.UIElements;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 
 namespace VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration
 {
-    public sealed class UIToolkitEntity : Entity
+    public class UIToolkitEntity : Entity
     {
-        private readonly Type[] _dataTypes;
-        private readonly Type[] _actionTypes;
+        private IVisualElementScheduledItem _updateItem;
+        private bool _isAttached;
 
-        public UIToolkitEntity(Type[] dataTypes, Type[] actionTypes)
+        public VisualElement Root { get; }
+
+        public UIToolkitEntity(VisualElement root)
         {
-            _dataTypes = dataTypes;
-            _actionTypes = actionTypes;
+            Root = root;
+
+            SetSetupData(new object[] { Root });
+
+            Root.RegisterCallback<AttachToPanelEvent>(OnAttachToPanel);
+            Root.RegisterCallback<DetachFromPanelEvent>(OnDetachFromPanel);
+
+            if (Root.panel != null)
+            {
+                _isAttached = true;
+                Enable();
+            }
         }
 
-        protected override Type[] ComponentDataTypesToCreate()
+        public void Dispose()
         {
-            return _dataTypes;
+            Root.UnregisterCallback<AttachToPanelEvent>(OnAttachToPanel);
+            Root.UnregisterCallback<DetachFromPanelEvent>(OnDetachFromPanel);
         }
 
-        protected override Type[] ActionTypesToCreate()
+        private void OnAttachToPanel(AttachToPanelEvent evt)
         {
-            return _actionTypes;
+            if (_isAttached)
+            {
+                return;
+            }
+
+            _isAttached = true;
+
+            Enable();
+        }
+
+        private void OnDetachFromPanel(DetachFromPanelEvent evt)
+        {
+            if (!_isAttached)
+            {
+                return;
+            }
+
+            _isAttached = false;
+
+            Disable();
         }
     }
 }
