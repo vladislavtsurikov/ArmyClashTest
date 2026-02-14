@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using VladislavTsurikov.ActionFlow.Runtime.Modifier;
 using VladislavTsurikov.ActionFlow.Runtime.Stats;
 using VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject;
 using VladislavTsurikov.MegaWorld.Runtime.GridSpawner;
 using ArmyClash.Battle.Data;
-using ArmyClash.Battle.Modifiers;
 using ArmyClash.Battle.Ui;
 using ArmyClash.MegaWorldGrid;
 using ArmyClash.UIToolkit.Data;
@@ -24,7 +22,7 @@ namespace ArmyClash.Battle
         [SerializeField] private bool _autoRandomizeOnAwake = true;
 
         [Header("UI")]
-        [SerializeField] private BattleUiDriver _uiDriver;
+        [SerializeField] private BattleUIDriver _uiDriver;
         [SerializeField] private float _fastTimeScale = 2f;
 
         [Header("Stats")]
@@ -33,6 +31,7 @@ namespace ArmyClash.Battle
         [SerializeField] private Stat _attackStat;
         [SerializeField] private Stat _speedStat;
         [SerializeField] private Stat _attackSpeedStat;
+        [SerializeField] private Stat _regenStat;
 
         [Header("Battle")]
         [SerializeField] private float _attackRange = 1.2f;
@@ -169,6 +168,7 @@ namespace ArmyClash.Battle
         public bool TryGetAttack(StatsEntityData stats, out float value) => TryGetStat(stats, _attackStat, out value);
         public bool TryGetSpeed(StatsEntityData stats, out float value) => TryGetStat(stats, _speedStat, out value);
         public bool TryGetAttackSpeed(StatsEntityData stats, out float value) => TryGetStat(stats, _attackSpeedStat, out value);
+        public bool TryGetRegen(StatsEntityData stats, out float value) => TryGetStat(stats, _regenStat, out value);
 
         public void ApplyDamage(BattleEntity target, float damage)
         {
@@ -184,6 +184,22 @@ namespace ArmyClash.Battle
             }
 
             stats.AddStatValue(_healthStat, -damage);
+        }
+
+        public void ApplyHealing(BattleEntity target, float amount)
+        {
+            if (target == null || amount <= 0f)
+            {
+                return;
+            }
+
+            var stats = target.GetData<StatsEntityData>();
+            if (stats == null || _healthStat == null)
+            {
+                return;
+            }
+
+            stats.AddStatValue(_healthStat, amount);
         }
 
         private bool TryGetStat(StatsEntityData stats, Stat stat, out float value)
@@ -327,13 +343,15 @@ namespace ArmyClash.Battle
             }
 
             var gridGenerator = spawner.GridGenerator;
-            if (gridGenerator == null)
+            var config = spawner.Config;
+            if (gridGenerator == null || config == null)
             {
                 return entities;
             }
 
-            var slots = gridGenerator.GetOrGenerate();
-            if (slots.Count == 0)
+            gridGenerator.Build(config, spawner.transform.position, spawner.transform.right, spawner.transform.forward,
+                spawner.transform.rotation);
+            if (gridGenerator.Slots.Count == 0)
             {
                 return entities;
             }
@@ -346,7 +364,7 @@ namespace ArmyClash.Battle
                     continue;
                 }
 
-                var spawned = await GridSpawnUtility.SpawnGroupWithInstances(token, group, slots);
+                var spawned = await GridSpawnUtility.SpawnGroup(token, group, gridGenerator);
                 for (int j = 0; j < spawned.Count; j++)
                 {
                     var battleEntity = spawned[j] != null ? spawned[j].GetComponent<BattleEntity>() : null;
@@ -369,14 +387,40 @@ namespace ArmyClash.Battle
                 return;
             }
 
-            IReadOnlyList<Modifier> modifiers = Array.Empty<Modifier>();
-            var provider = entity.GetComponent<ModifierProvider>();
-            if (provider != null && provider.Modifiers != null)
+            if (!entity.IsSetup)
             {
-                modifiers = provider.Modifiers;
+                entity.Setup();
             }
 
-            entity.Initialize(this, teamId, _statCollection, modifiers);
+            var context = entity.GetData<BattleContextData>();
+            if (context != null)
+            {
+                context.Controller = this;
+            }
+
+            var team = entity.GetData<BattleTeamData>();
+            if (team != null)
+            {
+                team.TeamId = teamId;
+            }
+
+            var target = entity.GetData<BattleTargetData>();
+            if (target != null)
+            {
+                target.Target = null;
+            }
+
+            var life = entity.GetData<BattleLifeData>();
+            if (life != null)
+            {
+                life.IsDead = false;
+            }
+
+            var stats = entity.GetData<StatsEntityData>();
+            if (stats != null)
+            {
+                stats.Collection = _statCollection;
+            }
 
             if (teamId == 0)
             {

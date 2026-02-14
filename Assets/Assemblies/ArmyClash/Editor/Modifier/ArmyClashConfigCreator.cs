@@ -28,8 +28,9 @@ namespace ArmyClash.Editor.Modifier
             Stat atk = CreateStat("ATK", 10f);
             Stat speed = CreateStat("SPEED", 10f);
             Stat atkSpd = CreateStat("ATKSPD", 1f);
+            Stat regen = CreateStat("REGEN", 0f);
 
-            StatCollection collection = CreateStatCollection(new[] { hp, atk, speed, atkSpd });
+            StatCollection collection = CreateStatCollection(new[] { hp, atk, speed, atkSpd, regen });
 
             ModifierStatEffect cubeEffect = CreateEffect("Shape_Cube", new[]
             {
@@ -70,6 +71,13 @@ namespace ArmyClash.Editor.Modifier
                 (speed, -9f)
             });
 
+            ModifierStatEffect goldEffect = CreateEffect("Color_Gold", new[]
+            {
+                (hp, 80f),
+                (atk, 25f),
+                (regen, 3f)
+            });
+
             CreateShapeModifier("CUBE", "Cube", cubeEffect, null);
             CreateShapeModifier("SPHERE", "Sphere", sphereEffect, null);
 
@@ -79,6 +87,7 @@ namespace ArmyClash.Editor.Modifier
             CreateColorModifier("BLUE", "Blue", blueEffect, new Color(0.2f, 0.4f, 1f));
             CreateColorModifier("GREEN", "Green", greenEffect, new Color(0.2f, 0.8f, 0.3f));
             CreateColorModifier("RED", "Red", redEffect, new Color(1f, 0.2f, 0.2f));
+            CreateColorModifier("GOLD", "Gold", goldEffect, new Color(1f, 0.85f, 0.1f));
 
             EditorUtility.SetDirty(collection);
             AssetDatabase.SaveAssets();
