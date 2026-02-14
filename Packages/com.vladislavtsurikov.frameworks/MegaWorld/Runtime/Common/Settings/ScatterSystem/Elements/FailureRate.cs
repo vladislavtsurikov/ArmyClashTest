@@ -16,8 +16,8 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
         [Tooltip("Percentage of samples to remove (0-100%)")]
         public float Value = 70;
 
-        public override async UniTask Samples(CancellationToken token, BoxArea boxArea, List<Vector2> samples,
-            Action<Vector2> onSpawn = null)
+        public override async UniTask Samples(CancellationToken token, BoxArea boxArea, List<Vector3> samples,
+            Action<Vector3> onSpawn = null)
         {
             for (var i = samples.Count - 1; i >= 0; i--)
             {

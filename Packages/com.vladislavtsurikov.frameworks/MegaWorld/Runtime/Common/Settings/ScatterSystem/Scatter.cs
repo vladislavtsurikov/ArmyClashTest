@@ -12,7 +12,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
     {
         protected ScatterStack ScatterStack => (ScatterStack)Stack;
 
-        public abstract UniTask Samples(CancellationToken token, BoxArea boxArea, List<Vector2> samples,
-            Action<Vector2> onSpawn = null);
+        public abstract UniTask Samples(CancellationToken token, BoxArea boxArea, List<Vector3> samples,
+            Action<Vector3> onSpawn = null);
     }
 }

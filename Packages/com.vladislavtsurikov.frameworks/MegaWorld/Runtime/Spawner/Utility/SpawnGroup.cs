@@ -31,7 +31,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Spawner.Utility
             {
                 RayHit rayHit =
                     RaycastUtility.Raycast(
-                        RayUtility.GetRayDown(new Vector3(sample.x, boxArea.RayHit.Point.y, sample.y)),
+                        RayUtility.GetRayDown(new Vector3(sample.x, sample.y, sample.z)),
                         layerSettings.GetCurrentPaintLayers(group.PrototypeType));
 
                 if (rayHit != null)

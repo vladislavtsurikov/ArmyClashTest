@@ -22,8 +22,8 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
 
         public int MaxChecksLimit => PreferenceElementSingleton<ScatterPreferenceSettings>.Instance.MaxChecks;
 
-        public override async UniTask Samples(CancellationToken token, BoxArea boxArea, List<Vector2> samples,
-            Action<Vector2> onSpawn = null)
+        public override async UniTask Samples(CancellationToken token, BoxArea boxArea, List<Vector3> samples,
+            Action<Vector3> onSpawn = null)
         {
             var numberOfChecks = Random.Range(MinChecks, MaxChecks);
 
@@ -36,17 +36,18 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
                     await UniTask.Yield();
                 }
 
-                Vector2 point = GetRandomPoint(boxArea);
+                Vector3 point = GetRandomPoint(boxArea);
                 onSpawn?.Invoke(point);
                 samples.Add(point);
             }
         }
 
-        private Vector2 GetRandomPoint(BoxArea boxArea)
+        private Vector3 GetRandomPoint(BoxArea boxArea)
         {
-            Vector2 spawnOffset = new Vector3(Random.Range(-boxArea.Radius, boxArea.Radius),
+            Vector2 spawnOffset = new Vector2(Random.Range(-boxArea.Radius, boxArea.Radius),
                 Random.Range(-boxArea.Radius, boxArea.Radius));
-            return new Vector2(spawnOffset.x + boxArea.RayHit.Point.x, spawnOffset.y + boxArea.RayHit.Point.z);
+            return new Vector3(spawnOffset.x + boxArea.RayHit.Point.x, boxArea.RayHit.Point.y,
+                spawnOffset.y + boxArea.RayHit.Point.z);
         }
     }
 }

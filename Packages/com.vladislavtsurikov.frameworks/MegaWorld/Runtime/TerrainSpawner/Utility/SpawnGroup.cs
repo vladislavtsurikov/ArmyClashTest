@@ -36,12 +36,11 @@ namespace VladislavTsurikov.MegaWorld.Runtime.TerrainSpawner.Utility
             {
                 RayHit rayHit =
                     RaycastUtility.Raycast(
-                        RayUtility.GetRayDown(new Vector3(sample.x, boxArea.RayHit.Point.y, sample.y)),
+                        RayUtility.GetRayDown(new Vector3(sample.x, sample.y, sample.z)),
                         layerSettings.GetCurrentPaintLayers(group.PrototypeType));
                 if (rayHit != null)
                 {
                     var proto = (PrototypeGameObject)GetRandomPrototype.GetMaxSuccessProto(group.PrototypeList);
-                    ;
 
                     if (proto == null || proto.Active == false)
                     {
@@ -82,7 +81,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.TerrainSpawner.Utility
             {
                 RayHit rayHit =
                     RaycastUtility.Raycast(
-                        RayUtility.GetRayDown(new Vector3(sample.x, boxArea.RayHit.Point.y, sample.y)),
+                        RayUtility.GetRayDown(new Vector3(sample.x, sample.y, sample.z)),
                         layerSettings.GetCurrentPaintLayers(group.PrototypeType));
                 if (rayHit != null)
                 {

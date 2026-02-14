@@ -32,8 +32,8 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
         [Range(0, 1)]
         public float Vastness = 1;
 
-        public override async UniTask Samples(CancellationToken token, BoxArea boxArea, List<Vector2> samples,
-            Action<Vector2> onSpawn = null)
+        public override async UniTask Samples(CancellationToken token, BoxArea boxArea, List<Vector3> samples,
+            Action<Vector3> onSpawn = null)
         {
             UpdateGrid(boxArea.Center, boxArea.BoxSize);
 
@@ -56,16 +56,17 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
 
                 Vector3 newLocalPosition = Vector3Ex.RotatePointAroundPivot(position,
                     new Vector3(maxPosition.x / 2, 0, maxPosition.z / 2), Quaternion.AngleAxis(GridAngle, Vector3.up));
-                var offsetLocalPosition = new Vector2(_visualOrigin.x + newLocalPosition.x,
+                var offsetLocalPosition2D = new Vector2(_visualOrigin.x + newLocalPosition.x,
                     _visualOrigin.z + newLocalPosition.z);
-                offsetLocalPosition = GetCurrentRandomPosition(offsetLocalPosition);
+                offsetLocalPosition2D = GetCurrentRandomPosition(offsetLocalPosition2D);
 
                 if (Random.Range(0f, 100f) > FailureRate)
                 {
-                    if (boxArea.Contains(offsetLocalPosition))
+                    var worldPosition = new Vector3(offsetLocalPosition2D.x, boxArea.Center.y, offsetLocalPosition2D.y);
+                    if (boxArea.Contains(worldPosition))
                     {
-                        onSpawn?.Invoke(offsetLocalPosition);
-                        samples.Add(offsetLocalPosition);
+                        onSpawn?.Invoke(worldPosition);
+                        samples.Add(worldPosition);
                     }
                 }
             }

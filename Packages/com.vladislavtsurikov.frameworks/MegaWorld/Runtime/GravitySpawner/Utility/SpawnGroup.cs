@@ -36,7 +36,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GravitySpawner.Utility
             await scatterComponentSettings.ScatterStack.Samples(area, sample =>
             {
                 RayHit rayHit = RaycastUtility.Raycast(
-                    RayUtility.GetRayDown(new Vector3(sample.x, area.Center.y, sample.y)),
+                    RayUtility.GetRayDown(new Vector3(sample.x, sample.y, sample.z)),
                     GlobalCommonComponentSingleton<LayerSettings>.Instance.GetCurrentPaintLayers(group.PrototypeType));
 
                 if (rayHit != null)
@@ -86,7 +86,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GravitySpawner.Utility
             await scatterComponentSettings.ScatterStack.Samples(area, sample =>
             {
                 RayHit rayHit =
-                    RaycastUtility.Raycast(RayUtility.GetRayDown(new Vector3(sample.x, area.Center.y, sample.y)),
+                    RaycastUtility.Raycast(RayUtility.GetRayDown(new Vector3(sample.x, sample.y, sample.z)),
                         GlobalCommonComponentSingleton<LayerSettings>.Instance.GetCurrentPaintLayers(
                             group.PrototypeType));
                 if (rayHit != null)

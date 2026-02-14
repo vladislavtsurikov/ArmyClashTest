@@ -13,8 +13,8 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
     {
         public Vector2 Size = new(1, 1);
 
-        public override async UniTask Samples(CancellationToken token, BoxArea boxArea, List<Vector2> samples,
-            Action<Vector2> onSpawn = null)
+        public override async UniTask Samples(CancellationToken token, BoxArea boxArea, List<Vector3> samples,
+            Action<Vector3> onSpawn = null)
         {
             var tileMapSize = new Vector2Int(
                 Mathf.RoundToInt(boxArea.BoxSize),
@@ -31,8 +31,9 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
                     await UniTask.Yield();
                 }
 
-                var cellCenter = new Vector2(
+                var cellCenter = new Vector3(
                     x * Size.x + Size.x / 2,
+                    boxArea.Center.y,
                     y * Size.y + Size.y / 2
                 );
 

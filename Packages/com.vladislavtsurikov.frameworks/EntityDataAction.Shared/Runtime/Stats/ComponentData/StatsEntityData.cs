@@ -59,38 +59,6 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats
             }
         }
 
-        public bool AddStat(Stat stat)
-        {
-            if (stat == null || TryGetRuntimeStat(stat, out _))
-            {
-                return false;
-            }
-
-            _stats.Add(new RuntimeStat(stat, GetDefaultValue(stat)));
-            MarkDirty();
-            return true;
-        }
-
-        public bool RemoveStat(Stat stat)
-        {
-            if (stat == null)
-            {
-                return false;
-            }
-
-            for (int i = 0; i < _stats.Count; i++)
-            {
-                if (_stats[i].Stat == stat)
-                {
-                    _stats.RemoveAt(i);
-                    MarkDirty();
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
         public bool SetStatValue(Stat stat, float value)
         {
             if (!TryGetRuntimeStat(stat, out RuntimeStat runtimeStat))

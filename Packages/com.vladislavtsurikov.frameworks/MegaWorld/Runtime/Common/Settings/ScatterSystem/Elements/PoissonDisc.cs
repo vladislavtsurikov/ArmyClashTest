@@ -28,12 +28,12 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
         /// width:  each sample's x coordinate will be between [0, width]
         /// height: each sample's y coordinate will be between [0, height]
         /// radius: each sample will be at least `radius` units away from any other sample, and at most 2 * `radius`.
-        public override async UniTask Samples(CancellationToken token, BoxArea boxArea, List<Vector2> samples,
-            Action<Vector2> onSpawn = null)
+        public override async UniTask Samples(CancellationToken token, BoxArea boxArea, List<Vector3> samples,
+            Action<Vector3> onSpawn = null)
         {
             Init(boxArea.Bounds.size.z, boxArea.Bounds.size.x, PoissonDiscSize / 2);
 
-            Vector2 point = AddSample(boxArea, new Vector2(Random.value * _rect.width, Random.value * _rect.height));
+            Vector3 point = AddSample(boxArea, new Vector2(Random.value * _rect.width, Random.value * _rect.height));
             samples.Add(point);
             onSpawn?.Invoke(point);
             if (ScatterStack.IsWaitForNextFrame())
@@ -68,7 +68,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
                     {
                         found = true;
 
-                        Vector2 localPoint = AddSample(boxArea, candidate);
+                        Vector3 localPoint = AddSample(boxArea, candidate);
 
                         samples.Add(localPoint);
                         onSpawn?.Invoke(localPoint);
@@ -126,17 +126,18 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
         }
 
         /// Adds the sample to the active samples queue and the grid before returning it
-        private Vector2 AddSample(BoxArea boxArea, Vector2 sample)
+        private Vector3 AddSample(BoxArea boxArea, Vector2 sample)
         {
             var radius = boxArea.BoxSize / 2;
 
             var x = boxArea.Center.x + sample.x - radius;
             var z = boxArea.Center.z + sample.y - radius;
+            var y = boxArea.Center.y;
 
             _activeSamples.Add(sample);
             var pos = new GridPos(sample, _cellSize);
             _grid[pos.X, pos.Y] = sample;
-            return new Vector2(x, z);
+            return new Vector3(x, y, z);
         }
 
         /// Helper struct to calculate the x and y indices of a sample in the grid
