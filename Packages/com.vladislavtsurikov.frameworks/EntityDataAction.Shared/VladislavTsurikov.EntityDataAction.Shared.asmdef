@@ -16,7 +16,8 @@
         "VladislavTsurikov.CustomInspector",
         "VladislavTsurikov.Core",
         "VladislavTsurikov.IMGUIUtility",
-        "VladislavTsurikov.AutoDefines"
+        "VladislavTsurikov.AutoDefines",
+        "UniRx"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

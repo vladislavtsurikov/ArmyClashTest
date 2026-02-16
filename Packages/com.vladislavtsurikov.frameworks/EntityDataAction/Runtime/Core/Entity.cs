@@ -210,10 +210,10 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             }
         }
 
-        private void InvokeOnEnable() => ForEachAction(action => action.InvokeOnEnable());
-        private void InvokeOnDisable() => ForEachAction(action => action.InvokeOnDisable());
+        private void InvokeOnEnable() => ForEachLifecycleAction(action => action.InvokeOnEnable());
+        private void InvokeOnDisable() => ForEachLifecycleAction(action => action.InvokeOnDisable());
 
-        private void ForEachAction(Action<EntityAction> handler)
+        private void ForEachLifecycleAction(Action<EntityLifecycleAction> handler)
         {
             if (handler == null || _actions == null)
             {
@@ -222,7 +222,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 
             for (int i = 0; i < _actions.ElementList.Count; i++)
             {
-                if (_actions.ElementList[i] is EntityAction action)
+                if (_actions.ElementList[i] is EntityLifecycleAction action)
                 {
                     handler(action);
                 }

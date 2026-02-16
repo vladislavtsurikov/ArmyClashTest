@@ -6,7 +6,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration
 {
     public class UIToolkitEntity : Entity
     {
-        private IVisualElementScheduledItem _updateItem;
         private bool _isAttached;
 
         public VisualElement Root { get; }

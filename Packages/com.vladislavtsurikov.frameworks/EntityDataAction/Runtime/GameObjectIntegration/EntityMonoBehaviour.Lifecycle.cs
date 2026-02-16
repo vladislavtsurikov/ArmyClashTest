@@ -41,7 +41,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
                 return;
             }
 
-            ForEachAction(action => action.InvokeOnDestroy());
+            ForEachLifecycleAction(action => action.InvokeOnDestroy());
         }
 
 #if UNITY_EDITOR
@@ -52,7 +52,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
                 return;
             }
 
-            ForEachAction(action => action.InvokeOnValidate());
+            ForEachLifecycleAction(action => action.InvokeOnValidate());
         }
 #endif
 

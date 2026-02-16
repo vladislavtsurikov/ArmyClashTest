@@ -130,7 +130,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             }
 
             _actionsAwakeCalled = true;
-            ForEachAction(action => action.InvokeAwake());
+            ForEachLifecycleAction(action => action.InvokeAwake());
         }
 
         private void InvokeStartIfNeeded()
@@ -141,20 +141,20 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             }
 
             _actionsStartCalled = true;
-            ForEachAction(action => action.InvokeStart());
+            ForEachLifecycleAction(action => action.InvokeStart());
         }
 
-        private void InvokeIfActive(Action<EntityAction> handler)
+        private void InvokeIfActive(Action<EntityLifecycleAction> handler)
         {
             if (!Active)
             {
                 return;
             }
 
-            ForEachAction(handler);
+            ForEachLifecycleAction(handler);
         }
 
-        private void ForEachAction(Action<EntityAction> handler)
+        private void ForEachLifecycleAction(Action<EntityLifecycleAction> handler)
         {
             if (handler == null)
             {
@@ -169,7 +169,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 
             for (int i = 0; i < actions.ElementList.Count; i++)
             {
-                if (actions.ElementList[i] is EntityAction action)
+                if (actions.ElementList[i] is EntityLifecycleAction action)
                 {
                     handler(action);
                 }

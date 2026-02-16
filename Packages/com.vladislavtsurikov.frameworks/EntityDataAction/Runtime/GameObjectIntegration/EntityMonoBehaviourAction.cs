@@ -3,13 +3,24 @@ using UnityEngine;
 
 namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 {
-    public abstract class EntityMonoBehaviourAction : EntityAction
+    public abstract class EntityMonoBehaviourAction : EntityLifecycleAction
     {
         protected EntityMonoBehaviour Host { get; private set; }
 
         protected sealed override void OnFirstSetupComponent(object[] setupData = null)
         {
-            Host = FindHost(setupData);
+            Host = null;
+            if (setupData != null)
+            {
+                for (int i = 0; i < setupData.Length; i++)
+                {
+                    if (setupData[i] is EntityMonoBehaviour host)
+                    {
+                        Host = host;
+                        break;
+                    }
+                }
+            }
             OnFirstSetupComponentWithHost(setupData);
         }
 
@@ -27,22 +38,5 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             return Host.GetComponentsInChildren<TComponent>(includeInactive);
         }
 
-        private static EntityMonoBehaviour FindHost(object[] setupData)
-        {
-            if (setupData == null)
-            {
-                return null;
-            }
-
-            for (int i = 0; i < setupData.Length; i++)
-            {
-                if (setupData[i] is EntityMonoBehaviour host)
-                {
-                    return host;
-                }
-            }
-
-            return null;
-        }
     }
 }
