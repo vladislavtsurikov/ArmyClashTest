@@ -1,5 +1,6 @@
 using System;
 using OdinSerializer;
+using UniRx;
 using VladislavTsurikov.ActionFlow.Runtime.Stats;
 
 namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats
@@ -8,14 +9,16 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats
     public sealed class RuntimeStat
     {
         [OdinSerialize] private Stat _stat;
-        [OdinSerialize] private float _value;
+        [OdinSerialize] private ReactiveProperty<float> _value;
 
         public Stat Stat => _stat;
 
-        public float Value
+        public ReactiveProperty<float> Value => EnsureValue();
+
+        public float CurrentValue
         {
-            get => _value;
-            set => _value = value;
+            get => Value.Value;
+            set => Value.Value = value;
         }
 
         public RuntimeStat()
@@ -25,7 +28,17 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats
         public RuntimeStat(Stat stat, float value)
         {
             _stat = stat;
-            _value = value;
+            EnsureValue().Value = value;
+        }
+
+        private ReactiveProperty<float> EnsureValue()
+        {
+            if (_value == null)
+            {
+                _value = new ReactiveProperty<float>();
+            }
+
+            return _value;
         }
     }
 }

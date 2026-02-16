@@ -61,14 +61,14 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Editor.Stats
 
                 string name = stat.Stat.name;
                 var valueComponent = stat.Stat.ComponentStack.GetElement<StatValueComponent>();
-                string valueText = stat.Value.ToString("0.##");
+                string valueText = stat.CurrentValue.ToString("0.##");
 
                 Rect nameRect = new Rect(rowRect.x + 8f, rowRect.y + 4f, rowRect.width * 0.7f, rowHeight);
                 EditorGUI.LabelField(nameRect, $"{name}: {valueText}", _nameStyle);
 
                 if (valueComponent != null && valueComponent.ClampEnabled)
                 {
-                    string clampText = BuildClampText(valueComponent, stat.Value);
+                    string clampText = BuildClampText(valueComponent, stat.CurrentValue);
                     Rect clampRect = new Rect(rowRect.x + rowRect.width * 0.7f, rowRect.y + 4f,
                         rowRect.width * 0.3f - 8f, rowHeight);
                     EditorGUI.LabelField(clampRect, clampText, _valueStyle);
