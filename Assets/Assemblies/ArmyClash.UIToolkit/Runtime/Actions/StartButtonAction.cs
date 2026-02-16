@@ -12,29 +12,18 @@ namespace ArmyClash.UIToolkit.Actions
         protected override void OnFirstSetupComponentUi(object[] setupData = null)
         {
             var view = Get<BattleUIViewData>();
-            if (view != null && view.StartButton != null)
-            {
-                view.StartButton.clicked += OnClicked;
-            }
+            view.StartButton.clicked += OnClicked;
         }
 
         protected override void OnDisable()
         {
             var view = Get<BattleUIViewData>();
-            if (view != null && view.StartButton != null)
-            {
-                view.StartButton.clicked -= OnClicked;
-            }
+            view.StartButton.clicked -= OnClicked;
         }
 
         private void OnClicked()
         {
             StartRequestData data = Get<StartRequestData>();
-            if (data == null)
-            {
-                return;
-            }
-
             data.Request();
         }
     }

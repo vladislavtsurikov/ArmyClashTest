@@ -1,4 +1,5 @@
 using System;
+using ArmyClash.Battle.Data;
 using ArmyClash.UIToolkit.Actions;
 using ArmyClash.UIToolkit.Data;
 using UnityEngine.UIElements;
@@ -21,6 +22,7 @@ namespace ArmyClash.Battle.Ui
                 typeof(SimulationStateData),
                 typeof(ArmyCountData),
                 typeof(BattleSpeedData),
+                typeof(BattleWorldSpeedData),
                 typeof(BattleUIViewData)
             };
         }
@@ -33,7 +35,10 @@ namespace ArmyClash.Battle.Ui
                 typeof(RandomizeButtonAction),
                 typeof(SetButtonsVisibilityAction),
                 typeof(SetArmyCountUIAction),
-                typeof(FastForwardButtonAction)
+                typeof(FastForwardButtonAction),
+                typeof(ApplyBattleSpeedTimeScaleAction),
+                typeof(StartRequestRelayAction),
+                typeof(RandomizeRequestRelayAction)
             };
         }
     }

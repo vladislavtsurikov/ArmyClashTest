@@ -6,16 +6,17 @@ using ArmyClash.Battle.Data;
 
 namespace ArmyClash.Battle
 {
-    public sealed class BattleEntity : EntityMonoBehaviour
+    public abstract class BattleEntity : EntityMonoBehaviour
     {
         protected override Type[] ComponentDataTypesToCreate()
         {
             return new[]
             {
                 typeof(StatsEntityData),
+                typeof(BattleStatIdsData),
                 typeof(BattleContextData),
                 typeof(BattleTeamData),
-                typeof(BattleTargetData),
+                typeof(TargetData),
                 typeof(BattleLifeData)
             };
         }
@@ -24,11 +25,12 @@ namespace ArmyClash.Battle
         {
             return new[]
             {
-                typeof(BattleTargetAction),
-                typeof(BattleMoveAction),
-                typeof(BattleAttackAction),
-                typeof(BattleRegenAction),
-                typeof(BattleDeathAction)
+                typeof(FindClosestOpponentTargetAction),
+                typeof(TargetValidationAction),
+                typeof(MoveToTargetAction),
+                typeof(AttackTargetAction),
+                typeof(HealthToDeathAction),
+                typeof(HandleDeathAction)
             };
         }
     }

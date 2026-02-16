@@ -15,24 +15,9 @@ namespace ArmyClash.UIToolkit.Actions
         protected override UniTask<bool> Run(CancellationToken token)
         {
             var data = Get<ArmyCountData>();
-            if (data == null)
-            {
-                return UniTask.FromResult(true);
-            }
-
             var view = Get<BattleUIViewData>();
-            if (view != null)
-            {
-                if (view.LeftCountLabel != null)
-                {
-                    view.LeftCountLabel.text = data.LeftCount.ToString();
-                }
-
-                if (view.RightCountLabel != null)
-                {
-                    view.RightCountLabel.text = data.RightCount.ToString();
-                }
-            }
+            view.LeftCountLabel.text = data.LeftCount.ToString();
+            view.RightCountLabel.text = data.RightCount.ToString();
 
             return UniTask.FromResult(true);
         }

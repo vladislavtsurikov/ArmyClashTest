@@ -16,30 +16,17 @@ namespace ArmyClash.UIToolkit.Actions
         protected override UniTask<bool> Run(CancellationToken token)
         {
             SimulationStateData data = Get<SimulationStateData>();
-            if (data == null)
-            {
-                return UniTask.FromResult(true);
-            }
-
             bool show = data.State != SimulationState.Running;
 
             var view = Get<BattleUIViewData>();
-            if (view != null)
-            {
-                SetVisible(view.RandomizeButton, show);
-                SetVisible(view.StartButton, show);
-            }
+            SetVisible(view.RandomizeButton, show);
+            SetVisible(view.StartButton, show);
 
             return UniTask.FromResult(true);
         }
 
         private static void SetVisible(VisualElement element, bool visible)
         {
-            if (element == null)
-            {
-                return;
-            }
-
             element.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
         }
     }

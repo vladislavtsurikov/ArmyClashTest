@@ -13,29 +13,18 @@ namespace ArmyClash.UIToolkit.Actions
         protected override void OnFirstSetupComponentUi(object[] setupData = null)
         {
             var view = Get<BattleUIViewData>();
-            if (view != null && view.FastForwardButton != null)
-            {
-                view.FastForwardButton.clicked += OnClicked;
-            }
+            view.FastForwardButton.clicked += OnClicked;
         }
 
         protected override void OnDisable()
         {
             var view = Get<BattleUIViewData>();
-            if (view != null && view.FastForwardButton != null)
-            {
-                view.FastForwardButton.clicked -= OnClicked;
-            }
+            view.FastForwardButton.clicked -= OnClicked;
         }
 
         protected override Cysharp.Threading.Tasks.UniTask<bool> Run(System.Threading.CancellationToken token)
         {
             BattleSpeedData data = Get<BattleSpeedData>();
-            if (data == null)
-            {
-                return Cysharp.Threading.Tasks.UniTask.FromResult(true);
-            }
-
             UpdateVisual(data.Speed == BattleSpeed.Fast);
             return Cysharp.Threading.Tasks.UniTask.FromResult(true);
         }
@@ -43,22 +32,13 @@ namespace ArmyClash.UIToolkit.Actions
         private void OnClicked()
         {
             BattleSpeedData data = Get<BattleSpeedData>();
-            if (data == null)
-            {
-                return;
-            }
-
             data.Speed = data.Speed == BattleSpeed.Fast ? BattleSpeed.Normal : BattleSpeed.Fast;
         }
 
         private void UpdateVisual(bool isFast)
         {
             var view = Get<BattleUIViewData>();
-            var button = view != null ? view.FastForwardButton : null;
-            if (button == null)
-            {
-                return;
-            }
+            var button = view.FastForwardButton;
 
             if (isFast)
             {

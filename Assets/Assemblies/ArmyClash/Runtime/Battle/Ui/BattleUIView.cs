@@ -15,6 +15,15 @@ namespace ArmyClash.Battle.Ui
         private BattleUIToolkitEntity _entity;
         private bool _initialized;
 
+        public BattleUIToolkitEntity Entity
+        {
+            get
+            {
+                EnsureInitialized();
+                return _entity;
+            }
+        }
+
         public BattleUIView()
         {
             RegisterCallback<AttachToPanelEvent>(OnAttachToPanel);

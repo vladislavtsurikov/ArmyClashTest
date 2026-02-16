@@ -1,5 +1,5 @@
 using OdinSerializer;
-using VladislavTsurikov.EntityDataAction.Runtime.Core;
+using UniRx;
 using VladislavTsurikov.Nody.Runtime.Core;
 using VladislavTsurikov.ReflectionUtility;
 
@@ -9,21 +9,23 @@ namespace ArmyClash.Battle.Data
     public sealed class BattleLifeData : ComponentData
     {
         [OdinSerialize]
-        private bool _isDead;
+        private ReactiveProperty<bool> _isDead;
 
         public bool IsDead
         {
-            get => _isDead;
+            get => _isDead.Value;
             set
             {
-                if (_isDead == value)
+                if (_isDead.Value == value)
                 {
                     return;
                 }
 
-                _isDead = value;
+                _isDead.Value = value;
                 MarkDirty();
             }
         }
+
+        public IReadOnlyReactiveProperty<bool> IsDeadReactive => _isDead;
     }
 }

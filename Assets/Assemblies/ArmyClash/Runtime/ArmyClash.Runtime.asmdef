@@ -9,6 +9,7 @@
         "VladislavTsurikov.ReflectionUtility",
         "OdinSerializer",
         "UniTask",
+        "UniRx",
         "ArmyClash.MegaWorldGrid",
         "ArmyClash.GridCore",
         "ArmyClash.GridWrapper",

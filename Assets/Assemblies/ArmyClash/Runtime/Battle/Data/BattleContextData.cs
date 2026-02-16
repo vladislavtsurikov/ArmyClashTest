@@ -1,5 +1,4 @@
 using OdinSerializer;
-using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.Nody.Runtime.Core;
 using VladislavTsurikov.ReflectionUtility;
 
@@ -9,19 +8,19 @@ namespace ArmyClash.Battle.Data
     public sealed class BattleContextData : ComponentData
     {
         [OdinSerialize]
-        private BattleController _controller;
+        private BattleWorldEntity _world;
 
-        public BattleController Controller
+        public BattleWorldEntity World
         {
-            get => _controller;
+            get => _world;
             set
             {
-                if (_controller == value)
+                if (_world == value)
                 {
                     return;
                 }
 
-                _controller = value;
+                _world = value;
                 MarkDirty();
             }
         }

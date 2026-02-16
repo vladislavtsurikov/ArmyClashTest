@@ -12,29 +12,18 @@ namespace ArmyClash.UIToolkit.Actions
         protected override void OnFirstSetupComponentUi(object[] setupData = null)
         {
             var view = Get<BattleUIViewData>();
-            if (view != null && view.RandomizeButton != null)
-            {
-                view.RandomizeButton.clicked += OnClicked;
-            }
+            view.RandomizeButton.clicked += OnClicked;
         }
 
         protected override void OnDisable()
         {
             var view = Get<BattleUIViewData>();
-            if (view != null && view.RandomizeButton != null)
-            {
-                view.RandomizeButton.clicked -= OnClicked;
-            }
+            view.RandomizeButton.clicked -= OnClicked;
         }
 
         private void OnClicked()
         {
             RandomizeRequestData data = Get<RandomizeRequestData>();
-            if (data == null)
-            {
-                return;
-            }
-
             data.Request();
         }
     }
