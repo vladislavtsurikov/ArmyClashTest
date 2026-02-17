@@ -1,8 +1,11 @@
 using System;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats;
-using ArmyClash.Battle.Actions;
 using ArmyClash.Battle.Data;
+using ArmyClash.Battle.Actions;
+using ArmyClash.Battle.States;
+using VladislavTsurikov.StateMachine.Runtime.Actions;
+using VladislavTsurikov.StateMachine.Runtime.Data;
 
 namespace ArmyClash.Battle
 {
@@ -17,7 +20,8 @@ namespace ArmyClash.Battle
                 typeof(BattleContextData),
                 typeof(BattleTeamData),
                 typeof(TargetData),
-                typeof(BattleLifeData)
+                typeof(BattleLifeData),
+                typeof(StateMachineData)
             };
         }
 
@@ -25,13 +29,34 @@ namespace ArmyClash.Battle
         {
             return new[]
             {
-                typeof(FindClosestOpponentTargetAction),
-                typeof(TargetValidationAction),
-                typeof(MoveToTargetAction),
-                typeof(AttackTargetAction),
-                typeof(HealthToDeathAction),
+                typeof(StateMachineAction),
+                typeof(RegenHealthAction),
                 typeof(HandleDeathAction)
             };
+        }
+
+        protected override void OnAfterCreateDataAndActions()
+        {
+            var stateMachine = GetData<StateMachineData>();
+            if (stateMachine == null)
+            {
+                return;
+            }
+
+            var stack = stateMachine.StateStack;
+            if (stack == null || stack.ElementList.Count > 0)
+            {
+                return;
+            }
+
+            stack.CreateIfMissingType(new[]
+            {
+                typeof(BattleDeadState),
+                typeof(BattlePausedState),
+                typeof(BattleAcquireTargetState),
+                typeof(BattleMoveToTargetState),
+                typeof(BattleAttackTargetState)
+            });
         }
     }
 }

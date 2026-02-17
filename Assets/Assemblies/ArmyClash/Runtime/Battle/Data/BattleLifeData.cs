@@ -13,10 +13,10 @@ namespace ArmyClash.Battle.Data
 
         public bool IsDead
         {
-            get => _isDead.Value;
+            get => EnsureIsDead().Value;
             set
             {
-                if (_isDead.Value == value)
+                if (EnsureIsDead().Value == value)
                 {
                     return;
                 }
@@ -26,6 +26,16 @@ namespace ArmyClash.Battle.Data
             }
         }
 
-        public IReadOnlyReactiveProperty<bool> IsDeadReactive => _isDead;
+        public IReadOnlyReactiveProperty<bool> IsDeadReactive => EnsureIsDead();
+
+        private ReactiveProperty<bool> EnsureIsDead()
+        {
+            if (_isDead == null)
+            {
+                _isDead = new ReactiveProperty<bool>();
+            }
+
+            return _isDead;
+        }
     }
 }

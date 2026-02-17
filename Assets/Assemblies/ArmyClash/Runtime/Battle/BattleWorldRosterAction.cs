@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using ArmyClash.Battle.Data;
@@ -12,6 +14,10 @@ namespace ArmyClash.Battle
 
         public IReadOnlyList<BattleEntity> LeftEntities => _leftEntities;
         public IReadOnlyList<BattleEntity> RightEntities => _rightEntities;
+
+        private readonly Subject<Unit> _rosterChanged = new Subject<Unit>();
+
+        public IObservable<Unit> RosterChanged => _rosterChanged;
 
         public void RegisterEntity(BattleEntity entity)
         {
@@ -56,6 +62,7 @@ namespace ArmyClash.Battle
                 if (!_leftEntities.Contains(entity))
                 {
                     _leftEntities.Add(entity);
+                    _rosterChanged.OnNext(Unit.Default);
                 }
                 return;
             }
@@ -63,6 +70,7 @@ namespace ArmyClash.Battle
             if (!_rightEntities.Contains(entity))
             {
                 _rightEntities.Add(entity);
+                _rosterChanged.OnNext(Unit.Default);
             }
         }
 
@@ -75,12 +83,14 @@ namespace ArmyClash.Battle
 
             _leftEntities.Remove(entity);
             _rightEntities.Remove(entity);
+            _rosterChanged.OnNext(Unit.Default);
         }
 
         public void ClearEntities()
         {
             _leftEntities.Clear();
             _rightEntities.Clear();
+            _rosterChanged.OnNext(Unit.Default);
         }
 
         public bool IsEntityAlive(BattleEntity entity)
@@ -96,5 +106,11 @@ namespace ArmyClash.Battle
 
         public int LeftCount => _leftEntities.Count;
         public int RightCount => _rightEntities.Count;
+
+        protected override void OnDisable()
+        {
+            _rosterChanged.OnCompleted();
+            _rosterChanged.Dispose();
+        }
     }
 }

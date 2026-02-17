@@ -22,7 +22,7 @@ namespace ArmyClash.Battle.Ui
                 typeof(SimulationStateData),
                 typeof(ArmyCountData),
                 typeof(BattleSpeedData),
-                typeof(BattleWorldSpeedData),
+                typeof(WorldSpeedProxyData),
                 typeof(BattleUIViewData)
             };
         }

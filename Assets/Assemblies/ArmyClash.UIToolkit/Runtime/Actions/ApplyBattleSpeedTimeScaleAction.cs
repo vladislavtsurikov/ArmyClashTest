@@ -8,8 +8,8 @@ using VladislavTsurikov.ReflectionUtility;
 
 namespace ArmyClash.UIToolkit.Actions
 {
-    [RunOnDirtyData(typeof(BattleSpeedData))]
-    [RequiresData(typeof(BattleSpeedData), typeof(BattleWorldSpeedData))]
+    [RunOnDirtyData(typeof(BattleSpeedData), typeof(WorldSpeedProxyData))]
+    [RequiresData(typeof(BattleSpeedData), typeof(WorldSpeedProxyData))]
     [Name("UI/ArmyClash/ApplyBattleSpeedTimeScaleAction")]
     public sealed class ApplyBattleSpeedTimeScaleAction : UIToolkitAction
     {
@@ -24,7 +24,7 @@ namespace ArmyClash.UIToolkit.Actions
             }
 
             _lastSpeed = data.Speed;
-            var settings = Get<BattleWorldSpeedData>();
+            var settings = Get<WorldSpeedProxyData>();
             float fastScale = settings != null ? settings.FastTimeScale : 1f;
             Time.timeScale = _lastSpeed == BattleSpeed.Fast ? fastScale : 1f;
             return UniTask.FromResult(true);

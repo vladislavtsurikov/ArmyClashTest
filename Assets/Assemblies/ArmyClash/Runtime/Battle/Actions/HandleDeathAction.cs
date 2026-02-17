@@ -6,41 +6,37 @@ using VladislavTsurikov.ReflectionUtility;
 namespace ArmyClash.Battle.Actions
 {
     [RequiresData(typeof(BattleLifeData))]
-    [Name("Action/HandleDeath")]
-    public sealed class HandleDeathAction : CombatEntityAction
+    [Name("Battle/Actions/HandleDeath")]
+    public sealed class HandleDeathAction : EntityMonoBehaviourAction
     {
-        private BattleLifeData _life;
         private readonly CompositeDisposable _subscriptions = new CompositeDisposable();
 
         protected override void OnEnable()
         {
-            _life = Get<BattleLifeData>();
             _subscriptions.Clear();
-            _life.IsDeadReactive
-                .Subscribe(HandleIsDeadChanged)
+
+            var life = Entity.GetData<BattleLifeData>();
+            life.IsDeadReactive
+                .Where(isDead => isDead)
+                .Subscribe(_ => HandleDeath())
                 .AddTo(_subscriptions);
         }
 
         protected override void OnDisable()
         {
             _subscriptions.Clear();
-            _life = null;
         }
 
-        private void HandleIsDeadChanged(bool isDead)
+        private void HandleDeath()
         {
-            if (!isDead)
-            {
-                return;
-            }
-
-            var stateAction = GetStateAction();
+            var stateAction = Entity.GetAction<BattleWorldStateAction>();
             if (!stateAction.IsRunning)
             {
                 return;
             }
 
-            stateAction.HandleEntityDeath(Self);
+            var battleEntity = (BattleEntity)Entity.SetupData[0];
+            stateAction.HandleEntityDeath(battleEntity);
         }
     }
 }

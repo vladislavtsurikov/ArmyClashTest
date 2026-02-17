@@ -1,6 +1,5 @@
 using System;
 using ArmyClash.Battle.Data;
-using ArmyClash.UIToolkit.Data;
 using UnityEngine;
 using UnityEngine.UIElements;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
@@ -35,7 +34,11 @@ namespace ArmyClash.Battle
             {
                 typeof(BattleWorldRosterAction),
                 typeof(BattleWorldStateAction),
-                typeof(BattleWorldSpawnAction)
+                typeof(BattleWorldSpawnAction),
+                typeof(BattleWorldUiSyncAction),
+                typeof(BattleWorldInputAction),
+                typeof(BattleWorldAutoRandomizeAction),
+                typeof(BattleWorldSpeedProxySyncAction)
             };
         }
     }

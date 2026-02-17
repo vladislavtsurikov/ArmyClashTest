@@ -16,7 +16,8 @@
         "VladislavTsurikov.MegaWorld",
         "ArmyClash.UIToolkit",
         "UnityEngine.UIElements",
-        "VladislavTsurikov.ComponentStack"
+        "VladislavTsurikov.ComponentStack",
+        "VladislavTsurikov.StateMachine"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

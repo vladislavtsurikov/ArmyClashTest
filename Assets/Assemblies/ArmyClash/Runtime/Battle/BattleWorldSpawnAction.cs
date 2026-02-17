@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using ArmyClash.Battle.Data;
 using Cysharp.Threading.Tasks;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group;
 using VladislavTsurikov.MegaWorld.Runtime.GridSpawner;
-using ArmyClash.UIToolkit.Actions;
 using ArmyClash.UIToolkit.Data;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject;
 
@@ -18,26 +18,19 @@ namespace ArmyClash.Battle
         private BattleWorldEntity World => Host as BattleWorldEntity;
         private BattleWorldRosterAction Roster => Entity?.GetAction<BattleWorldRosterAction>();
         private BattleWorldStateAction State => Entity?.GetAction<BattleWorldStateAction>();
+        private BattleWorldUiSyncAction UiSync => Entity?.GetAction<BattleWorldUiSyncAction>();
 
         protected override void OnEnable()
         {
-            BattleWorldSignals.RandomizeRequested += RandomizeArmies;
-
-            var settings = Get<Battle.Data.BattleWorldAutoRandomizeData>();
-            if (settings != null && settings.AutoRandomizeOnAwake)
-            {
-                RandomizeArmies();
-            }
         }
 
         protected override void OnDisable()
         {
-            BattleWorldSignals.RandomizeRequested -= RandomizeArmies;
         }
 
         public void RandomizeArmies()
         {
-            State?.SetSimulationState(SimulationState.Idle);
+            UiSync?.SetSimulationState(SimulationState.Idle);
 
             _spawnTokenSource?.Cancel();
             _spawnTokenSource = new CancellationTokenSource();
@@ -55,7 +48,7 @@ namespace ArmyClash.Battle
 
                 if (World == null || World.SpawnerPair == null || World.SpawnerPair.Left == null || World.SpawnerPair.Right == null)
                 {
-                    State?.UpdateArmyCountUi();
+                    UiSync?.UpdateArmyCountUI();
                     return;
                 }
 
@@ -64,19 +57,23 @@ namespace ArmyClash.Battle
 
                 for (int i = 0; i < left.Count; i++)
                 {
-                    Roster?.RegisterEntity(left[i]);
+                    var entity = left[i];
+                    SetTeamId(entity, 0);
+                    Roster?.RegisterEntity(entity);
                 }
 
                 for (int i = 0; i < right.Count; i++)
                 {
-                    Roster?.RegisterEntity(right[i]);
+                    var entity = right[i];
+                    SetTeamId(entity, 1);
+                    Roster?.RegisterEntity(entity);
                 }
 
-                State?.UpdateArmyCountUi();
+                UiSync?.UpdateArmyCountUI();
             }
             catch (OperationCanceledException)
             {
-                State?.UpdateArmyCountUi();
+                UiSync?.UpdateArmyCountUI();
             }
         }
 
@@ -124,6 +121,22 @@ namespace ArmyClash.Battle
             }
 
             return entities;
+        }
+
+        private static void SetTeamId(BattleEntity entity, int teamId)
+        {
+            if (entity == null)
+            {
+                return;
+            }
+
+            var team = entity.GetData<BattleTeamData>();
+            if (team == null)
+            {
+                return;
+            }
+
+            team.TeamId = teamId;
         }
 
         private void ClearSpawnedObjects()

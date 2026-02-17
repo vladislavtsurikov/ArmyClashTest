@@ -5,7 +5,7 @@ using VladislavTsurikov.ReflectionUtility;
 
 namespace ArmyClash.Battle.Data
 {
-    [Name("Battle/TargetData")]
+    [Name("Battle/Data/Target")]
     public sealed class TargetData : ComponentData
     {
         [OdinSerialize]
@@ -13,10 +13,10 @@ namespace ArmyClash.Battle.Data
 
         public BattleEntity Target
         {
-            get => _target.Value;
+            get => EnsureTarget().Value;
             set
             {
-                if (_target.Value == value)
+                if (EnsureTarget().Value == value)
                 {
                     return;
                 }
@@ -26,6 +26,16 @@ namespace ArmyClash.Battle.Data
             }
         }
 
-        public IReadOnlyReactiveProperty<BattleEntity> TargetReactive => _target;
+        public IReadOnlyReactiveProperty<BattleEntity> TargetReactive => EnsureTarget();
+
+        private ReactiveProperty<BattleEntity> EnsureTarget()
+        {
+            if (_target == null)
+            {
+                _target = new ReactiveProperty<BattleEntity>();
+            }
+
+            return _target;
+        }
     }
 }
