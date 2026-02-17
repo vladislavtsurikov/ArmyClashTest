@@ -10,12 +10,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             get
             {
                 EntityActionCollection collection = Stack as EntityActionCollection;
-                if (collection == null)
-                {
-                    return null;
-                }
-
-                return collection.Entity;
+                return collection?.Entity;
             }
         }
 
