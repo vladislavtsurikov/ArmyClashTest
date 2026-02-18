@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using VladislavTsurikov.AttributeUtility.Runtime;
-using VladislavTsurikov.Nody.Runtime.AdvancedNodeStack;
 using VladislavTsurikov.Nody.Runtime.Core;
 
 namespace VladislavTsurikov.Nody.Editor.Core

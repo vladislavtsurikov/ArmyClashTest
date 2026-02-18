@@ -131,6 +131,7 @@ namespace VladislavTsurikov.Nody.Runtime.Core
             {
                 if (!IsSetup)
                 {
+                    NodeInjectionUtility.Inject(this, setupData);
                     OnFirstSetupComponent(setupData);
                 }
 
