@@ -1,4 +1,5 @@
 using ArmyClash.Battle.Data;
+using ArmyClash.Battle.Services;
 using ArmyClash.Battle.States;
 using UnityEngine;
 using UniRx;
@@ -6,13 +7,17 @@ using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats;
 using VladislavTsurikov.ReflectionUtility;
 using VladislavTsurikov.StateMachine.Runtime.Data;
+using Zenject;
 
 namespace ArmyClash.Battle.Actions
 {
-    [RequiresData(typeof(StatsEntityData), typeof(BattleStatIdsData), typeof(BattleLifeData), typeof(StateMachineData))]
+    [RequiresData(typeof(StatsEntityData), typeof(StatIdsData), typeof(LifeData), typeof(StateMachineData))]
     [Name("Battle/Actions/RegenHealth")]
     public sealed class RegenHealthAction : EntityMonoBehaviourAction
     {
+        [Inject]
+        private BattleStateService _state;
+
         private readonly CompositeDisposable _subscriptions = new CompositeDisposable();
         private bool _canRegen;
 
@@ -28,17 +33,20 @@ namespace ArmyClash.Battle.Actions
             }
 
             var stateMachine = entity.GetData<StateMachineData>();
-            var worldState = entity.GetAction<BattleWorldStateAction>();
-            var life = entity.GetData<BattleLifeData>();
-            if (stateMachine == null || worldState == null || life == null)
+            var life = entity.GetData<LifeData>();
+            if (stateMachine == null || life == null)
             {
                 return;
             }
 
-            worldState.IsRunningReactive
+            _state.SimulationStateReactive
                 .CombineLatest(stateMachine.CurrentStateReactive, life.IsDeadReactive,
-                    (running, state, isDead) =>
-                        running && !isDead && state != null && state is not BattlePausedState && state is not BattleDeadState)
+                    (simState, state, isDead) =>
+                        simState == SimulationState.Running &&
+                        !isDead &&
+                        state != null &&
+                        state is not IdleState &&
+                        state is not DeadState)
                 .Subscribe(canRegen => _canRegen = canRegen)
                 .AddTo(_subscriptions);
         }
@@ -63,7 +71,7 @@ namespace ArmyClash.Battle.Actions
             }
 
             var stats = entity.GetData<StatsEntityData>();
-            var ids = entity.GetData<BattleStatIdsData>();
+            var ids = entity.GetData<StatIdsData>();
             if (stats == null || ids == null)
             {
                 return;
@@ -79,10 +87,7 @@ namespace ArmyClash.Battle.Actions
                 return;
             }
 
-            if (!string.IsNullOrEmpty(ids.HealthId))
-            {
-                stats.AddStatValueById(ids.HealthId, regen * Time.deltaTime);
-            }
+            stats.AddStatValueById(ids.HealthId, regen * Time.deltaTime);
         }
     }
 }

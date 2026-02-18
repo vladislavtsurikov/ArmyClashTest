@@ -1,21 +1,26 @@
 using ArmyClash.Battle.Data;
+using ArmyClash.Battle.Services;
 using UniRx;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.ReflectionUtility;
+using Zenject;
 
 namespace ArmyClash.Battle.Actions
 {
-    [RequiresData(typeof(BattleLifeData))]
+    [RequiresData(typeof(LifeData))]
     [Name("Battle/Actions/HandleDeath")]
     public sealed class HandleDeathAction : EntityMonoBehaviourAction
     {
+        [Inject]
+        private BattleStateService _state;
+
         private readonly CompositeDisposable _subscriptions = new CompositeDisposable();
 
         protected override void OnEnable()
         {
             _subscriptions.Clear();
 
-            var life = Entity.GetData<BattleLifeData>();
+            var life = Entity.GetData<LifeData>();
             life.IsDeadReactive
                 .Where(isDead => isDead)
                 .Subscribe(_ => HandleDeath())
@@ -29,14 +34,14 @@ namespace ArmyClash.Battle.Actions
 
         private void HandleDeath()
         {
-            var stateAction = Entity.GetAction<BattleWorldStateAction>();
-            if (!stateAction.IsRunning)
+            if (_state.SimulationState != SimulationState.Running)
             {
                 return;
             }
 
-            var battleEntity = (BattleEntity)Entity.SetupData[0];
-            stateAction.HandleEntityDeath(battleEntity);
+            UnityEngine.Object.Destroy(Host.gameObject);
+
+            _state.UnregisterEntity(Host);
         }
     }
 }
