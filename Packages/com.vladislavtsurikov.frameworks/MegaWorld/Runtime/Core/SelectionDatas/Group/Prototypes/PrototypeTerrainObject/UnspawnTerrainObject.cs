@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 #if RENDERER_STACK
 using VladislavTsurikov.RendererStack.Runtime.TerrainObjectRenderer;
 using VladislavTsurikov.UnityUtility.Runtime;

@@ -2,12 +2,10 @@
 using UnityEngine;
 using VladislavTsurikov.ColliderSystem.Runtime;
 using VladislavTsurikov.MegaWorld.Runtime.Common.Area;
-using VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter;
 using VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter.Settings;
 using VladislavTsurikov.MegaWorld.Runtime.Common.Stamper;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject;
-using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeTerrainObject;
 using VladislavTsurikov.PhysicsSimulator.Runtime;
 using VladislavTsurikov.UnityUtility.Runtime;
 

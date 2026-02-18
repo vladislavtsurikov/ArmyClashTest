@@ -1,5 +1,4 @@
 ﻿#if UNITY_EDITOR
-using VladislavTsurikov.Nody.Editor.Core;
 using VladislavTsurikov.Nody.Runtime.Core;
 using VladislavTsurikov.Core.Editor;
 using VladislavTsurikov.IMGUIUtility.Editor.ElementStack;

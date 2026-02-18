@@ -1,5 +1,4 @@
 ﻿using System;
-using Cysharp.Threading.Tasks;
 using OdinSerializer;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas;
 using VladislavTsurikov.Nody.Runtime.Core;

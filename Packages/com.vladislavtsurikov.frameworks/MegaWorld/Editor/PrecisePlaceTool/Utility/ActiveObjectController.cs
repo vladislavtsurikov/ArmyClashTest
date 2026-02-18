@@ -11,9 +11,6 @@ using VladislavTsurikov.Undo.Editor.GameObject;
 #if RENDERER_STACK
 using VladislavTsurikov.Undo.Editor.TerrainObjectRenderer;
 #endif
-using PrototypeTerrainObject =
-    VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeTerrainObject.
-    PrototypeTerrainObject;
 
 namespace VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool
 {

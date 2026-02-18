@@ -1,5 +1,4 @@
 using UnityEngine.UIElements;
-using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.Nody.Runtime.Core;
 
 namespace VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration

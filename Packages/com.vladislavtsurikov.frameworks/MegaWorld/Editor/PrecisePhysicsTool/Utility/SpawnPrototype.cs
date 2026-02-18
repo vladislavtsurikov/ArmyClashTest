@@ -1,15 +1,10 @@
 #if UNITY_EDITOR
-using System.Collections.Generic;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 using VladislavTsurikov.ColliderSystem.Runtime;
-using VladislavTsurikov.Math.Runtime;
-using VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter;
 using VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter.Settings;
 using VladislavTsurikov.MegaWorld.Runtime.Core.GlobalSettings.ElementsSystem;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject;
-using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeTerrainObject;
 using VladislavTsurikov.PhysicsSimulator.Runtime;
 #if RENDERER_STACK
 using VladislavTsurikov.RendererStack.Runtime.TerrainObjectRenderer.ScriptingSystem;

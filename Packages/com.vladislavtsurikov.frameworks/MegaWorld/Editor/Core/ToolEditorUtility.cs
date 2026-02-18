@@ -3,7 +3,6 @@ using UnityEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using VladislavTsurikov.IMGUIUtility.Editor;
 using VladislavTsurikov.MegaWorld.Runtime.Core;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas;
 

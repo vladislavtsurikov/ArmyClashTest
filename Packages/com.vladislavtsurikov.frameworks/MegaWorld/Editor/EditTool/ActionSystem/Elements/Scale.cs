@@ -4,7 +4,6 @@ using UnityEngine;
 using VladislavTsurikov.EditorShortcutCombo.Editor;
 using VladislavTsurikov.MegaWorld.Runtime.Common;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject;
-using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeTerrainObject;
 using VladislavTsurikov.ReflectionUtility;
 #if RENDERER_STACK
 using VladislavTsurikov.RendererStack.Runtime.TerrainObjectRenderer.Data;

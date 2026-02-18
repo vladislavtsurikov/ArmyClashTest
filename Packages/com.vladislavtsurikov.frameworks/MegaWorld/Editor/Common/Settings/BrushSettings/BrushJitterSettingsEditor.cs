@@ -2,7 +2,6 @@
 using UnityEditor;
 using System;
 using UnityEngine;
-using VladislavTsurikov.IMGUIUtility.Editor;
 using VladislavTsurikov.MegaWorld.Editor.Core.Window;
 using VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings;
 using VladislavTsurikov.MegaWorld.Runtime.Core.PreferencesSystem;

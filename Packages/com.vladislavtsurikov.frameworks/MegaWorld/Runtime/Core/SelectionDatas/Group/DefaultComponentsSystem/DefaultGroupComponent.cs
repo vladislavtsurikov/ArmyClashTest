@@ -1,4 +1,3 @@
-using Cysharp.Threading.Tasks;
 using VladislavTsurikov.Nody.Runtime.Core;
 
 namespace VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.DefaultComponentsSystem

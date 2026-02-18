@@ -37,6 +37,5 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 
             return Host.GetComponentsInChildren<TComponent>(includeInactive);
         }
-
     }
 }

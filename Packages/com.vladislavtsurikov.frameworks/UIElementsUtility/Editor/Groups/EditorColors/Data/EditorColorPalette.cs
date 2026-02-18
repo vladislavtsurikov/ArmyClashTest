@@ -3,7 +3,6 @@ using System.Linq;
 using UnityEngine;
 using VladislavTsurikov.ColorUtility.Runtime;
 using VladislavTsurikov.UIElementsUtility.Runtime.Core;
-using VladislavTsurikov.Utility.Runtime;
 using VladislavTsurikov.Utility.Runtime.Extensions;
 
 namespace VladislavTsurikov.UIElementsUtility.Editor.Groups.EditorColors

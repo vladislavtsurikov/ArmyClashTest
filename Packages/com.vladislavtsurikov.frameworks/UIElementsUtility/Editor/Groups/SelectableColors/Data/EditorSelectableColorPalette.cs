@@ -4,7 +4,6 @@ using UnityEngine;
 using VladislavTsurikov.ColorUtility.Runtime;
 using VladislavTsurikov.UIElementsUtility.Editor.Groups.EditorColors;
 using VladislavTsurikov.UIElementsUtility.Runtime.Core;
-using VladislavTsurikov.Utility.Runtime;
 using VladislavTsurikov.Utility.Runtime.Extensions;
 
 namespace VladislavTsurikov.UIElementsUtility.Editor.Groups.SelectableColors

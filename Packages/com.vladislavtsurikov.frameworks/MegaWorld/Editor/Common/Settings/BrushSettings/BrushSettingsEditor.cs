@@ -2,7 +2,6 @@
 using UnityEditor;
 using System;
 using UnityEngine;
-using VladislavTsurikov.Nody.Editor.Core;
 using VladislavTsurikov.Core.Editor;
 using VladislavTsurikov.IMGUIUtility.Editor;
 using VladislavTsurikov.IMGUIUtility.Editor.ElementStack;

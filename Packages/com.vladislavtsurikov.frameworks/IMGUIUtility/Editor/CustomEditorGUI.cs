@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using VladislavTsurikov.ColorUtility.Runtime;
-using Object = UnityEngine.Object;
 
 namespace VladislavTsurikov.IMGUIUtility.Editor
 {

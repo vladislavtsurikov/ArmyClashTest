@@ -3,9 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using VladislavTsurikov.Core.Editor;
 using VladislavTsurikov.CustomInspector.Editor.IMGUI;
-using VladislavTsurikov.EntityDataAction.Editor;
 using VladislavTsurikov.EntityDataAction.Editor.Core;
-using VladislavTsurikov.EntityDataAction.Runtime;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.EntityDataAction.Shared.Runtime.Style;
 

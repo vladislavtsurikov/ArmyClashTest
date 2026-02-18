@@ -22,7 +22,6 @@ using VladislavTsurikov.Undo.Editor.TerrainObjectRenderer;
 using VladislavTsurikov.UnityUtility.Editor;
 using VladislavTsurikov.UnityUtility.Runtime;
 using DrawHandles = VladislavTsurikov.MegaWorld.Runtime.Common.Utility.Repaint.DrawHandles;
-using Instance = VladislavTsurikov.UnityUtility.Runtime.Instance;
 using PrototypeTerrainObject =
     VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeTerrainObject.
     PrototypeTerrainObject;

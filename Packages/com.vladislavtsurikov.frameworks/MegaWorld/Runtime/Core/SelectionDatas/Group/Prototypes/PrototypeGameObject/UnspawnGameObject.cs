@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using VladislavTsurikov.GameObjectCollider.Editor;
 #if RENDERER_STACK
 using VladislavTsurikov.RendererStack.Editor.Sectorize.GameObjectColliderIntegration;
 #endif

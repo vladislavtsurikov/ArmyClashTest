@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using VladislavTsurikov.UnityUtility.Runtime;
-using VladislavTsurikov.Utility.Runtime;
 using VladislavTsurikov.Utility.Runtime.Extensions;
 
 namespace VladislavTsurikov.MegaWorld.Runtime.Common.Area

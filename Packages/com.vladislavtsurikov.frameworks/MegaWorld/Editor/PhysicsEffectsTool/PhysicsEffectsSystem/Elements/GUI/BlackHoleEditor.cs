@@ -1,9 +1,7 @@
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
-using VladislavTsurikov.Nody.Editor.Core;
 using VladislavTsurikov.Core.Editor;
-using VladislavTsurikov.IMGUIUtility.Editor;
 
 namespace VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsSystem.GUI
 {

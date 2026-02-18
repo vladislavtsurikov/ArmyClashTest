@@ -3,7 +3,6 @@ using System.Linq;
 using UnityEngine;
 using VladislavTsurikov.UIElementsUtility.Editor.Groups.Textures;
 using VladislavTsurikov.UIElementsUtility.Runtime.Core;
-using VladislavTsurikov.Utility.Runtime;
 using VladislavTsurikov.Utility.Runtime.Extensions;
 #if UNITY_EDITOR
 using UnityEditor;
