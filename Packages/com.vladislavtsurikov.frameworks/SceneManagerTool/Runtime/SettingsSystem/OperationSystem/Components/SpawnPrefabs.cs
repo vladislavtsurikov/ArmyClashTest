@@ -1,23 +1,32 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using VladislavTsurikov.ReflectionUtility;
+using Action = VladislavTsurikov.ActionFlow.Runtime.Actions.Action;
 
 namespace VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.OperationSystem
 {
     [Name("Spawn Prefabs")]
     [AfterLoadSceneComponent]
-    public class SpawnPrefabs : Operation
+    public class SpawnPrefabs : Action
     {
         public List<GameObject> GameObjects = new();
 
-        public override async UniTask DoOperation()
+        protected override async UniTask<bool> Run(CancellationToken token)
         {
             foreach (GameObject gameObject in GameObjects)
             {
+                if (token.IsCancellationRequested)
+                {
+                    return false;
+                }
+
                 Object.Instantiate(gameObject);
             }
+
             await UniTask.CompletedTask;
+            return true;
         }
     }
 }

@@ -1,36 +1,18 @@
-﻿using System.Collections.Generic;
+using System.Threading;
 using Cysharp.Threading.Tasks;
-using VladislavTsurikov.Nody.Runtime.AdvancedNodeStack;
+using VladislavTsurikov.ActionFlow.Runtime;
 using VladislavTsurikov.ReflectionUtility;
-using VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.OperationSystem;
-using VladislavTsurikov.SceneUtility.Runtime;
 
 namespace VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem
 {
     [Name("Before Unload")]
     public class BeforeUnloadOperationsSettings : SettingsComponent
     {
-        public NodeStackSupportSameType<Operation> OperationStack = new();
+        public ActionCollection OperationStack = new();
 
-        public async UniTask DoOperations()
+        public async UniTask DoOperations(CancellationToken token = default)
         {
-            foreach (Operation sceneOperation in OperationStack.ElementList)
-            {
-                await sceneOperation.DoOperation();
-            }
-        }
-
-        public override List<SceneReference> GetSceneReferences()
-        {
-            var sceneReferences =
-                new List<SceneReference>();
-
-            foreach (Operation operation in OperationStack.ElementList)
-            {
-                sceneReferences.AddRange(operation.GetSceneReferences());
-            }
-
-            return sceneReferences;
+            await OperationStack.Run(token);
         }
     }
 }

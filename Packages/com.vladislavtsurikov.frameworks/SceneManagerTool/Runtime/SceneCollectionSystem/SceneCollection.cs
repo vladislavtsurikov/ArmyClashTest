@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using OdinSerializer;
 using VladislavTsurikov.Nody.Runtime.AdvancedNodeStack;
@@ -74,14 +75,16 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.SceneCollectionSystem
             _name = "Scene Collection";
         }
 
-        public async UniTask Load()
+        public async UniTask Load(CancellationToken token = default)
         {
+            token.ThrowIfCancellationRequested();
+
             SceneCollection pastSceneCollection = Current;
 
             if (Current != null)
             {
-                await FadeTransition.LoadFadeIfNecessary(Current.SettingsStack);
-                await Current.Unload(this);
+                await FadeTransition.LoadFadeIfNecessary(Current.SettingsStack, token);
+                await Current.Unload(this, token);
             }
 
             if (this == Current)
@@ -91,43 +94,46 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.SceneCollectionSystem
 
             Current = this;
 
-            await ProgressBar.LoadProgressBarIfNecessary(SettingsStack);
+            await ProgressBar.LoadProgressBarIfNecessary(SettingsStack, token);
 
             var beforeLoadOperationsSettings =
                 (BeforeLoadOperationsSettings)SettingsStack.GetElement(typeof(BeforeLoadOperationsSettings));
 
             if (beforeLoadOperationsSettings != null)
             {
-                await beforeLoadOperationsSettings.DoOperations();
+                await beforeLoadOperationsSettings.DoOperations(token);
             }
 
-            await ActiveScene.LoadActiveSceneIfNecessary(SettingsStack);
+            await ActiveScene.LoadActiveSceneIfNecessary(SettingsStack, token);
 
             foreach (SceneType sceneComponent in SceneTypeComponentStack.ElementList)
             {
-                await sceneComponent.LoadInternal();
+                token.ThrowIfCancellationRequested();
+                await sceneComponent.LoadInternal(false, token);
             }
 
-            await UniTask.WaitWhile(() => LoadingProgress != 1);
+            await UniTask.WaitWhile(() => LoadingProgress != 1, cancellationToken: token);
 
             var afterLoadOperationsSettings =
                 (AfterLoadOperationsSettings)SettingsStack.GetElement(typeof(AfterLoadOperationsSettings));
 
             if (afterLoadOperationsSettings != null)
             {
-                await afterLoadOperationsSettings.DoOperations();
+                await afterLoadOperationsSettings.DoOperations(token);
             }
 
-            await ProgressBar.UnloadProgressBarIfNecessary(SettingsStack);
+            await ProgressBar.UnloadProgressBarIfNecessary(SettingsStack, token);
 
             if (pastSceneCollection != null)
             {
-                await FadeTransition.UnloadFadeIfNecessary(pastSceneCollection.SettingsStack);
+                await FadeTransition.UnloadFadeIfNecessary(pastSceneCollection.SettingsStack, token);
             }
         }
 
-        public async UniTask Unload(SceneCollection nextLoadSceneCollection)
+        public async UniTask Unload(SceneCollection nextLoadSceneCollection, CancellationToken token = default)
         {
+            token.ThrowIfCancellationRequested();
+
             Current = null;
 
             var beforeUnloadOperationsSettings =
@@ -135,22 +141,23 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.SceneCollectionSystem
 
             if (beforeUnloadOperationsSettings != null)
             {
-                await beforeUnloadOperationsSettings.DoOperations();
+                await beforeUnloadOperationsSettings.DoOperations(token);
             }
 
             foreach (SceneType sceneComponent in SceneTypeComponentStack.ElementList)
             {
-                await sceneComponent.UnloadInternal(nextLoadSceneCollection);
+                token.ThrowIfCancellationRequested();
+                await sceneComponent.UnloadInternal(nextLoadSceneCollection, false, token);
             }
 
-            await ActiveScene.UnloadActiveSceneIfNecessary(SettingsStack);
+            await ActiveScene.UnloadActiveSceneIfNecessary(SettingsStack, token);
 
             var afterUnloadOperationsSettings =
                 (AfterUnloadOperationsSettings)SettingsStack.GetElement(typeof(AfterUnloadOperationsSettings));
 
             if (afterUnloadOperationsSettings != null)
             {
-                await afterUnloadOperationsSettings.DoOperations();
+                await afterUnloadOperationsSettings.DoOperations(token);
             }
         }
 

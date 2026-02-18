@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using VladislavTsurikov.Nody.Runtime.AdvancedNodeStack;
 using VladislavTsurikov.Nody.Runtime.Core;
@@ -33,8 +34,10 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.SceneTypeSystem
             SettingsStack.Setup();
         }
 
-        internal async UniTask LoadInternal(bool force = false)
+        internal async UniTask LoadInternal(bool force = false, CancellationToken token = default)
         {
+            token.ThrowIfCancellationRequested();
+
             var sceneBehavior = (SceneBehavior)SettingsStack.GetElement(typeof(SceneBehavior));
 
             if (!force && sceneBehavior is { SceneOpenBehavior: SceneOpenBehavior.DoNotOpen })
@@ -47,22 +50,27 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.SceneTypeSystem
 
             if (beforeLoadOperationsSettings != null)
             {
-                await beforeLoadOperationsSettings.DoOperations();
+                await beforeLoadOperationsSettings.DoOperations(token);
             }
 
-            await Load();
+            await Load(token);
 
             var afterLoadOperationsSettings =
                 (AfterLoadOperationsSettings)SettingsStack.GetElement(typeof(AfterLoadOperationsSettings));
 
             if (afterLoadOperationsSettings != null)
             {
-                await afterLoadOperationsSettings.DoOperations();
+                await afterLoadOperationsSettings.DoOperations(token);
             }
         }
 
-        internal async UniTask UnloadInternal(SceneCollection nextLoadSceneCollection = null, bool force = false)
+        internal async UniTask UnloadInternal(
+            SceneCollection nextLoadSceneCollection = null,
+            bool force = false,
+            CancellationToken token = default)
         {
+            token.ThrowIfCancellationRequested();
+
             var sceneBehavior = (SceneBehavior)SettingsStack.GetElement(typeof(SceneBehavior));
 
             if (!force && sceneBehavior is { SceneCloseBehavior: SceneCloseBehavior.KeepOpenAlways })
@@ -75,14 +83,19 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.SceneTypeSystem
 
             if (beforeUnloadOperationsSettings != null)
             {
-                await beforeUnloadOperationsSettings.DoOperations();
+                await beforeUnloadOperationsSettings.DoOperations(token);
             }
 
-            await Unload(nextLoadSceneCollection);
+            await Unload(nextLoadSceneCollection, token);
         }
 
-        internal async UniTask UnloadSceneReference(SceneCollection nextLoadSceneCollection, SceneReference scene)
+        internal async UniTask UnloadSceneReference(
+            SceneCollection nextLoadSceneCollection,
+            SceneReference scene,
+            CancellationToken token = default)
         {
+            token.ThrowIfCancellationRequested();
+
             if (nextLoadSceneCollection == null)
             {
                 await scene.UnloadScene();
@@ -107,8 +120,8 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.SceneTypeSystem
             return sceneReferences;
         }
 
-        protected abstract UniTask Load();
-        protected abstract UniTask Unload(SceneCollection nextLoadSceneCollection);
+        protected abstract UniTask Load(CancellationToken token);
+        protected abstract UniTask Unload(SceneCollection nextLoadSceneCollection, CancellationToken token);
         public abstract bool HasScene(SceneReference sceneReference);
         protected abstract List<SceneReference> GetSceneReferences();
         public abstract float LoadingProgress();

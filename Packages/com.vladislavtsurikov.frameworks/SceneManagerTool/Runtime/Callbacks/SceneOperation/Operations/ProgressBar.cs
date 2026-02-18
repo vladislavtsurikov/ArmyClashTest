@@ -1,3 +1,4 @@
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,11 +36,12 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.Callbacks.SceneOperation
             }
         }
 
-        public override async UniTask OnLoad()
+        public override async UniTask OnLoad(CancellationToken token)
         {
+            token.ThrowIfCancellationRequested();
             Image.color = BackgroundColor;
 
-            await UniTask.Yield();
+            await UniTask.Yield(PlayerLoopTiming.Update, token);
 
             if (_progressBar.DisableFade)
             {
@@ -49,8 +51,10 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.Callbacks.SceneOperation
             await Group.Fade(1, DurationFade);
         }
 
-        public override async UniTask OnUnload()
+        public override async UniTask OnUnload(CancellationToken token)
         {
+            token.ThrowIfCancellationRequested();
+
             if (_progressBar.DisableFade)
             {
                 return;

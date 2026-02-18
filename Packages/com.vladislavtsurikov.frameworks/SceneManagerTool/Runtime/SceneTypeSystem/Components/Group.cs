@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using VladislavTsurikov.ReflectionUtility;
 using VladislavTsurikov.SceneManagerTool.Runtime.SceneCollectionSystem;
@@ -12,19 +13,21 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.SceneTypeSystem
     {
         public List<SceneReference> SceneReferences = new();
 
-        protected override async UniTask Load()
+        protected override async UniTask Load(CancellationToken token)
         {
             foreach (SceneReference sceneReference in SceneReferences)
             {
+                token.ThrowIfCancellationRequested();
                 await sceneReference.LoadScene();
             }
         }
 
-        protected override async UniTask Unload(SceneCollection nextLoadSceneCollection)
+        protected override async UniTask Unload(SceneCollection nextLoadSceneCollection, CancellationToken token)
         {
             foreach (SceneReference sceneReference in SceneReferences)
             {
-                await UnloadSceneReference(nextLoadSceneCollection, sceneReference);
+                token.ThrowIfCancellationRequested();
+                await UnloadSceneReference(nextLoadSceneCollection, sceneReference, token);
             }
         }
 

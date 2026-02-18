@@ -1,20 +1,22 @@
-﻿using Cysharp.Threading.Tasks;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using VladislavTsurikov.SceneManagerTool.Runtime.SceneCollectionSystem;
 
 namespace VladislavTsurikov.SceneManagerTool.Runtime.Utility
 {
     internal static class RuntimeUtility
     {
-        internal static void Start()
+        internal static void Start(CancellationToken token = default)
         {
-            Load().Forget();
+            Load(token).Forget();
 
-            static async UniTask Load()
+            static async UniTask Load(CancellationToken token)
             {
                 foreach (SceneCollection sceneCollection in SceneManagerData.Instance.Profile.BuildSceneCollectionStack
                              .ActiveBuildSceneCollection.GetStartupSceneCollections())
                 {
-                    await sceneCollection.Load();
+                    token.ThrowIfCancellationRequested();
+                    await sceneCollection.Load(token);
                 }
             }
         }

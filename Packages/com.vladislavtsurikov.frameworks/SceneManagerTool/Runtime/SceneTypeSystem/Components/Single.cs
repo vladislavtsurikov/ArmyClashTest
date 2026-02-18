@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using VladislavTsurikov.ReflectionUtility;
 using VladislavTsurikov.SceneManagerTool.Runtime.SceneCollectionSystem;
@@ -24,10 +25,17 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.SceneTypeSystem
             }
         }
 
-        protected override async UniTask Load() => await SceneReference.LoadScene();
+        protected override async UniTask Load(CancellationToken token)
+        {
+            token.ThrowIfCancellationRequested();
+            await SceneReference.LoadScene();
+        }
 
-        protected override async UniTask Unload(SceneCollection nextLoadSceneCollection) =>
-            await UnloadSceneReference(nextLoadSceneCollection, SceneReference);
+        protected override async UniTask Unload(SceneCollection nextLoadSceneCollection, CancellationToken token)
+        {
+            token.ThrowIfCancellationRequested();
+            await UnloadSceneReference(nextLoadSceneCollection, SceneReference, token);
+        }
 
         public override bool HasScene(SceneReference sceneReference) =>
             SceneReference.SceneName == sceneReference.SceneName;

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using VladislavTsurikov.Nody.Runtime.AdvancedNodeStack;
 using VladislavTsurikov.ReflectionUtility;
@@ -19,24 +20,26 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem
         public SceneReference SceneReference = new();
 
         internal static async UniTask LoadFadeIfNecessary(
-            NodeStackOnlyDifferentTypes<SettingsComponent> settingsList)
+            NodeStackOnlyDifferentTypes<SettingsComponent> settingsList,
+            CancellationToken token = default)
         {
             var fadeTransition = (FadeTransition)settingsList.GetElement(typeof(FadeTransition));
 
             if (fadeTransition != null)
             {
-                await fadeTransition.LoadFadeIfNecessary();
+                await fadeTransition.LoadFadeIfNecessary(token);
             }
         }
 
         internal static async UniTask UnloadFadeIfNecessary(
-            NodeStackOnlyDifferentTypes<SettingsComponent> settingsList)
+            NodeStackOnlyDifferentTypes<SettingsComponent> settingsList,
+            CancellationToken token = default)
         {
             var fadeTransition = (FadeTransition)settingsList.GetElement(typeof(FadeTransition));
 
             if (fadeTransition != null)
             {
-                await fadeTransition.UnloadFadeIfNecessary();
+                await fadeTransition.UnloadFadeIfNecessary(token);
             }
         }
 
@@ -52,23 +55,27 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem
         }
 #endif
 
-        private async UniTask LoadFadeIfNecessary()
+        private async UniTask LoadFadeIfNecessary(CancellationToken token)
         {
+            token.ThrowIfCancellationRequested();
             await SceneReference.LoadScene();
 
             var sceneOperation =
                 (SceneOperation)GameObjectUtility.FindObjectsOfType(typeof(SceneOperation), SceneReference.Scene)[0];
 
-            await sceneOperation.OnLoad();
+            await sceneOperation.OnLoad(token);
         }
 
-        private async UniTask UnloadFadeIfNecessary()
+        private async UniTask UnloadFadeIfNecessary(CancellationToken token)
         {
+            token.ThrowIfCancellationRequested();
+
             var sceneOperation =
                 (SceneOperation)GameObjectUtility.FindObjectsOfType(typeof(SceneOperation), SceneReference.Scene)[0];
 
-            await sceneOperation.OnUnload();
+            await sceneOperation.OnUnload(token);
 
+            token.ThrowIfCancellationRequested();
             await SceneReference.UnloadScene();
         }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using VladislavTsurikov.Nody.Runtime.AdvancedNodeStack;
@@ -14,35 +15,42 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem
         public SceneReference SceneReference = new();
 
         internal static async UniTask LoadActiveSceneIfNecessary(
-            NodeStackOnlyDifferentTypes<SettingsComponent> settingsList)
+            NodeStackOnlyDifferentTypes<SettingsComponent> settingsList,
+            CancellationToken token = default)
         {
             var activeScene = (ActiveScene)settingsList.GetElement(typeof(ActiveScene));
 
             if (activeScene != null)
             {
-                await activeScene.LoadScene();
+                await activeScene.LoadScene(token);
             }
         }
 
         internal static async UniTask UnloadActiveSceneIfNecessary(
-            NodeStackOnlyDifferentTypes<SettingsComponent> settingsList)
+            NodeStackOnlyDifferentTypes<SettingsComponent> settingsList,
+            CancellationToken token = default)
         {
             var activeScene = (ActiveScene)settingsList.GetElement(typeof(ActiveScene));
 
             if (activeScene != null)
             {
-                await activeScene.UnloadScene();
+                await activeScene.UnloadScene(token);
             }
         }
 
         public override List<SceneReference> GetSceneReferences() => new() { SceneReference };
 
-        private async UniTask LoadScene()
+        private async UniTask LoadScene(CancellationToken token)
         {
+            token.ThrowIfCancellationRequested();
             await SceneReference.LoadScene();
             SceneManager.SetActiveScene(SceneReference.Scene);
         }
 
-        private async UniTask UnloadScene() => await SceneReference.UnloadScene();
+        private async UniTask UnloadScene(CancellationToken token)
+        {
+            token.ThrowIfCancellationRequested();
+            await SceneReference.UnloadScene();
+        }
     }
 }

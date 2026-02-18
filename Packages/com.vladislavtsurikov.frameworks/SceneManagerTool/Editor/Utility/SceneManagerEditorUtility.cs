@@ -1,5 +1,6 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 using System;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -23,13 +24,14 @@ namespace VladislavTsurikov.SceneManagerTool.Editor
         {
             SceneManagerData.MaskAsDirty();
 
-            EnterPlaymodeAsync().Forget();
+            EnterPlaymodeAsync(CancellationToken.None).Forget();
 
-            async UniTask EnterPlaymodeAsync()
+            async UniTask EnterPlaymodeAsync(CancellationToken token)
             {
                 while (EditorApplication.isCompiling)
                 {
-                    await UniTask.Yield();
+                    token.ThrowIfCancellationRequested();
+                    await UniTask.Yield(PlayerLoopTiming.Update, token);
                 }
 
                 EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
@@ -37,7 +39,7 @@ namespace VladislavTsurikov.SceneManagerTool.Editor
                 SceneManagerData.Instance.SceneManagerEditorData.SceneSetupManager.SaveSceneSetup();
                 StartupScene.Open();
 
-                await UniTask.Delay(TimeSpan.FromSeconds(0.1f), true);
+                await UniTask.Delay(TimeSpan.FromSeconds(0.1f), true, cancellationToken: token);
 
                 EditorApplication.EnterPlaymode();
                 SceneManagerData.Instance.SceneManagerEditorData.RunAsBuildMode = true;

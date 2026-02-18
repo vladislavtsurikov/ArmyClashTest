@@ -1,25 +1,26 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 using System;
 using UnityEditor;
 using UnityEngine;
+using VladislavTsurikov.ActionFlow.Runtime;
 using VladislavTsurikov.AttributeUtility.Runtime;
 using VladislavTsurikov.IMGUIUtility.Editor.ElementStack.ReorderableList;
-using VladislavTsurikov.Nody.Runtime.AdvancedNodeStack;
 using VladislavTsurikov.ReflectionUtility;
 using VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem;
 using VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.OperationSystem;
+using Action = VladislavTsurikov.ActionFlow.Runtime.Actions.Action;
 
 namespace VladislavTsurikov.SceneManagerTool.Editor.SettingsSystem.OperationSystem
 {
-    public class SceneOperationStackEditor : ReorderableListStackEditor<Operation, ReorderableListComponentEditor>
+    public class SceneOperationStackEditor : ReorderableListStackEditor<Action, ReorderableListComponentEditor>
     {
-        private readonly NodeStackSupportSameType<Operation> _nodeStackSupportSameType;
+        private readonly ActionCollection _actionCollection;
         private readonly SettingsTypes _settingsTypes;
 
-        public SceneOperationStackEditor(SettingsTypes settingsTypes, NodeStackSupportSameType<Operation> list) :
+        public SceneOperationStackEditor(SettingsTypes settingsTypes, ActionCollection list) :
             base(new GUIContent("Actions"), list, true)
         {
-            _nodeStackSupportSameType = list;
+            _actionCollection = list;
             _settingsTypes = settingsTypes;
             CopySettings = true;
             ShowActiveToggle = false;
@@ -66,7 +67,7 @@ namespace VladislavTsurikov.SceneManagerTool.Editor.SettingsSystem.OperationSyst
                 var context = settingsType.GetAttribute<NameAttribute>().Name;
 
                 menu.AddItem(new GUIContent(context), false,
-                    () => _nodeStackSupportSameType.CreateNode(settingsType));
+                    () => _actionCollection.CreateNode(settingsType));
             }
 
             menu.ShowAsContext();
