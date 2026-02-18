@@ -76,8 +76,18 @@ namespace VladislavTsurikov.StateMachine.Runtime.Definitions
 
         protected override void SetupComponent(object[] setupData = null)
         {
-            Entity = setupData[0] as Entity;
-            _owner = setupData[0] as StateMachineData;
+            if (setupData != null)
+            {
+                if (setupData.Length > 0)
+                {
+                    Entity = setupData[0] as Entity;
+                }
+
+                if (setupData.Length > 1)
+                {
+                    _owner = setupData[1] as StateMachineData;
+                }
+            }
 
             Conditional();
         }
