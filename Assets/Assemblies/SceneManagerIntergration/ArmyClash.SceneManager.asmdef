@@ -1,0 +1,24 @@
+{
+    "name": "ArmyClash.SceneManager",
+    "rootNamespace": "ArmyClash.SceneManager",
+    "references": [
+        "Zenject",
+        "UniTask",
+        "VladislavTsurikov.SceneManagerTool",
+        "VladislavTsurikov.AddressableLoaderSystem",
+        "VladislavTsurikov.ActionFlow",
+        "VladislavTsurikov.ReflectionUtility",
+        "OdinSerializer",
+        "VladislavTsurikov.ComponentStack",
+        "VladislavTsurikov.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

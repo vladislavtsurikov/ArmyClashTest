@@ -1,0 +1,26 @@
+{
+    "name": "GridSpawner",
+    "rootNamespace": "ArmyClash.MegaWorldGrid",
+    "references": [
+        "Zenject",
+        "UniTask",
+        "ArmyClash.GridGenerator",
+        "VladislavTsurikov.MegaWorld",
+        "VladislavTsurikov.EntityDataAction",
+        "VladislavTsurikov.EntityDataAction.Shared",
+        "OdinSerializer",
+        "VladislavTsurikov.ReflectionUtility",
+        "VladislavTsurikov.ComponentStack",
+        "VladislavTsurikov.ColliderSystem",
+        "VladislavTsurikov.Utility"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
