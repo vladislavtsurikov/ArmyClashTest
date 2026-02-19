@@ -4,7 +4,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
     {
         protected void OnEnable()
         {
-            EnsureEntity();
             SetupEntityBindings();
             Entity.SetSetupData(new object[] { this });
 

@@ -18,7 +18,8 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
         {
             get
             {
-                EnsureEntity();
+                _entity ??= new Entity();
+
                 return _entity;
             }
         }
@@ -104,14 +105,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
         protected void HandleDataChanged(int index)
         {
             Entity.HandleDataChanged(index);
-        }
-
-        private void EnsureEntity()
-        {
-            if (_entity == null)
-            {
-                _entity = new Entity();
-            }
         }
 
         private void SetupEntityBindings()

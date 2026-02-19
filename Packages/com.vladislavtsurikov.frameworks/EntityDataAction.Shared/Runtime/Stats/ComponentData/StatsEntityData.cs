@@ -1,6 +1,5 @@
-using System;
+using System.Collections.Generic;
 using OdinSerializer;
-using UniRx;
 using VladislavTsurikov.Nody.Runtime.Core;
 using VladislavTsurikov.ActionFlow.Runtime.Stats;
 using VladislavTsurikov.ReflectionUtility;
@@ -11,7 +10,7 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats
     public sealed class StatsEntityData : ComponentData
     {
         [OdinSerialize] private StatCollection _collection;
-        [OdinSerialize] private System.Collections.Generic.List<RuntimeStat> _stats = new();
+        [OdinSerialize] private readonly Dictionary<string, RuntimeStat> _stats = new();
 
         public StatCollection Collection
         {
@@ -29,7 +28,7 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats
             }
         }
 
-        public System.Collections.Generic.IReadOnlyList<RuntimeStat> Stats => _stats;
+        public IReadOnlyDictionary<string, RuntimeStat> Stats => _stats;
 
         public void RebuildFromCollection()
         {
@@ -55,17 +54,13 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats
                 }
 
                 float value = GetDefaultValue(stat);
-                _stats.Add(new RuntimeStat(stat, value));
+                _stats[stat.Id] = new RuntimeStat(stat, value);
             }
         }
 
         public bool SetStatValue(Stat stat, float value)
         {
-            if (!TryGetRuntimeStat(stat, out RuntimeStat runtimeStat))
-            {
-                return false;
-            }
-
+            RuntimeStat runtimeStat = GetRuntimeStatById(stat.Id);
             float previous = runtimeStat.CurrentValue;
             runtimeStat.CurrentValue = ApplyClamp(stat, value);
             if (previous.Equals(runtimeStat.CurrentValue))
@@ -79,11 +74,7 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats
 
         public bool AddStatValue(Stat stat, float delta)
         {
-            if (!TryGetRuntimeStat(stat, out RuntimeStat runtimeStat))
-            {
-                return false;
-            }
-
+            RuntimeStat runtimeStat = GetRuntimeStatById(stat.Id);
             float previous = runtimeStat.CurrentValue;
             runtimeStat.CurrentValue = ApplyClamp(stat, runtimeStat.CurrentValue + delta);
             if (previous.Equals(runtimeStat.CurrentValue))
@@ -97,11 +88,7 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats
 
         public bool AddStatValueById(string id, float delta)
         {
-            if (!TryGetRuntimeStatById(id, out RuntimeStat runtimeStat))
-            {
-                return false;
-            }
-
+            RuntimeStat runtimeStat = GetRuntimeStatById(id);
             float previous = runtimeStat.CurrentValue;
             runtimeStat.CurrentValue = ApplyClamp(runtimeStat.Stat, runtimeStat.CurrentValue + delta);
             if (previous.Equals(runtimeStat.CurrentValue))
@@ -113,98 +100,23 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats
             return true;
         }
 
-        public bool TryGetStatValue(Stat stat, out float value)
+        public bool SetStatValueById(string id, float value)
         {
-            value = 0f;
-            if (!TryGetRuntimeStat(stat, out RuntimeStat runtimeStat))
+            RuntimeStat runtimeStat = GetRuntimeStatById(id);
+            float previous = runtimeStat.CurrentValue;
+            runtimeStat.CurrentValue = ApplyClamp(runtimeStat.Stat, value);
+            if (previous.Equals(runtimeStat.CurrentValue))
             {
                 return false;
             }
 
-            value = runtimeStat.CurrentValue;
+            MarkDirty();
             return true;
         }
 
-        public bool TryGetStatValueById(string id, out float value)
-        {
-            value = 0f;
-            if (!TryGetRuntimeStatByIdInternal(id, out RuntimeStat runtimeStat))
-            {
-                return false;
-            }
+        public float GetStatValueById(string id) => GetRuntimeStatById(id).CurrentValue;
 
-            value = runtimeStat.CurrentValue;
-            return true;
-        }
-
-        public bool TryGetRuntimeStatById(string id, out RuntimeStat runtimeStat)
-        {
-            return TryGetRuntimeStatByIdInternal(id, out runtimeStat);
-        }
-
-        public RuntimeStat GetRuntimeStatById(string id)
-        {
-            TryGetRuntimeStatByIdInternal(id, out RuntimeStat runtimeStat);
-            return runtimeStat;
-        }
-
-        public IDisposable SubscribeToStatValue(string id, Action<float> handler)
-        {
-            if (handler == null)
-            {
-                return null;
-            }
-
-            if (!TryGetRuntimeStatByIdInternal(id, out RuntimeStat runtimeStat))
-            {
-                return null;
-            }
-
-            return runtimeStat.Value.Subscribe(handler);
-        }
-
-        private bool TryGetRuntimeStat(Stat stat, out RuntimeStat runtimeStat)
-        {
-            runtimeStat = null;
-
-            if (stat == null)
-            {
-                return false;
-            }
-
-            for (int i = 0; i < _stats.Count; i++)
-            {
-                if (_stats[i].Stat == stat)
-                {
-                    runtimeStat = _stats[i];
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        private bool TryGetRuntimeStatByIdInternal(string id, out RuntimeStat runtimeStat)
-        {
-            runtimeStat = null;
-
-            if (string.IsNullOrEmpty(id))
-            {
-                return false;
-            }
-
-            for (int i = 0; i < _stats.Count; i++)
-            {
-                Stat stat = _stats[i].Stat;
-                if (stat != null && string.Equals(stat.Id, id, System.StringComparison.Ordinal))
-                {
-                    runtimeStat = _stats[i];
-                    return true;
-                }
-            }
-
-            return false;
-        }
+        public RuntimeStat GetRuntimeStatById(string id) => _stats[id];
 
         private float GetDefaultValue(Stat stat)
         {

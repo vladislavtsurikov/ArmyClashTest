@@ -27,7 +27,7 @@ namespace VladislavTsurikov.StateMachine.Runtime.Definitions
 
         protected CompositeDisposable Subscriptions => _subscriptions;
 
-        public Entity Entity { get; private set; }
+        public EntityMonoBehaviour Entity { get; private set; }
 
         public string StateId
         {
@@ -76,18 +76,8 @@ namespace VladislavTsurikov.StateMachine.Runtime.Definitions
 
         protected override void SetupComponent(object[] setupData = null)
         {
-            if (setupData != null)
-            {
-                if (setupData.Length > 0)
-                {
-                    Entity = setupData[0] as Entity;
-                }
-
-                if (setupData.Length > 1)
-                {
-                    _owner = setupData[1] as StateMachineData;
-                }
-            }
+            Entity = setupData[0] as EntityMonoBehaviour;
+            _owner = setupData[1] as StateMachineData;
 
             Conditional();
         }
@@ -112,7 +102,6 @@ namespace VladislavTsurikov.StateMachine.Runtime.Definitions
         public virtual void Enter(Entity entity) { }
         public virtual void Exit(Entity entity) { }
         public virtual void Update(Entity entity, float deltaTime) { }
-
         protected virtual void Conditional() { }
 
         protected void BindEligibility(Func<bool> predicate)

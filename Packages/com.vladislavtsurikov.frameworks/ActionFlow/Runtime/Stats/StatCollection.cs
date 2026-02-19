@@ -6,7 +6,8 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
     [CreateAssetMenu(menuName = "ActionFlow/Stats/Stat Collection", fileName = "StatCollection")]
     public sealed class StatCollection : ScriptableObject
     {
-        [SerializeField] private List<Stat> _stats = new();
+        [SerializeField]
+        private List<Stat> _stats = new();
 
         public IReadOnlyList<Stat> Stats => _stats;
 

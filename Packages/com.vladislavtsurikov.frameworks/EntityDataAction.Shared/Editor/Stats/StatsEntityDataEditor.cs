@@ -46,9 +46,8 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Editor.Stats
             }
 
             float rowHeight = EditorGUIUtility.singleLineHeight + 8f;
-            for (int i = 0; i < stats.Count; i++)
+            foreach (var stat in stats.Values)
             {
-                var stat = stats[i];
                 if (stat == null || stat.Stat == null)
                 {
                     continue;
