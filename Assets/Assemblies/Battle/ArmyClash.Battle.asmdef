@@ -22,7 +22,8 @@
         "ArmyClash.GridGenerator",
         "ArmyClash.MegaWorldGrid",
         "VladislavTsurikov.MegaWorld",
-        "GridSpawner"
+        "GridSpawner",
+        "VladislavTsurikov.CustomInspector"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

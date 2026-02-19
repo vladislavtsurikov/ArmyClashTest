@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -82,15 +81,22 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
             settings.Config.CopyFrom(config);
         }
 
-        public async UniTask<List<GameObject>> SpawnAndCollect(CancellationToken token, bool displayProgressBar)
+        public async UniTask SpawnAndCollect(CancellationToken token, bool displayProgressBar)
         {
-            var instances = new List<GameObject>();
+            await SpawnAndCollect(token, displayProgressBar, null);
+        }
+
+        public async UniTask SpawnAndCollect(
+            CancellationToken token,
+            bool displayProgressBar,
+            Action<GameObject> onSpawn)
+        {
             var gridGenerator = GridGenerator;
             var slots = gridGenerator.Build(Config, transform.position, transform.right, transform.forward,
                 transform.rotation);
             if (slots.Count == 0)
             {
-                return instances;
+                return;
             }
 
             var maxTypes = Data.GroupList.Count;
@@ -106,17 +112,15 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
                 }
 #endif
 
-                var spawned = await GridSpawnUtility.SpawnGroup(token, Data.GroupList[typeIndex], gridGenerator);
-                if (spawned != null && spawned.Count > 0)
-                {
-                    instances.AddRange(spawned);
-                }
+                await GridSpawnUtility.SpawnGroup(
+                    token,
+                    Data.GroupList[typeIndex],
+                    gridGenerator,
+                    onSpawn);
 
                 completedTypes++;
                 SpawnProgress = completedTypes / (float)maxTypes;
             }
-
-            return instances;
         }
 
         private void OnDrawGizmos()

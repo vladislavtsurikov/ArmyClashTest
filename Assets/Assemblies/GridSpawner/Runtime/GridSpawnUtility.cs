@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading;
+using System;
 using Cysharp.Threading.Tasks;
 using ArmyClash.Grid;
 using ArmyClash.MegaWorldGrid.Utility.Spawn;
@@ -17,7 +18,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
     public static class GridSpawnUtility
     {
         public static async UniTask<List<GameObject>> SpawnGroup(CancellationToken token, Group group,
-            GridGenerator gridGenerator)
+            GridGenerator gridGenerator, Action<GameObject> onSpawn = null)
         {
             var instances = new List<GameObject>();
 
@@ -58,6 +59,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
                     if (instance != null)
                     {
                         instances.Add(instance);
+                        onSpawn?.Invoke(instance);
                     }
                 }
 
@@ -83,6 +85,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
                 if (instance != null)
                 {
                     instances.Add(instance);
+                    onSpawn?.Invoke(instance);
                 }
             }, token);
 

@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading;
-using ArmyClash.Battle;
 using ArmyClash.Battle.Services;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using Zenject;
 
 namespace ArmyClash.MegaWorldGrid
@@ -29,40 +29,16 @@ namespace ArmyClash.MegaWorldGrid
 
             _roster?.Clear();
 
-            (List<GameObject> leftObjects, List<GameObject> rightObjects) = await SpawnBothAsync(token);
-
-            List<BattleEntity> left = CollectBattleEntities(leftObjects);
-            List<BattleEntity> right = CollectBattleEntities(rightObjects);
-
-            for (var i = 0; i < left.Count; i++)
-            {
-                BattleEntity entity = left[i];
-                _roster?.Register(entity);
-            }
-
-            for (var i = 0; i < right.Count; i++)
-            {
-                BattleEntity entity = right[i];
-                _roster?.Register(entity);
-            }
+            await SpawnBoth(
+                token,
+                false,
+                RegisterSpawned);
         }
 
-        private static List<BattleEntity> CollectBattleEntities(List<GameObject> objects)
+        private void RegisterSpawned(GameObject go)
         {
-            var entities = new List<BattleEntity>();
-
-            for (var i = 0; i < objects.Count; i++)
-            {
-                BattleEntity battleEntity = objects[i] != null ? objects[i].GetComponent<BattleEntity>() : null;
-                if (battleEntity == null)
-                {
-                    continue;
-                }
-
-                entities.Add(battleEntity);
-            }
-
-            return entities;
+            var entity = go.GetComponent<EntityMonoBehaviour>();
+            _roster?.Register(entity);
         }
     }
 }
