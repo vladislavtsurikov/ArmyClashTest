@@ -12,4 +12,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e45335c0eb3b546891cfd683ee8aae, type: 3}
   m_Name: SPEED
   m_EditorClassIdentifier: VladislavTsurikov.ActionFlow::VladislavTsurikov.ActionFlow.Runtime.Stats.Stat
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _componentStack
+      Entry: 7
+      Data: 0|VladislavTsurikov.ActionFlow.Runtime.Stats.StatsComponentStack, VladislavTsurikov.ActionFlow
+    - Name: _elementList
+      Entry: 7
+      Data: 1|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.ComponentData,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 2|VladislavTsurikov.ActionFlow.Runtime.Stats.StatValueComponent, VladislavTsurikov.ActionFlow
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 30fab96f-d3be-4b3c-b5e7-1fef5b19f032
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _baseValue
+      Entry: 4
+      Data: 10
+    - Name: _clampEnabled
+      Entry: 5
+      Data: false
+    - Name: _maxValue
+      Entry: 4
+      Data: 0
+    - Name: _minValue
+      Entry: 4
+      Data: 0
+    - Name: _useMax
+      Entry: 5
+      Data: false
+    - Name: _useMin
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   _id: SPEED

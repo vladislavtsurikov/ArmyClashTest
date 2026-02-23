@@ -12,7 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f606c3470b2284088ebb9a30507c83, type: 3}
   m_Name: SPHERE
   m_EditorClassIdentifier: VladislavTsurikov.ActionFlow::VladislavTsurikov.ActionFlow.Runtime.Modifier.ShapeModifier
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _componentStack
+      Entry: 7
+      Data: 0|VladislavTsurikov.ActionFlow.Runtime.Modifier.ModifierComponentStack,
+        VladislavTsurikov.ActionFlow
+    - Name: _elementList
+      Entry: 7
+      Data: 1|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.ComponentData,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   _id: SPHERE
-  _displayName: Sphere
-  _statEffect: {fileID: 11400000, guid: 038172f5884705a44bc2ca6235713b99, type: 2}
   _prefab: {fileID: 0}

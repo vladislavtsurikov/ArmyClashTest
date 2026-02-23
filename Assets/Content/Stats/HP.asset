@@ -45,7 +45,7 @@ MonoBehaviour:
       Data: true
     - Name: _nodeId
       Entry: 1
-      Data: e84f10b0-71b5-41d8-82de-6c78f8c9be5b
+      Data: 0ab3bcbd-0fe5-47f7-9dab-e563212e7d47
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
