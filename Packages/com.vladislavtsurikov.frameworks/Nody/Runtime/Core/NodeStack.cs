@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using OdinSerializer;
 using OdinSerializer.Utilities;
+using UnityEngine;
 using VladislavTsurikov.AttributeUtility.Runtime;
 using VladislavTsurikov.Nody.Runtime.Core.Ports;
 using VladislavTsurikov.ReflectionUtility;
@@ -13,20 +14,32 @@ namespace VladislavTsurikov.Nody.Runtime.Core
     [Serializable]
     public abstract class NodeStack<T> where T : Node
     {
+        private ContextHierarchy _contextHierarchy = new();
+
         [OdinSerialize]
         protected ObservableList<T> _elementList = new();
+
+        [NonSerialized]
+        protected string[] _allowedGroupAttributes;
+
+        public ContextHierarchy ContextHierarchy
+        {
+            get
+            {
+                return _contextHierarchy ??= new ContextHierarchy();
+            }
+        }
 
         [NonSerialized]
         public bool IsDirty = true;
 
         public object[] SetupData { get; private set; }
 
+        public IReadOnlyList<object> ContextHierarchyData => ContextHierarchy.ContextHierarchyData;
+
         public IReadOnlyList<T> ElementList => _elementList;
 
         public bool IsSetup { get; private set; }
-
-        [NonSerialized]
-        protected string[] _allowedGroupAttributes;
 
         public string[] AllowedGroupAttributes => _allowedGroupAttributes;
 
@@ -63,6 +76,11 @@ namespace VladislavTsurikov.Nody.Runtime.Core
             }
 
             IsDirty = true;
+        }
+
+        public void BuildContextHierarchy(List<object> contextHierarchy = null)
+        {
+            ContextHierarchy.Build(this, contextHierarchy);
         }
 
         public void OnDisable()

@@ -22,11 +22,6 @@ namespace VladislavTsurikov.SceneManagerTool.Editor.SceneCollectionSystem
             var nodeStackSupportSameType = (NodeStackSupportSameType<SceneCollection>)Stack;
             nodeStackSupportSameType.CreateNode(typeof(SceneCollection));
         }
-
-        protected override void DrawHeaderElement(Rect headerRect, int index, SceneCollectionEditor componentEditor) =>
-            componentEditor.Target.SelectSettingsFoldout =
-                CustomEditorGUI.HeaderWithMenu(headerRect, componentEditor.Target.Name,
-                    componentEditor.Target.SelectSettingsFoldout, () => Menu(Stack.ElementList[index], index));
     }
 }
 #endif

@@ -3,12 +3,13 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using VladislavTsurikov.ReflectionUtility;
+using VladislavTsurikov.Nody.Runtime.Core;
 using Action = VladislavTsurikov.ActionFlow.Runtime.Actions.Action;
 
 namespace VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.OperationSystem
 {
     [Name("Spawn Prefabs")]
-    [AfterLoadSceneComponent]
+    [ParentRequired(typeof(AfterLoadOperationsSettings))]
     public class SpawnPrefabs : Action
     {
         public List<GameObject> GameObjects = new();

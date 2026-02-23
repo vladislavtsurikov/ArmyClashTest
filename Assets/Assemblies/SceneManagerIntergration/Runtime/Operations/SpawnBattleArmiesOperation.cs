@@ -3,14 +3,15 @@ using ArmyClash.MegaWorldGrid;
 using Cysharp.Threading.Tasks;
 using OdinSerializer;
 using VladislavTsurikov.ReflectionUtility;
-using VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.OperationSystem;
+using VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem;
+using VladislavTsurikov.Nody.Runtime.Core;
 using Zenject;
 using Action = VladislavTsurikov.ActionFlow.Runtime.Actions.Action;
 
 namespace ArmyClash.SceneManager
 {
     [Name("Battle/Spawn Armies")]
-    [AfterLoadSceneComponent]
+    [ParentRequired(typeof(AfterLoadOperationsSettings))]
     public sealed class SpawnBattleArmiesOperation : Action
     {
         [OdinSerialize]

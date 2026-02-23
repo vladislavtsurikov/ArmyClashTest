@@ -16,7 +16,7 @@ namespace VladislavTsurikov.SceneManagerTool.Editor.SettingsSystem
         public override void OnEnable()
         {
             _beforeLoadOperationsSettings = (BeforeLoadOperationsSettings)Target;
-            _sceneOperationStackEditor = new SceneOperationStackEditor(SettingsTypes.BeforeLoadScene,
+            _sceneOperationStackEditor = new SceneOperationStackEditor(
                 _beforeLoadOperationsSettings.OperationStack);
         }
 

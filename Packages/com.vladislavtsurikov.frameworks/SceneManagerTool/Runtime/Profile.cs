@@ -25,6 +25,7 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime
         public void Setup()
         {
             BuildSceneCollectionStack.Setup();
+            BuildSceneCollectionStack.BuildContextHierarchy();
 #if UNITY_EDITOR
             BuildSceneCollectionStackEditor = new BuildSceneCollectionStackEditor(BuildSceneCollectionStack);
 #endif

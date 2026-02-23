@@ -80,6 +80,11 @@ namespace VladislavTsurikov.IMGUIUtility.Editor.ElementStack.ReorderableList
                     continue;
                 }
 
+                if (!MatchesParentHierarchy(settingsType))
+                {
+                    continue;
+                }
+
                 var context = nameAttribute.Name;
 
                 if (!IsGroupAllowed(settingsType))
@@ -114,6 +119,48 @@ namespace VladislavTsurikov.IMGUIUtility.Editor.ElementStack.ReorderableList
             }
 
             menu.ShowAsContext();
+        }
+
+        private bool MatchesParentHierarchy(Type settingsType)
+        {
+            var parentRequired = settingsType.GetAttribute<ParentRequiredAttribute>();
+            if (parentRequired == null || parentRequired.ParentTypes == null || parentRequired.ParentTypes.Length == 0)
+            {
+                return true;
+            }
+
+            var hierarchy = Stack.ContextHierarchyData;
+            if (hierarchy == null || hierarchy.Count == 0)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < parentRequired.ParentTypes.Length; i++)
+            {
+                Type requiredType = parentRequired.ParentTypes[i];
+                if (requiredType == null)
+                {
+                    continue;
+                }
+
+                bool found = false;
+                for (int j = 0; j < hierarchy.Count; j++)
+                {
+                    object entry = hierarchy[j];
+                    if (entry != null && requiredType.IsInstanceOfType(entry))
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         protected bool IsNameAllowed(string name)

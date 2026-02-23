@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using OdinSerializer;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace VladislavTsurikov.Nody.Runtime.Core
         [HideInInspector]
         public bool SelectSettingsFoldout = true;
         private object[] _setupData;
+        private List<object> _contextHierarchy;
 
         [NonSerialized]
         [HideInInspector]
@@ -36,6 +38,8 @@ namespace VladislavTsurikov.Nody.Runtime.Core
         private bool _isDirty;
 
         public bool IsDirty => _isDirty;
+
+        protected List<object> ContextHierarchy => _contextHierarchy;
 
         void IDisableable.OnDisable()
         {
@@ -142,6 +146,11 @@ namespace VladislavTsurikov.Nody.Runtime.Core
             {
                 Debug.LogError($"[{GetType().Name}] SetupWithSetupData failed: {ex.Message}\nStackTrace: {ex.StackTrace}");
             }
+        }
+
+        internal void SetContextHierarchy(List<object> contextHierarchy)
+        {
+            _contextHierarchy = contextHierarchy;
         }
 
         internal void OnReset(Element oldElement) => OnResetElement(oldElement);

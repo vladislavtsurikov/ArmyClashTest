@@ -1,25 +1,30 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using OdinSerializer;
 using VladislavTsurikov.AddressableLoaderSystem.Runtime.Core;
 using VladislavTsurikov.Core.Runtime;
 using VladislavTsurikov.ReflectionUtility;
-using VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.OperationSystem;
+using VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem;
+using VladislavTsurikov.Nody.Runtime.Core;
 using VladislavTsurikov.SceneUtility.Runtime;
 using Zenject;
 using Action = VladislavTsurikov.ActionFlow.Runtime.Actions.Action;
+using Single = VladislavTsurikov.SceneManagerTool.Runtime.SceneTypeSystem.Single;
 
 namespace ArmyClash.SceneManager
 {
     [Name("Addressables/Load Resource Loaders")]
-    [BeforeLoadSceneComponent]
+    [ParentRequired(typeof(BeforeLoadOperationsSettings), typeof(Single))]
     public sealed class LoadResourceLoadersOperation : Action
     {
         [Inject]
         private ResourceLoaderManager _manager;
 
-        [OdinSerialize]
         private SceneReference _sceneReference = new();
+
+        protected override void SetupComponent(object[] setupData = null)
+        {
+            _sceneReference = setupData.GetContext<Single>().SceneReference;
+        }
 
         protected override async UniTask<bool> Run(CancellationToken token)
         {
