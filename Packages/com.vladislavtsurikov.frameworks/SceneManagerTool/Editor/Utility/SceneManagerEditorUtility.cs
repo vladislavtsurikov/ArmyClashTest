@@ -37,7 +37,7 @@ namespace VladislavTsurikov.SceneManagerTool.Editor
                 EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
 
                 SceneManagerData.Instance.SceneManagerEditorData.SceneSetupManager.SaveSceneSetup();
-                StartupScene.Open();
+                await StartupScene.OpenAsync();
 
                 await UniTask.Delay(TimeSpan.FromSeconds(0.1f), true, cancellationToken: token);
 

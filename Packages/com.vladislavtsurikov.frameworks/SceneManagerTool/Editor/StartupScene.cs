@@ -1,5 +1,6 @@
 ﻿#if UNITY_EDITOR
 using System;
+using Cysharp.Threading.Tasks;
 using OdinSerializer;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -29,16 +30,42 @@ namespace VladislavTsurikov.SceneManagerTool.Editor
             };
         }
 
-        public static void Open() => EditorSceneManager.OpenScene(GetStartupScenePath(), OpenSceneMode.Single);
+        public static void Open() => OpenAsync().Forget();
 
-        public static string GetStartupScenePath()
+        public static async UniTask OpenAsync()
+        {
+            string path = await GetStartupScenePathAsync();
+            if (!string.IsNullOrEmpty(path))
+            {
+                EditorSceneManager.OpenScene(path, OpenSceneMode.Single);
+            }
+        }
+
+        public static async UniTask<string> GetStartupScenePathAsync()
         {
             if (!SceneManagerData.Instance.SceneManagerEditorData.StartupScene._sceneReference.IsValid())
             {
                 SceneManagerData.Instance.SceneManagerEditorData.StartupScene.Setup();
             }
 
+            while (!SceneManagerData.Instance.SceneManagerEditorData.StartupScene._sceneReference.IsValid())
+            {
+                await UniTask.Yield(PlayerLoopTiming.Update);
+            }
+
             return SceneManagerData.Instance.SceneManagerEditorData.StartupScene._sceneReference.ScenePath;
+        }
+
+        public static bool TryGetStartupScenePath(out string path)
+        {
+            if (SceneManagerData.Instance.SceneManagerEditorData.StartupScene._sceneReference.IsValid())
+            {
+                path = SceneManagerData.Instance.SceneManagerEditorData.StartupScene._sceneReference.ScenePath;
+                return true;
+            }
+
+            path = string.Empty;
+            return false;
         }
     }
 }

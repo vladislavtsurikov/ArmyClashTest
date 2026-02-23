@@ -5,6 +5,7 @@ using VladislavTsurikov.SceneUtility.Runtime;
 using VladislavTsurikov.ScriptableObjectUtility.Runtime;
 #if UNITY_EDITOR
 using UnityEditor;
+using Cysharp.Threading.Tasks;
 using VladislavTsurikov.SceneManagerTool.Editor;
 using VladislavTsurikov.SceneUtility.Editor;
 #endif
@@ -70,11 +71,13 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime
             SceneReference.OnDeleteScene += Setup;
 
             SceneManagerEditorData.Setup();
-            ScenesInBuildUtility.Setup(GetAllScenePaths());
+            RefreshScenesInBuild();
 #endif
         }
 
 #if UNITY_EDITOR
+        public void RefreshScenesInBuild() => RefreshScenesInBuildAsync().Forget();
+
         public static void MaskAsDirty()
         {
             EditorUtility.SetDirty(Instance);
@@ -100,10 +103,37 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime
             }
 
 #if UNITY_EDITOR
-            scenePaths.Add(StartupScene.GetStartupScenePath());
+            if (StartupScene.TryGetStartupScenePath(out string path))
+            {
+                scenePaths.Add(path);
+            }
 #endif
 
             return scenePaths;
         }
+
+#if UNITY_EDITOR
+        public async UniTask<List<string>> GetAllScenePathsAsync()
+        {
+            var scenePaths = new List<string>();
+
+            foreach (SceneReference sceneReference in Profile.BuildSceneCollectionStack.GetSceneReferences())
+            {
+                if (sceneReference.IsValid())
+                {
+                    scenePaths.Add(sceneReference.ScenePath);
+                }
+            }
+
+            scenePaths.Add(await StartupScene.GetStartupScenePathAsync());
+            return scenePaths;
+        }
+
+        private async UniTask RefreshScenesInBuildAsync()
+        {
+            var paths = await GetAllScenePathsAsync();
+            ScenesInBuildUtility.Setup(paths);
+        }
+#endif
     }
 }

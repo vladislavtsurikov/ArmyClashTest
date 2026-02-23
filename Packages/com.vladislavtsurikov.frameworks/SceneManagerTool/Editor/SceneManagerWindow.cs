@@ -150,7 +150,7 @@ namespace VladislavTsurikov.SceneManagerTool.Editor
                 EditorUtility.SetDirty(SceneManagerData.Instance);
                 if (SceneManagerData.Instance.Profile != null)
                 {
-                    ScenesInBuildUtility.Setup(SceneManagerData.Instance.GetAllScenePaths());
+                    SceneManagerData.Instance.RefreshScenesInBuild();
                 }
             }
 
