@@ -16,7 +16,7 @@ namespace ArmyClash.Grid
                 return;
             }
 
-            var settings = GridGlobalSettings.Instance;
+            GridGlobalSettings settings = GridGlobalSettings.Instance;
             if (settings != null && !settings.ShowGizmos)
             {
                 return;
@@ -39,7 +39,7 @@ namespace ArmyClash.Grid
             }
 
             float size = Mathf.Max(0.05f, config.CellSize) * sizeScale;
-            var cubeSize = new Vector3(size, height, size);
+            Vector3 cubeSize = new(size, height, size);
             float lineWidth = settings != null ? settings.LinePixelWidth : 2f;
 
 #if UNITY_EDITOR
@@ -58,10 +58,10 @@ namespace ArmyClash.Grid
         {
             float halfX = size.x * 0.5f;
             float halfZ = size.z * 0.5f;
-            var p0 = new Vector3(center.x - halfX, center.y, center.z - halfZ);
-            var p1 = new Vector3(center.x + halfX, center.y, center.z - halfZ);
-            var p2 = new Vector3(center.x + halfX, center.y, center.z + halfZ);
-            var p3 = new Vector3(center.x - halfX, center.y, center.z + halfZ);
+            Vector3 p0 = new(center.x - halfX, center.y, center.z - halfZ);
+            Vector3 p1 = new(center.x + halfX, center.y, center.z - halfZ);
+            Vector3 p2 = new(center.x + halfX, center.y, center.z + halfZ);
+            Vector3 p3 = new(center.x - halfX, center.y, center.z + halfZ);
 
 #if UNITY_EDITOR
             Handles.DrawAAPolyLine(Mathf.Max(0.5f, lineWidth), p0, p1, p2, p3, p0);

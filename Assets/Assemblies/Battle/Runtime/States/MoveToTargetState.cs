@@ -1,7 +1,9 @@
+using System;
 using ArmyClash.Battle.Data;
 using ArmyClash.Battle.Services;
 using UniRx;
 using UnityEngine;
+using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats;
 using VladislavTsurikov.ReflectionUtility;
 using VladislavTsurikov.StateMachine.Runtime.Definitions;
@@ -13,6 +15,7 @@ namespace ArmyClash.Battle.States
     public sealed class MoveToTargetState : State
     {
         private const string SpeedId = "SPEED";
+
         [Inject]
         private BattleTeamRoster _roster;
 
@@ -21,7 +24,7 @@ namespace ArmyClash.Battle.States
 
         protected override void Conditional()
         {
-            var canMove =
+            IObservable<bool> canMove =
                 Observable.EveryUpdate()
                     .Select(_ => CanMove())
                     .DistinctUntilChanged();
@@ -59,8 +62,8 @@ namespace ArmyClash.Battle.States
                 return false;
             }
 
-            var battleEntity = (BattleEntity)Entity;
-            var distanceData = Entity.GetData<AttackDistanceData>();
+            BattleEntity battleEntity = (BattleEntity)Entity;
+            AttackDistanceData distanceData = Entity.GetData<AttackDistanceData>();
             float attackRange = distanceData.AttackRange;
             float stopDistance = distanceData.StopDistance;
 
@@ -69,7 +72,7 @@ namespace ArmyClash.Battle.States
 
         private void MoveStep()
         {
-            var entity = Entity;
+            EntityMonoBehaviour entity = Entity;
             if (entity == null)
             {
                 return;
@@ -78,7 +81,7 @@ namespace ArmyClash.Battle.States
             StatsEntityData stats = entity.GetData<StatsEntityData>();
             float speed = stats.GetStatValueById(SpeedId);
 
-            var distanceData = entity.GetData<AttackDistanceData>();
+            AttackDistanceData distanceData = entity.GetData<AttackDistanceData>();
             float attackRange = distanceData.AttackRange;
             float stopDistance = distanceData.StopDistance;
 
@@ -89,15 +92,15 @@ namespace ArmyClash.Battle.States
                 return;
             }
 
-            var battleEntity = (BattleEntity)Entity;
+            BattleEntity battleEntity = (BattleEntity)Entity;
             Vector3 current = battleEntity.transform.position;
             Vector3 targetPosition = target.transform.position;
             Vector3 direction = targetPosition - current;
-            var distance = direction.magnitude;
+            float distance = direction.magnitude;
 
             if (distance > Mathf.Max(0f, attackRange - stopDistance))
             {
-                var next = Vector3.MoveTowards(current, targetPosition, speed * Time.deltaTime);
+                Vector3 next = Vector3.MoveTowards(current, targetPosition, speed * Time.deltaTime);
                 battleEntity.transform.position = next;
             }
         }
@@ -107,7 +110,7 @@ namespace ArmyClash.Battle.States
         {
             Vector3 current = mover.transform.position;
             Vector3 targetPosition = target.transform.position;
-            var distance = Vector3.Distance(current, targetPosition);
+            float distance = Vector3.Distance(current, targetPosition);
             return distance > Mathf.Max(0f, attackRange - stopDistance);
         }
     }

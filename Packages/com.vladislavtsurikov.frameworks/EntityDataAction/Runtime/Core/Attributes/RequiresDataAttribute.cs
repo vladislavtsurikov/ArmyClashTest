@@ -7,9 +7,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
     {
         public readonly Type[] RequiredTypes;
 
-        public RequiresDataAttribute(params Type[] requiredTypes)
-        {
-            RequiredTypes = requiredTypes;
-        }
+        public RequiresDataAttribute(params Type[] requiredTypes) => RequiredTypes = requiredTypes;
     }
 }

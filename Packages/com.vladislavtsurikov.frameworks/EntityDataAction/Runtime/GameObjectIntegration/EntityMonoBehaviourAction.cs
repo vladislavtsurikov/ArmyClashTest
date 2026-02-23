@@ -21,6 +21,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
                     }
                 }
             }
+
             OnFirstSetupComponentWithHost(setupData);
         }
 
@@ -28,7 +29,8 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
         {
         }
 
-        protected TComponent[] GetComponentsInChildren<TComponent>(bool includeInactive) where TComponent : MonoBehaviour
+        protected TComponent[] GetComponentsInChildren<TComponent>(bool includeInactive)
+            where TComponent : MonoBehaviour
         {
             if (Host == null)
             {

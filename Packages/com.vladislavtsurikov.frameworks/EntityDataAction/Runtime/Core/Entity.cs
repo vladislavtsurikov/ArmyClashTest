@@ -5,27 +5,28 @@ using VladislavTsurikov.Nody.Runtime.Core;
 
 namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 {
-    public partial class Entity
+    public class Entity
     {
         [OdinSerialize]
-        private EntityDataCollection _data;
-        [OdinSerialize]
         private EntityActionCollection _actions;
+
+        [OdinSerialize]
+        private EntityDataCollection _data;
+
         [OdinSerialize]
         private bool _localActive = true;
 
-        private object[] _setupData;
-
-        internal DirtyActionRunner DirtyRunner;
-
-        internal Func<Type[]> ComponentDataTypesProvider;
         internal Func<Type[]> ActionTypesProvider;
         internal Action<Entity> AfterCreateDataAndActionsCallback;
+
+        internal Func<Type[]> ComponentDataTypesProvider;
+
+        internal DirtyActionRunner DirtyRunner;
         internal Action<Entity> SetupEntityCallback;
 
         public EntityDataCollection Data => _data;
         public EntityActionCollection Actions => _actions;
-        public object[] SetupData => _setupData;
+        public object[] SetupData { get; private set; }
 
         public bool IsSetup { get; private set; }
 
@@ -52,17 +53,14 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 
         public bool Active => _localActive && EntityDataActionGlobalSettings.Active;
 
-        public void SetSetupData(object[] setupData)
-        {
-            _setupData = setupData;
-        }
+        public void SetSetupData(object[] setupData) => SetupData = setupData;
 
         protected virtual void OnSetupEntity()
         {
             if (Active)
             {
-                _data.Setup(true, _setupData);
-                _actions.Setup(true, _setupData);
+                _data.Setup(true, SetupData);
+                _actions.Setup(true, SetupData);
 
                 _data.ElementAdded += HandleDataChanged;
                 _data.ElementRemoved += HandleDataChanged;
@@ -107,34 +105,19 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             IsSetup = true;
         }
 
-        protected virtual Type[] ComponentDataTypesToCreate()
-        {
-            return null;
-        }
+        protected virtual Type[] ComponentDataTypesToCreate() => null;
 
-        protected virtual Type[] ActionTypesToCreate()
-        {
-            return null;
-        }
+        protected virtual Type[] ActionTypesToCreate() => null;
 
         protected virtual void OnAfterCreateDataAndActions()
         {
         }
 
-        public T GetData<T>() where T : ComponentData
-        {
-            return Data.GetElement<T>();
-        }
+        public T GetData<T>() where T : ComponentData => Data.GetElement<T>();
 
-        public T GetAction<T>() where T : EntityAction
-        {
-            return Actions.GetElement<T>();
-        }
+        public T GetAction<T>() where T : EntityAction => Actions.GetElement<T>();
 
-        internal void HandleDataChanged(int index)
-        {
-            DirtyRunner?.TriggerAll();
-        }
+        internal void HandleDataChanged(int index) => DirtyRunner?.TriggerAll();
 
         private void CreateDefaultData()
         {

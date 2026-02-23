@@ -6,7 +6,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 {
     public static class RunOnDirtyDataUtility
     {
-        private static readonly Dictionary<Type, Type[]> s_dataTypesCache = new Dictionary<Type, Type[]>();
+        private static readonly Dictionary<Type, Type[]> s_dataTypesCache = new();
 
         public static Type[] GetDataTypes(Type actionType)
         {

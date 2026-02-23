@@ -23,13 +23,9 @@ namespace ArmyClash.Battle.UI.Actions
         protected override UniTask<bool> Run(CancellationToken token)
         {
             BattleSpeedData data = Get<BattleSpeedData>();
-            if (data.Speed == _lastSpeed)
-            {
-                return UniTask.FromResult(true);
-            }
 
             _lastSpeed = data.Speed;
-            var fastScale = _config != null ? _config.FastTimeScale : 1f;
+            float fastScale = _config != null ? _config.FastTimeScale : 1f;
             Time.timeScale = _lastSpeed == BattleSpeed.Fast ? fastScale : 1f;
             return UniTask.FromResult(true);
         }

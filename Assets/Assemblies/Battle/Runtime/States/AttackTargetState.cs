@@ -1,3 +1,4 @@
+using System;
 using ArmyClash.Battle.Data;
 using ArmyClash.Battle.Services;
 using UniRx;
@@ -27,7 +28,7 @@ namespace ArmyClash.Battle.States
 
         protected override void Conditional()
         {
-            var canAttack =
+            IObservable<bool> canAttack =
                 Observable.EveryUpdate()
                     .Select(_ => CanAttack())
                     .DistinctUntilChanged();
@@ -65,8 +66,8 @@ namespace ArmyClash.Battle.States
                 return false;
             }
 
-            var battleEntity = (BattleEntity)Entity;
-            var distanceData = Entity.GetData<AttackDistanceData>();
+            BattleEntity battleEntity = (BattleEntity)Entity;
+            AttackDistanceData distanceData = Entity.GetData<AttackDistanceData>();
             float attackRange = distanceData.AttackRange;
 
             return IsInAttackRange(battleEntity, target, attackRange);
@@ -74,7 +75,7 @@ namespace ArmyClash.Battle.States
 
         private void AttackStep()
         {
-            var entity = Entity;
+            EntityMonoBehaviour entity = Entity;
             if (entity == null)
             {
                 return;
@@ -87,13 +88,13 @@ namespace ArmyClash.Battle.States
                 return;
             }
 
-            var battleEntity = (BattleEntity)Entity;
+            BattleEntity battleEntity = (BattleEntity)Entity;
             StatsEntityData stats = entity.GetData<StatsEntityData>();
 
             float attack = stats.GetStatValueById(AttackId);
             float attackSpeed = stats.GetStatValueById(AttackSpeedId);
 
-            var distanceData = entity.GetData<AttackDistanceData>();
+            AttackDistanceData distanceData = entity.GetData<AttackDistanceData>();
             float attackRange = distanceData.AttackRange;
 
             if (!IsInAttackRange(battleEntity, target, attackRange))
@@ -117,7 +118,7 @@ namespace ArmyClash.Battle.States
         {
             Vector3 current = attacker.transform.position;
             Vector3 targetPosition = target.transform.position;
-            var distance = Vector3.Distance(current, targetPosition);
+            float distance = Vector3.Distance(current, targetPosition);
             return distance <= attackRange;
         }
     }

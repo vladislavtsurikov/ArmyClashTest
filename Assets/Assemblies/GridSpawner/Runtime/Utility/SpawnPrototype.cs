@@ -14,7 +14,7 @@ namespace ArmyClash.MegaWorldGrid.Utility.Spawn
                 return null;
             }
 
-            var instance = Object.Instantiate(proto.Prefab, position, rotation);
+            GameObject instance = Object.Instantiate(proto.Prefab, position, rotation);
             group.GetDefaultElement<ContainerForGameObjects>().ParentGameObject(instance);
             return instance;
         }

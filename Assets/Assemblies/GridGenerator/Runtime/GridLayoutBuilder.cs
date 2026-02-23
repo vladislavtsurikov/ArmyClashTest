@@ -6,7 +6,8 @@ namespace ArmyClash.Grid
 {
     public static class GridLayoutBuilder
     {
-        public static IReadOnlyList<GridSlot> Build(GridConfig config, Vector3 origin, Vector3 rightAxis, Vector3 forwardAxis,
+        public static IReadOnlyList<GridSlot> Build(GridConfig config, Vector3 origin, Vector3 rightAxis,
+            Vector3 forwardAxis,
             Quaternion rotation)
         {
             if (config == null)
@@ -19,10 +20,10 @@ namespace ArmyClash.Grid
             float rowStep = config.RowStep;
             float columnStep = config.ColumnStep;
 
-            var rightAxisNormalized = NormalizeAxis(rightAxis, Vector3.right);
-            var forwardAxisNormalized = NormalizeAxis(forwardAxis, Vector3.forward);
+            Vector3 rightAxisNormalized = NormalizeAxis(rightAxis, Vector3.right);
+            Vector3 forwardAxisNormalized = NormalizeAxis(forwardAxis, Vector3.forward);
 
-            var slots = new List<GridSlot>(rows * columns);
+            List<GridSlot> slots = new(rows * columns);
             float columnStart = -(columns - 1) * 0.5f;
             float rowStart = -(rows - 1) * 0.5f;
 

@@ -9,7 +9,7 @@ namespace ArmyClash.Battle.Data
     public sealed class LifeData : ComponentData
     {
         [OdinSerialize]
-        private ReactiveProperty<bool> _isDead =  new ReactiveProperty<bool>();
+        private ReactiveProperty<bool> _isDead = new();
 
         public bool IsDead
         {

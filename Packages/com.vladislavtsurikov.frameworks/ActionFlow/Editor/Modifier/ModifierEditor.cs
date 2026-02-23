@@ -10,9 +10,9 @@ namespace VladislavTsurikov.ActionFlow.Editor.Modifier
     [CustomEditor(typeof(Runtime.Modifier.Modifier), true)]
     public sealed class ModifierEditor : UnityEditor.Editor
     {
-        private readonly IMGUIInspectorFieldsDrawer _fieldsDrawer = new IMGUIInspectorFieldsDrawer();
-        private ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor> _stackEditor;
+        private readonly IMGUIInspectorFieldsDrawer _fieldsDrawer = new();
         private Runtime.Modifier.Modifier _modifier;
+        private ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor> _stackEditor;
 
         public override void OnInspectorGUI()
         {
@@ -42,11 +42,11 @@ namespace VladislavTsurikov.ActionFlow.Editor.Modifier
                 return;
             }
 
-            _stackEditor = new ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor>(_modifier.ComponentStack)
-            {
-                AllowedGroupAttributes = new[] { "CommonUI" },
-                DisplayHeaderText = true
-            };
+            _stackEditor =
+                new ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor>(_modifier.ComponentStack)
+                {
+                    AllowedGroupAttributes = new[] { "CommonUI" }, DisplayHeaderText = true
+                };
         }
     }
 }

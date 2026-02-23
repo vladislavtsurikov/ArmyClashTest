@@ -14,17 +14,25 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
     {
         [OdinSerialize]
         private float _baseValue;
+
         [OdinSerialize]
         private bool _clampEnabled;
 
-        [OdinSerialize, ShowIf(nameof(ClampEnabled), true)]
-        private bool _useMin;
-        [OdinSerialize, ShowIf(nameof(UseMin), true)]
-        private float _minValue;
-        [OdinSerialize, ShowIf(nameof(ClampEnabled), true)]
-        private bool _useMax;
-        [OdinSerialize, ShowIf(nameof(UseMax), true)]
+        [OdinSerialize]
+        [ShowIf(nameof(UseMax), true)]
         private float _maxValue;
+
+        [OdinSerialize]
+        [ShowIf(nameof(UseMin), true)]
+        private float _minValue;
+
+        [OdinSerialize]
+        [ShowIf(nameof(ClampEnabled), true)]
+        private bool _useMax;
+
+        [OdinSerialize]
+        [ShowIf(nameof(ClampEnabled), true)]
+        private bool _useMin;
 
         public float BaseValue => _baseValue;
         public bool ClampEnabled => _clampEnabled;
@@ -51,9 +59,6 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
             return value;
         }
 
-        public void SetBaseValue(float value)
-        {
-            _baseValue = ApplyClamp(value);
-        }
+        public void SetBaseValue(float value) => _baseValue = ApplyClamp(value);
     }
 }

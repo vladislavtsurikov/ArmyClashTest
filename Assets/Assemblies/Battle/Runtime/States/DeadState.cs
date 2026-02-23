@@ -13,6 +13,7 @@ namespace ArmyClash.Battle.States
     public sealed class DeadState : State
     {
         private const string HealthId = "HP";
+
         [Inject]
         private BattleStateService _state;
 

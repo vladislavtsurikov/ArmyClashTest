@@ -10,7 +10,9 @@
         "VladislavTsurikov.ReflectionUtility",
         "OdinSerializer",
         "VladislavTsurikov.ComponentStack",
-        "VladislavTsurikov.Core"
+        "VladislavTsurikov.Core",
+        "ArmyClash.Battle",
+        "VladislavTsurikov.SceneUtility"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

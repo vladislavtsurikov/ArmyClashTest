@@ -6,9 +6,11 @@ using VladislavTsurikov.ScriptableObjectUtility.Runtime;
 namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 {
     [LocationAsset("EntityDataAction", false)]
-    public sealed class EntityDataActionGlobalSettings : SerializedScriptableObjectSingleton<EntityDataActionGlobalSettings>
+    public sealed class
+        EntityDataActionGlobalSettings : SerializedScriptableObjectSingleton<EntityDataActionGlobalSettings>
     {
-        public static event Action ActiveChanged;
+        [OdinSerialize]
+        public bool EditModeActive;
 
         public static bool Active
         {
@@ -38,7 +40,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             }
         }
 
-        [OdinSerialize]
-        public bool EditModeActive;
+        public static event Action ActiveChanged;
     }
 }

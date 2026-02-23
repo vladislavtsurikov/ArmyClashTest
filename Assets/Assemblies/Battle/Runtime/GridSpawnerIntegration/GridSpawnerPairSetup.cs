@@ -72,7 +72,7 @@ namespace ArmyClash.MegaWorldGrid
             Transform child = transform.Find(name);
             if (child == null)
             {
-                var go = new GameObject(name);
+                GameObject go = new(name);
                 go.transform.SetParent(transform, false);
                 child = go.transform;
             }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 using VladislavTsurikov.ReflectionUtility.Runtime;
 
 namespace VladislavTsurikov.Nody.Runtime.Core
@@ -9,6 +10,11 @@ namespace VladislavTsurikov.Nody.Runtime.Core
 
         public static void Inject(Element node, object[] setupData = null)
         {
+            if (!Application.isPlaying)
+            {
+                return;
+            }
+
             if (node == null)
             {
                 return;

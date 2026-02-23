@@ -32,7 +32,7 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime
                 if (_profile != value)
                 {
                     _profile = value;
-                    _profile.Setup();
+                    _profile?.Setup();
                 }
             }
 #endif

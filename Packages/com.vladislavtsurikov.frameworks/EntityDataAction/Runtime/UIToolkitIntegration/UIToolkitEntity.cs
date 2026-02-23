@@ -7,8 +7,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration
     {
         private bool _isAttached;
 
-        public VisualElement Root { get; }
-
         public UIToolkitEntity(VisualElement root)
         {
             Root = root;
@@ -24,6 +22,8 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration
                 Enable();
             }
         }
+
+        public VisualElement Root { get; }
 
         public void Dispose()
         {

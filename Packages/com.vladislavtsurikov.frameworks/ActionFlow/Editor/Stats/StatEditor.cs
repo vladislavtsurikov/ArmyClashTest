@@ -1,52 +1,50 @@
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
+using VladislavTsurikov.ActionFlow.Runtime.Stats;
 using VladislavTsurikov.CustomInspector.Editor.IMGUI;
 using VladislavTsurikov.IMGUIUtility.Editor.ElementStack.ReorderableList;
 using VladislavTsurikov.Nody.Runtime.Core;
 
 namespace VladislavTsurikov.ActionFlow.Editor.Stats
 {
-    [CustomEditor(typeof(Runtime.Stats.Stat))]
+    [CustomEditor(typeof(Stat))]
     public sealed class StatEditor : UnityEditor.Editor
     {
-        private readonly IMGUIInspectorFieldsDrawer _fieldsDrawer = new IMGUIInspectorFieldsDrawer();
+        private readonly IMGUIInspectorFieldsDrawer _fieldsDrawer = new();
         private ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor> _stackEditor;
-        private Runtime.Stats.Stat _stat;
+        private Stat _stat;
 
-        public override void OnInspectorGUI()
+        private void OnEnable()
         {
-            _stat ??= target as Runtime.Stats.Stat;
-            if (_stat == null)
+            _stat ??= target as Stat;
+
+            if (_stackEditor != null)
             {
                 return;
             }
 
+            _stackEditor =
+                new ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor>(_stat.ComponentStack)
+                {
+                    AllowedGroupAttributes = new[] { "Stats", "CommonUI" }, DisplayHeaderText = true
+                };
+        }
+
+        public override void OnInspectorGUI()
+        {
+            EditorGUI.BeginChangeCheck();
             float fieldsHeight = _fieldsDrawer.GetFieldsHeight(_stat);
             Rect fieldsRect = EditorGUILayout.GetControlRect(false, fieldsHeight);
             _fieldsDrawer.DrawFields(_stat, fieldsRect);
 
-            EnsureStackEditor();
             _stackEditor.OnGUI();
-        }
 
-        private void EnsureStackEditor()
-        {
-            if (_stat.ComponentStack == null)
+            if (EditorGUI.EndChangeCheck())
             {
-                return;
+                Debug.Log("SetDirty");
+                EditorUtility.SetDirty(_stat);
             }
-
-            if (_stackEditor != null && ReferenceEquals(_stackEditor.Stack, _stat.ComponentStack))
-            {
-                return;
-            }
-
-            _stackEditor = new ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor>(_stat.ComponentStack)
-            {
-                AllowedGroupAttributes = new[] { "Stats", "CommonUI" },
-                DisplayHeaderText = true
-            };
         }
     }
 }

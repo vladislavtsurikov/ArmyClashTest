@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using ArmyClash.Grid;
 using Cysharp.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace ArmyClash.MegaWorldGrid
         public async UniTask SpawnBoth(
             CancellationToken token,
             bool displayProgressBar,
-            System.Action<GameObject> onSpawn)
+            Action<GameObject> onSpawn)
         {
             ApplyConfig();
 

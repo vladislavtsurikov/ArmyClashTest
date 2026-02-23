@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using ArmyClash.Battle.Data;
@@ -25,7 +26,7 @@ namespace ArmyClash.Battle.States
             LifeData life = GetData<LifeData>();
             TargetData targetData = GetData<TargetData>();
 
-            var canAcquire = _state.SimulationStateReactive
+            IObservable<bool> canAcquire = _state.SimulationStateReactive
                 .Select(state => state == SimulationState.Running)
                 .CombineLatest(life.IsDeadReactive, targetData.TargetReactive,
                     (running, isDead, target) => running && !isDead && target == null);

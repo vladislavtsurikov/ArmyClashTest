@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Threading;
 using ArmyClash.Battle.Services;
 using Cysharp.Threading.Tasks;
@@ -37,7 +36,7 @@ namespace ArmyClash.MegaWorldGrid
 
         private void RegisterSpawned(GameObject go)
         {
-            var entity = go.GetComponent<EntityMonoBehaviour>();
+            EntityMonoBehaviour entity = go.GetComponent<EntityMonoBehaviour>();
             _roster?.Register(entity);
         }
     }

@@ -1,17 +1,17 @@
 {
-  "name": "ArmyClash.GridGenerator",
-  "rootNamespace": "ArmyClash.Grid",
-  "references": [
-    "VladislavTsurikov.ScriptableObjectUtility",
-    "OdinSerializer"
-  ],
-  "includePlatforms": [],
-  "excludePlatforms": [],
-  "allowUnsafeCode": false,
-  "overrideReferences": false,
-  "precompiledReferences": [],
-  "autoReferenced": true,
-  "defineConstraints": [],
-  "versionDefines": [],
-  "noEngineReferences": false
+    "name": "ArmyClash.GridGenerator",
+    "rootNamespace": "ArmyClash.Grid",
+    "references": [
+        "VladislavTsurikov.ScriptableObjectUtility",
+        "OdinSerializer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

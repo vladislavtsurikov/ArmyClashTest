@@ -1,20 +1,19 @@
+using OdinSerializer;
 using UnityEngine;
 using VladislavTsurikov.ActionFlow.Runtime.Stats;
 
 namespace VladislavTsurikov.ActionFlow.Runtime.Modifier
 {
-    public abstract class Modifier : ScriptableObject
+    public abstract class Modifier : SerializedScriptableObject
     {
-        [SerializeField] private string _id;
-        [SerializeField] private string _displayName;
-        [SerializeField] private StatEffect _statEffect;
         [SerializeField]
+        private string _id;
+
+        [OdinSerialize]
         [HideInInspector]
         private ModifierComponentStack _componentStack = new();
 
         public string Id => _id;
-        public string DisplayName => _displayName;
-        public StatEffect StatEffect => _statEffect;
         public ModifierComponentStack ComponentStack => _componentStack;
 
         private void OnEnable()
@@ -23,9 +22,6 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Modifier
             _componentStack.Setup(true, new object[] { this });
         }
 
-        private void OnDisable()
-        {
-            _componentStack?.OnDisable();
-        }
+        private void OnDisable() => _componentStack?.OnDisable();
     }
 }

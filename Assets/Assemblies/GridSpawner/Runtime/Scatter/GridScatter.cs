@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using Cysharp.Threading.Tasks;
 using ArmyClash.Grid;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using VladislavTsurikov.MegaWorld.Runtime.Common.Area;
 using VladislavTsurikov.ReflectionUtility;
@@ -12,7 +12,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
     [Name("Grid Scatter")]
     public sealed class GridScatter : Scatter
     {
-        private GridGenerator _gridGenerator ;
+        private GridGenerator _gridGenerator;
 
         protected override void SetupComponent(object[] setupData = null)
         {
@@ -36,7 +36,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
                 return;
             }
 
-            var slots = _gridGenerator.Slots;
+            IReadOnlyList<GridSlot> slots = _gridGenerator.Slots;
             for (int i = 0; i < slots.Count; i++)
             {
                 token.ThrowIfCancellationRequested();
@@ -47,7 +47,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
                 }
 
                 Vector3 position = slots[i].Position;
-                var sample = position;
+                Vector3 sample = position;
                 samples.Add(sample);
                 onSpawn?.Invoke(sample);
             }

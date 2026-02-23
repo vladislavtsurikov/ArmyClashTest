@@ -10,7 +10,7 @@ namespace ArmyClash.Grid
         [SettingsProvider]
         public static SettingsProvider SettingsGUI()
         {
-            var provider = new SettingsProvider("Preferences/GridGenerator", SettingsScope.User)
+            SettingsProvider provider = new("Preferences/GridGenerator", SettingsScope.User)
             {
                 label = "GridGenerator",
                 guiHandler = _ =>
@@ -23,7 +23,8 @@ namespace ArmyClash.Grid
                     }
 
                     settings.ShowGizmos = EditorGUILayout.Toggle("Show Grid Gizmos", settings.ShowGizmos);
-                    settings.OverrideGizmoColor = EditorGUILayout.Toggle("Override Gizmo Color", settings.OverrideGizmoColor);
+                    settings.OverrideGizmoColor =
+                        EditorGUILayout.Toggle("Override Gizmo Color", settings.OverrideGizmoColor);
 
                     using (new EditorGUI.DisabledScope(!settings.OverrideGizmoColor))
                     {

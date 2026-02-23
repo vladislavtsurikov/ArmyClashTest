@@ -1,19 +1,20 @@
 #if UNITY_EDITOR
 using UnityEditor;
-using VladislavTsurikov.Nody.Runtime.Core;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.IMGUIUtility.Editor.ElementStack.ReorderableList;
+using VladislavTsurikov.Nody.Runtime.Core;
 
 namespace VladislavTsurikov.EntityDataAction.Editor.Core
 {
     [CustomEditor(typeof(EntityMonoBehaviour), true)]
     public sealed class EntityEditor : UnityEditor.Editor
     {
-        private EntityMonoBehaviour _entity;
+        private ActionReorderableListStackEditor _actionsEditor;
 
         private ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor> _dataEditor;
-        private ActionReorderableListStackEditor _actionsEditor;
+        private EntityMonoBehaviour _entity;
 
         private void OnEnable()
         {
@@ -69,7 +70,7 @@ namespace VladislavTsurikov.EntityDataAction.Editor.Core
             GUILayout.Space(3);
             _actionsEditor.OnGUI();
 
-            if(EditorGUI.EndChangeCheck())
+            if (EditorGUI.EndChangeCheck())
             {
                 SetDirtyTarget();
             }
@@ -98,7 +99,7 @@ namespace VladislavTsurikov.EntityDataAction.Editor.Core
             GUI.color = prev;
 
 #if UNITY_EDITOR
-            if (UnityEditor.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage() != null)
+            if (PrefabStageUtility.GetCurrentPrefabStage() != null)
             {
                 EditorGUILayout.HelpBox("Inactive in Prefab Mode.", MessageType.Info);
             }

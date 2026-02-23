@@ -1,9 +1,11 @@
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using OdinSerializer;
 using VladislavTsurikov.AddressableLoaderSystem.Runtime.Core;
 using VladislavTsurikov.Core.Runtime;
 using VladislavTsurikov.ReflectionUtility;
 using VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.OperationSystem;
+using VladislavTsurikov.SceneUtility.Runtime;
 using Zenject;
 using Action = VladislavTsurikov.ActionFlow.Runtime.Actions.Action;
 
@@ -13,32 +15,25 @@ namespace ArmyClash.SceneManager
     [BeforeLoadSceneComponent]
     public sealed class LoadResourceLoadersOperation : Action
     {
-        [OdinSerialize] private string _sceneName;
+        [Inject]
+        private ResourceLoaderManager _manager;
 
-        protected override async UniTask<bool> Run(System.Threading.CancellationToken token)
+        [OdinSerialize]
+        private SceneReference _sceneReference = new();
+
+        protected override async UniTask<bool> Run(CancellationToken token)
         {
-            var container = ProjectContext.Instance != null ? ProjectContext.Instance.Container : null;
-            if (container == null)
-            {
-                return true;
-            }
-
-            var manager = container.Resolve<ResourceLoaderManager>();
-            if (manager == null)
-            {
-                return true;
-            }
-
-            await manager.Load(attribute =>
+            await _manager.Load(attribute =>
             {
                 if (attribute is GlobalFilterAttribute)
                 {
                     return true;
                 }
 
-                if (!string.IsNullOrEmpty(_sceneName) &&
+                if (_sceneReference != null &&
+                    !string.IsNullOrEmpty(_sceneReference.SceneName) &&
                     attribute is SceneFilterAttribute sceneFilter &&
-                    sceneFilter.Matches(_sceneName))
+                    sceneFilter.Matches(_sceneReference.SceneName))
                 {
                     return true;
                 }

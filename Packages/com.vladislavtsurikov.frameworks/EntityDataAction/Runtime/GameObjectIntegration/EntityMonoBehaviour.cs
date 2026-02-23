@@ -1,6 +1,7 @@
 using System;
 using Cysharp.Threading.Tasks;
 using OdinSerializer;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using VladislavTsurikov.Nody.Runtime.Core;
 
@@ -9,10 +10,11 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
     [ExecuteInEditMode]
     public partial class EntityMonoBehaviour : SerializedMonoBehaviour
     {
-        [OdinSerialize]
-        private Entity _entity;
         private bool _actionsAwakeCalled;
         private bool _actionsStartCalled;
+
+        [OdinSerialize]
+        private Entity _entity;
 
         public Entity Entity
         {
@@ -49,7 +51,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             get
             {
 #if UNITY_EDITOR
-                if (UnityEditor.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage() != null)
+                if (PrefabStageUtility.GetCurrentPrefabStage() != null)
                 {
                     return false;
                 }
@@ -73,39 +75,21 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             }
         }
 
-        protected virtual Type[] ComponentDataTypesToCreate()
-        {
-            return null;
-        }
+        protected virtual Type[] ComponentDataTypesToCreate() => null;
 
-        protected virtual Type[] ActionTypesToCreate()
-        {
-            return null;
-        }
+        protected virtual Type[] ActionTypesToCreate() => null;
 
         protected virtual void OnAfterCreateDataAndActions()
         {
         }
 
-        public T GetData<T>() where T : ComponentData
-        {
-            return Entity.GetData<T>();
-        }
+        public T GetData<T>() where T : ComponentData => Entity.GetData<T>();
 
-        public T GetAction<T>() where T : EntityAction
-        {
-            return Entity.GetAction<T>();
-        }
+        public T GetAction<T>() where T : EntityAction => Entity.GetAction<T>();
 
-        public void Setup()
-        {
-            Entity.Setup();
-        }
+        public void Setup() => Entity.Setup();
 
-        protected void HandleDataChanged(int index)
-        {
-            Entity.HandleDataChanged(index);
-        }
+        protected void HandleDataChanged(int index) => Entity.HandleDataChanged(index);
 
         private void SetupEntityBindings()
         {
@@ -154,7 +138,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
                 return;
             }
 
-            var actions = Entity.Actions;
+            EntityActionCollection actions = Entity.Actions;
             if (actions == null)
             {
                 return;

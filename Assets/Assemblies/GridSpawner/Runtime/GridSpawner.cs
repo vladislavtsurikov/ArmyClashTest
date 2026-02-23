@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Threading;
+using ArmyClash.Grid;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using VladislavTsurikov.MegaWorld.Runtime.Common.Settings;
@@ -11,7 +13,6 @@ using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject;
 using VladislavTsurikov.ReflectionUtility;
-using ArmyClash.Grid;
 
 namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
 {
@@ -57,7 +58,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
         {
             get
             {
-                var settings = (GridStamperControllerSettings)StamperControllerSettings;
+                GridStamperControllerSettings settings = (GridStamperControllerSettings)StamperControllerSettings;
                 if (settings == null)
                 {
                     return null;
@@ -68,41 +69,52 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
             }
         }
 
-        protected override async UniTask Spawn(CancellationToken token, bool displayProgressBar)
+        private void OnDrawGizmos()
         {
-            await SpawnAndCollect(token, displayProgressBar);
+            GridConfig config = Config;
+            if (config == null)
+            {
+                return;
+            }
+
+            GridStamperControllerSettings settings = (GridStamperControllerSettings)StamperControllerSettings;
+
+            GridGizmoDrawer.Draw(config, transform.position, transform.right, transform.forward, transform.rotation,
+                settings.GizmoColor);
         }
+
+        protected override async UniTask Spawn(CancellationToken token, bool displayProgressBar) =>
+            await SpawnAndCollect(token, displayProgressBar);
 
         public void ApplyConfig(GridConfig config)
         {
-            var settings = (GridStamperControllerSettings)StamperControllerSettings;
+            GridStamperControllerSettings settings = (GridStamperControllerSettings)StamperControllerSettings;
 
             settings.Config ??= new GridConfig();
             settings.Config.CopyFrom(config);
         }
 
-        public async UniTask SpawnAndCollect(CancellationToken token, bool displayProgressBar)
-        {
+        public async UniTask SpawnAndCollect(CancellationToken token, bool displayProgressBar) =>
             await SpawnAndCollect(token, displayProgressBar, null);
-        }
 
         public async UniTask SpawnAndCollect(
             CancellationToken token,
             bool displayProgressBar,
             Action<GameObject> onSpawn)
         {
-            var gridGenerator = GridGenerator;
-            var slots = gridGenerator.Build(Config, transform.position, transform.right, transform.forward,
+            GridGenerator gridGenerator = GridGenerator;
+            IReadOnlyList<GridSlot> slots = gridGenerator.Build(Config, transform.position, transform.right,
+                transform.forward,
                 transform.rotation);
             if (slots.Count == 0)
             {
                 return;
             }
 
-            var maxTypes = Data.GroupList.Count;
-            var completedTypes = 0;
+            int maxTypes = Data.GroupList.Count;
+            int completedTypes = 0;
 
-            for (var typeIndex = 0; typeIndex < Data.GroupList.Count; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Data.GroupList.Count; typeIndex++)
             {
                 token.ThrowIfCancellationRequested();
 #if UNITY_EDITOR
@@ -121,20 +133,6 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
                 completedTypes++;
                 SpawnProgress = completedTypes / (float)maxTypes;
             }
-        }
-
-        private void OnDrawGizmos()
-        {
-            var config = Config;
-            if (config == null)
-            {
-                return;
-            }
-
-            var settings = (GridStamperControllerSettings)StamperControllerSettings;
-
-            GridGizmoDrawer.Draw(config, transform.position, transform.right, transform.forward, transform.rotation,
-                settings.GizmoColor);
         }
     }
 }

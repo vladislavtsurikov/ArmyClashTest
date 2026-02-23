@@ -13,10 +13,8 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration
             BindElements();
         }
 
-        protected TElement Query<TElement>(string name) where TElement : VisualElement
-        {
-            return Root == null ? null : Root.Q<TElement>(name);
-        }
+        protected TElement Query<TElement>(string name) where TElement : VisualElement =>
+            Root == null ? null : Root.Q<TElement>(name);
 
         protected abstract void BindElements();
 

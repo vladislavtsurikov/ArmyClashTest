@@ -16,8 +16,8 @@ namespace ArmyClash.Battle
         protected override Type[] ComponentDataTypesToCreate() =>
             new[]
             {
-                typeof(StatsEntityData), typeof(TeamData), typeof(TargetData),
-                typeof(LifeData), typeof(AttackDistanceData), typeof(StateMachineData)
+                typeof(StatsEntityData), typeof(TeamData), typeof(TargetData), typeof(LifeData),
+                typeof(AttackDistanceData), typeof(StateMachineData)
             };
 
         protected override Type[] ActionTypesToCreate() =>

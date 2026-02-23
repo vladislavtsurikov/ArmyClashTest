@@ -9,24 +9,22 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 {
     public sealed class DirtyActionRunner
     {
-        private readonly NodeStackOnlyDifferentTypes<ComponentData> _data;
         private readonly EntityActionCollection _actions;
+        private readonly NodeStackOnlyDifferentTypes<ComponentData> _data;
 
-        private readonly HashSet<Type> _pendingDirtyTypes = new HashSet<Type>();
+        private readonly HashSet<Type> _pendingDirtyTypes = new();
+        private readonly Entity _entity;
         private bool _isProcessingDirty;
-        private Entity _entity;
 
-        public DirtyActionRunner(Entity entity, NodeStackOnlyDifferentTypes<ComponentData> data, EntityActionCollection actions)
+        public DirtyActionRunner(Entity entity, NodeStackOnlyDifferentTypes<ComponentData> data,
+            EntityActionCollection actions)
         {
             _entity = entity;
             _data = data;
             _actions = actions;
         }
 
-        public void Setup()
-        {
-            _data.ElementDirtied += HandleDataDirtied;
-        }
+        public void Setup() => _data.ElementDirtied += HandleDataDirtied;
 
         public void OnDisable()
         {

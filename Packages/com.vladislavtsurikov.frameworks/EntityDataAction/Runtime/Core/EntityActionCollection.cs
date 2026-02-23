@@ -3,15 +3,9 @@ using VladislavTsurikov.ActionFlow.Runtime;
 
 namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 {
-    public partial class EntityActionCollection : ActionCollection
+    public class EntityActionCollection : ActionCollection
     {
-        [NonSerialized]
-        private Entity _entity;
-
-        public Entity Entity
-        {
-            get => _entity;
-            internal set => _entity = value;
-        }
+        [field: NonSerialized]
+        public Entity Entity { get; internal set; }
     }
 }

@@ -2,6 +2,12 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 {
     public partial class EntityMonoBehaviour
     {
+        protected void Update() => InvokeIfActive(action => action.InvokeUpdate());
+
+        protected void FixedUpdate() => InvokeIfActive(action => action.InvokeFixedUpdate());
+
+        protected void LateUpdate() => InvokeIfActive(action => action.InvokeLateUpdate());
+
         protected void OnEnable()
         {
             SetupEntityBindings();
@@ -27,12 +33,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             Entity.Disable();
         }
 
-        protected void Update() => InvokeIfActive(action => action.InvokeUpdate());
-
-        protected void FixedUpdate() => InvokeIfActive(action => action.InvokeFixedUpdate());
-
-        protected void LateUpdate() => InvokeIfActive(action => action.InvokeLateUpdate());
-
         protected void OnDestroy()
         {
             if (_entity == null)
@@ -42,6 +42,12 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 
             ForEachLifecycleAction(action => action.InvokeOnDestroy());
         }
+
+        protected void OnApplicationFocus(bool hasFocus) =>
+            InvokeIfActive(action => action.InvokeOnApplicationFocus(hasFocus));
+
+        protected void OnApplicationPause(bool pauseStatus) =>
+            InvokeIfActive(action => action.InvokeOnApplicationPause(pauseStatus));
 
 #if UNITY_EDITOR
         protected void OnValidate()
@@ -54,11 +60,5 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             ForEachLifecycleAction(action => action.InvokeOnValidate());
         }
 #endif
-
-        protected void OnApplicationFocus(bool hasFocus) =>
-            InvokeIfActive(action => action.InvokeOnApplicationFocus(hasFocus));
-
-        protected void OnApplicationPause(bool pauseStatus) =>
-            InvokeIfActive(action => action.InvokeOnApplicationPause(pauseStatus));
     }
 }

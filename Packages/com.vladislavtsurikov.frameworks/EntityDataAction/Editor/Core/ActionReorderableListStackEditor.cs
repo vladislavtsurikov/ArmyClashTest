@@ -15,22 +15,21 @@ using Action = VladislavTsurikov.ActionFlow.Runtime.Actions.Action;
 
 namespace VladislavTsurikov.EntityDataAction.Editor.Core
 {
-    public sealed class ActionReorderableListStackEditor : ReorderableListStackEditor<Action, ActionReorderableListComponentEditor>
+    public sealed class
+        ActionReorderableListStackEditor : ReorderableListStackEditor<Action, ActionReorderableListComponentEditor>
     {
-        private readonly NodeStackOnlyDifferentTypes<ComponentData> _dataStack;
         private static GUIStyle s_missingStyle;
+        private readonly NodeStackOnlyDifferentTypes<ComponentData> _dataStack;
 
         public ActionReorderableListStackEditor(
             AdvancedNodeStack<Action> actionStack,
             NodeStackOnlyDifferentTypes<ComponentData> dataStack)
-            : base(new GUIContent("Actions"), actionStack, true)
-        {
+            : base(new GUIContent("Actions"), actionStack, true) =>
             _dataStack = dataStack;
-        }
 
         protected override void ShowAddMenu()
         {
-            GenericMenu menu = new GenericMenu();
+            GenericMenu menu = new();
 
             foreach (Type actionType in GetComponentTypes())
             {
@@ -76,7 +75,8 @@ namespace VladislavTsurikov.EntityDataAction.Editor.Core
             menu.ShowAsContext();
         }
 
-        protected override void DrawHeaderElement(Rect totalRect, int index, ActionReorderableListComponentEditor componentEditor)
+        protected override void DrawHeaderElement(Rect totalRect, int index,
+            ActionReorderableListComponentEditor componentEditor)
         {
             Type actionType = Stack.ElementList[index].GetType();
             bool requirementsMet = RequiresDataUtility.IsRequirementsMet(_dataStack, actionType);
@@ -115,7 +115,8 @@ namespace VladislavTsurikov.EntityDataAction.Editor.Core
             EditorGUI.LabelField(labelRect, missingText, GetMissingStyle());
         }
 
-        protected override void DrawElement(Rect totalRect, int index, float iconSize, Color prevColor, ActionReorderableListComponentEditor componentEditor)
+        protected override void DrawElement(Rect totalRect, int index, float iconSize, Color prevColor,
+            ActionReorderableListComponentEditor componentEditor)
         {
             Type actionType = Stack.ElementList[index].GetType();
             bool requirementsMet = RequiresDataUtility.IsRequirementsMet(_dataStack, actionType);
@@ -180,7 +181,7 @@ namespace VladislavTsurikov.EntityDataAction.Editor.Core
                 return string.Empty;
             }
 
-            StringBuilder sb = new StringBuilder(64);
+            StringBuilder sb = new(64);
 
             for (int i = 0; i < missing.Count; i++)
             {
@@ -204,7 +205,7 @@ namespace VladislavTsurikov.EntityDataAction.Editor.Core
             int lines = 1 + missingCount;
             float padding = 4f;
 
-            return (lineHeight * lines) + padding;
+            return lineHeight * lines + padding;
         }
 
         private int GetMissingRequiredCount(Type actionType)
@@ -228,15 +229,9 @@ namespace VladislavTsurikov.EntityDataAction.Editor.Core
             return count;
         }
 
-        private float GetDefaultHeaderHeight()
-        {
-            return EditorGUIUtility.singleLineHeight * 1.3f;
-        }
+        private float GetDefaultHeaderHeight() => EditorGUIUtility.singleLineHeight * 1.3f;
 
-        private float GetWarningHeaderHeight()
-        {
-            return EditorGUIUtility.singleLineHeight * 1.3f;
-        }
+        private float GetWarningHeaderHeight() => EditorGUIUtility.singleLineHeight * 1.3f;
 
         private float GetMissingBlockHeight(Type actionType)
         {
@@ -249,7 +244,7 @@ namespace VladislavTsurikov.EntityDataAction.Editor.Core
             float lineHeight = EditorGUIUtility.singleLineHeight;
             float padding = 4f;
 
-            return (lineHeight * missingCount) + padding;
+            return lineHeight * missingCount + padding;
         }
 
         private static GUIStyle GetMissingStyle()

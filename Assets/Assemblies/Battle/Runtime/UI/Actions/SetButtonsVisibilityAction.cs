@@ -39,7 +39,7 @@ namespace ArmyClash.Battle.UI.Actions
 
         private void ApplyState(SimulationState state)
         {
-            var show = state != SimulationState.Running;
+            bool show = state != SimulationState.Running;
             BattleUIViewData view = Get<BattleUIViewData>();
             SetVisible(view.RandomizeButton, show);
             SetVisible(view.StartButton, show);

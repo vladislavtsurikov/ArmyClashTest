@@ -1,14 +1,14 @@
 using System;
-using VladislavTsurikov.Nody.Runtime.Core;
 using System.Collections.Generic;
 using VladislavTsurikov.AttributeUtility.Runtime;
 using VladislavTsurikov.Nody.Runtime.AdvancedNodeStack;
+using VladislavTsurikov.Nody.Runtime.Core;
 
 namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 {
     public static class RequiresDataUtility
     {
-        private static readonly Dictionary<Type, Type[]> s_requiredTypesCache = new Dictionary<Type, Type[]>();
+        private static readonly Dictionary<Type, Type[]> s_requiredTypesCache = new();
 
         public static bool IsRequirementsMet(NodeStackOnlyDifferentTypes<ComponentData> data, Type actionType)
         {
@@ -73,6 +73,5 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 
             return false;
         }
-
     }
 }

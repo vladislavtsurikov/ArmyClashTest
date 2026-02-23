@@ -1,14 +1,18 @@
+using OdinSerializer;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace VladislavTsurikov.ActionFlow.Runtime.Stats
 {
     [CreateAssetMenu(menuName = "ActionFlow/Stats/Stat", fileName = "Stat")]
-    public sealed class Stat : ScriptableObject
+    public sealed class Stat : SerializedScriptableObject
     {
         [SerializeField]
         private string _id;
 
-        [SerializeField]
+        [OdinSerialize]
         [HideInInspector]
         private StatsComponentStack _componentStack = new();
 
@@ -19,11 +23,12 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
         {
             _componentStack ??= new StatsComponentStack();
             _componentStack.Setup(true, new object[] { this });
+
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(this);
+#endif
         }
 
-        private void OnDisable()
-        {
-            _componentStack?.OnDisable();
-        }
+        private void OnDisable() => _componentStack?.OnDisable();
     }
 }
