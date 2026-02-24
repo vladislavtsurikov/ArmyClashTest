@@ -55,9 +55,9 @@ namespace VladislavTsurikov.Nody.Editor.Core
             {
                 editor.Init(settings);
             }
-            catch
+            catch (Exception ex)
             {
-                Debug.LogError("Component Editor initialization: " + settings.Name);
+                Debug.LogError("Component Editor initialization: " + settings.Name + "\n" + ex);
             }
 
             if (index < 0)

@@ -18,7 +18,12 @@ namespace VladislavTsurikov.EntityDataAction.Editor.Core
 
         private void OnEnable()
         {
-            _entity = (EntityMonoBehaviour)target;
+            _entity = target as EntityMonoBehaviour;
+
+            if (_entity == null)
+            {
+                return;
+            }
 
             if (!_entity.IsSetup && !Application.isPlaying)
             {

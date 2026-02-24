@@ -21,6 +21,8 @@ namespace ArmyClash.Editor.Modifier
         private const string SizesPath = ModifiersPath + "/Sizes";
         private const string ColorsPath = ModifiersPath + "/Colors";
         private const string GridConfigPath = RootPath + "/GridConfig.asset";
+        private const string CubePrefabPath = RootPath + "/Prefabs/Cube.prefab";
+        private const string SpherePrefabPath = RootPath + "/Prefabs/Sphere.prefab";
 
         [MenuItem("ArmyClash/Configs/Create Default Modifier Configs")]
         public static void CreateDefaults()
@@ -50,8 +52,11 @@ namespace ArmyClash.Editor.Modifier
 
             ModifierStatEffect goldEffect = CreateEffect("Color_Gold", new[] { (hp, 80f), (atk, 25f), (regen, 3f) });
 
-            CreateShapeModifier("CUBE", cubeEffect, null);
-            CreateShapeModifier("SPHERE", sphereEffect, null);
+            GameObject cubePrefab = AssetDatabase.LoadAssetAtPath<GameObject>(CubePrefabPath);
+            GameObject spherePrefab = AssetDatabase.LoadAssetAtPath<GameObject>(SpherePrefabPath);
+
+            CreateShapeModifier("CUBE", cubeEffect, cubePrefab);
+            CreateShapeModifier("SPHERE", sphereEffect, spherePrefab);
 
             CreateSizeModifier("BIG", bigEffect, Vector3.one * 1.2f);
             CreateSizeModifier("SMALL", smallEffect, Vector3.one * 0.8f);

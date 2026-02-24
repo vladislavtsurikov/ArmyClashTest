@@ -41,7 +41,7 @@ namespace VladislavTsurikov.StateMachine.Runtime.Actions
 
         protected override void OnDisable()
         {
-            _subscriptions.Clear();
+            _subscriptions?.Clear();
             if (_data != null)
             {
                 _data.ActiveStatesChanged -= EvaluateConditions;

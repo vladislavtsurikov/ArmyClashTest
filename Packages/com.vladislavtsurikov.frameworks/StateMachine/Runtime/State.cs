@@ -84,7 +84,7 @@ namespace VladislavTsurikov.StateMachine.Runtime.Definitions
 
         protected override void OnDisableElement()
         {
-            _subscriptions.Clear();
+            _subscriptions?.Clear();
         }
 
         protected T GetData<T>() where T : ComponentData

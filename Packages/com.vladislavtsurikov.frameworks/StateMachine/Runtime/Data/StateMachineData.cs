@@ -17,7 +17,7 @@ namespace VladislavTsurikov.StateMachine.Runtime.Data
         private NodeStackOnlyDifferentTypes<State> _stateStack = new NodeStackOnlyDifferentTypes<State>();
 
         [OdinSerialize, HideInInspector]
-        private ReactiveProperty<State> _currentState;
+        private ReactiveProperty<State> _currentState = new();
 
         [OdinSerialize, HideInInspector]
         private State _previousState;
@@ -29,20 +29,30 @@ namespace VladislavTsurikov.StateMachine.Runtime.Data
 
         public State CurrentState
         {
-            get => EnsureCurrentState().Value;
+            get => _currentState.Value;
             set
             {
-                if (EnsureCurrentState().Value == value)
+                if (_currentState.Value == value)
                 {
                     return;
                 }
 
+                _previousState = _currentState.Value;
+
+                NodeStackOnlyDifferentTypes<State> stack = StateStack;
+                foreach (State state in stack.ElementList)
+                {
+                    state.Active = false;
+                }
+
                 _currentState.Value = value;
+                value.Active = true;
+
                 MarkDirty();
             }
         }
 
-        public IReadOnlyReactiveProperty<State> CurrentStateReactive => EnsureCurrentState();
+        public IReadOnlyReactiveProperty<State> CurrentStateReactive => _currentState;
 
         public State PreviousState
         {
@@ -71,16 +81,6 @@ namespace VladislavTsurikov.StateMachine.Runtime.Data
         protected override void OnDisableElement()
         {
             _stateStack.OnDisable();
-        }
-
-        private ReactiveProperty<State> EnsureCurrentState()
-        {
-            if (_currentState == null)
-            {
-                _currentState = new ReactiveProperty<State>();
-            }
-
-            return _currentState;
         }
 
         internal void SetStateEligible(State state, bool eligible)
