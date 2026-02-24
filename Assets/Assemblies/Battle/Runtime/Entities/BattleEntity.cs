@@ -11,7 +11,7 @@ using VladislavTsurikov.StateMachine.Runtime.Definitions;
 
 namespace ArmyClash.Battle
 {
-    public abstract class BattleEntity : EntityMonoBehaviour
+    public class BattleEntity : EntityMonoBehaviour
     {
         protected override Type[] ComponentDataTypesToCreate() =>
             new[]

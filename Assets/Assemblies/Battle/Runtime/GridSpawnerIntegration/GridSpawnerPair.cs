@@ -1,17 +1,24 @@
 using System;
 using System.Threading;
+using ArmyClash.Battle.Data;
+using ArmyClash.Battle.Services;
 using ArmyClash.Grid;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject;
 using VladislavTsurikov.MegaWorld.Runtime.GridSpawner;
+using Zenject;
 
 namespace ArmyClash.MegaWorldGrid
 {
-    public partial class GridSpawnerPair : MonoBehaviour
+    public sealed class GridSpawnerPair : MonoBehaviour
     {
+        [Inject]
+        private BattleTeamRoster _roster;
+
         [SerializeField]
-        private GridConfig _config = new();
+        private GridConfig _config;
 
         [SerializeField]
         private GridSpawner _leftSpawner;
@@ -19,21 +26,36 @@ namespace ArmyClash.MegaWorldGrid
         [SerializeField]
         private GridSpawner _rightSpawner;
 
-        public async UniTask SpawnBoth(
-            CancellationToken token,
-            bool displayProgressBar,
-            Action<GameObject> onSpawn)
+        private CancellationTokenSource _spawnTokenSource;
+
+        public void RespawnBoth()
         {
+            _spawnTokenSource?.Cancel();
+            _spawnTokenSource = new CancellationTokenSource();
+
+            RespawnBothAsync(_spawnTokenSource.Token).Forget();
+        }
+
+        public async UniTask RespawnBothAsync(CancellationToken token)
+        {
+            ClearSpawnedObjects();
+
+            _roster?.Clear();
+
             ApplyConfig();
 
             if (_leftSpawner != null)
             {
-                await _leftSpawner.SpawnAndCollect(token, displayProgressBar, onSpawn);
+                await _leftSpawner.SpawnAndCollect(
+                    token,
+                    go => OnSpawned(go, 0));
             }
 
             if (_rightSpawner != null)
             {
-                await _rightSpawner.SpawnAndCollect(token, displayProgressBar, onSpawn);
+                await _rightSpawner.SpawnAndCollect(
+                    token,
+                    go => OnSpawned(go, 1));
             }
         }
 
@@ -51,8 +73,21 @@ namespace ArmyClash.MegaWorldGrid
 
         public void ApplyConfig()
         {
+            if (_config == null)
+            {
+                return;
+            }
+
             _leftSpawner?.ApplyConfig(_config);
             _rightSpawner?.ApplyConfig(_config);
+        }
+
+        private void OnSpawned(GameObject go, int teamId)
+        {
+            EntityMonoBehaviour entity = go.GetComponent<EntityMonoBehaviour>();
+            TeamData team = entity.GetData<TeamData>();
+            team.TeamId = teamId;
+            _roster?.Register(entity);
         }
     }
 }

@@ -33,7 +33,7 @@ namespace ArmyClash.Battle.UI.Actions
         private void OnClicked()
         {
             _state?.SetIdle();
-            _spawner?.RandomizeArmies();
+            _spawner?.RespawnBoth();
         }
     }
 }

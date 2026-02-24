@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 
 namespace ArmyClash.Grid
 {
-    [Serializable]
-    public class GridConfig
+    [CreateAssetMenu(menuName = "Configs/Battle/GridConfig", fileName = "GridConfig")]
+    public sealed class GridConfig : ScriptableObject
     {
         [Min(1)]
         public int Rows = 4;

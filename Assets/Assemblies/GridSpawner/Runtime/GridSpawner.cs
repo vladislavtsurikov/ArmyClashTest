@@ -64,44 +64,37 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
                     return null;
                 }
 
-                settings.Config ??= new GridConfig();
                 return settings.Config;
             }
         }
 
-        private void OnDrawGizmos()
-        {
-            GridConfig config = Config;
-            if (config == null)
-            {
-                return;
-            }
-
-            GridStamperControllerSettings settings = (GridStamperControllerSettings)StamperControllerSettings;
-
-            GridGizmoDrawer.Draw(config, transform.position, transform.right, transform.forward, transform.rotation,
-                settings.GizmoColor);
-        }
-
         protected override async UniTask Spawn(CancellationToken token, bool displayProgressBar) =>
-            await SpawnAndCollect(token, displayProgressBar);
+            await SpawnAndCollect(token);
 
         public void ApplyConfig(GridConfig config)
         {
             GridStamperControllerSettings settings = (GridStamperControllerSettings)StamperControllerSettings;
+            if (settings == null)
+            {
+                return;
+            }
 
-            settings.Config ??= new GridConfig();
-            settings.Config.CopyFrom(config);
+            settings.Config = config;
         }
 
-        public async UniTask SpawnAndCollect(CancellationToken token, bool displayProgressBar) =>
-            await SpawnAndCollect(token, displayProgressBar, null);
+        public async UniTask SpawnAndCollect(CancellationToken token) =>
+            await SpawnAndCollect(token, null);
 
         public async UniTask SpawnAndCollect(
             CancellationToken token,
-            bool displayProgressBar,
             Action<GameObject> onSpawn)
         {
+            if (Config == null)
+            {
+                Debug.LogWarning("GridSpawner requires a GridConfig asset.", this);
+                return;
+            }
+
             GridGenerator gridGenerator = GridGenerator;
             IReadOnlyList<GridSlot> slots = gridGenerator.Build(Config, transform.position, transform.right,
                 transform.forward,
@@ -117,12 +110,6 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
             for (int typeIndex = 0; typeIndex < Data.GroupList.Count; typeIndex++)
             {
                 token.ThrowIfCancellationRequested();
-#if UNITY_EDITOR
-                if (displayProgressBar)
-                {
-                    UpdateDisplayProgressBar("Running", "Running " + Data.GroupList[typeIndex].name);
-                }
-#endif
 
                 await GridSpawnUtility.SpawnGroup(
                     token,
@@ -133,6 +120,21 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
                 completedTypes++;
                 SpawnProgress = completedTypes / (float)maxTypes;
             }
+        }
+
+        private void OnDrawGizmos()
+        {
+            GridConfig config = Config;
+            if (config == null)
+            {
+                Debug.LogWarning("GridSpawner requires a GridConfig asset.", this);
+                return;
+            }
+
+            GridStamperControllerSettings settings = (GridStamperControllerSettings)StamperControllerSettings;
+
+            GridGizmoDrawer.Draw(config, transform.position, transform.right, transform.forward, transform.rotation,
+                settings.GizmoColor);
         }
     }
 }

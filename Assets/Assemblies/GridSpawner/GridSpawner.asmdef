@@ -12,7 +12,8 @@
         "VladislavTsurikov.ReflectionUtility",
         "VladislavTsurikov.ComponentStack",
         "VladislavTsurikov.ColliderSystem",
-        "VladislavTsurikov.Utility"
+        "VladislavTsurikov.Utility",
+        "VladislavTsurikov.IMGUIUtility"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

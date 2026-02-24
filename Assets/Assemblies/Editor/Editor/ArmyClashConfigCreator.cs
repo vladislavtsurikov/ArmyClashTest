@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using ArmyClash.Grid;
 using UnityEditor;
 using UnityEngine;
 using VladislavTsurikov.ActionFlow.Runtime.Modifier;
@@ -19,6 +20,7 @@ namespace ArmyClash.Editor.Modifier
         private const string ShapesPath = ModifiersPath + "/Shapes";
         private const string SizesPath = ModifiersPath + "/Sizes";
         private const string ColorsPath = ModifiersPath + "/Colors";
+        private const string GridConfigPath = RootPath + "/GridConfig.asset";
 
         [MenuItem("ArmyClash/Configs/Create Default Modifier Configs")]
         public static void CreateDefaults()
@@ -59,6 +61,23 @@ namespace ArmyClash.Editor.Modifier
             CreateColorModifier("RED", redEffect, new Color(1f, 0.2f, 0.2f));
             CreateColorModifier("GOLD", goldEffect, new Color(1f, 0.85f, 0.1f));
 
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+        }
+
+        [MenuItem("ArmyClash/Configs/Create Grid Config")]
+        public static void CreateGridConfig()
+        {
+            EnsureFolders();
+
+            GridConfig config = AssetDatabase.LoadAssetAtPath<GridConfig>(GridConfigPath);
+            if (config == null)
+            {
+                config = ScriptableObject.CreateInstance<GridConfig>();
+                AssetDatabase.CreateAsset(config, GridConfigPath);
+            }
+
+            EditorUtility.SetDirty(config);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
         }

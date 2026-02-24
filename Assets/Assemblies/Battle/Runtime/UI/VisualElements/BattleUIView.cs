@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace ArmyClash.Battle.Ui
@@ -9,8 +10,11 @@ namespace ArmyClash.Battle.Ui
 
         public BattleUIView()
         {
-            RegisterCallback<AttachToPanelEvent>(OnAttachToPanel);
-            RegisterCallback<DetachFromPanelEvent>(OnDetachFromPanel);
+            if (Application.isPlaying)
+            {
+                RegisterCallback<AttachToPanelEvent>(OnAttachToPanel);
+                RegisterCallback<DetachFromPanelEvent>(OnDetachFromPanel);
+            }
         }
 
         public BattleUIToolkitEntity Entity

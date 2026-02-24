@@ -5,7 +5,7 @@ using VladislavTsurikov.ReflectionUtility;
 
 namespace ArmyClash.Battle.Data
 {
-    [Name("Battle/WorldAttackDistance")]
+    [Name("Battle/AttackDistanceData")]
     public sealed class AttackDistanceData : ComponentData
     {
         private readonly ReactiveProperty<float> _attackRangeReactive = new();
