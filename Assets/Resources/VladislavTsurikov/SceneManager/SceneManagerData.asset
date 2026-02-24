@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58b5066f4e147ef8d576b22adb7d854, type: 3}
+  m_Name: SceneManagerData
+  m_EditorClassIdentifier: VladislavTsurikov.SceneManagerTool::VladislavTsurikov.SceneManagerTool.Runtime.SceneManagerData
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: b2bc2450727ab3a4f8b52bf9025b79cb, type: 2}
+    - {fileID: 102900000, guid: e671668ad4d2abb408e3110c6c0d0d8d, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _profile
+      Entry: 10
+      Data: 0
+    - Name: SceneManagerEditorData
+      Entry: 7
+      Data: 0|VladislavTsurikov.SceneManagerTool.Editor.SceneManagerEditorData, VladislavTsurikov.SceneManagerTool
+    - Name: SceneSetupManager
+      Entry: 7
+      Data: 1|VladislavTsurikov.SceneManagerTool.Editor.SceneSetupManager, VladislavTsurikov.SceneManagerTool
+    - Name: SceneSetups
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: StartupScene
+      Entry: 7
+      Data: 2|VladislavTsurikov.SceneManagerTool.Editor.StartupScene, VladislavTsurikov.SceneManagerTool
+    - Name: _sceneReference
+      Entry: 7
+      Data: 3|VladislavTsurikov.SceneUtility.Runtime.SceneReference, VladislavTsurikov.SceneUtility
+    - Name: _cachedScene
+      Entry: 5
+      Data: false
+    - Name: _sceneAsset
+      Entry: 10
+      Data: 1
+    - Name: _scenePath
+      Entry: 1
+      Data: Assets/Resources/VladislavTsurikov/SceneManager/Scene Manager.unity
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _runAsRunAsBuildMode
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+  EnableSceneManager: 1

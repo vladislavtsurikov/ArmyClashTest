@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Default Local Group
+  m_GUID: 0961c3246aab5a84b95c8979ad5ea17d
+  m_SerializeEntries:
+  - m_GUID: 0b5d16219ded1bc4baacc0abedb4f943
+    m_Address: BattleWorldSpeedConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c0c949b06142fd429d0a7c6b4cad282
+    m_Address: Assets/Assemblies/Battle/Content/Scenes/Battle.unity
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Scene Manager
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e671668ad4d2abb408e3110c6c0d0d8d
+    m_Address: Assets/Resources/VladislavTsurikov/SceneManager/Scene Manager.unity
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Scene Manager
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: e99b5afd71106804eb1722c8badde95c, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: da6758c5e81f4804da424d64f9b27caf, type: 2}
+    - {fileID: 11400000, guid: e61f87831dae3484daba18f5396ae940, type: 2}

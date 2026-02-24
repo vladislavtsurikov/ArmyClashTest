@@ -1,0 +1,417 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab17fe27e7f84c8bbe08270652c758e6, type: 3}
+  m_Name: Profile
+  m_EditorClassIdentifier: VladislavTsurikov.SceneManagerTool::VladislavTsurikov.SceneManagerTool.Runtime.Profile
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 102900000, guid: 7c0c949b06142fd429d0a7c6b4cad282, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: BuildSceneCollectionStack
+      Entry: 7
+      Data: 0|VladislavTsurikov.SceneManagerTool.Runtime.BuildSceneCollectionSystem.BuildSceneCollectionStack,
+        VladislavTsurikov.SceneManagerTool
+    - Name: _elementList
+      Entry: 7
+      Data: 1|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.SceneManagerTool.Runtime.BuildSceneCollectionSystem.BuildSceneCollection,
+        VladislavTsurikov.SceneManagerTool]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 2|VladislavTsurikov.SceneManagerTool.Runtime.BuildSceneCollectionSystem.DefaultBuildSceneCollection,
+        VladislavTsurikov.SceneManagerTool
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: c109e725-7a8d-4259-b919-c4b20a083bb1
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _name
+      Entry: 1
+      Data: Game
+    - Name: SceneCollectionStack
+      Entry: 7
+      Data: 3|VladislavTsurikov.SceneManagerTool.Runtime.SceneCollectionSystem.SceneCollectionStack,
+        VladislavTsurikov.SceneManagerTool
+    - Name: _elementList
+      Entry: 7
+      Data: 4|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.SceneManagerTool.Runtime.SceneCollectionSystem.SceneCollection,
+        VladislavTsurikov.SceneManagerTool]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 5|VladislavTsurikov.SceneManagerTool.Runtime.SceneCollectionSystem.SceneCollection,
+        VladislavTsurikov.SceneManagerTool
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 6f843981-3124-4e08-aa74-009eff14f895
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _name
+      Entry: 1
+      Data: Scene Collection
+    - Name: SceneTypeComponentStack
+      Entry: 7
+      Data: 6|VladislavTsurikov.SceneManagerTool.Runtime.SceneTypeSystem.SceneTypeComponentStack,
+        VladislavTsurikov.SceneManagerTool
+    - Name: _elementList
+      Entry: 7
+      Data: 7|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.SceneManagerTool.Runtime.SceneTypeSystem.SceneType,
+        VladislavTsurikov.SceneManagerTool]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 8|VladislavTsurikov.SceneManagerTool.Runtime.SceneTypeSystem.Single,
+        VladislavTsurikov.SceneManagerTool
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 7c800e22-b86b-47cc-a91f-16204251ae3e
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SettingsStack
+      Entry: 7
+      Data: 9|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.SettingsComponent,
+        VladislavTsurikov.SceneManagerTool]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 10|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.SettingsComponent,
+        VladislavTsurikov.SceneManagerTool]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 11|VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.BeforeLoadOperationsSettings,
+        VladislavTsurikov.SceneManagerTool
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 4742fa46-997f-4564-8269-acef8b02b749
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OperationStack
+      Entry: 7
+      Data: 12|VladislavTsurikov.ActionFlow.Runtime.ActionCollection, VladislavTsurikov.ActionFlow
+    - Name: _elementList
+      Entry: 7
+      Data: 13|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.ActionFlow.Runtime.Actions.Action,
+        VladislavTsurikov.ActionFlow]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 14|ArmyClash.SceneManager.LoadResourceLoadersOperation, ArmyClash.SceneManager
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: false
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 824b0e6b-b945-453d-ad00-fa6a88889c42
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.AfterLoadOperationsSettings,
+        VladislavTsurikov.SceneManagerTool
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: cb7737a0-fdff-4d9b-84b5-5272f2703222
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OperationStack
+      Entry: 7
+      Data: 16|VladislavTsurikov.ActionFlow.Runtime.ActionCollection, VladislavTsurikov.ActionFlow
+    - Name: _elementList
+      Entry: 7
+      Data: 17|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.ActionFlow.Runtime.Actions.Action,
+        VladislavTsurikov.ActionFlow]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 18|ArmyClash.SceneManager.SpawnBattleArmiesOperation, ArmyClash.SceneManager
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 8f4bbe74-30fa-41e4-8f48-b805adf6fbed
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _randomize
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SceneReference
+      Entry: 7
+      Data: 19|VladislavTsurikov.SceneUtility.Runtime.SceneReference, VladislavTsurikov.SceneUtility
+    - Name: _cachedScene
+      Entry: 5
+      Data: false
+    - Name: _sceneAsset
+      Entry: 10
+      Data: 0
+    - Name: _scenePath
+      Entry: 1
+      Data: Assets/Assemblies/Battle/Content/Scenes/Battle.unity
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SettingsStack
+      Entry: 7
+      Data: 20|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.SettingsComponent,
+        VladislavTsurikov.SceneManagerTool]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 21|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.SettingsComponent,
+        VladislavTsurikov.SceneManagerTool]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Startup
+      Entry: 5
+      Data: true
+    - Name: <ID>k__BackingField
+      Entry: 3
+      Data: -1856521216
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ActiveBuildSceneCollection
+      Entry: 9
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: BuildSceneCollectionStackEditor
+      Entry: 7
+      Data: 22|VladislavTsurikov.SceneManagerTool.Editor.BuildSceneCollectionSystem.BuildSceneCollectionStackEditor,
+        VladislavTsurikov.SceneManagerTool
+    - Name: 
+      Entry: 8
+      Data: 
