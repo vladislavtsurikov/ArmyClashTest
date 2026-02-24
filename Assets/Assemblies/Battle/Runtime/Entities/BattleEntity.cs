@@ -16,28 +16,37 @@ namespace ArmyClash.Battle
         protected override Type[] ComponentDataTypesToCreate() =>
             new[]
             {
-                typeof(StatsEntityData), typeof(TeamData), typeof(TargetData), typeof(LifeData),
+                typeof(StatsEntityData), typeof(ModifiersData), typeof(TeamData), typeof(TargetData), typeof(LifeData),
                 typeof(AttackDistanceData), typeof(StateMachineData)
             };
 
         protected override Type[] ActionTypesToCreate() =>
-            new[] { typeof(StateMachineAction), typeof(HandleDeathAction) };
+            new[]
+            {
+                typeof(ApplyModifierStatEffectAction),
+                typeof(ApplyColorModifierAction),
+                typeof(ApplySizeModifierAction),
+                typeof(ApplyShapeModifierAction),
+                typeof(SelectRandomModifierEffectAction),
+                typeof(SelectRandomModifierEffectAction),
+                typeof(SelectRandomModifierEffectAction),
+                typeof(StateMachineAction),
+                typeof(HandleDeathAction)
+            };
 
         protected override void OnAfterCreateDataAndActions()
         {
             StateMachineData stateMachine = GetData<StateMachineData>();
 
             NodeStackOnlyDifferentTypes<State> stack = stateMachine.StateStack;
-            if (stack.ElementList.Count > 0)
+            if (stack.ElementList.Count == 0)
             {
-                return;
+                stack.CreateIfMissingType(new[]
+                {
+                    typeof(DeadState), typeof(IdleState), typeof(FindTargetState), typeof(MoveToTargetState),
+                    typeof(AttackTargetState)
+                });
             }
-
-            stack.CreateIfMissingType(new[]
-            {
-                typeof(DeadState), typeof(IdleState), typeof(FindTargetState), typeof(MoveToTargetState),
-                typeof(AttackTargetState)
-            });
         }
     }
 }

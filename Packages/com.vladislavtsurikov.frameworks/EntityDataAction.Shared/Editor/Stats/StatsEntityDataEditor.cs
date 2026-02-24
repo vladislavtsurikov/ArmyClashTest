@@ -20,7 +20,6 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Editor.Stats
         public override void OnEnable()
         {
             _data = Target as StatsEntityData;
-            BuildStyles();
         }
 
         public override void OnGUI(Rect rect, int index)
@@ -33,6 +32,22 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Editor.Stats
             BuildStyles();
 
             float y = rect.y;
+            float collectionHeight = EditorGUIUtility.singleLineHeight;
+            Rect collectionRect = new Rect(rect.x, y, rect.width, collectionHeight);
+            EditorGUI.BeginChangeCheck();
+            StatCollection collection = (StatCollection)EditorGUI.ObjectField(
+                collectionRect,
+                "Collection",
+                _data.Collection,
+                typeof(StatCollection),
+                false);
+            if (EditorGUI.EndChangeCheck())
+            {
+                _data.Collection = collection;
+                MarkTargetDirty();
+            }
+            y += collectionHeight + 6f;
+
             float headerHeight = EditorGUIUtility.singleLineHeight;
             EditorGUI.LabelField(new Rect(rect.x, y, rect.width, headerHeight), "Stats", _headerStyle);
             y += headerHeight + 4f;
@@ -82,11 +97,12 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Editor.Stats
                 return EditorGUIUtility.singleLineHeight;
             }
 
+            float collectionHeight = EditorGUIUtility.singleLineHeight + 6f;
             int count = _data.Stats != null ? _data.Stats.Count : 0;
             float headerHeight = EditorGUIUtility.singleLineHeight + 4f;
             float rowHeight = EditorGUIUtility.singleLineHeight + 8f;
             float rowsHeight = count > 0 ? count * (rowHeight + 2f) : EditorGUIUtility.singleLineHeight;
-            return headerHeight + rowsHeight;
+            return collectionHeight + headerHeight + rowsHeight;
         }
 
         private static string BuildClampText(StatValueComponent component, float value)
@@ -98,17 +114,20 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Editor.Stats
 
         private void BuildStyles()
         {
-            _headerStyle ??= new GUIStyle(EditorStyles.boldLabel)
+            GUIStyle baseLabel = GUI.skin != null ? GUI.skin.label : null;
+
+            _headerStyle ??= new GUIStyle(baseLabel ?? new GUIStyle())
             {
-                fontSize = 12
+                fontSize = 12,
+                fontStyle = FontStyle.Bold
             };
 
             _rowStyle ??= new GUIStyle(EditorStyles.helpBox);
-            _nameStyle ??= new GUIStyle(EditorStyles.label)
+            _nameStyle ??= new GUIStyle(baseLabel ?? new GUIStyle())
             {
                 fontStyle = FontStyle.Bold
             };
-            _valueStyle ??= new GUIStyle(EditorStyles.label)
+            _valueStyle ??= new GUIStyle(baseLabel ?? new GUIStyle())
             {
                 alignment = TextAnchor.MiddleRight
             };

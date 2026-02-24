@@ -1,50 +1,63 @@
+using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using OdinSerializer;
+using UniRx;
 using VladislavTsurikov.ActionFlow.Runtime.Stats;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.ReflectionUtility;
 
 namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats
 {
-    [RequiresData(typeof(StatsEntityData))]
-    [Name("Stats/Apply Modifier Stat Effect Action")]
-    public sealed class ApplyModifierStatEffectAction : EntityAction
+    [RequiresData(typeof(StatsEntityData), typeof(ArmyClash.Battle.Data.ModifiersData))]
+    [Name("Stats/Apply Modifier Stat Effect")]
+    public sealed class ApplyModifierStatEffectAction : EntityLifecycleAction
     {
-        [OdinSerialize]
-        private ModifierStatEffect _effect;
+        private IDisposable _subscription;
+
+        protected override void Awake()
+        {
+            var data = Get<ArmyClash.Battle.Data.ModifiersData>();
+            _subscription?.Dispose();
+            IObservable<Unit> added = data.Effects.ObserveAdd().Select(_ => Unit.Default);
+            IObservable<Unit> removed = data.Effects.ObserveRemove().Select(_ => Unit.Default);
+            IObservable<Unit> reset = data.Effects.ObserveReset().Select(_ => Unit.Default);
+            _subscription = added.Merge(removed, reset)
+                .Subscribe(_ => ApplyAll(data));
+        }
+
+        protected override void OnDisable()
+        {
+            _subscription?.Dispose();
+            _subscription = null;
+        }
 
         protected override UniTask<bool> Run(CancellationToken token)
         {
-            if (_effect == null)
-            {
-                return UniTask.FromResult(true);
-            }
+            var data = Get<ArmyClash.Battle.Data.ModifiersData>();
+            ApplyAll(data);
 
-            StatsEntityData data = Get<StatsEntityData>();
-            if (data == null)
-            {
-                return UniTask.FromResult(true);
-            }
+            return UniTask.FromResult(true);
+        }
 
-            var entries = _effect.Entries;
-            if (entries == null)
-            {
-                return UniTask.FromResult(true);
-            }
+        private void ApplyAll(ArmyClash.Battle.Data.ModifiersData data)
+        {
+            StatsEntityData stats = Get<StatsEntityData>();
+            stats.RebuildFromCollection();
 
+            foreach (var t in data.Effects)
+            {
+                ApplyEffect(stats, t);
+            }
+        }
+
+        private static void ApplyEffect(StatsEntityData stats, ModifierStatEffect effect)
+        {
+            var entries = effect.Entries;
             for (int i = 0; i < entries.Count; i++)
             {
                 Stat stat = entries[i].Stat;
-                if (stat == null)
-                {
-                    continue;
-                }
-
-                data.AddStatValue(stat, entries[i].Delta);
+                stats.AddStatValue(stat, entries[i].Delta);
             }
-
-            return UniTask.FromResult(true);
         }
     }
 }
