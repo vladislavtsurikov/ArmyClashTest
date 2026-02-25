@@ -79,8 +79,8 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 6|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem.RandomGrid,
-        VladislavTsurikov.MegaWorld
+      Data: 6|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem.GridScatter,
+        GridSpawner
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -92,7 +92,7 @@ MonoBehaviour:
       Data: true
     - Name: _nodeId
       Entry: 1
-      Data: dae8d1d8-4e9e-4fe0-871b-98346a56ddbd
+      Data: 4da47890-7585-4ad1-8d02-93d56f6e0eeb
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -105,33 +105,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: FailureRate
-      Entry: 4
-      Data: 20
-    - Name: GridAngle
-      Entry: 4
-      Data: 0
-    - Name: GridStep
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 7
-    - Name: 
-      Entry: 4
-      Data: 7
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: RandomisationType
-      Entry: 3
-      Data: 1
-    - Name: UniformGrid
-      Entry: 5
-      Data: true
-    - Name: Vastness
-      Entry: 4
-      Data: 1
     - Name: 
       Entry: 8
       Data: 
