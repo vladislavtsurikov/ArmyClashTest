@@ -35,38 +35,8 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
             RandomSeedSettings randomSeedSettings = (RandomSeedSettings)group.GetElement(typeof(RandomSeedSettings));
             randomSeedSettings.GenerateRandomSeedIfNecessary();
 
-            IReadOnlyList<GridSlot> slots = gridGenerator?.Slots;
-            if (slots == null || slots.Count == 0)
-            {
-                return instances;
-            }
-
             ScatterComponentSettings scatterSettings =
                 (ScatterComponentSettings)group.GetElement(typeof(ScatterComponentSettings));
-            if (scatterSettings == null || scatterSettings.ScatterStack == null)
-            {
-                for (int i = 0; i < slots.Count; i++)
-                {
-                    token.ThrowIfCancellationRequested();
-
-                    PrototypeGameObject proto =
-                        (PrototypeGameObject)GetRandomPrototype.GetMaxSuccessProto(group.PrototypeList);
-                    if (proto == null || !proto.Active || proto.Prefab == null)
-                    {
-                        continue;
-                    }
-
-                    GameObject instance = SpawnPrototype.SpawnGameObject(group, proto, slots[i].Position,
-                        gridGenerator.Rotation);
-                    if (instance != null)
-                    {
-                        instances.Add(instance);
-                        onSpawn?.Invoke(instance);
-                    }
-                }
-
-                return instances;
-            }
 
             ScatterStack scatterStack = scatterSettings.ScatterStack;
             scatterStack.Setup(true, new object[] { gridGenerator });

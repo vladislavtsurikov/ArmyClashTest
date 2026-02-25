@@ -16,6 +16,11 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
 
         protected override void SetupComponent(object[] setupData = null)
         {
+            if (setupData == null)
+            {
+                return;
+            }
+
             for (int i = 0; i < setupData.Length; i++)
             {
                 if (setupData[i] is GridGenerator gridGenerator)

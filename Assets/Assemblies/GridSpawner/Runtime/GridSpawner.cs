@@ -111,6 +111,10 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
             {
                 token.ThrowIfCancellationRequested();
 
+                ScatterComponentSettings scatterSettings =
+                    (ScatterComponentSettings)Data.GroupList[typeIndex].GetElement(typeof(ScatterComponentSettings));
+                scatterSettings.ScatterStack.Setup(true, new object[] { gridGenerator });
+
                 await GridSpawnUtility.SpawnGroup(
                     token,
                     Data.GroupList[typeIndex],
