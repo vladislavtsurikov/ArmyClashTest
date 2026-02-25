@@ -18,6 +18,7 @@ UserSettings/
 *.suo
 *.pidb
 *.booproj
+*.csproj.DotSettings
 *.svd
 *.pdb
 *.mdb
