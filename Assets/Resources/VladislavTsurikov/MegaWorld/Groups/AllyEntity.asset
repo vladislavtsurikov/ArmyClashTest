@@ -80,8 +80,8 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 6|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem.RandomPoint,
-        VladislavTsurikov.MegaWorld
+      Data: 6|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem.GridScatter,
+        GridSpawner
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -93,7 +93,7 @@ MonoBehaviour:
       Data: true
     - Name: _nodeId
       Entry: 1
-      Data: ef8364b2-eb48-43f0-98b9-1fb8700cd171
+      Data: 2e14d3e6-9fb2-409e-a03e-021bfb85bb7d
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -106,12 +106,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: MaxChecks
-      Entry: 3
-      Data: 15
-    - Name: MinChecks
-      Entry: 3
-      Data: 15
     - Name: 
       Entry: 8
       Data: 

@@ -122,16 +122,6 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
             }
         }
 
-        private void OnDrawGizmos()
-        {
-            GridConfig config = Config;
-            if (config == null)
-            {
-                Debug.LogWarning("GridSpawner requires a GridConfig asset.", this);
-                return;
-            }
-
-            GridGizmoDrawer.Draw(config, transform.position, transform.right, transform.forward, transform.rotation);
-        }
+        
     }
 }
