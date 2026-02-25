@@ -168,7 +168,7 @@ MonoBehaviour:
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: 2|VladislavTsurikov.MegaWorld.Runtime.GridSpawner.GridStamperControllerSettings,
@@ -181,10 +181,10 @@ MonoBehaviour:
       Data: true
     - Name: _selected
       Entry: 5
-      Data: true
+      Data: false
     - Name: _nodeId
       Entry: 1
-      Data: b5e39d43-a217-432e-b6c3-13b4a3fb10a9
+      Data: 1eca3e95-f17d-453d-a594-1e716c762cd2
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -204,54 +204,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
-      Entry: 7
-      Data: 3|VladislavTsurikov.ActionFlow.Runtime.Stats.StatValueComponent, VladislavTsurikov.ActionFlow
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: false
-    - Name: _nodeId
-      Entry: 1
-      Data: f852528d-9cae-4f02-8728-025d65ecccb3
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _baseValue
-      Entry: 4
-      Data: 0
-    - Name: _clampEnabled
-      Entry: 5
-      Data: false
-    - Name: _maxValue
-      Entry: 4
-      Data: 0
-    - Name: _minValue
-      Entry: 4
-      Data: 0
-    - Name: _useMax
-      Entry: 5
-      Data: false
-    - Name: _useMin
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -262,7 +214,7 @@ MonoBehaviour:
       Data: 
     - Name: AutoRespawnController
       Entry: 7
-      Data: 4|VladislavTsurikov.MegaWorld.Runtime.Common.Stamper.AutoRespawn.AutoRespawnController,
+      Data: 3|VladislavTsurikov.MegaWorld.Runtime.Common.Stamper.AutoRespawn.AutoRespawnController,
         VladislavTsurikov.MegaWorld
     - Name: 
       Entry: 8
@@ -545,7 +497,7 @@ MonoBehaviour:
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: 2|VladislavTsurikov.MegaWorld.Runtime.GridSpawner.GridStamperControllerSettings,
@@ -558,10 +510,10 @@ MonoBehaviour:
       Data: true
     - Name: _selected
       Entry: 5
-      Data: true
+      Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 0afafa42-14cb-408d-9523-4e11fcc1150e
+      Data: 615a2f8c-b7fc-4a7e-bae7-27950afd7ae0
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -581,54 +533,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
-      Entry: 7
-      Data: 3|VladislavTsurikov.ActionFlow.Runtime.Stats.StatValueComponent, VladislavTsurikov.ActionFlow
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: false
-    - Name: _nodeId
-      Entry: 1
-      Data: f77f8f85-0289-4b6f-8d54-b7261811daa9
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _baseValue
-      Entry: 4
-      Data: 0
-    - Name: _clampEnabled
-      Entry: 5
-      Data: false
-    - Name: _maxValue
-      Entry: 4
-      Data: 0
-    - Name: _minValue
-      Entry: 4
-      Data: 0
-    - Name: _useMax
-      Entry: 5
-      Data: false
-    - Name: _useMin
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -639,7 +543,7 @@ MonoBehaviour:
       Data: 
     - Name: AutoRespawnController
       Entry: 7
-      Data: 4|VladislavTsurikov.MegaWorld.Runtime.Common.Stamper.AutoRespawn.AutoRespawnController,
+      Data: 3|VladislavTsurikov.MegaWorld.Runtime.Common.Stamper.AutoRespawn.AutoRespawnController,
         VladislavTsurikov.MegaWorld
     - Name: 
       Entry: 8
@@ -657,7 +561,7 @@ Transform:
   m_GameObject: {fileID: 904738819}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -736,6 +640,7 @@ GameObject:
   - component: {fileID: 1228870217}
   - component: {fileID: 1228870216}
   - component: {fileID: 1228870215}
+  - component: {fileID: 1228870219}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -815,6 +720,269 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1228870219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228870214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ed336fc87ce154ea6fa6c1e855863b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: VladislavTsurikov.MegaWorld::VladislavTsurikov.MegaWorld.Runtime.TerrainSpawner.TerrainSpawner
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1228870219}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _componentStack
+      Entry: 7
+      Data: 0|VladislavTsurikov.MegaWorld.Runtime.Core.MonoBehaviour.ComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 1|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 2|VladislavTsurikov.MegaWorld.Runtime.Common.Stamper.Area, VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 368276a8-7b3b-47fb-8b24-1b11dff3809e
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Bounds
+      Entry: 7
+      Data: UnityEngine.Bounds, UnityEngine.CoreModule
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ColorCube
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.25
+    - Name: 
+      Entry: 4
+      Data: 0.25
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Dotted
+      Entry: 5
+      Data: false
+    - Name: DrawHandleIfNotSelected
+      Entry: 5
+      Data: false
+    - Name: HandleSettingsMode
+      Entry: 3
+      Data: 1
+    - Name: OnSetAreaBounds
+      Entry: 7
+      Data: 3|System.Action, mscorlib
+    - Name: target
+      Entry: 10
+      Data: 0
+    - Name: declaringType
+      Entry: 7
+      Data: 4|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Runtime.TerrainSpawner.TerrainSpawner, VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: methodName
+      Entry: 1
+      Data: <OnStamperEnable>g__Action|9_0
+    - Name: delegateType
+      Entry: 7
+      Data: 5|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.Action, mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: signature
+      Entry: 7
+      Data: 6|System.Type[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: PastScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: PastThisPosition
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: PixelWidth
+      Entry: 4
+      Data: 4
+    - Name: StamperTool
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|VladislavTsurikov.MegaWorld.Runtime.Common.Stamper.StamperControllerSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 43a323e5-399c-478f-bd50-21e14d4de103
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: AutoRespawn
+      Entry: 5
+      Data: false
+    - Name: DelayAutoRespawn
+      Entry: 4
+      Data: 0.1
+    - Name: Visualisation
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: AutoRespawnController
+      Entry: 7
+      Data: 8|VladislavTsurikov.MegaWorld.Runtime.Common.Stamper.AutoRespawn.AutoRespawnController,
+        VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+  Data:
+    GroupList: []
+  SpawnProgress: 0
 --- !u!1 &1606376792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,7 +1176,7 @@ MonoBehaviour:
       Data: true
     - Name: _nodeId
       Entry: 1
-      Data: 43f207a8-b6e6-4e51-b201-ab10f7ef62f2
+      Data: ccf84651-d278-4dbf-8bf0-df9e35fd6aec
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
