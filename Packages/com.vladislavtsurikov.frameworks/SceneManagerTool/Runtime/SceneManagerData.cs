@@ -59,13 +59,13 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime
                 return;
             }
 
-            Profile.Setup();
-
 #if UNITY_EDITOR
             if (Application.isPlaying)
             {
                 return;
             }
+
+            Profile.Setup();
 
             SceneReference.OnDeleteScene -= Setup;
             SceneReference.OnDeleteScene += Setup;

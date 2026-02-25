@@ -199,7 +199,7 @@ MonoBehaviour:
       Data: 14|ArmyClash.SceneManager.LoadResourceLoadersOperation, ArmyClash.SceneManager
     - Name: SelectSettingsFoldout
       Entry: 5
-      Data: false
+      Data: true
     - Name: _active
       Entry: 5
       Data: true
@@ -208,7 +208,7 @@ MonoBehaviour:
       Data: true
     - Name: _nodeId
       Entry: 1
-      Data: 824b0e6b-b945-453d-ad00-fa6a88889c42
+      Data: c7c19d9a-b299-4b30-b616-aa4f97b8b427
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -288,7 +288,7 @@ MonoBehaviour:
       Data: true
     - Name: _nodeId
       Entry: 1
-      Data: 8f4bbe74-30fa-41e4-8f48-b805adf6fbed
+      Data: bdc69a0a-244e-4102-9daa-dd5aa39d653f
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule

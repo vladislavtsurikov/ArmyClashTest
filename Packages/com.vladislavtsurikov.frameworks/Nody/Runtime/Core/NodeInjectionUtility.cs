@@ -6,37 +6,25 @@ namespace VladislavTsurikov.Nody.Runtime.Core
 {
     public static class NodeInjectionUtility
     {
-        private static List<NodeInjectorRegistrar> _registrars;
+        private static readonly List<NodeInjectorRegistrar> _registrars;
 
-        public static void Inject(Element node, object[] setupData = null)
+        static NodeInjectionUtility()
+        {
+            _registrars = new List<NodeInjectorRegistrar>(
+                ReflectionFactory.CreateAllInstances<NodeInjectorRegistrar>());
+        }
+
+        public static void Inject(Element node)
         {
             if (!Application.isPlaying)
             {
                 return;
             }
 
-            if (node == null)
+            foreach (NodeInjectorRegistrar t in _registrars)
             {
-                return;
+                t.Inject(node);
             }
-
-            EnsureRegistrars();
-
-            for (int i = 0; i < _registrars.Count; i++)
-            {
-                _registrars[i].Inject(node, setupData);
-            }
-        }
-
-        private static void EnsureRegistrars()
-        {
-            if (_registrars != null)
-            {
-                return;
-            }
-
-            _registrars = new List<NodeInjectorRegistrar>(
-                ReflectionFactory.CreateAllInstances<NodeInjectorRegistrar>());
         }
     }
 }

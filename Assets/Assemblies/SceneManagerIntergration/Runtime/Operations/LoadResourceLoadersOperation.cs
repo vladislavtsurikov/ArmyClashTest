@@ -1,5 +1,6 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 using VladislavTsurikov.AddressableLoaderSystem.Runtime.Core;
 using VladislavTsurikov.Core.Runtime;
 using VladislavTsurikov.ReflectionUtility;
@@ -23,7 +24,11 @@ namespace ArmyClash.SceneManager
 
         protected override void SetupComponent(object[] setupData = null)
         {
-            _sceneReference = setupData.GetContext<Single>().SceneReference;
+            Single single = ContextHierarchy.GetContext<Single>();
+            if (single != null)
+            {
+                _sceneReference = single.SceneReference;
+            }
         }
 
         protected override async UniTask<bool> Run(CancellationToken token)

@@ -10,8 +10,16 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem
     {
         public ActionCollection OperationStack = new();
 
+        private object[] _setupData;
+
+        protected override void SetupComponent(object[] setupData = null)
+        {
+            _setupData = setupData;
+        }
+
         public async UniTask DoOperations(CancellationToken token = default)
         {
+            OperationStack.Setup(true, _setupData);
             await OperationStack.Run(token);
         }
     }

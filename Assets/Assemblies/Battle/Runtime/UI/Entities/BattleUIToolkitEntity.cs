@@ -6,7 +6,7 @@ using VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration;
 
 namespace ArmyClash.Battle.Ui
 {
-    public sealed class BattleUIToolkitEntity : UIToolkitEntity
+    public sealed class BattleUIToolkitEntity : UIToolkitEntity, IDisposable
     {
         public BattleUIToolkitEntity(VisualElement root) : base(root)
         {

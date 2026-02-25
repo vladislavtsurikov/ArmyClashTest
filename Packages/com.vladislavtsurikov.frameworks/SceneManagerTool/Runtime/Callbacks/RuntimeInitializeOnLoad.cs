@@ -5,7 +5,7 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.Callbacks
 {
     public static class RuntimeInitializeOnLoad
     {
-        [RuntimeInitializeOnLoadMethod]
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         internal static void OnLoad()
         {
             if (!SceneManagerData.IsValidSceneManager())
@@ -19,6 +19,7 @@ namespace VladislavTsurikov.SceneManagerTool.Runtime.Callbacks
             }
 #endif
 
+            SceneManagerData.Instance.Profile.Setup();
             RuntimeUtility.Start();
         }
     }
