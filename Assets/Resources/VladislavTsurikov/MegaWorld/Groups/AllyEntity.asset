@@ -1,0 +1,5735 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2667aae7eaa2da44eb7c5015b5d2be5a, type: 3}
+  m_Name: AllyEntity
+  m_EditorClassIdentifier: VladislavTsurikov.MegaWorld::VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Group
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000}
+    - {fileID: 6453394263857975662, guid: 9d5d66c931a149f429119dfddcfb3716, type: 3}
+    - {fileID: 3312732151646990043, guid: 9b05ccb2cf4246f48802e9a64857f828, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _componentStackManager
+      Entry: 7
+      Data: 0|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ComponentStackManager,
+        VladislavTsurikov.MegaWorld
+    - Name: _generalGeneralComponentStack
+      Entry: 7
+      Data: 1|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.GeneralComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 2|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 3|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem.ScatterComponentSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 6ecc9746-dc08-4cdc-b041-1ed600438a34
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ScatterStack
+      Entry: 7
+      Data: 4|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem.ScatterStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 5|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem.Scatter,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem.RandomPoint,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: ef8364b2-eb48-43f0-98b9-1fb8700cd171
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MaxChecks
+      Entry: 3
+      Data: 15
+    - Name: MinChecks
+      Entry: 3
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.FilterSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: b0a30e9d-aea6-4e48-9733-24d50b80e968
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: FilterType
+      Entry: 3
+      Data: 1
+    - Name: MaskFilterComponentSettings
+      Entry: 7
+      Data: 8|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.MaskFilterSystem.MaskFilterComponentSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: b52c917e-fc88-437d-9dad-3657a14fdf7b
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MaskFilterStack
+      Entry: 7
+      Data: 9|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.MaskFilterSystem.MaskFilterStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 10|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.MaskFilterSystem.MaskFilter,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SimpleFilter
+      Entry: 7
+      Data: 11|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.SimpleFilter,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 6b103abb-c0c2-4ba4-9347-300245818cee
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: UseFalloff
+      Entry: 5
+      Data: true
+    - Name: CheckHeight
+      Entry: 5
+      Data: false
+    - Name: CheckSlope
+      Entry: 5
+      Data: false
+    - Name: CheckGlobalFractalNoise
+      Entry: 5
+      Data: false
+    - Name: MinHeight
+      Entry: 4
+      Data: 0
+    - Name: MaxHeight
+      Entry: 4
+      Data: 0
+    - Name: HeightFalloffType
+      Entry: 3
+      Data: 1
+    - Name: HeightFalloffMinMax
+      Entry: 5
+      Data: false
+    - Name: MinAddHeightFalloff
+      Entry: 4
+      Data: 20
+    - Name: MaxAddHeightFalloff
+      Entry: 4
+      Data: 20
+    - Name: AddHeightFalloff
+      Entry: 4
+      Data: 20
+    - Name: MinSlope
+      Entry: 4
+      Data: 0
+    - Name: MaxSlope
+      Entry: 4
+      Data: 20
+    - Name: SlopeFalloffType
+      Entry: 3
+      Data: 1
+    - Name: SlopeFalloffMinMax
+      Entry: 5
+      Data: true
+    - Name: MinAddSlopeFalloff
+      Entry: 4
+      Data: 30
+    - Name: MaxAddSlopeFalloff
+      Entry: 4
+      Data: 30
+    - Name: AddSlopeFalloff
+      Entry: 4
+      Data: 30
+    - Name: NoiseTexture
+      Entry: 6
+      Data: 
+    - Name: Fractal
+      Entry: 7
+      Data: 12|VladislavTsurikov.CPUNoise.Runtime.FractalNoiseCPU, VladislavTsurikov.CPUNoise
+    - Name: _noiseType
+      Entry: 3
+      Data: 0
+    - Name: _seed
+      Entry: 3
+      Data: 0
+    - Name: _octaves
+      Entry: 3
+      Data: 3
+    - Name: _frequency
+      Entry: 4
+      Data: 0.03
+    - Name: _lacunarity
+      Entry: 4
+      Data: 2
+    - Name: _persistence
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RangeMin
+      Entry: 4
+      Data: -0.5
+    - Name: RangeMax
+      Entry: 4
+      Data: 0.5
+    - Name: NoisePreviewTexture
+      Entry: 5
+      Data: false
+    - Name: RemapNoiseMin
+      Entry: 4
+      Data: 0
+    - Name: RemapNoiseMax
+      Entry: 4
+      Data: 1
+    - Name: Invert
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|VladislavTsurikov.MegaWorld.Runtime.Common.Stamper.RandomSeedSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 8816f92c-3e29-4780-923c-123077ab8d1c
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: GenerateRandomSeed
+      Entry: 5
+      Data: false
+    - Name: RandomSeed
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _addElementsAttributeType
+      Entry: 7
+      Data: 14|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.AddGeneralGroupComponentsAttribute,
+        VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _prototypeType
+      Entry: 7
+      Data: 15|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject.PrototypeGameObject,
+        VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _toolsComponentStack
+      Entry: 7
+      Data: 16|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolsComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 17|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 16
+    - Name: 
+      Entry: 7
+      Data: 18|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 9718e854-9653-44d7-8f4c-d5913ebcf66f
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 19|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 20|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 21|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Editor.ExplodePhysics.ExplodePhysicsTool,
+        VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 22|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 3c9205d8-138b-46c6-8595-7198ab160c6a
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 23|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 24|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 25|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.FilterSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 10d2d09f-fd4c-4ac4-8367-821ac857a766
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: FilterType
+      Entry: 3
+      Data: 1
+    - Name: MaskFilterComponentSettings
+      Entry: 7
+      Data: 26|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.MaskFilterSystem.MaskFilterComponentSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 3302d630-db5f-4970-a245-7990cf06b3c3
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MaskFilterStack
+      Entry: 7
+      Data: 27|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.MaskFilterSystem.MaskFilterStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 28|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.MaskFilterSystem.MaskFilter,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SimpleFilter
+      Entry: 7
+      Data: 29|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.SimpleFilter,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 3b86f4a7-b7c6-4be4-a96a-8f72714cc643
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: UseFalloff
+      Entry: 5
+      Data: true
+    - Name: CheckHeight
+      Entry: 5
+      Data: false
+    - Name: CheckSlope
+      Entry: 5
+      Data: false
+    - Name: CheckGlobalFractalNoise
+      Entry: 5
+      Data: false
+    - Name: MinHeight
+      Entry: 4
+      Data: 0
+    - Name: MaxHeight
+      Entry: 4
+      Data: 0
+    - Name: HeightFalloffType
+      Entry: 3
+      Data: 1
+    - Name: HeightFalloffMinMax
+      Entry: 5
+      Data: false
+    - Name: MinAddHeightFalloff
+      Entry: 4
+      Data: 20
+    - Name: MaxAddHeightFalloff
+      Entry: 4
+      Data: 20
+    - Name: AddHeightFalloff
+      Entry: 4
+      Data: 20
+    - Name: MinSlope
+      Entry: 4
+      Data: 0
+    - Name: MaxSlope
+      Entry: 4
+      Data: 20
+    - Name: SlopeFalloffType
+      Entry: 3
+      Data: 1
+    - Name: SlopeFalloffMinMax
+      Entry: 5
+      Data: true
+    - Name: MinAddSlopeFalloff
+      Entry: 4
+      Data: 30
+    - Name: MaxAddSlopeFalloff
+      Entry: 4
+      Data: 30
+    - Name: AddSlopeFalloff
+      Entry: 4
+      Data: 30
+    - Name: NoiseTexture
+      Entry: 6
+      Data: 
+    - Name: Fractal
+      Entry: 7
+      Data: 30|VladislavTsurikov.CPUNoise.Runtime.FractalNoiseCPU, VladislavTsurikov.CPUNoise
+    - Name: _noiseType
+      Entry: 3
+      Data: 0
+    - Name: _seed
+      Entry: 3
+      Data: 0
+    - Name: _octaves
+      Entry: 3
+      Data: 3
+    - Name: _frequency
+      Entry: 4
+      Data: 0.03
+    - Name: _lacunarity
+      Entry: 4
+      Data: 2
+    - Name: _persistence
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RangeMin
+      Entry: 4
+      Data: -0.5
+    - Name: RangeMax
+      Entry: 4
+      Data: 0.5
+    - Name: NoisePreviewTexture
+      Entry: 5
+      Data: false
+    - Name: RemapNoiseMin
+      Entry: 4
+      Data: 0
+    - Name: RemapNoiseMax
+      Entry: 4
+      Data: 1
+    - Name: Invert
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 31|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.BrushModifyTool, VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 32|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 368f17ac-2f99-4c88-b422-80872e9bb11b
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 33|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 34|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 35|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.FilterSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 21446d92-77cd-48b1-9aa1-31604571445c
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: FilterType
+      Entry: 3
+      Data: 1
+    - Name: MaskFilterComponentSettings
+      Entry: 7
+      Data: 36|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.MaskFilterSystem.MaskFilterComponentSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 65f4f40b-5714-480e-bf87-c96133df3c49
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MaskFilterStack
+      Entry: 7
+      Data: 37|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.MaskFilterSystem.MaskFilterStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 38|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.MaskFilterSystem.MaskFilter,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SimpleFilter
+      Entry: 7
+      Data: 39|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.SimpleFilter,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: ac89d315-5838-47d2-bbfd-fc205cf81a4d
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: UseFalloff
+      Entry: 5
+      Data: true
+    - Name: CheckHeight
+      Entry: 5
+      Data: false
+    - Name: CheckSlope
+      Entry: 5
+      Data: false
+    - Name: CheckGlobalFractalNoise
+      Entry: 5
+      Data: false
+    - Name: MinHeight
+      Entry: 4
+      Data: 0
+    - Name: MaxHeight
+      Entry: 4
+      Data: 0
+    - Name: HeightFalloffType
+      Entry: 3
+      Data: 1
+    - Name: HeightFalloffMinMax
+      Entry: 5
+      Data: false
+    - Name: MinAddHeightFalloff
+      Entry: 4
+      Data: 20
+    - Name: MaxAddHeightFalloff
+      Entry: 4
+      Data: 20
+    - Name: AddHeightFalloff
+      Entry: 4
+      Data: 20
+    - Name: MinSlope
+      Entry: 4
+      Data: 0
+    - Name: MaxSlope
+      Entry: 4
+      Data: 20
+    - Name: SlopeFalloffType
+      Entry: 3
+      Data: 1
+    - Name: SlopeFalloffMinMax
+      Entry: 5
+      Data: true
+    - Name: MinAddSlopeFalloff
+      Entry: 4
+      Data: 30
+    - Name: MaxAddSlopeFalloff
+      Entry: 4
+      Data: 30
+    - Name: AddSlopeFalloff
+      Entry: 4
+      Data: 30
+    - Name: NoiseTexture
+      Entry: 6
+      Data: 
+    - Name: Fractal
+      Entry: 7
+      Data: 40|VladislavTsurikov.CPUNoise.Runtime.FractalNoiseCPU, VladislavTsurikov.CPUNoise
+    - Name: _noiseType
+      Entry: 3
+      Data: 0
+    - Name: _seed
+      Entry: 3
+      Data: 0
+    - Name: _octaves
+      Entry: 3
+      Data: 3
+    - Name: _frequency
+      Entry: 4
+      Data: 0.03
+    - Name: _lacunarity
+      Entry: 4
+      Data: 2
+    - Name: _persistence
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RangeMin
+      Entry: 4
+      Data: -0.5
+    - Name: RangeMax
+      Entry: 4
+      Data: 0.5
+    - Name: NoisePreviewTexture
+      Entry: 5
+      Data: false
+    - Name: RemapNoiseMin
+      Entry: 4
+      Data: 0
+    - Name: RemapNoiseMax
+      Entry: 4
+      Data: 1
+    - Name: Invert
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 41|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Editor.BrushEraseTool.BrushEraseTool, VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 42|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 4e7b44d3-43cc-4063-98a5-457a6daec5db
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 43|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 44|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 45|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.SimpleFilter,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 7963e227-4101-4d3c-a1b9-726cca6a4939
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: UseFalloff
+      Entry: 5
+      Data: true
+    - Name: CheckHeight
+      Entry: 5
+      Data: false
+    - Name: CheckSlope
+      Entry: 5
+      Data: false
+    - Name: CheckGlobalFractalNoise
+      Entry: 5
+      Data: false
+    - Name: MinHeight
+      Entry: 4
+      Data: 0
+    - Name: MaxHeight
+      Entry: 4
+      Data: 0
+    - Name: HeightFalloffType
+      Entry: 3
+      Data: 1
+    - Name: HeightFalloffMinMax
+      Entry: 5
+      Data: false
+    - Name: MinAddHeightFalloff
+      Entry: 4
+      Data: 20
+    - Name: MaxAddHeightFalloff
+      Entry: 4
+      Data: 20
+    - Name: AddHeightFalloff
+      Entry: 4
+      Data: 20
+    - Name: MinSlope
+      Entry: 4
+      Data: 0
+    - Name: MaxSlope
+      Entry: 4
+      Data: 20
+    - Name: SlopeFalloffType
+      Entry: 3
+      Data: 1
+    - Name: SlopeFalloffMinMax
+      Entry: 5
+      Data: true
+    - Name: MinAddSlopeFalloff
+      Entry: 4
+      Data: 30
+    - Name: MaxAddSlopeFalloff
+      Entry: 4
+      Data: 30
+    - Name: AddSlopeFalloff
+      Entry: 4
+      Data: 30
+    - Name: NoiseTexture
+      Entry: 6
+      Data: 
+    - Name: Fractal
+      Entry: 7
+      Data: 46|VladislavTsurikov.CPUNoise.Runtime.FractalNoiseCPU, VladislavTsurikov.CPUNoise
+    - Name: _noiseType
+      Entry: 3
+      Data: 0
+    - Name: _seed
+      Entry: 3
+      Data: 0
+    - Name: _octaves
+      Entry: 3
+      Data: 3
+    - Name: _frequency
+      Entry: 4
+      Data: 0.03
+    - Name: _lacunarity
+      Entry: 4
+      Data: 2
+    - Name: _persistence
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RangeMin
+      Entry: 4
+      Data: -0.5
+    - Name: RangeMax
+      Entry: 4
+      Data: 0.5
+    - Name: NoisePreviewTexture
+      Entry: 5
+      Data: false
+    - Name: RemapNoiseMin
+      Entry: 4
+      Data: 0
+    - Name: RemapNoiseMax
+      Entry: 4
+      Data: 1
+    - Name: Invert
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 47|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Editor.SprayBrushTool.SprayBrushTool, VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 48|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: cf4347b9-b390-4a72-b62e-00153db45e3b
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 49|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 50|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 51|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.PrecisePlaceTool,
+        VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 52|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 864f5abc-b3eb-4a74-bbdd-52598fed099b
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 53|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 54|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 55|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Editor.PrecisePhysicsTool.PrecisePhysicsTool,
+        VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 56|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 05609378-a36c-487c-8d11-baaadb14466a
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 57|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 58|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 59|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Editor.BrushPhysicsTool.BrushPhysicsTool,
+        VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 60|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 9de1055d-8357-4ee3-851d-4206bed54231
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 61|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 62|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 63|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Editor.EditTool.EditTool, VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 64|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 885bbf07-0e63-4564-8b66-a159bd5d64d2
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 65|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 66|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 67|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Editor.AdvancedBrushTool.AdvancedBrushTool,
+        VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 68|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 23b0464d-7994-483a-b649-b9fcc26ccf06
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 69|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 70|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 71|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Editor.PinTool.PinTool, VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 72|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 78f72135-9f66-41b5-b83a-1b3141f7c42a
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 73|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 74|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 75|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsTool,
+        VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 76|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: aae78e2e-77ae-4c5c-9913-6b7dd3692f04
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 77|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 78|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 79|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Runtime.TextureStamperTool.TextureStamper,
+        VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 80|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 5f442d0f-d821-490b-b545-f6bc95020a4e
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 81|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 82|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 83|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Runtime.TerrainSpawner.TerrainSpawner, VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 84|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 01adbf3d-362e-4ff3-917b-c0592f988c85
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 85|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 86|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 87|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Runtime.Spawner.Spawner, VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 88|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 8a771944-3225-4071-88f7-e8c58c26f9c0
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 89|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 90|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 91|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.FilterSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 444a529b-eea9-4ce0-bd38-4ca6a23ebe13
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: FilterType
+      Entry: 3
+      Data: 1
+    - Name: MaskFilterComponentSettings
+      Entry: 7
+      Data: 92|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.MaskFilterSystem.MaskFilterComponentSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: c5e62f34-93f1-46f5-8f2e-496862123d84
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MaskFilterStack
+      Entry: 7
+      Data: 93|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.MaskFilterSystem.MaskFilterStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 94|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.MaskFilterSystem.MaskFilter,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SimpleFilter
+      Entry: 7
+      Data: 95|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.SimpleFilter,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 517f629d-408f-4c8d-9dba-bc534d464698
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: UseFalloff
+      Entry: 5
+      Data: true
+    - Name: CheckHeight
+      Entry: 5
+      Data: false
+    - Name: CheckSlope
+      Entry: 5
+      Data: false
+    - Name: CheckGlobalFractalNoise
+      Entry: 5
+      Data: false
+    - Name: MinHeight
+      Entry: 4
+      Data: 0
+    - Name: MaxHeight
+      Entry: 4
+      Data: 0
+    - Name: HeightFalloffType
+      Entry: 3
+      Data: 1
+    - Name: HeightFalloffMinMax
+      Entry: 5
+      Data: false
+    - Name: MinAddHeightFalloff
+      Entry: 4
+      Data: 20
+    - Name: MaxAddHeightFalloff
+      Entry: 4
+      Data: 20
+    - Name: AddHeightFalloff
+      Entry: 4
+      Data: 20
+    - Name: MinSlope
+      Entry: 4
+      Data: 0
+    - Name: MaxSlope
+      Entry: 4
+      Data: 20
+    - Name: SlopeFalloffType
+      Entry: 3
+      Data: 1
+    - Name: SlopeFalloffMinMax
+      Entry: 5
+      Data: true
+    - Name: MinAddSlopeFalloff
+      Entry: 4
+      Data: 30
+    - Name: MaxAddSlopeFalloff
+      Entry: 4
+      Data: 30
+    - Name: AddSlopeFalloff
+      Entry: 4
+      Data: 30
+    - Name: NoiseTexture
+      Entry: 6
+      Data: 
+    - Name: Fractal
+      Entry: 7
+      Data: 96|VladislavTsurikov.CPUNoise.Runtime.FractalNoiseCPU, VladislavTsurikov.CPUNoise
+    - Name: _noiseType
+      Entry: 3
+      Data: 0
+    - Name: _seed
+      Entry: 3
+      Data: 0
+    - Name: _octaves
+      Entry: 3
+      Data: 3
+    - Name: _frequency
+      Entry: 4
+      Data: 0.03
+    - Name: _lacunarity
+      Entry: 4
+      Data: 2
+    - Name: _persistence
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RangeMin
+      Entry: 4
+      Data: -0.5
+    - Name: RangeMax
+      Entry: 4
+      Data: 0.5
+    - Name: NoisePreviewTexture
+      Entry: 5
+      Data: false
+    - Name: RemapNoiseMin
+      Entry: 4
+      Data: 0
+    - Name: RemapNoiseMax
+      Entry: 4
+      Data: 1
+    - Name: Invert
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 97|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Runtime.GravitySpawner.GravitySpawner, VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 98|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: d7066d7a-e531-4562-a2d9-4497195c2ecc
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 99|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 100|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 7
+      Data: 101|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Runtime.GridSpawner.GridSpawner, GridSpawner
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _addElementsAttributeType
+      Entry: 7
+      Data: 102|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.AddGroupComponentsAttribute,
+        VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _prototypeType
+      Entry: 9
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _defaultGroupComponentStack
+      Entry: 7
+      Data: 103|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.DefaultComponentsSystem.DefaultGroupComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 104|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 105|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject.ContainerForGameObjects,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 19def26d-f99a-4f53-a9eb-60261eb80101
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _group
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _prototypeType
+      Entry: 9
+      Data: 15
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: PrototypeList
+      Entry: 7
+      Data: 106|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.Prototype,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 107|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject.PrototypeGameObject,
+        VladislavTsurikov.MegaWorld
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: Active
+      Entry: 5
+      Data: true
+    - Name: _componentStackManager
+      Entry: 7
+      Data: 108|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ComponentStackManager,
+        VladislavTsurikov.MegaWorld
+    - Name: _generalGeneralComponentStack
+      Entry: 7
+      Data: 109|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.GeneralComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 110|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 111|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.SuccessSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 713ecf71-215e-4c3e-8bd4-fdaf0be16718
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SuccessValue
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 112|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.OverlapCheckSettings.OverlapCheckSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 0a4b14bc-fd67-4a57-be79-959c541afba1
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: CollisionCheck
+      Entry: 7
+      Data: 113|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.OverlapCheckSettings.OverlapChecks.CollisionCheck,
+        VladislavTsurikov.MegaWorld
+    - Name: MultiplyBoundsSize
+      Entry: 4
+      Data: 1
+    - Name: CollisionCheckType
+      Entry: 5
+      Data: false
+    - Name: CheckCollisionLayers
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ObbCheck
+      Entry: 7
+      Data: 114|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.OverlapCheckSettings.OverlapChecks.OBBCheck,
+        VladislavTsurikov.MegaWorld
+    - Name: BoundsSize
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: BoundsType
+      Entry: 3
+      Data: 1
+    - Name: MultiplyBoundsSize
+      Entry: 4
+      Data: 1
+    - Name: UniformBoundsSize
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OverlapShapeEnum
+      Entry: 3
+      Data: 2
+    - Name: SphereCheck
+      Entry: 7
+      Data: 115|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.OverlapCheckSettings.OverlapChecks.SphereCheck,
+        VladislavTsurikov.MegaWorld
+    - Name: Priority
+      Entry: 3
+      Data: 0
+    - Name: Size
+      Entry: 4
+      Data: 3.5
+    - Name: TrunkSize
+      Entry: 4
+      Data: 0.8
+    - Name: VegetationMode
+      Entry: 5
+      Data: true
+    - Name: ViabilitySize
+      Entry: 4
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 116|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.TransformComponentSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 48b7f2f3-f9d6-4179-a958-f6be92e265f7
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: TransformComponentStack
+      Entry: 7
+      Data: 117|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.TransformComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 118|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.TransformComponent,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 119|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.PositionOffset,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 3017fd49-a25c-47a6-a5aa-8ee9eec36534
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MinPositionOffsetY
+      Entry: 4
+      Data: -0.15
+    - Name: MaxPositionOffsetY
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 120|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.Rotation,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 74a63a76-87f1-4a35-8afe-52a80bed89cd
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RandomizeOrientationX
+      Entry: 4
+      Data: 5
+    - Name: RandomizeOrientationY
+      Entry: 4
+      Data: 100
+    - Name: RandomizeOrientationZ
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 121|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.Scale,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 02dbe328-e93d-4567-9036-914d913049d9
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: UniformScale
+      Entry: 5
+      Data: true
+    - Name: MinScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MaxScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 122|VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter.Settings.PhysicsTransformComponentSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 3e884fe4-ad04-4972-ad24-5160436bac31
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: TransformComponentStack
+      Entry: 7
+      Data: 123|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.TransformComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 124|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.TransformComponent,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 125|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.PositionOffset,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 042cc182-c208-4742-9b64-418628c640b9
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MinPositionOffsetY
+      Entry: 4
+      Data: -0.15
+    - Name: MaxPositionOffsetY
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 126|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.Rotation,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: ede729a2-2198-4f17-a148-1f6f8931e47e
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RandomizeOrientationX
+      Entry: 4
+      Data: 5
+    - Name: RandomizeOrientationY
+      Entry: 4
+      Data: 100
+    - Name: RandomizeOrientationZ
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 127|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.Scale,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 673223d5-071e-4b5a-8477-d040b28bf81d
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: UniformScale
+      Entry: 5
+      Data: true
+    - Name: MinScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MaxScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _addElementsAttributeType
+      Entry: 7
+      Data: 128|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.AddGeneralPrototypeComponentsAttribute,
+        VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _prototypeType
+      Entry: 9
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _toolsComponentStack
+      Entry: 7
+      Data: 129|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolsComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 130|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 16
+    - Name: 
+      Entry: 7
+      Data: 131|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 552d127a-2ff8-4434-a8ba-b9c8dddcbe31
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 132|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 133|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 21
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 134|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 380e49cb-2cc0-4ce2-a9ce-1d78e1d1084c
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 135|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 136|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 31
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 137|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 3ac1e81c-6496-44ed-abf9-011e6a2a5512
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 138|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 139|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 140|VladislavTsurikov.MegaWorld.Editor.BrushEraseTool.PrototypeElements.AdditionalEraseSetting,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 83842e84-2858-4931-aef3-981d5cca71cc
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Success
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 41
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 141|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 03694766-9700-4534-8ce8-0be18dfa57c9
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 142|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 143|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 144|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.SimpleTransformComponentSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: ceadc482-056e-47c3-80f9-cf85c3c2860f
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: TransformComponentStack
+      Entry: 7
+      Data: 145|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.TransformComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 146|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.TransformComponent,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 147|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.PositionOffset,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: d07072e5-1c64-4684-9818-0496734c74c7
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MinPositionOffsetY
+      Entry: 4
+      Data: -0.15
+    - Name: MaxPositionOffsetY
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 148|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.Rotation,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: ef59a872-479d-4478-9308-0cc1b9de5ec6
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RandomizeOrientationX
+      Entry: 4
+      Data: 5
+    - Name: RandomizeOrientationY
+      Entry: 4
+      Data: 100
+    - Name: RandomizeOrientationZ
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 149|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.Scale,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 1cc1b274-f43c-4040-a851-7c9e97debc5e
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: UniformScale
+      Entry: 5
+      Data: true
+    - Name: MinScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MaxScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 47
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 150|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 04b58119-5773-41ab-88e9-c57953016647
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 151|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 152|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 153|VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.PrototypeSettings.PrecisePlaceSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 0f6a8924-ee4c-4025-ba1f-fb73e884f1d7
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: PositionOffset
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 51
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 154|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 9222e9e0-e5cc-47b3-8866-6168c87ef29d
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 155|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 156|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 55
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 157|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 05903fc1-4d27-48da-9d6d-968909724018
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 158|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 159|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 59
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 160|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 0f9981dd-8a94-42cb-aea8-cfe46d5e6e87
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 161|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 162|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 63
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 163|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: f6807ce6-30e4-4f5a-92d3-513ba1bd63a5
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 164|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 165|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 67
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 166|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 6869591d-3954-4263-b130-4572d08ad144
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 167|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 168|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 71
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 169|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: b06bce4a-0638-4ab6-881f-40046c708b4c
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 170|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 171|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 75
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 172|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 03827466-3c5f-4263-b350-2888e6737a62
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 173|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 174|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 79
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 175|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 8ee115dd-d33b-486f-9afe-324744509bfa
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 176|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 177|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 83
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 178|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 9f326654-8c17-4404-9c55-e97b374f0b1d
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 179|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 180|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 87
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 181|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: cb1a6981-0bd2-4bb7-b51d-2177078f9669
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 182|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 183|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 97
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 184|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 6b79a351-11ed-4933-a08f-3fd038a67326
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 185|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 186|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 101
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _addElementsAttributeType
+      Entry: 7
+      Data: 187|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.AddPrototypeComponentsAttribute,
+        VladislavTsurikov.MegaWorld
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _prototypeType
+      Entry: 9
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _id
+      Entry: 3
+      Data: 59524
+    - Name: Prefab
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 188|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject.PrototypeGameObject,
+        VladislavTsurikov.MegaWorld
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: Active
+      Entry: 5
+      Data: true
+    - Name: _componentStackManager
+      Entry: 7
+      Data: 189|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ComponentStackManager,
+        VladislavTsurikov.MegaWorld
+    - Name: _generalGeneralComponentStack
+      Entry: 7
+      Data: 190|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.GeneralComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 191|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 192|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.SuccessSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 53fb6e67-355a-4dab-a626-f797e451b6e3
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SuccessValue
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 193|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.OverlapCheckSettings.OverlapCheckSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: adcd4ccb-e867-4bca-997a-943762b2ef0e
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: CollisionCheck
+      Entry: 7
+      Data: 194|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.OverlapCheckSettings.OverlapChecks.CollisionCheck,
+        VladislavTsurikov.MegaWorld
+    - Name: MultiplyBoundsSize
+      Entry: 4
+      Data: 1
+    - Name: CollisionCheckType
+      Entry: 5
+      Data: false
+    - Name: CheckCollisionLayers
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ObbCheck
+      Entry: 7
+      Data: 195|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.OverlapCheckSettings.OverlapChecks.OBBCheck,
+        VladislavTsurikov.MegaWorld
+    - Name: BoundsSize
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: BoundsType
+      Entry: 3
+      Data: 1
+    - Name: MultiplyBoundsSize
+      Entry: 4
+      Data: 1
+    - Name: UniformBoundsSize
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OverlapShapeEnum
+      Entry: 3
+      Data: 2
+    - Name: SphereCheck
+      Entry: 7
+      Data: 196|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.OverlapCheckSettings.OverlapChecks.SphereCheck,
+        VladislavTsurikov.MegaWorld
+    - Name: Priority
+      Entry: 3
+      Data: 0
+    - Name: Size
+      Entry: 4
+      Data: 3.5
+    - Name: TrunkSize
+      Entry: 4
+      Data: 0.8
+    - Name: VegetationMode
+      Entry: 5
+      Data: true
+    - Name: ViabilitySize
+      Entry: 4
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 197|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.TransformComponentSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 09195b7b-0ee0-4b30-a5e6-4a614af28a00
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: TransformComponentStack
+      Entry: 7
+      Data: 198|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.TransformComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 199|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.TransformComponent,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 200|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.PositionOffset,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: bfdd9962-6e4f-4997-b091-ced585a4d19c
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MinPositionOffsetY
+      Entry: 4
+      Data: -0.15
+    - Name: MaxPositionOffsetY
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 201|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.Rotation,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 23ca2dc4-1a7f-4efb-8d68-89db15f7654d
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RandomizeOrientationX
+      Entry: 4
+      Data: 5
+    - Name: RandomizeOrientationY
+      Entry: 4
+      Data: 100
+    - Name: RandomizeOrientationZ
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 202|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.Scale,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 9f502d24-c2e7-402b-bccc-7dae7693261f
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: UniformScale
+      Entry: 5
+      Data: true
+    - Name: MinScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MaxScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 203|VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter.Settings.PhysicsTransformComponentSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 7c3afc30-1000-41b2-91c9-bfc136bb32e7
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: TransformComponentStack
+      Entry: 7
+      Data: 204|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.TransformComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 205|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.TransformComponent,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 206|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.PositionOffset,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: a5a2acc8-0608-4864-b314-932d8a2b1229
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MinPositionOffsetY
+      Entry: 4
+      Data: -0.15
+    - Name: MaxPositionOffsetY
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 207|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.Rotation,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 1f73a1a0-edb8-455e-abbb-7733f87bb572
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RandomizeOrientationX
+      Entry: 4
+      Data: 5
+    - Name: RandomizeOrientationY
+      Entry: 4
+      Data: 100
+    - Name: RandomizeOrientationZ
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 208|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.Scale,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: a675772e-1f66-46c0-a32a-7ea5658880af
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: UniformScale
+      Entry: 5
+      Data: true
+    - Name: MinScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MaxScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _addElementsAttributeType
+      Entry: 9
+      Data: 128
+    - Name: _prototypeType
+      Entry: 9
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _toolsComponentStack
+      Entry: 7
+      Data: 209|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolsComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 210|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 16
+    - Name: 
+      Entry: 7
+      Data: 211|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 069ab1e1-edc7-4a9c-9c50-19d828f552d8
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 212|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 213|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 21
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 214|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 9a0cf4dd-3812-41da-a8e8-78b6672d7bd2
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 215|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 216|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 31
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 217|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: c8cb22f1-b536-4e83-a4ed-3ff188de8adf
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 218|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 219|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 220|VladislavTsurikov.MegaWorld.Editor.BrushEraseTool.PrototypeElements.AdditionalEraseSetting,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 71992b5b-d679-4f68-938d-94b1f6b4783a
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Success
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 41
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 221|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 055df99a-3a6f-4ad7-a993-6e28ac04d8fa
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 222|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 223|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 224|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.SimpleTransformComponentSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 32529459-c26c-47bf-a7e8-40529cae2688
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: TransformComponentStack
+      Entry: 7
+      Data: 225|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.TransformComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: _elementList
+      Entry: 7
+      Data: 226|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.TransformComponent,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 227|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.PositionOffset,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 129c5669-9f47-434e-9c05-c8605c217135
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MinPositionOffsetY
+      Entry: 4
+      Data: -0.15
+    - Name: MaxPositionOffsetY
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 228|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.Rotation,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 9561fb22-651f-4bbb-9bc8-326cafb6badb
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RandomizeOrientationX
+      Entry: 4
+      Data: 5
+    - Name: RandomizeOrientationY
+      Entry: 4
+      Data: 100
+    - Name: RandomizeOrientationZ
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 229|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.TransformElementSystem.Scale,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 4967f23c-fd7f-4699-a259-6d37649b0d8f
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: UniformScale
+      Entry: 5
+      Data: true
+    - Name: MinScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 4
+      Data: 0.8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MaxScale
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 4
+      Data: 1.2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 47
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 230|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 1b095836-d93e-4145-9ca0-bb63e90d72ed
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 231|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 232|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 233|VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.PrototypeSettings.PrecisePlaceSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: e55f0948-bcd6-42cd-be55-e04165bc7623
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: PositionOffset
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 51
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 234|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: f8e6ef95-01df-48ea-b6bb-0128d06c10c4
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 235|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 236|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 55
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 237|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: b62eed88-3134-4764-83cb-a6b972cfb76f
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 238|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 239|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 59
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 240|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 552f1ea2-e221-4233-bc93-07488ef95a34
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 241|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 242|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 63
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 243|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: db6ffca1-53b8-4e3c-b111-099707a5ceba
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 244|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 245|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 67
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 246|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 507e9bf1-d556-42c0-b134-f84a572596d7
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 247|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 248|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 71
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 249|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 17070baa-fcca-49ab-b00f-efd5310ad869
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 250|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 251|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 75
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 252|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: a44c8c1c-ccaf-498e-8289-2532f0f5ad33
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 253|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 254|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 79
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 255|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: b10e009d-98c4-4d7f-9b84-33e54ec46057
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 256|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 257|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 83
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 258|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 3a3f0482-c429-4da8-8554-fc99ea42430f
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 259|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 260|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 87
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 261|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 2cf63d0f-402f-4f7d-93c4-669a6ec078b7
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 262|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 263|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 97
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 264|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: a7676a52-93b4-438c-8185-7a9d13771d0e
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ComponentStack
+      Entry: 7
+      Data: 265|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 266|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ToolType
+      Entry: 9
+      Data: 101
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _addElementsAttributeType
+      Entry: 9
+      Data: 187
+    - Name: _prototypeType
+      Entry: 9
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _id
+      Entry: 3
+      Data: 59126
+    - Name: Prefab
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  RenamingName: AllyEntity
+  Renaming: 0

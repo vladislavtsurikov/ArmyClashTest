@@ -31,7 +31,7 @@ MonoBehaviour:
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 2
     - Name: 
       Entry: 7
       Data: 2|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.LayerSettings,
@@ -107,54 +107,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
-      Entry: 7
-      Data: 4|VladislavTsurikov.ActionFlow.Runtime.Stats.StatValueComponent, VladislavTsurikov.ActionFlow
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: false
-    - Name: _nodeId
-      Entry: 1
-      Data: 72c2a49c-8bfa-4c36-8d03-162c32aa563b
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _baseValue
-      Entry: 4
-      Data: 0
-    - Name: _clampEnabled
-      Entry: 5
-      Data: false
-    - Name: _maxValue
-      Entry: 4
-      Data: 0
-    - Name: _minValue
-      Entry: 4
-      Data: 0
-    - Name: _useMax
-      Entry: 5
-      Data: false
-    - Name: _useMin
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -165,18 +117,18 @@ MonoBehaviour:
       Data: 
     - Name: ToolsComponentStack
       Entry: 7
-      Data: 5|VladislavTsurikov.MegaWorld.Runtime.Core.GlobalSettings.ElementsSystem.ToolsComponentStack,
+      Data: 4|VladislavTsurikov.MegaWorld.Runtime.Core.GlobalSettings.ElementsSystem.ToolsComponentStack,
         VladislavTsurikov.MegaWorld
     - Name: _elementList
       Entry: 7
-      Data: 6|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+      Data: 5|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
         VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
       Data: 11
     - Name: 
       Entry: 7
-      Data: 7|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+      Data: 6|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -189,7 +141,7 @@ MonoBehaviour:
       Data: true
     - Name: _nodeId
       Entry: 1
-      Data: 658e84d1-37b4-4de1-9c07-61e9b5ae9781
+      Data: 1a748ca0-8a9b-4825-b6c3-d23dbd3e837a
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -204,66 +156,18 @@ MonoBehaviour:
       Data: 
     - Name: ComponentStack
       Entry: 7
-      Data: 8|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 7|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
     - Name: _elementList
       Entry: 7
-      Data: 9|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 8|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 10|VladislavTsurikov.ActionFlow.Runtime.Stats.StatValueComponent, VladislavTsurikov.ActionFlow
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: true
-    - Name: _nodeId
-      Entry: 1
-      Data: ab8a6b0a-a262-41fd-ba1b-c66cb7581c9b
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _baseValue
-      Entry: 4
-      Data: 0
-    - Name: _clampEnabled
-      Entry: 5
-      Data: false
-    - Name: _maxValue
-      Entry: 4
-      Data: 0
-    - Name: _minValue
-      Entry: 4
-      Data: 0
-    - Name: _useMax
-      Entry: 5
-      Data: false
-    - Name: _useMin
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 11|VladislavTsurikov.MegaWorld.Editor.ExplodePhysics.ExplodePhysicsToolSettings,
+      Data: 9|VladislavTsurikov.MegaWorld.Editor.ExplodePhysics.ExplodePhysicsToolSettings,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -276,7 +180,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 71a5d322-a5e0-42e6-93d8-3589573b35b4
+      Data: d5f19657-3d11-44f6-8d82-bed571917426
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -324,7 +228,7 @@ MonoBehaviour:
       Data: 
     - Name: ToolType
       Entry: 7
-      Data: 12|System.RuntimeType, mscorlib
+      Data: 10|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: VladislavTsurikov.MegaWorld.Editor.ExplodePhysics.ExplodePhysicsTool,
@@ -337,7 +241,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 13|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+      Data: 11|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -350,7 +254,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: b19d80b8-4b68-4eb7-b87e-738d1157f213
+      Data: a7095701-3596-42e5-aa33-5e26470fafca
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -365,66 +269,18 @@ MonoBehaviour:
       Data: 
     - Name: ComponentStack
       Entry: 7
-      Data: 14|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 12|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
     - Name: _elementList
       Entry: 7
-      Data: 15|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 13|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 16|VladislavTsurikov.ActionFlow.Runtime.Stats.StatValueComponent, VladislavTsurikov.ActionFlow
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: true
-    - Name: _nodeId
-      Entry: 1
-      Data: 7ead5fe6-cc75-4993-88a7-5aea74816c35
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _baseValue
-      Entry: 4
-      Data: 0
-    - Name: _clampEnabled
-      Entry: 5
-      Data: false
-    - Name: _maxValue
-      Entry: 4
-      Data: 0
-    - Name: _minValue
-      Entry: 4
-      Data: 0
-    - Name: _useMax
-      Entry: 5
-      Data: false
-    - Name: _useMin
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 17|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushSettings,
+      Data: 14|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushSettings,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -437,7 +293,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 206850d9-7ff1-46ee-a64f-2aee410eb73c
+      Data: 417d30d0-24a9-4cc9-a199-88bcb2fbb2a1
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -461,7 +317,7 @@ MonoBehaviour:
       Data: 30
     - Name: BrushJitterSettings
       Entry: 7
-      Data: 18|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushJitterSettings,
+      Data: 15|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushJitterSettings,
         VladislavTsurikov.MegaWorld
     - Name: _brushRotationJitter
       Entry: 4
@@ -480,10 +336,10 @@ MonoBehaviour:
       Data: 
     - Name: CustomMasks
       Entry: 7
-      Data: 19|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.CustomMasks, VladislavTsurikov.MegaWorld
+      Data: 16|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.CustomMasks, VladislavTsurikov.MegaWorld
     - Name: Masks
       Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[UnityEngine.Texture2D, UnityEngine.CoreModule]],
+      Data: 17|System.Collections.Generic.List`1[[UnityEngine.Texture2D, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -505,7 +361,7 @@ MonoBehaviour:
       Data: 1
     - Name: ProceduralMask
       Entry: 7
-      Data: 21|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ProceduralMask,
+      Data: 18|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ProceduralMask,
         VladislavTsurikov.MegaWorld
     - Name: Shape
       Entry: 3
@@ -521,7 +377,7 @@ MonoBehaviour:
       Data: 0
     - Name: Fractal
       Entry: 7
-      Data: 22|VladislavTsurikov.CPUNoise.Runtime.FractalNoiseCPU, VladislavTsurikov.CPUNoise
+      Data: 19|VladislavTsurikov.CPUNoise.Runtime.FractalNoiseCPU, VladislavTsurikov.CPUNoise
     - Name: _noiseType
       Entry: 3
       Data: 0
@@ -587,7 +443,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 23|VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.ModifyTransformComponents.ModifyTransformSettings,
+      Data: 20|VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.ModifyTransformComponents.ModifyTransformSettings,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -600,7 +456,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 5cad3be0-d0a8-4ccc-81e4-80f136a3bbec
+      Data: b5037e57-90e0-40bb-aee7-2466b65f7080
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -615,18 +471,18 @@ MonoBehaviour:
       Data: 
     - Name: ModifyTransformComponentStack
       Entry: 7
-      Data: 24|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.ModifyTransformComponents.ModifyTransformComponent,
+      Data: 21|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.ModifyTransformComponents.ModifyTransformComponent,
         VladislavTsurikov.MegaWorld]], VladislavTsurikov.ComponentStack
     - Name: _elementList
       Entry: 7
-      Data: 25|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.ModifyTransformComponents.ModifyTransformComponent,
+      Data: 22|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.ModifyTransformComponents.ModifyTransformComponent,
         VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 26|VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.ModifyTransformComponents.RandomizeScale,
+      Data: 23|VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.ModifyTransformComponents.RandomizeScale,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -639,7 +495,7 @@ MonoBehaviour:
       Data: true
     - Name: _nodeId
       Entry: 1
-      Data: cfb05414-383b-450d-85ea-3ea12e3ed246
+      Data: a8e76287-ea65-4508-8ca9-6f69c3444cc7
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -711,7 +567,7 @@ MonoBehaviour:
       Data: 
     - Name: ToolType
       Entry: 7
-      Data: 27|System.RuntimeType, mscorlib
+      Data: 24|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.BrushModifyTool, VladislavTsurikov.MegaWorld
@@ -723,7 +579,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 28|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+      Data: 25|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -736,7 +592,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 4fe8a38d-6776-4cbc-9d20-3474c46089a2
+      Data: 1f52ba60-6071-4db1-83d1-443497065f76
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -751,66 +607,18 @@ MonoBehaviour:
       Data: 
     - Name: ComponentStack
       Entry: 7
-      Data: 29|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 26|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
     - Name: _elementList
       Entry: 7
-      Data: 30|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 27|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 31|VladislavTsurikov.ActionFlow.Runtime.Stats.StatValueComponent, VladislavTsurikov.ActionFlow
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: true
-    - Name: _nodeId
-      Entry: 1
-      Data: 43ed22f6-6531-4e0e-a72c-a342bfd1c463
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _baseValue
-      Entry: 4
-      Data: 0
-    - Name: _clampEnabled
-      Entry: 5
-      Data: false
-    - Name: _maxValue
-      Entry: 4
-      Data: 0
-    - Name: _minValue
-      Entry: 4
-      Data: 0
-    - Name: _useMax
-      Entry: 5
-      Data: false
-    - Name: _useMin
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 32|VladislavTsurikov.MegaWorld.Editor.BrushEraseTool.BrushEraseToolSettings,
+      Data: 28|VladislavTsurikov.MegaWorld.Editor.BrushEraseTool.BrushEraseToolSettings,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -823,7 +631,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 52edc4a0-cff8-45be-a1be-6baef82a408f
+      Data: ef5ec919-2ed2-49a2-b107-e143ad190b6d
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -844,7 +652,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 33|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushSettings,
+      Data: 29|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushSettings,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -857,7 +665,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: d3fb890b-e3ec-4e8e-9c0c-b7a30789e2f9
+      Data: 8354daeb-08e6-45a6-a809-8d453a70b111
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -881,7 +689,7 @@ MonoBehaviour:
       Data: 30
     - Name: BrushJitterSettings
       Entry: 7
-      Data: 34|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushJitterSettings,
+      Data: 30|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushJitterSettings,
         VladislavTsurikov.MegaWorld
     - Name: _brushRotationJitter
       Entry: 4
@@ -900,10 +708,10 @@ MonoBehaviour:
       Data: 
     - Name: CustomMasks
       Entry: 7
-      Data: 35|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.CustomMasks, VladislavTsurikov.MegaWorld
+      Data: 31|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.CustomMasks, VladislavTsurikov.MegaWorld
     - Name: Masks
       Entry: 7
-      Data: 36|System.Collections.Generic.List`1[[UnityEngine.Texture2D, UnityEngine.CoreModule]],
+      Data: 32|System.Collections.Generic.List`1[[UnityEngine.Texture2D, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -925,7 +733,7 @@ MonoBehaviour:
       Data: 1
     - Name: ProceduralMask
       Entry: 7
-      Data: 37|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ProceduralMask,
+      Data: 33|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ProceduralMask,
         VladislavTsurikov.MegaWorld
     - Name: Shape
       Entry: 3
@@ -941,7 +749,7 @@ MonoBehaviour:
       Data: 0
     - Name: Fractal
       Entry: 7
-      Data: 38|VladislavTsurikov.CPUNoise.Runtime.FractalNoiseCPU, VladislavTsurikov.CPUNoise
+      Data: 34|VladislavTsurikov.CPUNoise.Runtime.FractalNoiseCPU, VladislavTsurikov.CPUNoise
     - Name: _noiseType
       Entry: 3
       Data: 0
@@ -1016,7 +824,7 @@ MonoBehaviour:
       Data: 
     - Name: ToolType
       Entry: 7
-      Data: 39|System.RuntimeType, mscorlib
+      Data: 35|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: VladislavTsurikov.MegaWorld.Editor.BrushEraseTool.BrushEraseTool, VladislavTsurikov.MegaWorld
@@ -1028,7 +836,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 40|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+      Data: 36|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -1041,7 +849,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 123ad8de-b3d7-4d9e-bc66-8560d4bc186a
+      Data: f7b83f16-88fa-4963-a4be-69c3f097d962
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -1056,66 +864,18 @@ MonoBehaviour:
       Data: 
     - Name: ComponentStack
       Entry: 7
-      Data: 41|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 37|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
     - Name: _elementList
       Entry: 7
-      Data: 42|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 38|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 43|VladislavTsurikov.ActionFlow.Runtime.Stats.StatValueComponent, VladislavTsurikov.ActionFlow
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: true
-    - Name: _nodeId
-      Entry: 1
-      Data: 7f889853-6ad7-4811-acfb-7ea263a0ecc9
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _baseValue
-      Entry: 4
-      Data: 0
-    - Name: _clampEnabled
-      Entry: 5
-      Data: false
-    - Name: _maxValue
-      Entry: 4
-      Data: 0
-    - Name: _minValue
-      Entry: 4
-      Data: 0
-    - Name: _useMax
-      Entry: 5
-      Data: false
-    - Name: _useMin
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 44|VladislavTsurikov.MegaWorld.Editor.SprayBrushTool.BrushSettings, VladislavTsurikov.MegaWorld
+      Data: 39|VladislavTsurikov.MegaWorld.Editor.SprayBrushTool.BrushSettings, VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -1127,7 +887,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 472748ba-930e-4de3-951c-9a51f1f5c67c
+      Data: 3fbb8690-1788-4290-89b3-3dc5b8df6836
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -1160,7 +920,7 @@ MonoBehaviour:
       Data: 
     - Name: ToolType
       Entry: 7
-      Data: 45|System.RuntimeType, mscorlib
+      Data: 40|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: VladislavTsurikov.MegaWorld.Editor.SprayBrushTool.SprayBrushTool, VladislavTsurikov.MegaWorld
@@ -1172,7 +932,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 46|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+      Data: 41|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -1185,7 +945,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 4154e44f-0ced-4966-bce1-e99c52006421
+      Data: 3211dd32-95bf-4690-80d8-d6c0b73818f9
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -1200,66 +960,18 @@ MonoBehaviour:
       Data: 
     - Name: ComponentStack
       Entry: 7
-      Data: 47|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 42|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
     - Name: _elementList
       Entry: 7
-      Data: 48|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 43|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 49|VladislavTsurikov.ActionFlow.Runtime.Stats.StatValueComponent, VladislavTsurikov.ActionFlow
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: true
-    - Name: _nodeId
-      Entry: 1
-      Data: 1562879d-c105-4cab-8ea9-7ab22494c392
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _baseValue
-      Entry: 4
-      Data: 0
-    - Name: _clampEnabled
-      Entry: 5
-      Data: false
-    - Name: _maxValue
-      Entry: 4
-      Data: 0
-    - Name: _minValue
-      Entry: 4
-      Data: 0
-    - Name: _useMax
-      Entry: 5
-      Data: false
-    - Name: _useMin
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 50|VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.PrecisePlaceToolSettings,
+      Data: 44|VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.PrecisePlaceToolSettings,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -1272,7 +984,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 5bad8c42-b3b8-4866-87b4-040139021dc4
+      Data: 396c2087-4e96-47b1-807e-7fba4c56e1ae
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -1287,18 +999,18 @@ MonoBehaviour:
       Data: 
     - Name: MouseActionStack
       Entry: 7
-      Data: 51|VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.MouseActions.MouseActionStack,
+      Data: 45|VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.MouseActions.MouseActionStack,
         VladislavTsurikov.MegaWorld
     - Name: _elementList
       Entry: 7
-      Data: 52|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.MouseActions.MouseAction,
+      Data: 46|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.MouseActions.MouseAction,
         VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
       Data: 3
     - Name: 
       Entry: 7
-      Data: 53|VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.MouseActions.MoveAlongDirection,
+      Data: 47|VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.MouseActions.MoveAlongDirection,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -1311,7 +1023,7 @@ MonoBehaviour:
       Data: true
     - Name: _nodeId
       Entry: 1
-      Data: d73f8bf9-c123-4ad8-abe9-afa85b431019
+      Data: 6d9be887-7232-453f-a878-5888bdf9dc86
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -1326,7 +1038,7 @@ MonoBehaviour:
       Data: 
     - Name: MouseMoveAlongDirectionSettings
       Entry: 7
-      Data: 54|VladislavTsurikov.MegaWorld.Runtime.Common.MouseSensitivitySettings,
+      Data: 48|VladislavTsurikov.MegaWorld.Runtime.Common.MouseSensitivitySettings,
         VladislavTsurikov.MegaWorld
     - Name: _mouseSensitivity
       Entry: 4
@@ -1345,7 +1057,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 55|VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.MouseActions.Scale,
+      Data: 49|VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.MouseActions.Scale,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -1358,7 +1070,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 566fd920-a0cb-43ad-a070-2688b03051a6
+      Data: df57ac99-7e94-4c4b-bbff-2775a535f5e3
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -1376,7 +1088,7 @@ MonoBehaviour:
       Data: false
     - Name: MouseScaleSettings
       Entry: 7
-      Data: 56|VladislavTsurikov.MegaWorld.Runtime.Common.MouseSensitivitySettings,
+      Data: 50|VladislavTsurikov.MegaWorld.Runtime.Common.MouseSensitivitySettings,
         VladislavTsurikov.MegaWorld
     - Name: _mouseSensitivity
       Entry: 4
@@ -1392,7 +1104,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 57|VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.MouseActions.Rotation,
+      Data: 51|VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.MouseActions.Rotation,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -1405,7 +1117,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: a38c6a75-f81e-4014-8023-24c13c041962
+      Data: cf7b9f24-9112-45fb-a742-780d82a6f1ec
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -1423,7 +1135,7 @@ MonoBehaviour:
       Data: false
     - Name: MouseRotationSettings
       Entry: 7
-      Data: 58|VladislavTsurikov.MegaWorld.Runtime.Common.MouseSensitivitySettings,
+      Data: 52|VladislavTsurikov.MegaWorld.Runtime.Common.MouseSensitivitySettings,
         VladislavTsurikov.MegaWorld
     - Name: _mouseSensitivity
       Entry: 4
@@ -1508,7 +1220,7 @@ MonoBehaviour:
       Data: 
     - Name: ToolType
       Entry: 7
-      Data: 59|System.RuntimeType, mscorlib
+      Data: 53|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: VladislavTsurikov.MegaWorld.Editor.PrecisePlaceTool.PrecisePlaceTool,
@@ -1521,7 +1233,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 60|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+      Data: 54|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -1534,7 +1246,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 20340e50-adbd-4e40-a7c3-71f14579b57b
+      Data: ab37f5e0-0fdd-4a17-a408-62ad99498e89
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -1549,66 +1261,18 @@ MonoBehaviour:
       Data: 
     - Name: ComponentStack
       Entry: 7
-      Data: 61|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 55|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
     - Name: _elementList
       Entry: 7
-      Data: 62|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 56|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 63|VladislavTsurikov.ActionFlow.Runtime.Stats.StatValueComponent, VladislavTsurikov.ActionFlow
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: true
-    - Name: _nodeId
-      Entry: 1
-      Data: 77772613-80f1-4753-ab2e-9b64c7915031
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _baseValue
-      Entry: 4
-      Data: 0
-    - Name: _clampEnabled
-      Entry: 5
-      Data: false
-    - Name: _maxValue
-      Entry: 4
-      Data: 0
-    - Name: _minValue
-      Entry: 4
-      Data: 0
-    - Name: _useMax
-      Entry: 5
-      Data: false
-    - Name: _useMin
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 64|VladislavTsurikov.MegaWorld.Editor.PrecisePhysicsTool.PrecisePhysicsToolSettings,
+      Data: 57|VladislavTsurikov.MegaWorld.Editor.PrecisePhysicsTool.PrecisePhysicsToolSettings,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -1621,7 +1285,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: f4084703-997d-4fa2-8c62-1beacea161b5
+      Data: 4c8480bd-dea9-4479-8ef8-465addca2f91
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -1645,7 +1309,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 65|VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter.Settings.PhysicsEffects,
+      Data: 58|VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter.Settings.PhysicsEffects,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -1658,7 +1322,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: bc5d59f5-2852-4701-81f6-c75f577a2670
+      Data: c86cfd36-386f-4fdf-83b3-e5967bb2dc6a
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -1697,7 +1361,7 @@ MonoBehaviour:
       Data: 
     - Name: ToolType
       Entry: 7
-      Data: 66|System.RuntimeType, mscorlib
+      Data: 59|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: VladislavTsurikov.MegaWorld.Editor.PrecisePhysicsTool.PrecisePhysicsTool,
@@ -1710,7 +1374,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 67|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+      Data: 60|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -1723,7 +1387,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: c1b4b6e7-6bb6-426a-ae9d-b0c4f8f40bf3
+      Data: 426daa2e-16ac-4f0b-ac63-8563c5e4c97f
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -1738,66 +1402,18 @@ MonoBehaviour:
       Data: 
     - Name: ComponentStack
       Entry: 7
-      Data: 68|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 61|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
     - Name: _elementList
       Entry: 7
-      Data: 69|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 62|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 3
     - Name: 
       Entry: 7
-      Data: 70|VladislavTsurikov.ActionFlow.Runtime.Stats.StatValueComponent, VladislavTsurikov.ActionFlow
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: true
-    - Name: _nodeId
-      Entry: 1
-      Data: e4944c2d-bbd1-49f4-96b3-3da8107bbd99
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _baseValue
-      Entry: 4
-      Data: 0
-    - Name: _clampEnabled
-      Entry: 5
-      Data: false
-    - Name: _maxValue
-      Entry: 4
-      Data: 0
-    - Name: _minValue
-      Entry: 4
-      Data: 0
-    - Name: _useMax
-      Entry: 5
-      Data: false
-    - Name: _useMin
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 71|VladislavTsurikov.MegaWorld.Editor.BrushPhysicsTool.BrushPhysicsToolSettings,
+      Data: 63|VladislavTsurikov.MegaWorld.Editor.BrushPhysicsTool.BrushPhysicsToolSettings,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -1810,7 +1426,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 7b097043-01fe-4a94-96f5-1a5f5b22e7a7
+      Data: c945a1c6-5409-416d-9173-0f8ddb7df32f
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -1825,7 +1441,7 @@ MonoBehaviour:
       Data: 
     - Name: PhysicsEffects
       Entry: 7
-      Data: 72|VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter.Settings.PhysicsEffects,
+      Data: 64|VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter.Settings.PhysicsEffects,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -1838,7 +1454,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 50fc2d83-6d0c-4b6e-a133-63df747d960f
+      Data: af0ce438-0470-4f3a-99ae-c39468462e31
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -1874,7 +1490,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 73|VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter.Settings.PhysicsEffects,
+      Data: 65|VladislavTsurikov.MegaWorld.Runtime.Common.PhysXPainter.Settings.PhysicsEffects,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -1887,7 +1503,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 4ac994d8-7933-4518-9474-c9530ff0cff5
+      Data: c94a9a62-ba15-41e1-829e-01aa586bac1c
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -1917,7 +1533,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 74|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushSettings,
+      Data: 66|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushSettings,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -1930,7 +1546,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: d48cf51d-e0d2-4805-b129-08b1186a4c58
+      Data: fa30d2b6-0d9c-4bdc-8782-c1278ac7d62e
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -1954,7 +1570,7 @@ MonoBehaviour:
       Data: 30
     - Name: BrushJitterSettings
       Entry: 7
-      Data: 75|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushJitterSettings,
+      Data: 67|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushJitterSettings,
         VladislavTsurikov.MegaWorld
     - Name: _brushRotationJitter
       Entry: 4
@@ -1973,10 +1589,10 @@ MonoBehaviour:
       Data: 
     - Name: CustomMasks
       Entry: 7
-      Data: 76|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.CustomMasks, VladislavTsurikov.MegaWorld
+      Data: 68|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.CustomMasks, VladislavTsurikov.MegaWorld
     - Name: Masks
       Entry: 7
-      Data: 77|System.Collections.Generic.List`1[[UnityEngine.Texture2D, UnityEngine.CoreModule]],
+      Data: 69|System.Collections.Generic.List`1[[UnityEngine.Texture2D, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1998,7 +1614,7 @@ MonoBehaviour:
       Data: 1
     - Name: ProceduralMask
       Entry: 7
-      Data: 78|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ProceduralMask,
+      Data: 70|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ProceduralMask,
         VladislavTsurikov.MegaWorld
     - Name: Shape
       Entry: 3
@@ -2014,7 +1630,7 @@ MonoBehaviour:
       Data: 0
     - Name: Fractal
       Entry: 7
-      Data: 79|VladislavTsurikov.CPUNoise.Runtime.FractalNoiseCPU, VladislavTsurikov.CPUNoise
+      Data: 71|VladislavTsurikov.CPUNoise.Runtime.FractalNoiseCPU, VladislavTsurikov.CPUNoise
     - Name: _noiseType
       Entry: 3
       Data: 0
@@ -2089,7 +1705,7 @@ MonoBehaviour:
       Data: 
     - Name: ToolType
       Entry: 7
-      Data: 80|System.RuntimeType, mscorlib
+      Data: 72|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: VladislavTsurikov.MegaWorld.Editor.BrushPhysicsTool.BrushPhysicsTool,
@@ -2102,7 +1718,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 81|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+      Data: 73|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -2115,7 +1731,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 0ab56631-e2b0-4d8c-ad46-5e911ffea9c3
+      Data: a4293977-4340-4515-b091-135b95bf5819
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -2130,66 +1746,18 @@ MonoBehaviour:
       Data: 
     - Name: ComponentStack
       Entry: 7
-      Data: 82|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 74|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
     - Name: _elementList
       Entry: 7
-      Data: 83|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 75|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 84|VladislavTsurikov.ActionFlow.Runtime.Stats.StatValueComponent, VladislavTsurikov.ActionFlow
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: true
-    - Name: _nodeId
-      Entry: 1
-      Data: 9ad00ab6-12c3-4bfd-85a3-16bda0e0aa95
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _baseValue
-      Entry: 4
-      Data: 0
-    - Name: _clampEnabled
-      Entry: 5
-      Data: false
-    - Name: _maxValue
-      Entry: 4
-      Data: 0
-    - Name: _minValue
-      Entry: 4
-      Data: 0
-    - Name: _useMax
-      Entry: 5
-      Data: false
-    - Name: _useMin
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 85|VladislavTsurikov.MegaWorld.Editor.EditTool.EditToolSettings, VladislavTsurikov.MegaWorld
+      Data: 76|VladislavTsurikov.MegaWorld.Editor.EditTool.EditToolSettings, VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -2201,7 +1769,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 2eddf915-614d-45e9-9b69-36932cbb85b0
+      Data: 9a33e87d-6c26-43fe-91a9-18ea09c7697d
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -2222,18 +1790,18 @@ MonoBehaviour:
       Data: 200
     - Name: _actionStack
       Entry: 7
-      Data: 86|VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem.ActionStack,
+      Data: 77|VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem.ActionStack,
         VladislavTsurikov.MegaWorld
     - Name: _elementList
       Entry: 7
-      Data: 87|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem.Action,
+      Data: 78|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem.Action,
         VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 88|VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem.MoveAlongDirection,
+      Data: 79|VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem.MoveAlongDirection,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -2246,7 +1814,7 @@ MonoBehaviour:
       Data: true
     - Name: _nodeId
       Entry: 1
-      Data: 0f31d6ff-fc94-4f87-a720-2d79c3e94daf
+      Data: dada0654-dfe5-468f-8ce9-1a482aac8ced
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -2261,7 +1829,7 @@ MonoBehaviour:
       Data: 
     - Name: MouseSensitivitySettings
       Entry: 7
-      Data: 89|VladislavTsurikov.MegaWorld.Runtime.Common.MouseSensitivitySettings,
+      Data: 80|VladislavTsurikov.MegaWorld.Runtime.Common.MouseSensitivitySettings,
         VladislavTsurikov.MegaWorld
     - Name: _mouseSensitivity
       Entry: 4
@@ -2274,7 +1842,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 90|VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem.Raycast,
+      Data: 81|VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem.Raycast,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -2287,7 +1855,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 906e4ab5-70a2-4a87-9a5e-90f3d1bc671e
+      Data: 8ca95d8d-c17f-48e0-9ab1-2c56cab57657
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -2317,7 +1885,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 91|VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem.Rotate, VladislavTsurikov.MegaWorld
+      Data: 82|VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem.Rotate, VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -2329,7 +1897,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: f69863f0-92ba-4825-8563-990b9299b4b6
+      Data: 9e47ca0b-93eb-4442-b43d-540650312789
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -2347,7 +1915,7 @@ MonoBehaviour:
       Data: false
     - Name: MouseSensitivitySettings
       Entry: 7
-      Data: 92|VladislavTsurikov.MegaWorld.Runtime.Common.MouseSensitivitySettings,
+      Data: 83|VladislavTsurikov.MegaWorld.Runtime.Common.MouseSensitivitySettings,
         VladislavTsurikov.MegaWorld
     - Name: _mouseSensitivity
       Entry: 4
@@ -2363,7 +1931,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 93|VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem.Scale, VladislavTsurikov.MegaWorld
+      Data: 84|VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem.Scale, VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -2375,7 +1943,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: a13a655c-a8c1-44cb-89d2-86d211193762
+      Data: e160676c-b029-41bb-8398-1c5c6b253a44
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -2393,7 +1961,7 @@ MonoBehaviour:
       Data: false
     - Name: MouseSensitivitySettings
       Entry: 7
-      Data: 94|VladislavTsurikov.MegaWorld.Runtime.Common.MouseSensitivitySettings,
+      Data: 85|VladislavTsurikov.MegaWorld.Runtime.Common.MouseSensitivitySettings,
         VladislavTsurikov.MegaWorld
     - Name: _mouseSensitivity
       Entry: 4
@@ -2409,7 +1977,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 95|VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem.Remove, VladislavTsurikov.MegaWorld
+      Data: 86|VladislavTsurikov.MegaWorld.Editor.EditTool.ActionSystem.Remove, VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -2421,7 +1989,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: f88c15b8-1c09-4d58-8e2e-5a5a68bb68f5
+      Data: 9eda3d33-4a51-46c3-9dde-d3820aa19719
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -2460,7 +2028,7 @@ MonoBehaviour:
       Data: 
     - Name: ToolType
       Entry: 7
-      Data: 96|System.RuntimeType, mscorlib
+      Data: 87|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: VladislavTsurikov.MegaWorld.Editor.EditTool.EditTool, VladislavTsurikov.MegaWorld
@@ -2472,7 +2040,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 97|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+      Data: 88|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -2485,7 +2053,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 9fd1bc10-d17e-4e95-a1b4-869271784c90
+      Data: ea819817-ddb9-4b2a-bf04-7263d5ee4c7c
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -2500,66 +2068,18 @@ MonoBehaviour:
       Data: 
     - Name: ComponentStack
       Entry: 7
-      Data: 98|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 89|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
     - Name: _elementList
       Entry: 7
-      Data: 99|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 90|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 100|VladislavTsurikov.ActionFlow.Runtime.Stats.StatValueComponent, VladislavTsurikov.ActionFlow
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: true
-    - Name: _nodeId
-      Entry: 1
-      Data: 11d6e7da-9d0d-4405-8597-3244942a199a
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _baseValue
-      Entry: 4
-      Data: 0
-    - Name: _clampEnabled
-      Entry: 5
-      Data: false
-    - Name: _maxValue
-      Entry: 4
-      Data: 0
-    - Name: _minValue
-      Entry: 4
-      Data: 0
-    - Name: _useMax
-      Entry: 5
-      Data: false
-    - Name: _useMin
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 101|VladislavTsurikov.MegaWorld.Editor.AdvancedBrushTool.AdvancedBrushToolSettings,
+      Data: 91|VladislavTsurikov.MegaWorld.Editor.AdvancedBrushTool.AdvancedBrushToolSettings,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -2572,7 +2092,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: a363b983-644f-475c-9100-45aad89f3d99
+      Data: 60af5f39-b346-4736-97a3-f4f386b78acc
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -2599,7 +2119,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 102|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushSettings,
+      Data: 92|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushSettings,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -2612,7 +2132,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 89898e10-be70-4619-b561-2b3a84f4c808
+      Data: e919a52d-631b-4681-bcf8-055bc6fc932b
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -2636,7 +2156,7 @@ MonoBehaviour:
       Data: 30
     - Name: BrushJitterSettings
       Entry: 7
-      Data: 103|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushJitterSettings,
+      Data: 93|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushJitterSettings,
         VladislavTsurikov.MegaWorld
     - Name: _brushRotationJitter
       Entry: 4
@@ -2655,11 +2175,10 @@ MonoBehaviour:
       Data: 
     - Name: CustomMasks
       Entry: 7
-      Data: 104|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.CustomMasks,
-        VladislavTsurikov.MegaWorld
+      Data: 94|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.CustomMasks, VladislavTsurikov.MegaWorld
     - Name: Masks
       Entry: 7
-      Data: 105|System.Collections.Generic.List`1[[UnityEngine.Texture2D, UnityEngine.CoreModule]],
+      Data: 95|System.Collections.Generic.List`1[[UnityEngine.Texture2D, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -2681,7 +2200,7 @@ MonoBehaviour:
       Data: 1
     - Name: ProceduralMask
       Entry: 7
-      Data: 106|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ProceduralMask,
+      Data: 96|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ProceduralMask,
         VladislavTsurikov.MegaWorld
     - Name: Shape
       Entry: 3
@@ -2697,7 +2216,7 @@ MonoBehaviour:
       Data: 0
     - Name: Fractal
       Entry: 7
-      Data: 107|VladislavTsurikov.CPUNoise.Runtime.FractalNoiseCPU, VladislavTsurikov.CPUNoise
+      Data: 97|VladislavTsurikov.CPUNoise.Runtime.FractalNoiseCPU, VladislavTsurikov.CPUNoise
     - Name: _noiseType
       Entry: 3
       Data: 0
@@ -2772,7 +2291,7 @@ MonoBehaviour:
       Data: 
     - Name: ToolType
       Entry: 7
-      Data: 108|System.RuntimeType, mscorlib
+      Data: 98|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: VladislavTsurikov.MegaWorld.Editor.AdvancedBrushTool.AdvancedBrushTool,
@@ -2785,7 +2304,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 109|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+      Data: 99|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -2798,7 +2317,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 3bd74710-3706-4185-92fe-c104d25279aa
+      Data: 58a16935-6620-43f2-a1bd-d40e645ee730
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -2813,66 +2332,18 @@ MonoBehaviour:
       Data: 
     - Name: ComponentStack
       Entry: 7
-      Data: 110|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 100|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
     - Name: _elementList
       Entry: 7
-      Data: 111|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 101|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 112|VladislavTsurikov.ActionFlow.Runtime.Stats.StatValueComponent, VladislavTsurikov.ActionFlow
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: true
-    - Name: _nodeId
-      Entry: 1
-      Data: c435016f-ee06-4f63-ae7a-65629194b25c
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _baseValue
-      Entry: 4
-      Data: 0
-    - Name: _clampEnabled
-      Entry: 5
-      Data: false
-    - Name: _maxValue
-      Entry: 4
-      Data: 0
-    - Name: _minValue
-      Entry: 4
-      Data: 0
-    - Name: _useMax
-      Entry: 5
-      Data: false
-    - Name: _useMin
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 113|VladislavTsurikov.MegaWorld.Editor.PinTool.PinToolSettings, VladislavTsurikov.MegaWorld
+      Data: 102|VladislavTsurikov.MegaWorld.Editor.PinTool.PinToolSettings, VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -2884,7 +2355,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 3dab912b-3ec4-481c-baa2-6b052686f955
+      Data: 33ba47f7-c768-4b14-beeb-dbafe03c02d0
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -2962,7 +2433,7 @@ MonoBehaviour:
       Data: 
     - Name: ToolType
       Entry: 7
-      Data: 114|System.RuntimeType, mscorlib
+      Data: 103|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: VladislavTsurikov.MegaWorld.Editor.PinTool.PinTool, VladislavTsurikov.MegaWorld
@@ -2974,7 +2445,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 115|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
+      Data: 104|VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem.ToolComponentStack,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -2987,7 +2458,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: a82066ae-300d-48dd-9108-70f504263b1d
+      Data: 0de0c220-189d-4d15-9335-cce02015cdd7
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -3002,66 +2473,18 @@ MonoBehaviour:
       Data: 
     - Name: ComponentStack
       Entry: 7
-      Data: 116|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 105|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.ComponentStack
     - Name: _elementList
       Entry: 7
-      Data: 117|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
+      Data: 106|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.Node,
         VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 118|VladislavTsurikov.ActionFlow.Runtime.Stats.StatValueComponent, VladislavTsurikov.ActionFlow
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: true
-    - Name: _nodeId
-      Entry: 1
-      Data: 961373ad-344e-49a8-b518-8bbbd0ad4b9c
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _baseValue
-      Entry: 4
-      Data: 0
-    - Name: _clampEnabled
-      Entry: 5
-      Data: false
-    - Name: _maxValue
-      Entry: 4
-      Data: 0
-    - Name: _minValue
-      Entry: 4
-      Data: 0
-    - Name: _useMax
-      Entry: 5
-      Data: false
-    - Name: _useMin
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 119|VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsToolSettings,
+      Data: 107|VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsToolSettings,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -3074,7 +2497,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 43803dc3-442c-4826-a5f0-63e98798bf3e
+      Data: f1843450-fb66-43bc-b196-ff146c0b888b
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -3092,18 +2515,18 @@ MonoBehaviour:
       Data: 5
     - Name: List
       Entry: 7
-      Data: 120|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsSystem.PhysicsEffect,
+      Data: 108|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsSystem.PhysicsEffect,
         VladislavTsurikov.MegaWorld]], VladislavTsurikov.ComponentStack
     - Name: _elementList
       Entry: 7
-      Data: 121|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsSystem.PhysicsEffect,
+      Data: 109|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsSystem.PhysicsEffect,
         VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
       Data: 4
     - Name: 
       Entry: 7
-      Data: 122|VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsSystem.Explosion,
+      Data: 110|VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsSystem.Explosion,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -3116,7 +2539,7 @@ MonoBehaviour:
       Data: true
     - Name: _nodeId
       Entry: 1
-      Data: 8869196d-600f-4065-8bf1-fcdf0745d237
+      Data: cfec1b01-13ca-4753-be55-e3b731f228bc
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -3143,7 +2566,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 123|VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsSystem.BlackHole,
+      Data: 111|VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsSystem.BlackHole,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -3156,7 +2579,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: f62c8e7d-8e41-40b3-ae58-d76e93768810
+      Data: 96bd9a5a-13cc-415d-a5b2-390675841e24
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -3183,7 +2606,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 124|VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsSystem.FlyUp,
+      Data: 112|VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsSystem.FlyUp,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -3196,7 +2619,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 91f13dfa-9e7c-48fd-8723-1f4532320480
+      Data: aba0fa06-dda5-4d4e-b7f8-908febc731e5
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -3223,7 +2646,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 125|VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsSystem.SimpleForce,
+      Data: 113|VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsSystem.SimpleForce,
         VladislavTsurikov.MegaWorld
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -3236,7 +2659,7 @@ MonoBehaviour:
       Data: false
     - Name: _nodeId
       Entry: 1
-      Data: 84a6f933-7924-4fec-9a2c-e0bdf67d6687
+      Data: dc957a98-df2d-46d0-9632-98b06e4dcc0e
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -3287,7 +2710,7 @@ MonoBehaviour:
       Data: 
     - Name: ToolType
       Entry: 7
-      Data: 126|System.RuntimeType, mscorlib
+      Data: 114|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
       Data: VladislavTsurikov.MegaWorld.Editor.PhysicsEffectsTool.PhysicsEffectsTool,

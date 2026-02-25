@@ -1,0 +1,397 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b11183928ad05e4dbd0a579735cd235, type: 3}
+  m_Name: PreferencesSettings
+  m_EditorClassIdentifier: VladislavTsurikov.MegaWorld::VladislavTsurikov.MegaWorld.Runtime.Core.PreferencesSystem.PreferencesSettings
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _stack
+      Entry: 7
+      Data: 0|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.MegaWorld.Runtime.Core.PreferencesSystem.PreferenceSettings,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 1|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.MegaWorld.Runtime.Core.PreferencesSystem.PreferenceSettings,
+        VladislavTsurikov.MegaWorld]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 2|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.RaycastPreferenceSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 629e5517-2ac8-456d-bf26-f9de46f9780d
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MaxRayDistance
+      Entry: 4
+      Data: 6500
+    - Name: Offset
+      Entry: 4
+      Data: 500
+    - Name: RaycastType
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.BrushPreferenceSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 82b16b8e-730a-4a75-870c-ee7585aaefe2
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MaxBrushSize
+      Entry: 4
+      Data: 200
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem.ScatterPreferenceSettings,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: e719cdb6-dde8-4530-bcff-c48831090884
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MaxChecks
+      Entry: 3
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.MaskFilterSystem.VisualisationMaskFiltersPreference,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 36767d71-b066-4736-8727-fa5271247ac4
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: AlphaVisualisationType
+      Entry: 3
+      Data: 2
+    - Name: Color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 128
+    - Name: 
+      Entry: 4
+      Data: 171
+    - Name: 
+      Entry: 4
+      Data: 78
+    - Name: 
+      Entry: 4
+      Data: 255
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ColorSpace
+      Entry: 3
+      Data: 1
+    - Name: CustomAlpha
+      Entry: 4
+      Data: 0.3
+    - Name: EnableStripe
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.OverlapCheckSettings.OverlapCheckSettingsPreference,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: e7d5e9d3-830d-4fdf-b6aa-5d4a6fd16a8c
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: MultiplyFindSize
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.FilterSettings.VisualisationSimpleFilterPreference,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 9e51b6f9-e312-4292-a2f4-85fdc8d6232f
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ActiveColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Alpha
+      Entry: 4
+      Data: 0.6
+    - Name: ColorHandlesType
+      Entry: 3
+      Data: 1
+    - Name: CustomHandleSize
+      Entry: 4
+      Data: 0.3
+    - Name: EnableSpawnVisualization
+      Entry: 5
+      Data: true
+    - Name: HandleResizingType
+      Entry: 3
+      Data: 0
+    - Name: HandlesType
+      Entry: 3
+      Data: 1
+    - Name: InactiveColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: VisualiserResolution
+      Entry: 3
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|VladislavTsurikov.MegaWorld.Runtime.Common.Settings.BrushSettings.VisualisationBrushHandlesPreference,
+        VladislavTsurikov.MegaWorld
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: c7022282-b69b-4ae9-ae8e-2bcf570238a8
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: CircleColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 0.7
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: CirclePixelWidth
+      Entry: 4
+      Data: 5
+    - Name: DrawSolidDisc
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: StackEditor
+      Entry: 7
+      Data: 9|VladislavTsurikov.IMGUIUtility.Editor.ElementStack.IMGUIComponentStackEditor`2[[VladislavTsurikov.MegaWorld.Runtime.Core.PreferencesSystem.PreferenceSettings,
+        VladislavTsurikov.MegaWorld],[VladislavTsurikov.IMGUIUtility.Editor.ElementStack.IMGUIElementEditor,
+        VladislavTsurikov.IMGUIUtility]], VladislavTsurikov.IMGUIUtility
+    - Name: 
+      Entry: 8
+      Data: 

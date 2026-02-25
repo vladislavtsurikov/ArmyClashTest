@@ -1,0 +1,1144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3312732151646990043
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2728825304569137108}
+  - component: {fileID: 8101754270783719349}
+  m_Layer: 0
+  m_Name: HeroBattleEntity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2728825304569137108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312732151646990043}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.96732, y: 0.74841, z: -1.26514}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8101754270783719349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312732151646990043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9175dbce0a38c04f81c5eed38e7e548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: ArmyClash.Battle::ArmyClash.Battle.BattleHeroEntity
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: d4ce7acd419d7cb40a0f72d4ef0c5c40, type: 2}
+    - {fileID: 11400000, guid: 3786426bf8499714b8996e09a8da47ba, type: 2}
+    - {fileID: 11400000, guid: 8aa68654b7d839d4c9a7318d8c90ebef, type: 2}
+    - {fileID: 11400000, guid: 038172f5884705a44bc2ca6235713b99, type: 2}
+    - {fileID: 2728825304569137108}
+    - {fileID: 11400000, guid: f6389f926fc14cb4bb0a9be923dda1d1, type: 2}
+    - {fileID: 11400000, guid: 0bafa3464dd336c46b4b75d95faaab96, type: 2}
+    - {fileID: 11400000, guid: 6206e55167bbcf64f87f9831a321f584, type: 2}
+    - {fileID: 11400000, guid: 24f1337d1bfc6894e84eb6db1bc5529b, type: 2}
+    - {fileID: 11400000, guid: 86e65a61390e84343bd098fde4286d42, type: 2}
+    - {fileID: 11400000, guid: 7d860c0cd20c40b499d1a0da05eeb3ab, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _entity
+      Entry: 7
+      Data: 0|VladislavTsurikov.EntityDataAction.Runtime.Core.Entity, VladislavTsurikov.EntityDataAction
+    - Name: _actions
+      Entry: 7
+      Data: 1|VladislavTsurikov.EntityDataAction.Runtime.Core.EntityActionCollection,
+        VladislavTsurikov.EntityDataAction
+    - Name: _elementList
+      Entry: 7
+      Data: 2|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.ActionFlow.Runtime.Actions.Action,
+        VladislavTsurikov.ActionFlow]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 10
+    - Name: 
+      Entry: 7
+      Data: 3|ArmyClash.Battle.Actions.SelectRandomModifierEffectAction, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 915aec5d-6be8-440b-b6b3-f1332aa83298
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _options
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[VladislavTsurikov.ActionFlow.Runtime.Stats.ModifierStatEffect,
+        VladislavTsurikov.ActionFlow]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|ArmyClash.Battle.Actions.SelectRandomModifierEffectAction, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: d6fa114f-9c1a-4c29-8b75-60da088a267a
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _options
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[VladislavTsurikov.ActionFlow.Runtime.Stats.ModifierStatEffect,
+        VladislavTsurikov.ActionFlow]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|ArmyClash.Battle.Actions.SelectRandomModifierEffectAction, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 2e658769-8196-4a0b-ad90-3e9773e08122
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _options
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[VladislavTsurikov.ActionFlow.Runtime.Stats.ModifierStatEffect,
+        VladislavTsurikov.ActionFlow]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats.ApplyModifierStatEffectAction,
+        VladislavTsurikov.EntityDataAction.Shared
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 413e5c6c-b28b-4d27-9269-27e846c34d93
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|ArmyClash.Battle.Actions.ApplyColorModifierAction, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 03e7fe3d-7feb-45fe-b435-bade663fb79e
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|ArmyClash.Battle.Actions.ApplySizeModifierAction, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 7628490f-a315-4583-88ec-7347803d439f
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|ArmyClash.Battle.Actions.ApplyShapeModifierAction, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 1c60fa0f-484f-4864-8be4-d10d1ceab47a
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _root
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|VladislavTsurikov.StateMachine.Runtime.Actions.StateMachineAction,
+        VladislavTsurikov.StateMachine
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 79ba7426-6096-4583-8c88-f776d22d887b
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 14|ArmyClash.Battle.Actions.HandleDeathAction, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 70dba58b-6e3d-4aa9-b0e2-dbbee389bc94
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|ArmyClash.Battle.Actions.RegenHealthAction, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 3a19a7f2-6852-4c0e-945f-0724b0600541
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _data
+      Entry: 7
+      Data: 16|VladislavTsurikov.EntityDataAction.Runtime.Core.EntityDataCollection,
+        VladislavTsurikov.EntityDataAction
+    - Name: _elementList
+      Entry: 7
+      Data: 17|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.Nody.Runtime.Core.ComponentData,
+        VladislavTsurikov.ComponentStack]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 18|VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats.StatsEntityData,
+        VladislavTsurikov.EntityDataAction.Shared
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: 1ac7960d-a907-4a48-9935-9cef975bc77e
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _collection
+      Entry: 10
+      Data: 5
+    - Name: _stats
+      Entry: 7
+      Data: 19|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats.RuntimeStat,
+        VladislavTsurikov.EntityDataAction.Shared]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 20|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: HP
+    - Name: $v
+      Entry: 7
+      Data: 21|VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats.RuntimeStat,
+        VladislavTsurikov.EntityDataAction.Shared
+    - Name: _stat
+      Entry: 10
+      Data: 6
+    - Name: _value
+      Entry: 7
+      Data: 22|UniRx.ReactiveProperty`1[[System.Single, mscorlib]], UniRx
+    - Name: value
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: ATK
+    - Name: $v
+      Entry: 7
+      Data: 23|VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats.RuntimeStat,
+        VladislavTsurikov.EntityDataAction.Shared
+    - Name: _stat
+      Entry: 10
+      Data: 7
+    - Name: _value
+      Entry: 7
+      Data: 24|UniRx.ReactiveProperty`1[[System.Single, mscorlib]], UniRx
+    - Name: value
+      Entry: 4
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: ATKSPD
+    - Name: $v
+      Entry: 7
+      Data: 25|VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats.RuntimeStat,
+        VladislavTsurikov.EntityDataAction.Shared
+    - Name: _stat
+      Entry: 10
+      Data: 8
+    - Name: _value
+      Entry: 7
+      Data: 26|UniRx.ReactiveProperty`1[[System.Single, mscorlib]], UniRx
+    - Name: value
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: SPEED
+    - Name: $v
+      Entry: 7
+      Data: 27|VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats.RuntimeStat,
+        VladislavTsurikov.EntityDataAction.Shared
+    - Name: _stat
+      Entry: 10
+      Data: 9
+    - Name: _value
+      Entry: 7
+      Data: 28|UniRx.ReactiveProperty`1[[System.Single, mscorlib]], UniRx
+    - Name: value
+      Entry: 4
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: REGEN
+    - Name: $v
+      Entry: 7
+      Data: 29|VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats.RuntimeStat,
+        VladislavTsurikov.EntityDataAction.Shared
+    - Name: _stat
+      Entry: 10
+      Data: 10
+    - Name: _value
+      Entry: 7
+      Data: 30|UniRx.ReactiveProperty`1[[System.Single, mscorlib]], UniRx
+    - Name: value
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 31|ArmyClash.Battle.Data.ModifiersData, VladislavTsurikov.EntityDataAction.Shared
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: e864ae74-1d3b-43f1-b4cd-86bbb8b782bc
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _effects
+      Entry: 7
+      Data: 32|UniRx.ReactiveCollection`1[[VladislavTsurikov.ActionFlow.Runtime.Stats.ModifierStatEffect,
+        VladislavTsurikov.ActionFlow]], UniRx
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 33|ArmyClash.Battle.Data.TeamData, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 8af36c17-5870-42bb-8947-e1739f0ea4fd
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _teamId
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 34|ArmyClash.Battle.Data.TargetData, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 03ac89cc-acc3-486b-ab15-595ea3be9a4f
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _target
+      Entry: 7
+      Data: 35|UniRx.ReactiveProperty`1[[ArmyClash.Battle.BattleEntity, ArmyClash.Battle]],
+        UniRx
+    - Name: value
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 36|ArmyClash.Battle.Data.LifeData, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 84f0dfdf-4756-4d27-b828-2d18632462ec
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _isDead
+      Entry: 7
+      Data: 37|UniRx.ReactiveProperty`1[[System.Boolean, mscorlib]], UniRx
+    - Name: value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 38|ArmyClash.Battle.Data.AttackDistanceData, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: a1f844fb-6505-488f-836d-86892619ddf9
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _attackRange
+      Entry: 4
+      Data: 1.2
+    - Name: _stopDistance
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 39|VladislavTsurikov.StateMachine.Runtime.Data.StateMachineData, VladislavTsurikov.StateMachine
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: f04e5756-1ef1-4a27-bb70-193241bfcec9
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _stateStack
+      Entry: 7
+      Data: 40|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.StateMachine.Runtime.Definitions.State,
+        VladislavTsurikov.StateMachine]], VladislavTsurikov.ComponentStack
+    - Name: _elementList
+      Entry: 7
+      Data: 41|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.StateMachine.Runtime.Definitions.State,
+        VladislavTsurikov.StateMachine]], VladislavTsurikov.Utility
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 42|ArmyClash.Battle.States.DeadState, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: true
+    - Name: _nodeId
+      Entry: 1
+      Data: bd6d85f5-5240-4318-9b33-c2a449f0e031
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _stateId
+      Entry: 6
+      Data: 
+    - Name: _priority
+      Entry: 3
+      Data: 2147483647
+    - Name: State+_active
+      Entry: 7
+      Data: 43|UniRx.ReactiveProperty`1[[System.Boolean, mscorlib]], UniRx
+    - Name: value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 44|ArmyClash.Battle.States.IdleState, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 65a73254-2055-4bbc-99b5-d05bf6286b79
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _stateId
+      Entry: 6
+      Data: 
+    - Name: _priority
+      Entry: 3
+      Data: 0
+    - Name: State+_active
+      Entry: 7
+      Data: 45|UniRx.ReactiveProperty`1[[System.Boolean, mscorlib]], UniRx
+    - Name: value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 46|ArmyClash.Battle.States.FindTargetState, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: e32a7b19-77f0-4a01-a6b7-adcbabe4f9ae
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _stateId
+      Entry: 6
+      Data: 
+    - Name: _priority
+      Entry: 3
+      Data: 0
+    - Name: State+_active
+      Entry: 7
+      Data: 47|UniRx.ReactiveProperty`1[[System.Boolean, mscorlib]], UniRx
+    - Name: value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 48|ArmyClash.Battle.States.MoveToTargetState, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: e2cd8b95-a29b-4d11-9f99-a60b158ab128
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _stateId
+      Entry: 6
+      Data: 
+    - Name: _priority
+      Entry: 3
+      Data: 0
+    - Name: State+_active
+      Entry: 7
+      Data: 49|UniRx.ReactiveProperty`1[[System.Boolean, mscorlib]], UniRx
+    - Name: value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 50|ArmyClash.Battle.States.AttackTargetState, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: f9465bfe-7cb9-4fa2-9179-47602f334d0f
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _stateId
+      Entry: 6
+      Data: 
+    - Name: _priority
+      Entry: 3
+      Data: 0
+    - Name: State+_active
+      Entry: 7
+      Data: 51|UniRx.ReactiveProperty`1[[System.Boolean, mscorlib]], UniRx
+    - Name: value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _currentState
+      Entry: 7
+      Data: 52|UniRx.ReactiveProperty`1[[VladislavTsurikov.StateMachine.Runtime.Definitions.State,
+        VladislavTsurikov.StateMachine]], UniRx
+    - Name: value
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _previousState
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _localActive
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
