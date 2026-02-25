@@ -7,7 +7,7 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Modifier
     {
         protected override void OnSetup()
         {
-            _allowedGroupAttributes = new[] { "CommonUI" };
+            AllowedGroup.Set(new[] { "CommonUI" });
             base.OnSetup();
         }
     }

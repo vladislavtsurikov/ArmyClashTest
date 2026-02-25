@@ -101,7 +101,6 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Editor
             _stackEditor = new ActionReorderableListStackEditor(_group.Actions, entity.Data)
             {
                 DisplayHeaderText = false,
-                AllowedNamePrefixes = new[] { "UI/Common/Style/" }
             };
         }
     }

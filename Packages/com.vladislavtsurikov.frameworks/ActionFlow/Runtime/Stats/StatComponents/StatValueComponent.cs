@@ -9,7 +9,7 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
 {
     [Persistent]
     [Name("Stats/Value")]
-    [ReflectionUtility.Group("Stats")]
+    [global::Nody.Runtime.Core.GroupAttribute("Stats")]
     public sealed class StatValueComponent : ComponentData
     {
         [OdinSerialize]

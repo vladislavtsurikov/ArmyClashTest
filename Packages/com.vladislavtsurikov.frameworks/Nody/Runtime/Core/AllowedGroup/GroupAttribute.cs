@@ -1,6 +1,6 @@
 using System;
 
-namespace VladislavTsurikov.ReflectionUtility
+namespace Nody.Runtime.Core
 {
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
     public sealed class GroupAttribute : Attribute

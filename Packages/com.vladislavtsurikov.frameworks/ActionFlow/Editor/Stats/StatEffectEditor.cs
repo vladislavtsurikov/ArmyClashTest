@@ -23,10 +23,18 @@ namespace VladislavTsurikov.ActionFlow.Editor.Stats
                 return;
             }
 
+            serializedObject.Update();
+
             EditorGUI.BeginChangeCheck();
             float fieldsHeight = _fieldsDrawer.GetFieldsHeight(_statEffect);
             Rect fieldsRect = EditorGUILayout.GetControlRect(false, fieldsHeight);
             _fieldsDrawer.DrawFields(_statEffect, fieldsRect);
+
+            SerializedProperty entriesProperty = serializedObject.FindProperty("_entries");
+            if (entriesProperty != null)
+            {
+                EditorGUILayout.PropertyField(entriesProperty, true);
+            }
 
             EnsureStackEditor();
             _stackEditor.OnGUI();
@@ -35,6 +43,8 @@ namespace VladislavTsurikov.ActionFlow.Editor.Stats
             {
                 EditorUtility.SetDirty(_statEffect);
             }
+
+            serializedObject.ApplyModifiedProperties();
         }
 
         private void EnsureStackEditor()
@@ -53,7 +63,7 @@ namespace VladislavTsurikov.ActionFlow.Editor.Stats
                 new ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor>(
                     _statEffect.ComponentStack)
                 {
-                    AllowedGroupAttributes = new[] { "Stats", "CommonUI" }, DisplayHeaderText = true
+                    DisplayHeaderText = true
                 };
         }
     }

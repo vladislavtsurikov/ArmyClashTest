@@ -4,12 +4,14 @@ using OdinSerializer;
 using UnityEngine;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.ReflectionUtility;
+using Nody.Runtime.Core;
 
 namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Style
 {
     [RunOnDirtyData(typeof(StyleStateData))]
     [RequiresData(typeof(StyleStateData))]
     [Name("UI/Common/StyleGroup")]
+    [Group("Style")]
     public sealed class StyleActionGroup : EntityAction
     {
         [OdinSerialize]

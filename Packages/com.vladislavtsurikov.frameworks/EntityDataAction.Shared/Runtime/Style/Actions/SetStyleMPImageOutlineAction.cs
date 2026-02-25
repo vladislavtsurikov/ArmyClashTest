@@ -7,12 +7,14 @@ using UnityEngine;
 using VladislavTsurikov.EntityDataAction.Runtime;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.ReflectionUtility;
+using Nody.Runtime.Core;
 
 namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Style
 {
     [RunOnDirtyData(typeof(StyleStateData))]
     [RequiresData(typeof(StyleStateData))]
     [Name("UI/Common/Style/SetStyleMPImageOutlineAction")]
+    [Group("Style")]
     public sealed class SetStyleMPImageOutlineAction : EntityMonoBehaviourAction
     {
         [OdinSerialize]

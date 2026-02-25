@@ -11,7 +11,7 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
         [OdinSerialize]
         private StatsComponentStack _componentStack = new();
 
-        [OdinSerialize]
+        [OdinSerialize, SerializeField]
         private List<Entry> _entries = new();
 
         public IReadOnlyList<Entry> Entries => _entries;

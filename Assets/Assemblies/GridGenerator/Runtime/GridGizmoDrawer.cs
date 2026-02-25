@@ -8,8 +8,7 @@ namespace ArmyClash.Grid
 {
     public static class GridGizmoDrawer
     {
-        public static void Draw(GridConfig config, Vector3 origin, Vector3 rightAxis, Vector3 forwardAxis,
-            Quaternion rotation, Color gizmoColor)
+        public static void Draw(GridConfig config, Vector3 origin, Vector3 rightAxis, Vector3 forwardAxis, Quaternion rotation)
         {
             if (config == null)
             {
@@ -23,17 +22,12 @@ namespace ArmyClash.Grid
             }
 
             IReadOnlyList<GridSlot> slots = GridLayoutBuilder.Build(config, origin, rightAxis, forwardAxis, rotation);
-            Color color = gizmoColor;
+            Color color = settings.GizmoColor;
             float height = 0.02f;
             float sizeScale = 1f;
 
             if (settings != null)
             {
-                if (settings.OverrideGizmoColor)
-                {
-                    color = settings.GizmoColor;
-                }
-
                 height = Mathf.Max(0.001f, settings.GizmoHeight);
                 sizeScale = Mathf.Max(0.01f, settings.GizmoSizeScale);
             }

@@ -27,45 +27,36 @@ namespace VladislavTsurikov.SceneManagerTool.Editor.SettingsSystem
         private NodeStackOnlyDifferentTypes<SettingsComponent> NodeStackOnlyDifferentTypes =>
             (NodeStackOnlyDifferentTypes<SettingsComponent>)Stack;
 
-        protected override void ShowAddMenu()
+        protected override bool PopulateMenu(string context, GenericMenu menu, Type settingsType)
         {
-            var menu = new GenericMenu();
+            var exists = NodeStackOnlyDifferentTypes.GetElement(settingsType) != null;
 
-            foreach (KeyValuePair<Type, Type> type in AllEditorTypes<SettingsComponent>.Types)
+            if (_sceneCollection)
             {
-                Type settingsType = type.Key;
-
-                var exists = NodeStackOnlyDifferentTypes.GetElement(settingsType) != null;
-
-                var context = settingsType.GetAttribute<NameAttribute>().Name;
-
-                if (_sceneCollection)
+                if (settingsType.GetAttribute<SceneComponentAttribute>() != null)
                 {
-                    if (settingsType.GetAttribute<SceneComponentAttribute>() != null)
-                    {
-                        continue;
-                    }
+                    return false;
                 }
-                else
+            }
+            else
+            {
+                if (settingsType.GetAttribute<SceneCollectionComponentAttribute>() != null)
                 {
-                    if (settingsType.GetAttribute<SceneCollectionComponentAttribute>() != null)
-                    {
-                        continue;
-                    }
-                }
-
-                if (!exists)
-                {
-                    menu.AddItem(new GUIContent(context), false,
-                        () => NodeStackOnlyDifferentTypes.CreateIfMissingType(settingsType));
-                }
-                else
-                {
-                    menu.AddDisabledItem(new GUIContent(context));
+                    return false;
                 }
             }
 
-            menu.ShowAsContext();
+            if (!exists)
+            {
+                menu.AddItem(new GUIContent(context), false,
+                    () => NodeStackOnlyDifferentTypes.CreateIfMissingType(settingsType));
+            }
+            else
+            {
+                menu.AddDisabledItem(new GUIContent(context));
+            }
+
+            return true;
         }
     }
 }

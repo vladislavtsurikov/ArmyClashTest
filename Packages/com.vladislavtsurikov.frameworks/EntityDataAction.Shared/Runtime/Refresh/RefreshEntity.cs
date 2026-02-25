@@ -15,9 +15,9 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Refresh
             };
         }
 
-        public override string[] GetAllowedActionNamePrefixes()
+        public override string[] GetAllowedActionGroups()
         {
-            return new[] { "UI/Common/Refresh/" };
+            return new[] { "Refresh" };
         }
     }
 }

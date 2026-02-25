@@ -27,52 +27,27 @@ namespace VladislavTsurikov.EntityDataAction.Editor.Core
             : base(new GUIContent("Actions"), actionStack, true) =>
             _dataStack = dataStack;
 
-        protected override void ShowAddMenu()
+        protected override bool PopulateMenu(string context, GenericMenu menu, Type settingsType)
         {
-            GenericMenu menu = new();
+            bool requirementsMet = RequiresDataUtility.IsRequirementsMet(_dataStack, settingsType);
 
-            foreach (Type actionType in GetComponentTypes())
+            if (!requirementsMet)
             {
-                if (actionType.GetAttribute(typeof(DontCreateAttribute)) != null)
-                {
-                    continue;
-                }
-
-                if (actionType.GetAttribute<PersistentAttribute>() != null ||
-                    actionType.GetAttribute<DontShowInAddMenuAttribute>() != null)
-                {
-                    continue;
-                }
-
-                NameAttribute nameAttribute = actionType.GetAttribute<NameAttribute>();
-
-                string context = nameAttribute != null ? nameAttribute.Name : actionType.Name;
-
-                if (!IsNameAllowed(context))
-                {
-                    continue;
-                }
-
-                bool requirementsMet = RequiresDataUtility.IsRequirementsMet(_dataStack, actionType);
-
-                if (!requirementsMet)
-                {
-                    menu.AddDisabledItem(new GUIContent(context));
-                    continue;
-                }
-
-                if (Stack is NodeStackSupportSameType<Action> componentStackWithSameTypes)
-                {
-                    menu.AddItem(new GUIContent(context), false,
-                        () => componentStackWithSameTypes.CreateNode(actionType));
-                }
-                else
-                {
-                    menu.AddDisabledItem(new GUIContent(context));
-                }
+                menu.AddDisabledItem(new GUIContent(context));
+                return true;
             }
 
-            menu.ShowAsContext();
+            if (Stack is NodeStackSupportSameType<Action> componentStackWithSameTypes)
+            {
+                menu.AddItem(new GUIContent(context), false,
+                    () => componentStackWithSameTypes.CreateNode(settingsType));
+            }
+            else
+            {
+                menu.AddDisabledItem(new GUIContent(context));
+            }
+
+            return true;
         }
 
         protected override void DrawHeaderElement(Rect totalRect, int index,

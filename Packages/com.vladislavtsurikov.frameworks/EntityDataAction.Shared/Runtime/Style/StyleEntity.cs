@@ -10,9 +10,9 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Style
             return new[] { typeof(StyleStateData) };
         }
 
-        public override string[] GetAllowedActionNamePrefixes()
+        public override string[] GetAllowedActionGroups()
         {
-            return new[] { "UI/Common/StyleGroup" };
+            return new[] { "Style" };
         }
     }
 }

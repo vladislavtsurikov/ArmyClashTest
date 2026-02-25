@@ -7,7 +7,7 @@ namespace VladislavTsurikov.ActionFlow.Runtime.Stats
     {
         protected override void OnSetup()
         {
-            _allowedGroupAttributes = new[] { "Stats", "CommonUI" };
+            AllowedGroup.Set(new[] { "Stats", "CommonUI" });
             base.OnSetup();
         }
     }

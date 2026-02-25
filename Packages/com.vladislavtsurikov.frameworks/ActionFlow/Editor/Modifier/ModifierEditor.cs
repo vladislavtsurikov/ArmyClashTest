@@ -45,7 +45,7 @@ namespace VladislavTsurikov.ActionFlow.Editor.Modifier
             _stackEditor =
                 new ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor>(_modifier.ComponentStack)
                 {
-                    AllowedGroupAttributes = new[] { "CommonUI" }, DisplayHeaderText = true
+                    DisplayHeaderText = true
                 };
         }
     }

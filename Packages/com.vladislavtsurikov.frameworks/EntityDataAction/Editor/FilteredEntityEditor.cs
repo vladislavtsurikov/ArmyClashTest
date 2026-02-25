@@ -30,10 +30,8 @@ namespace VladislavTsurikov.EntityDataAction.Editor
             _dataEditor = new ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor>(
                 new GUIContent("Data"), _entity.Data, true);
             _dataEditor.ShowActiveToggle = false;
-            _dataEditor.AllowedNamePrefixes = _entity.GetAllowedDataNamePrefixes();
 
             _actionsEditor = new ActionReorderableListStackEditor(_entity.Actions, _entity.Data);
-            _actionsEditor.AllowedNamePrefixes = _entity.GetAllowedActionNamePrefixes();
         }
 
         public override void OnInspectorGUI()

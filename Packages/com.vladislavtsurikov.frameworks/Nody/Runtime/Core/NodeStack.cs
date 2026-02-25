@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using OdinSerializer;
 using OdinSerializer.Utilities;
-using UnityEngine;
-using VladislavTsurikov.AttributeUtility.Runtime;
 using VladislavTsurikov.Nody.Runtime.Core.Ports;
-using VladislavTsurikov.ReflectionUtility;
 using VladislavTsurikov.Utility.Runtime;
+using VladislavTsurikov.AttributeUtility.Runtime;
 
 namespace VladislavTsurikov.Nody.Runtime.Core
 {
@@ -15,12 +13,18 @@ namespace VladislavTsurikov.Nody.Runtime.Core
     public abstract class NodeStack<T> where T : Node
     {
         private ContextHierarchy _contextHierarchy = new();
+        private AllowedGroup _allowedGroup = new();
 
         [OdinSerialize]
         protected ObservableList<T> _elementList = new();
 
-        [NonSerialized]
-        protected string[] _allowedGroupAttributes;
+        protected AllowedGroup AllowedGroup
+        {
+            get
+            {
+                return _allowedGroup ??= new AllowedGroup();
+            }
+        }
 
         public ContextHierarchy ContextHierarchy
         {
@@ -37,11 +41,11 @@ namespace VladislavTsurikov.Nody.Runtime.Core
 
         public IReadOnlyList<object> ContextHierarchyData => ContextHierarchy.ContextHierarchyData;
 
+        public string[] AllowedGroupAttributes => AllowedGroup.AllowedGroupAttributesData;
+
         public IReadOnlyList<T> ElementList => _elementList;
 
         public bool IsSetup { get; private set; }
-
-        public string[] AllowedGroupAttributes => _allowedGroupAttributes;
 
         public T SelectedElement => _elementList.FirstOrDefault(t => t.Selected);
 
@@ -248,7 +252,8 @@ namespace VladislavTsurikov.Nody.Runtime.Core
         {
             for (var i = _elementList.Count - 1; i >= 0; i--)
             {
-                if (_elementList[i] == null || _elementList[i].GetType().IsAbstract || !_elementList[i].DeleteElement())
+                if (_elementList[i] == null || _elementList[i].GetType().IsAbstract ||
+                    !_elementList[i].DeleteElement() || !AllowCreate(_elementList[i].GetType()))
                 {
                     Remove(i);
                 }
@@ -314,6 +319,21 @@ namespace VladislavTsurikov.Nody.Runtime.Core
             return context;
         }
 
+        public bool AllowCreate(Type type)
+        {
+            if (!ContextHierarchy.MatchesParentHierarchy(type))
+            {
+                return false;
+            }
+
+            return AllowedGroup.IsGroupAllowed(type) && AllowCreateNodeStack(type);
+        }
+
+        public void SetAllowedGroupAttributes(string[] allowedGroupAttributes)
+        {
+            AllowedGroup.Set(allowedGroupAttributes);
+        }
+
         private void HandleElementAdded(int index) => ElementAdded?.Invoke(index);
 
         private void HandleElementRemoved(int index) => ElementRemoved?.Invoke(index);
@@ -336,31 +356,9 @@ namespace VladislavTsurikov.Nody.Runtime.Core
         {
         }
 
-        protected virtual bool AllowCreate(Type type)
+        protected virtual bool AllowCreateNodeStack(Type type)
         {
-            if (_allowedGroupAttributes == null || _allowedGroupAttributes.Length == 0)
-            {
-                return true;
-            }
-
-            var groupAttributes = type.GetAttributes<GroupAttribute>();
-            foreach (var group in groupAttributes)
-            {
-                if (group == null || string.IsNullOrWhiteSpace(group.Name))
-                {
-                    continue;
-                }
-
-                for (int i = 0; i < _allowedGroupAttributes.Length; i++)
-                {
-                    if (string.Equals(group.Name, _allowedGroupAttributes[i], StringComparison.Ordinal))
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
+            return true;
         }
 
         private protected virtual void CreateElements()

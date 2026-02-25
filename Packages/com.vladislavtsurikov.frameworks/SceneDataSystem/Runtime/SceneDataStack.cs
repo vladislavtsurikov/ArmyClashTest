@@ -6,7 +6,7 @@ namespace VladislavTsurikov.SceneDataSystem.Runtime
 {
     public class SceneDataStack : NodeStackOnlyDifferentTypes<SceneData>
     {
-        protected override bool AllowCreate(Type type)
+        protected override bool AllowCreateNodeStack(Type type)
         {
             AllowCreateComponentAttribute allowCreateComponentAttribute =
                 type.GetAttribute<AllowCreateComponentAttribute>();

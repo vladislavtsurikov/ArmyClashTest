@@ -43,52 +43,45 @@ namespace VladislavTsurikov.MegaWorld.Editor.Common.Settings.TransformElementSys
         private NodeStackOnlyDifferentTypes<TransformComponent> ComponentStackOnlyDifferentTypes =>
             (NodeStackOnlyDifferentTypes<TransformComponent>)Stack;
 
-        protected override void ShowAddMenu()
+        protected override bool PopulateMenu(string context, GenericMenu menu, Type settingsType)
         {
-            var menu = new GenericMenu();
-
-            foreach (KeyValuePair<Type, Type> type in AllEditorTypes<TransformComponent>.Types)
+            if (_dontShowTransformTypes.Contains(settingsType))
             {
-                if (_dontShowTransformTypes.Contains(type.Key))
+                return false;
+            }
+
+            if (_useSimpleComponent)
+            {
+                if (settingsType.GetAttribute<SimpleAttribute>() == null)
                 {
-                    continue;
+                    return false;
                 }
-
-                var context = type.Key.GetAttribute<NameAttribute>().Name;
-
-                if (_useSimpleComponent)
+            }
+            else
+            {
+                if (settingsType.GetAttribute<SimpleAttribute>() != null)
                 {
-                    if (type.Key.GetAttribute<SimpleAttribute>() == null)
-                    {
-                        continue;
-                    }
-                }
-                else
-                {
-                    if (type.Key.GetAttribute<SimpleAttribute>() != null)
-                    {
-                        context = "Simple/" + context;
-                    }
-                    else
-                    {
-                        context = "Advanced/" + context;
-                    }
-                }
-
-                var exists = ComponentStackOnlyDifferentTypes.HasType(type.Key);
-
-                if (!exists)
-                {
-                    menu.AddItem(new GUIContent(context), false,
-                        () => ComponentStackOnlyDifferentTypes.CreateIfMissingType(type.Key));
+                    context = "Simple/" + context;
                 }
                 else
                 {
-                    menu.AddDisabledItem(new GUIContent(context));
+                    context = "Advanced/" + context;
                 }
             }
 
-            menu.ShowAsContext();
+            var exists = ComponentStackOnlyDifferentTypes.HasType(settingsType);
+
+            if (!exists)
+            {
+                menu.AddItem(new GUIContent(context), false,
+                    () => ComponentStackOnlyDifferentTypes.CreateIfMissingType(settingsType));
+            }
+            else
+            {
+                menu.AddDisabledItem(new GUIContent(context));
+            }
+
+            return true;
         }
     }
 }

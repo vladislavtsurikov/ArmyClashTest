@@ -75,17 +75,7 @@ namespace VladislavTsurikov.Nody.Runtime.Core
             }
         }
 
-        public bool IsDeletable()
-        {
-            if (GetType().GetAttribute<PersistentAttribute>() != null)
-            {
-                return false;
-            }
-
-            return IsDeletableNode();
-        }
-
-        protected virtual bool IsDeletableNode() => true;
+        public virtual bool IsDeletable() => true;
 
         internal void OnCreateInternal() => OnCreate();
 

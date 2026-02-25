@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using VladislavTsurikov.AttributeUtility.Runtime;
 using VladislavTsurikov.Nody.Runtime.AdvancedNodeStack;
 using VladislavTsurikov.Nody.Runtime.Core;
@@ -47,3 +47,4 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Core.MonoBehaviour
         }
     }
 }
+

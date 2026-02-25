@@ -5,12 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.ReflectionUtility;
+using Nody.Runtime.Core;
 
 namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Style
 {
     [RunOnDirtyData(typeof(StyleStateData))]
     [RequiresData(typeof(StyleStateData))]
     [Name("UI/Common/Style/SetStyleGraphicColorAction")]
+    [Group("Style")]
     public sealed class SetStyleGraphicColorAction : EntityMonoBehaviourAction
     {
         [OdinSerialize]

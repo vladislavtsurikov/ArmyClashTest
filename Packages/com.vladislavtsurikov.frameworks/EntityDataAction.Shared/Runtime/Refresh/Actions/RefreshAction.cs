@@ -1,11 +1,13 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
+using Nody.Runtime.Core;
 
 namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Refresh
 {
     [RunOnDirtyData(typeof(RefreshData))]
     [RequiresData(typeof(RefreshData))]
+    [Group("Refresh")]
     public abstract class RefreshAction : EntityAction
     {
         protected override UniTask<bool> Run(CancellationToken token)

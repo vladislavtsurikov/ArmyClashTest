@@ -23,14 +23,7 @@ namespace ArmyClash.Grid
                     }
 
                     settings.ShowGizmos = EditorGUILayout.Toggle("Show Grid Gizmos", settings.ShowGizmos);
-                    settings.OverrideGizmoColor =
-                        EditorGUILayout.Toggle("Override Gizmo Color", settings.OverrideGizmoColor);
-
-                    using (new EditorGUI.DisabledScope(!settings.OverrideGizmoColor))
-                    {
-                        settings.GizmoColor = EditorGUILayout.ColorField("Gizmo Color", settings.GizmoColor);
-                    }
-
+                    settings.GizmoColor = EditorGUILayout.ColorField("Gizmo Color", settings.GizmoColor);
                     settings.GizmoHeight = EditorGUILayout.FloatField("Gizmo Height", settings.GizmoHeight);
                     settings.GizmoSizeScale = EditorGUILayout.FloatField("Gizmo Size Scale", settings.GizmoSizeScale);
                     settings.LinePixelWidth = EditorGUILayout.FloatField("Line Pixel Width", settings.LinePixelWidth);

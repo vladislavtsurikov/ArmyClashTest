@@ -48,7 +48,7 @@ namespace ArmyClash.Battle.Actions
                 .AddTo(_subscriptions);
         }
 
-        protected override void OnDisable() => _subscriptions.Clear();
+        protected override void OnDisable() => _subscriptions?.Clear();
 
         private void ApplyRegen(StatsEntityData stats)
         {

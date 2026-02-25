@@ -4,6 +4,7 @@ using ArmyClash.Battle.Data;
 using ArmyClash.Battle.Services;
 using ArmyClash.Grid;
 using Cysharp.Threading.Tasks;
+using UniRx;
 using UnityEngine;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.Group.Prototypes.PrototypeGameObject;
@@ -12,13 +13,14 @@ using Zenject;
 
 namespace ArmyClash.MegaWorldGrid
 {
+    [ExecuteInEditMode]
     public sealed class GridSpawnerPair : MonoBehaviour
     {
         [Inject]
         private BattleTeamRoster _roster;
 
         [SerializeField]
-        private GridConfig _config;
+        private ReactiveProperty<GridConfig> _config = new ReactiveProperty<GridConfig>();
 
         [SerializeField]
         private GridSpawner _leftSpawner;
@@ -27,6 +29,19 @@ namespace ArmyClash.MegaWorldGrid
         private GridSpawner _rightSpawner;
 
         private CancellationTokenSource _spawnTokenSource;
+        private readonly CompositeDisposable _subscriptions = new CompositeDisposable();
+
+        private void OnEnable()
+        {
+            _subscriptions.Clear();
+            _config
+                .DistinctUntilChanged()
+                .Subscribe(_ => ApplyConfig())
+                .AddTo(_subscriptions);
+            ApplyConfig();
+        }
+
+        private void OnDisable() => _subscriptions.Clear();
 
         public void RespawnBoth()
         {
@@ -73,13 +88,14 @@ namespace ArmyClash.MegaWorldGrid
 
         public void ApplyConfig()
         {
-            if (_config == null)
+            GridConfig config = _config.Value;
+            if (config == null)
             {
                 return;
             }
 
-            _leftSpawner?.ApplyConfig(_config);
-            _rightSpawner?.ApplyConfig(_config);
+            _leftSpawner?.ApplyConfig(config);
+            _rightSpawner?.ApplyConfig(config);
         }
 
         private void OnSpawned(GameObject go, int teamId)

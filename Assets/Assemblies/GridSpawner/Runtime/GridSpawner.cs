@@ -31,7 +31,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
         [NonSerialized]
         private GridStamperControllerSettings _stamperControllerSettings;
 
-        public StamperControllerSettings StamperControllerSettings
+        public GridStamperControllerSettings StamperControllerSettings
         {
             get
             {
@@ -58,7 +58,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
         {
             get
             {
-                GridStamperControllerSettings settings = (GridStamperControllerSettings)StamperControllerSettings;
+                GridStamperControllerSettings settings = StamperControllerSettings;
                 if (settings == null)
                 {
                     return null;
@@ -73,7 +73,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
 
         public void ApplyConfig(GridConfig config)
         {
-            GridStamperControllerSettings settings = (GridStamperControllerSettings)StamperControllerSettings;
+            GridStamperControllerSettings settings = StamperControllerSettings;
             if (settings == null)
             {
                 return;
@@ -131,10 +131,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
                 return;
             }
 
-            GridStamperControllerSettings settings = (GridStamperControllerSettings)StamperControllerSettings;
-
-            GridGizmoDrawer.Draw(config, transform.position, transform.right, transform.forward, transform.rotation,
-                settings.GizmoColor);
+            GridGizmoDrawer.Draw(config, transform.position, transform.right, transform.forward, transform.rotation);
         }
     }
 }

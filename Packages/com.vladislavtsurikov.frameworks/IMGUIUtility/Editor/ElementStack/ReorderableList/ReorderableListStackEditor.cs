@@ -34,8 +34,6 @@ namespace VladislavTsurikov.IMGUIUtility.Editor.ElementStack.ReorderableList
         public bool ShowActiveToggle = true;
         public bool RemoveSupport = true;
         public bool ReorderSupport = true;
-        public string[] AllowedNamePrefixes;
-        public string[] AllowedGroupAttributes;
 
         public ReorderableListStackEditor(AdvancedNodeStack<T> stack) : base(stack)
         {
@@ -57,7 +55,7 @@ namespace VladislavTsurikov.IMGUIUtility.Editor.ElementStack.ReorderableList
             SetupCallbacks();
         }
 
-        protected virtual void ShowAddMenu()
+        protected void ShowAddMenu()
         {
             var menu = new GenericMenu();
 
@@ -80,137 +78,43 @@ namespace VladislavTsurikov.IMGUIUtility.Editor.ElementStack.ReorderableList
                     continue;
                 }
 
-                if (!MatchesParentHierarchy(settingsType))
+                if (!Stack.AllowCreate(settingsType))
                 {
                     continue;
                 }
 
-                var context = nameAttribute.Name;
-
-                if (!IsGroupAllowed(settingsType))
+                if (!PopulateMenu(nameAttribute.Name, menu, settingsType))
                 {
                     continue;
-                }
-
-                if (!IsNameAllowed(context))
-                {
-                    continue;
-                }
-
-                if (Stack is NodeStackSupportSameType<T> componentStackWithSameTypes)
-                {
-                    menu.AddItem(new GUIContent(context), false,
-                        () => componentStackWithSameTypes.CreateNode(settingsType));
-                }
-                else if (Stack is NodeStackOnlyDifferentTypes<T> componentStackWithDifferentTypes)
-                {
-                    var exists = componentStackWithDifferentTypes.HasType(settingsType);
-
-                    if (!exists)
-                    {
-                        menu.AddItem(new GUIContent(context), false,
-                            () => componentStackWithDifferentTypes.CreateIfMissingType(settingsType));
-                    }
-                    else
-                    {
-                        menu.AddDisabledItem(new GUIContent(context));
-                    }
                 }
             }
 
             menu.ShowAsContext();
         }
 
-        private bool MatchesParentHierarchy(Type settingsType)
+        protected virtual bool PopulateMenu(string context, GenericMenu menu, Type settingsType)
         {
-            var parentRequired = settingsType.GetAttribute<ParentRequiredAttribute>();
-            if (parentRequired == null || parentRequired.ParentTypes == null || parentRequired.ParentTypes.Length == 0)
+            if (Stack is NodeStackSupportSameType<T> componentStackWithSameTypes)
             {
-                return true;
+                menu.AddItem(new GUIContent(context), false,
+                    () => componentStackWithSameTypes.CreateNode(settingsType));
             }
-
-            var hierarchy = Stack.ContextHierarchyData;
-            if (hierarchy == null || hierarchy.Count == 0)
+            else if (Stack is NodeStackOnlyDifferentTypes<T> componentStackWithDifferentTypes)
             {
-                return false;
-            }
+                var exists = componentStackWithDifferentTypes.HasType(settingsType);
 
-            for (int i = 0; i < parentRequired.ParentTypes.Length; i++)
-            {
-                Type requiredType = parentRequired.ParentTypes[i];
-                if (requiredType == null)
+                if (!exists)
                 {
-                    continue;
+                    menu.AddItem(new GUIContent(context), false,
+                        () => componentStackWithDifferentTypes.CreateIfMissingType(settingsType));
                 }
-
-                bool found = false;
-                for (int j = 0; j < hierarchy.Count; j++)
+                else
                 {
-                    object entry = hierarchy[j];
-                    if (entry != null && requiredType.IsInstanceOfType(entry))
-                    {
-                        found = true;
-                        break;
-                    }
-                }
-
-                if (!found)
-                {
-                    return false;
+                    menu.AddDisabledItem(new GUIContent(context));
                 }
             }
 
             return true;
-        }
-
-        protected bool IsNameAllowed(string name)
-        {
-            if (AllowedGroupAttributes != null && AllowedGroupAttributes.Length > 0)
-            {
-                return true;
-            }
-
-            if (AllowedNamePrefixes == null || AllowedNamePrefixes.Length == 0)
-            {
-                return true;
-            }
-
-            for (int i = 0; i < AllowedNamePrefixes.Length; i++)
-            {
-                if (name.StartsWith(AllowedNamePrefixes[i], StringComparison.Ordinal))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        protected bool IsGroupAllowed(Type settingsType)
-        {
-            if (AllowedGroupAttributes == null || AllowedGroupAttributes.Length == 0)
-            {
-                return true;
-            }
-
-            var groupAttributes = settingsType.GetAttributes<GroupAttribute>();
-            foreach (var group in groupAttributes)
-            {
-                if (group == null || string.IsNullOrWhiteSpace(group.Name))
-                {
-                    continue;
-                }
-
-                for (int i = 0; i < AllowedGroupAttributes.Length; i++)
-                {
-                    if (string.Equals(group.Name, AllowedGroupAttributes[i], StringComparison.Ordinal))
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
         }
 
         protected virtual void AddCB(UnityEditorInternal.ReorderableList list) => ShowAddMenu();

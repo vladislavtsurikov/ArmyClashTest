@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using OdinSerializer;
 using VladislavTsurikov.AttributeUtility.Runtime;
@@ -80,3 +80,4 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Core.SelectionDatas.ElementsSystem
         }
     }
 }
+

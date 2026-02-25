@@ -22,30 +22,21 @@ namespace VladislavTsurikov.MegaWorld.Editor.BrushModifyTool.ModifyTransformComp
         private NodeStackOnlyDifferentTypes<ModifyTransformComponent> ComponentStackOnlyDifferentTypes =>
             (NodeStackOnlyDifferentTypes<ModifyTransformComponent>)Stack;
 
-        protected override void ShowAddMenu()
+        protected override bool PopulateMenu(string context, GenericMenu menu, Type settingsType)
         {
-            var menu = new GenericMenu();
+            var exists = ComponentStackOnlyDifferentTypes.HasType(settingsType);
 
-            foreach (KeyValuePair<Type, Type> type in AllEditorTypes<ModifyTransformComponent>.Types)
+            if (!exists)
             {
-                Type modifyTransformComponentType = type.Key;
-
-                var context = modifyTransformComponentType.GetAttribute<NameAttribute>().Name;
-
-                var exists = ComponentStackOnlyDifferentTypes.HasType(modifyTransformComponentType);
-
-                if (!exists)
-                {
-                    menu.AddItem(new GUIContent(context), false,
-                        () => ComponentStackOnlyDifferentTypes.CreateIfMissingType(modifyTransformComponentType));
-                }
-                else
-                {
-                    menu.AddDisabledItem(new GUIContent(context));
-                }
+                menu.AddItem(new GUIContent(context), false,
+                    () => ComponentStackOnlyDifferentTypes.CreateIfMissingType(settingsType));
+            }
+            else
+            {
+                menu.AddDisabledItem(new GUIContent(context));
             }
 
-            menu.ShowAsContext();
+            return true;
         }
     }
 }

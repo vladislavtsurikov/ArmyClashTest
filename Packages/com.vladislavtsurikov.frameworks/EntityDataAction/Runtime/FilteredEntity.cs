@@ -5,14 +5,14 @@ namespace VladislavTsurikov.EntityDataAction.Runtime
 {
     public abstract class FilteredEntity : EntityMonoBehaviour
     {
-        public virtual string[] GetAllowedDataNamePrefixes() => null;
-
-        public virtual string[] GetAllowedActionNamePrefixes() => null;
+        public virtual string[] GetAllowedActionGroups() => null;
 
         protected override void OnSetupEntity()
         {
             if (Active)
             {
+                Actions.SetAllowedGroupAttributes(GetAllowedActionGroups());
+
                 Data.Setup();
                 Actions.Setup();
 

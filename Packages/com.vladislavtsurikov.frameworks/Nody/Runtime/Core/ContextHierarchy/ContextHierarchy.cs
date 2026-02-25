@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using VladislavTsurikov.AttributeUtility.Runtime;
 using VladislavTsurikov.ReflectionUtility.Runtime;
 
 namespace VladislavTsurikov.Nody.Runtime.Core
@@ -86,5 +87,50 @@ namespace VladislavTsurikov.Nody.Runtime.Core
         private static bool IsNodeStackType(Type type) =>
             type.TryGetGenericArgument(typeof(NodeStack<>)) != null;
 
+        public bool MatchesParentHierarchy(Type settingsType)
+        {
+            if (settingsType == null)
+            {
+                return false;
+            }
+
+            var parentRequired = settingsType.GetAttribute<ParentRequiredAttribute>();
+            if (parentRequired == null || parentRequired.ParentTypes == null || parentRequired.ParentTypes.Length == 0)
+            {
+                return true;
+            }
+
+            if (ContextHierarchyData == null || ContextHierarchyData.Count == 0)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < parentRequired.ParentTypes.Length; i++)
+            {
+                Type requiredType = parentRequired.ParentTypes[i];
+                if (requiredType == null)
+                {
+                    continue;
+                }
+
+                bool found = false;
+                for (int j = 0; j < ContextHierarchyData.Count; j++)
+                {
+                    object entry = ContextHierarchyData[j];
+                    if (entry != null && requiredType.IsInstanceOfType(entry))
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }
