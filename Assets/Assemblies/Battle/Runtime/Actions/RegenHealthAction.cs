@@ -31,7 +31,7 @@ namespace ArmyClash.Battle.Actions
 
             StatsEntityData stats = Entity.GetData<StatsEntityData>();
             _state.SimulationStateReactive
-                .CombineLatest(stateMachine.CurrentStateReactive, life.IsDeadReactive,
+                .CombineLatest(stateMachine.CurrentState, life.IsDead,
                     (simState, state, isDead) =>
                         simState == SimulationState.Running &&
                         !isDead &&

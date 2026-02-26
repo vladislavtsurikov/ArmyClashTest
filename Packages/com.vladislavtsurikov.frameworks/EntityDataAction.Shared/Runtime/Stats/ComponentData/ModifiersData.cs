@@ -10,25 +10,32 @@ namespace ArmyClash.Battle.Data
     public sealed class ModifiersData : ComponentData
     {
         [OdinSerialize]
-        private readonly ReactiveCollection<ModifierStatEffect> _effects = new();
+        private ReactiveCollection<ModifierStatEffect> _effects = new();
 
-        public ReactiveCollection<ModifierStatEffect> Effects => _effects;
+        public ReactiveCollection<ModifierStatEffect> Effects
+        {
+            get
+            {
+                _effects ??= new ReactiveCollection<ModifierStatEffect>();
+                return _effects;
+            }
+        }
 
         public void Clear()
         {
-            _effects.Clear();
+            Effects.Clear();
             MarkDirty();
         }
 
         public void Add(ModifierStatEffect effect)
         {
-            _effects.Add(effect);
+            Effects.Add(effect);
             MarkDirty();
         }
 
         public bool Remove(ModifierStatEffect effect)
         {
-            bool removed = _effects.Remove(effect);
+            bool removed = Effects.Remove(effect);
             MarkDirty();
             return removed;
         }

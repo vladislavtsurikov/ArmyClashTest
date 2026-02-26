@@ -37,7 +37,25 @@ MonoBehaviour:
       Data: 2|UnityEditor.SceneManagement.SceneSetup[], UnityEditor.CoreModule
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|UnityEditor.SceneManagement.SceneSetup, UnityEditor.CoreModule
+    - Name: m_Path
+      Entry: 1
+      Data: Assets/Assemblies/Battle/Content/Scenes/Battle.unity
+    - Name: m_IsLoaded
+      Entry: 5
+      Data: true
+    - Name: m_IsActive
+      Entry: 5
+      Data: true
+    - Name: m_IsSubScene
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -49,10 +67,10 @@ MonoBehaviour:
       Data: 
     - Name: StartupScene
       Entry: 7
-      Data: 3|VladislavTsurikov.SceneManagerTool.Editor.StartupScene, VladislavTsurikov.SceneManagerTool
+      Data: 4|VladislavTsurikov.SceneManagerTool.Editor.StartupScene, VladislavTsurikov.SceneManagerTool
     - Name: _sceneReference
       Entry: 7
-      Data: 4|VladislavTsurikov.SceneUtility.Runtime.SceneReference, VladislavTsurikov.SceneUtility
+      Data: 5|VladislavTsurikov.SceneUtility.Runtime.SceneReference, VladislavTsurikov.SceneUtility
     - Name: _cachedScene
       Entry: 5
       Data: false

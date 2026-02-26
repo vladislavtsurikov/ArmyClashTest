@@ -11,21 +11,14 @@ namespace ArmyClash.Battle.Data
         [OdinSerialize]
         private ReactiveProperty<bool> _isDead = new();
 
-        public bool IsDead
+        public ReactiveProperty<bool> IsDead
         {
-            get => _isDead.Value;
-            set
+            get
             {
-                if (_isDead.Value == value)
-                {
-                    return;
-                }
-
-                _isDead.Value = value;
-                MarkDirty();
+                _isDead ??= new ReactiveProperty<bool>();
+                return _isDead;
             }
+            set => _isDead = value;
         }
-
-        public IReadOnlyReactiveProperty<bool> IsDeadReactive => _isDead;
     }
 }

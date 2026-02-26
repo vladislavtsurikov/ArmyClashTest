@@ -48,27 +48,27 @@ namespace ArmyClash.Battle.States
         private bool CanAttack()
         {
             LifeData life = Entity.GetData<LifeData>();
-            if (_state.SimulationState != SimulationState.Running || life.IsDead)
+            if (_state.SimulationState != SimulationState.Running || life.IsDead.Value)
             {
                 return false;
             }
 
             TargetData targetData = Entity.GetData<TargetData>();
-            BattleEntity target = targetData.Target;
+            BattleEntity target = targetData.Target.Value;
             if (target == null)
             {
                 return false;
             }
 
             LifeData targetLife = target.GetData<LifeData>();
-            if (targetLife.IsDead)
+            if (targetLife.IsDead.Value)
             {
                 return false;
             }
 
             BattleEntity battleEntity = (BattleEntity)Entity;
             AttackDistanceData distanceData = Entity.GetData<AttackDistanceData>();
-            float attackRange = distanceData.AttackRange;
+            float attackRange = distanceData.AttackRange.Value;
 
             return IsInAttackRange(battleEntity, target, attackRange);
         }
@@ -82,7 +82,7 @@ namespace ArmyClash.Battle.States
             }
 
             TargetData targetData = entity.GetData<TargetData>();
-            BattleEntity target = targetData.Target;
+            BattleEntity target = targetData.Target.Value;
             if (target == null)
             {
                 return;
@@ -95,7 +95,7 @@ namespace ArmyClash.Battle.States
             float attackSpeed = stats.GetStatValueById(AttackSpeedId);
 
             AttackDistanceData distanceData = entity.GetData<AttackDistanceData>();
-            float attackRange = distanceData.AttackRange;
+            float attackRange = distanceData.AttackRange.Value;
 
             if (!IsInAttackRange(battleEntity, target, attackRange))
             {

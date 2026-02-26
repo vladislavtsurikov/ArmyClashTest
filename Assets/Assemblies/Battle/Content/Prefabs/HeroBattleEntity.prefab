@@ -653,7 +653,7 @@ MonoBehaviour:
       Data: 31|ArmyClash.Battle.Data.ModifiersData, VladislavTsurikov.EntityDataAction.Shared
     - Name: SelectSettingsFoldout
       Entry: 5
-      Data: true
+      Data: false
     - Name: _active
       Entry: 5
       Data: true
@@ -696,7 +696,7 @@ MonoBehaviour:
       Data: 33|ArmyClash.Battle.Data.TeamData, ArmyClash.Battle
     - Name: SelectSettingsFoldout
       Entry: 5
-      Data: true
+      Data: false
     - Name: _active
       Entry: 5
       Data: true
@@ -729,7 +729,7 @@ MonoBehaviour:
       Data: 34|ArmyClash.Battle.Data.TargetData, ArmyClash.Battle
     - Name: SelectSettingsFoldout
       Entry: 5
-      Data: true
+      Data: false
     - Name: _active
       Entry: 5
       Data: true
@@ -769,7 +769,7 @@ MonoBehaviour:
       Data: 36|ArmyClash.Battle.Data.LifeData, ArmyClash.Battle
     - Name: SelectSettingsFoldout
       Entry: 5
-      Data: true
+      Data: false
     - Name: _active
       Entry: 5
       Data: true
@@ -831,17 +831,29 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: _attackRange
+      Entry: 7
+      Data: 39|UniRx.ReactiveProperty`1[[System.Single, mscorlib]], UniRx
+    - Name: value
       Entry: 4
       Data: 1.2
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: _stopDistance
+      Entry: 7
+      Data: 40|UniRx.ReactiveProperty`1[[System.Single, mscorlib]], UniRx
+    - Name: value
       Entry: 4
       Data: 0.1
     - Name: 
       Entry: 8
       Data: 
     - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 7
-      Data: 39|VladislavTsurikov.StateMachine.Runtime.Data.StateMachineData, VladislavTsurikov.StateMachine
+      Data: 41|VladislavTsurikov.StateMachine.Runtime.Data.StateMachineData, VladislavTsurikov.StateMachine
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -868,18 +880,18 @@ MonoBehaviour:
       Data: 
     - Name: _stateStack
       Entry: 7
-      Data: 40|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.StateMachine.Runtime.Definitions.State,
+      Data: 42|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.StateMachine.Runtime.Definitions.State,
         VladislavTsurikov.StateMachine]], VladislavTsurikov.ComponentStack
     - Name: _elementList
       Entry: 7
-      Data: 41|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.StateMachine.Runtime.Definitions.State,
+      Data: 43|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.StateMachine.Runtime.Definitions.State,
         VladislavTsurikov.StateMachine]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 42|ArmyClash.Battle.States.DeadState, ArmyClash.Battle
+      Data: 44|ArmyClash.Battle.States.DeadState, ArmyClash.Battle
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -910,21 +922,15 @@ MonoBehaviour:
     - Name: _priority
       Entry: 3
       Data: 2147483647
-    - Name: State+_active
-      Entry: 7
-      Data: 43|UniRx.ReactiveProperty`1[[System.Boolean, mscorlib]], UniRx
-    - Name: value
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
+    - Name: _isEligibleForTransition
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 44|ArmyClash.Battle.States.IdleState, ArmyClash.Battle
+      Data: 45|ArmyClash.Battle.States.IdleState, ArmyClash.Battle
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -955,14 +961,8 @@ MonoBehaviour:
     - Name: _priority
       Entry: 3
       Data: 0
-    - Name: State+_active
-      Entry: 7
-      Data: 45|UniRx.ReactiveProperty`1[[System.Boolean, mscorlib]], UniRx
-    - Name: value
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
+    - Name: _isEligibleForTransition
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -1000,21 +1000,15 @@ MonoBehaviour:
     - Name: _priority
       Entry: 3
       Data: 0
-    - Name: State+_active
-      Entry: 7
-      Data: 47|UniRx.ReactiveProperty`1[[System.Boolean, mscorlib]], UniRx
-    - Name: value
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
+    - Name: _isEligibleForTransition
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 48|ArmyClash.Battle.States.MoveToTargetState, ArmyClash.Battle
+      Data: 47|ArmyClash.Battle.States.MoveToTargetState, ArmyClash.Battle
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -1045,21 +1039,15 @@ MonoBehaviour:
     - Name: _priority
       Entry: 3
       Data: 0
-    - Name: State+_active
-      Entry: 7
-      Data: 49|UniRx.ReactiveProperty`1[[System.Boolean, mscorlib]], UniRx
-    - Name: value
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
+    - Name: _isEligibleForTransition
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 50|ArmyClash.Battle.States.AttackTargetState, ArmyClash.Battle
+      Data: 48|ArmyClash.Battle.States.AttackTargetState, ArmyClash.Battle
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -1090,14 +1078,8 @@ MonoBehaviour:
     - Name: _priority
       Entry: 3
       Data: 0
-    - Name: State+_active
-      Entry: 7
-      Data: 51|UniRx.ReactiveProperty`1[[System.Boolean, mscorlib]], UniRx
-    - Name: value
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
+    - Name: _isEligibleForTransition
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -1113,7 +1095,7 @@ MonoBehaviour:
       Data: 
     - Name: _currentState
       Entry: 7
-      Data: 52|UniRx.ReactiveProperty`1[[VladislavTsurikov.StateMachine.Runtime.Definitions.State,
+      Data: 49|UniRx.ReactiveProperty`1[[VladislavTsurikov.StateMachine.Runtime.Definitions.State,
         VladislavTsurikov.StateMachine]], UniRx
     - Name: value
       Entry: 6

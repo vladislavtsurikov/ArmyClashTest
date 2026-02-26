@@ -20,10 +20,10 @@ namespace VladislavTsurikov.StateMachine.Runtime.Definitions
         private StateMachineData _owner;
 
         [OdinSerialize, HideInInspector]
-        private ReactiveProperty<bool> _active = new ReactiveProperty<bool>();
+        private ReactiveProperty<bool> _isEligibleForTransition = new ReactiveProperty<bool>();
 
         [NonSerialized]
-        private readonly CompositeDisposable _subscriptions = new CompositeDisposable();
+        private CompositeDisposable _subscriptions = new CompositeDisposable();
 
         protected CompositeDisposable Subscriptions => _subscriptions;
 
@@ -57,27 +57,22 @@ namespace VladislavTsurikov.StateMachine.Runtime.Definitions
             }
         }
 
-        public bool IsEligibleForTransition
+        public ReactiveProperty<bool> IsEligibleForTransition
         {
-            get => _active.Value;
-            set
+            get
             {
-                if (_active.Value == value)
-                {
-                    return;
-                }
-
-                _active.Value = value;
-                _owner?.SetStateEligible(this, value);
+                _isEligibleForTransition ??= new ReactiveProperty<bool>();
+                return _isEligibleForTransition;
             }
+            set => _isEligibleForTransition = value;
         }
-
-        public IReadOnlyReactiveProperty<bool> IsEligibleForTransitionReactive => _active;
 
         protected override void SetupComponent(object[] setupData = null)
         {
-            Entity = setupData[0] as EntityMonoBehaviour;
-            _owner = setupData[1] as StateMachineData;
+            _subscriptions = new CompositeDisposable();
+
+            Entity = (EntityMonoBehaviour)setupData[0];
+            _owner = (StateMachineData)setupData[1];
 
             Conditional();
         }
@@ -121,13 +116,17 @@ namespace VladislavTsurikov.StateMachine.Runtime.Definitions
 
             if (eligibleStream == null)
             {
-                IsEligibleForTransition = false;
+                IsEligibleForTransition.Value = false;
                 return;
             }
 
             eligibleStream
                 .DistinctUntilChanged()
-                .Subscribe(active => IsEligibleForTransition = active)
+                .Subscribe(active =>
+                {
+                    IsEligibleForTransition.Value = active;
+                    _owner?.SetStateEligible(this, active);
+                })
                 .AddTo(_subscriptions);
         }
     }

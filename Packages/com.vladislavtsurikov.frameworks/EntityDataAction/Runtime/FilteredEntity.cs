@@ -7,20 +7,9 @@ namespace VladislavTsurikov.EntityDataAction.Runtime
     {
         public virtual string[] GetAllowedActionGroups() => null;
 
-        protected override void OnSetupEntity()
+        protected override void BeforeOnSetupEntity()
         {
-            if (Active)
-            {
-                Actions.SetAllowedGroupAttributes(GetAllowedActionGroups());
-
-                Data.Setup();
-                Actions.Setup();
-
-                Data.ElementAdded += HandleDataChanged;
-                Data.ElementRemoved += HandleDataChanged;
-
-                Actions.Run().Forget();
-            }
+            Actions.SetAllowedGroupAttributes(GetAllowedActionGroups());
         }
     }
 }

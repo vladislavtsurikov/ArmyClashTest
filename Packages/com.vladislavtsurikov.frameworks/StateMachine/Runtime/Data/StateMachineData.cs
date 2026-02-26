@@ -5,6 +5,7 @@ using UniRx;
 using UnityEngine;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.Nody.Runtime.AdvancedNodeStack;
+using VladislavTsurikov.Nody.Runtime.Core;
 using VladislavTsurikov.ReflectionUtility;
 using VladislavTsurikov.StateMachine.Runtime.Definitions;
 
@@ -27,32 +28,39 @@ namespace VladislavTsurikov.StateMachine.Runtime.Data
 
         public event Action ActiveStatesChanged;
 
-        public State CurrentState
+        public ReactiveProperty<State> CurrentState
         {
-            get => _currentState.Value;
-            set
+            get
             {
-                if (_currentState.Value == value)
-                {
-                    return;
-                }
-
-                _previousState = _currentState.Value;
-
-                NodeStackOnlyDifferentTypes<State> stack = StateStack;
-                foreach (State state in stack.ElementList)
-                {
-                    state.Active = false;
-                }
-
-                _currentState.Value = value;
-                value.Active = true;
-
-                MarkDirty();
+                _currentState ??= new ReactiveProperty<State>();
+                return _currentState;
             }
         }
 
-        public IReadOnlyReactiveProperty<State> CurrentStateReactive => _currentState;
+        public void SetState(State value)
+        {
+            _currentState ??= new ReactiveProperty<State>();
+            if (_currentState.Value == value)
+            {
+                return;
+            }
+
+            _previousState = _currentState.Value;
+
+            NodeStackOnlyDifferentTypes<State> stack = StateStack;
+            foreach (State state in stack.ElementList)
+            {
+                state.Active = false;
+            }
+
+            _currentState.Value = value;
+            if (value != null)
+            {
+                value.Active = true;
+            }
+
+            MarkDirty();
+        }
 
         public State PreviousState
         {
@@ -75,7 +83,7 @@ namespace VladislavTsurikov.StateMachine.Runtime.Data
 
         protected override void SetupComponent(object[] setupData = null)
         {
-            _stateStack.Setup(true, new object[]{Entity, this});
+            _stateStack.Setup(true, new object[]{setupData[0], this});
         }
 
         protected override void OnDisableElement()

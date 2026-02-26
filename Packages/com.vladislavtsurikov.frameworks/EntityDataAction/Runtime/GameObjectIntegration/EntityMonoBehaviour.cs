@@ -58,18 +58,8 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             }
         }
 
-        protected virtual void OnSetupEntity()
+        protected virtual void BeforeOnSetupEntity()
         {
-            if (Active)
-            {
-                Entity.Data.Setup();
-                Entity.Actions.Setup();
-
-                Entity.Data.ElementAdded += HandleDataChanged;
-                Entity.Data.ElementRemoved += HandleDataChanged;
-
-                Entity.Actions.Run().Forget();
-            }
         }
 
         protected virtual Type[] ComponentDataTypesToCreate() => null;
@@ -86,14 +76,12 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 
         public void Setup() => Entity.Setup();
 
-        protected void HandleDataChanged(int index) => Entity.HandleDataChanged(index);
-
         private void SetupEntityBindings()
         {
             Entity.ComponentDataTypesProvider = ComponentDataTypesToCreate;
             Entity.ActionTypesProvider = ActionTypesToCreate;
             Entity.AfterCreateDataAndActionsCallback = _ => OnAfterCreateDataAndActions();
-            Entity.SetupEntityCallback = _ => OnSetupEntity();
+            Entity.BeforeOnSetupEntity = _ => BeforeOnSetupEntity();
         }
     }
 }

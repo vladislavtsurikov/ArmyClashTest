@@ -22,7 +22,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
         internal Func<Type[]> ComponentDataTypesProvider;
 
         internal DirtyActionRunner DirtyRunner;
-        internal Action<Entity> SetupEntityCallback;
+        internal Action<Entity> BeforeOnSetupEntity;
 
         public EntityDataCollection Data => _data;
         public EntityActionCollection Actions => _actions;
@@ -87,14 +87,12 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             DirtyRunner ??= new DirtyActionRunner(this, _data, _actions);
             DirtyRunner.Setup();
 
-            if (SetupEntityCallback != null)
+            if (BeforeOnSetupEntity != null)
             {
-                SetupEntityCallback(this);
+                BeforeOnSetupEntity(this);
             }
-            else
-            {
-                OnSetupEntity();
-            }
+
+            OnSetupEntity();
 
             CreateDefaultData();
             CreateDefaultActions();

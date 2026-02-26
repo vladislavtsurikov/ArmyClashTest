@@ -22,7 +22,7 @@ namespace ArmyClash.Battle.Actions
             _subscriptions.Clear();
 
             LifeData life = Entity.GetData<LifeData>();
-            life.IsDeadReactive
+            life.IsDead
                 .Where(isDead => isDead)
                 .Subscribe(_ => HandleDeath())
                 .AddTo(_subscriptions);

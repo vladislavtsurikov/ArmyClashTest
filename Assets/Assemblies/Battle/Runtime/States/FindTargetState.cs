@@ -28,7 +28,7 @@ namespace ArmyClash.Battle.States
 
             IObservable<bool> canAcquire = _state.SimulationStateReactive
                 .Select(state => state == SimulationState.Running)
-                .CombineLatest(life.IsDeadReactive, targetData.TargetReactive,
+                .CombineLatest(life.IsDead, targetData.Target,
                     (running, isDead, target) => running && !isDead && target == null);
 
             BindEligibility(canAcquire);
@@ -51,8 +51,8 @@ namespace ArmyClash.Battle.States
 
             Vector3 position = Entity.transform.position;
 
-            targetData.Target = list
-                .Where(candidate => !candidate.GetData<LifeData>().IsDead)
+            targetData.Target.Value = list
+                .Where(candidate => !candidate.GetData<LifeData>().IsDead.Value)
                 .Cast<BattleEntity>()
                 .OrderBy(candidate => (candidate.transform.position - position).sqrMagnitude)
                 .FirstOrDefault();

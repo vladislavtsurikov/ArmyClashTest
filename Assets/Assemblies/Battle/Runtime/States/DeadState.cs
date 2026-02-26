@@ -25,16 +25,16 @@ namespace ArmyClash.Battle.States
             StatsEntityData stats = GetData<StatsEntityData>();
             RuntimeStat health = stats.GetRuntimeStatById(HealthId);
 
-            BindEligibility(life.IsDeadReactive
+            BindEligibility(life.IsDead
                 .CombineLatest(health.Value, (isDead, hp) => isDead || hp <= 0f));
         }
 
         public override void Enter(Entity entity)
         {
             LifeData life = entity.GetData<LifeData>();
-            if (!life.IsDead)
+            if (!life.IsDead.Value)
             {
-                life.IsDead = true;
+                life.IsDead.Value = true;
             }
         }
     }

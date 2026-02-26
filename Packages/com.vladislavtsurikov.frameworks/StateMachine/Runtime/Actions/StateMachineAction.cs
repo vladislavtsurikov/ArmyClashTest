@@ -18,7 +18,7 @@ namespace VladislavTsurikov.StateMachine.Runtime.Actions
         {
             _data = Get<StateMachineData>();
 
-            if (_data.CurrentState == null)
+            if (_data.CurrentState.Value == null)
             {
                 EvaluateConditions();
             }
@@ -28,7 +28,7 @@ namespace VladislavTsurikov.StateMachine.Runtime.Actions
             Observable.EveryUpdate()
                 .Subscribe(_ =>
                 {
-                    var current = _data.CurrentState;
+                    var current = _data.CurrentState.Value;
                     if (current == null)
                     {
                         return;
@@ -53,7 +53,7 @@ namespace VladislavTsurikov.StateMachine.Runtime.Actions
                         continue;
                     }
 
-                    state.IsEligibleForTransition = false;
+                    state.IsEligibleForTransition.Value = false;
                 }
 
                 _data = null;
@@ -70,7 +70,7 @@ namespace VladislavTsurikov.StateMachine.Runtime.Actions
             }
 
             var best = data.ActiveStates
-                .Where(state => state != null && !ReferenceEquals(state, data.CurrentState))
+                .Where(state => state != null && !ReferenceEquals(state, data.CurrentState.Value))
                 .OrderByDescending(state => state.Priority)
                 .FirstOrDefault();
 
@@ -85,12 +85,12 @@ namespace VladislavTsurikov.StateMachine.Runtime.Actions
                 return false;
             }
 
-            if (ReferenceEquals(data.CurrentState, nextState))
+            if (ReferenceEquals(data.CurrentState.Value, nextState))
             {
                 return false;
             }
 
-            var current = data.CurrentState;
+            var current = data.CurrentState.Value;
             if (current != null && !current.CanExit(Entity, nextState))
             {
                 return false;
@@ -103,7 +103,7 @@ namespace VladislavTsurikov.StateMachine.Runtime.Actions
 
             current?.Exit(Entity);
             data.PreviousState = current;
-            data.CurrentState = nextState;
+            data.SetState(nextState);
             nextState.Enter(Entity);
             return true;
         }

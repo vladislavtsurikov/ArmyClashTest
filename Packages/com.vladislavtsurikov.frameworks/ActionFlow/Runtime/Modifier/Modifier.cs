@@ -1,6 +1,5 @@
 using OdinSerializer;
 using UnityEngine;
-using VladislavTsurikov.ActionFlow.Runtime.Stats;
 
 namespace VladislavTsurikov.ActionFlow.Runtime.Modifier
 {

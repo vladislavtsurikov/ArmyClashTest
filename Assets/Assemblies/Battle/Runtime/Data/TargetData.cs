@@ -11,21 +11,14 @@ namespace ArmyClash.Battle.Data
         [OdinSerialize]
         private ReactiveProperty<BattleEntity> _target = new();
 
-        public BattleEntity Target
+        public ReactiveProperty<BattleEntity> Target
         {
-            get => _target.Value;
-            set
+            get
             {
-                if (_target.Value == value)
-                {
-                    return;
-                }
-
-                _target.Value = value;
-                MarkDirty();
+                _target ??= new ReactiveProperty<BattleEntity>();
+                return _target;
             }
+            set => _target = value;
         }
-
-        public IReadOnlyReactiveProperty<BattleEntity> TargetReactive => _target;
     }
 }

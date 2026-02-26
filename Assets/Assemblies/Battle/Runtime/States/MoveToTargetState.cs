@@ -44,28 +44,28 @@ namespace ArmyClash.Battle.States
         private bool CanMove()
         {
             LifeData life = Entity.GetData<LifeData>();
-            if (_state.SimulationState != SimulationState.Running || life.IsDead)
+            if (_state.SimulationState != SimulationState.Running || life.IsDead.Value)
             {
                 return false;
             }
 
             TargetData targetData = Entity.GetData<TargetData>();
-            BattleEntity target = targetData.Target;
+            BattleEntity target = targetData.Target.Value;
             if (target == null)
             {
                 return false;
             }
 
             LifeData targetLife = target.GetData<LifeData>();
-            if (targetLife.IsDead)
+            if (targetLife.IsDead.Value)
             {
                 return false;
             }
 
             BattleEntity battleEntity = (BattleEntity)Entity;
             AttackDistanceData distanceData = Entity.GetData<AttackDistanceData>();
-            float attackRange = distanceData.AttackRange;
-            float stopDistance = distanceData.StopDistance;
+            float attackRange = distanceData.AttackRange.Value;
+            float stopDistance = distanceData.StopDistance.Value;
 
             return IsOutsideStopRange(battleEntity, target, attackRange, stopDistance);
         }
@@ -82,11 +82,11 @@ namespace ArmyClash.Battle.States
             float speed = stats.GetStatValueById(SpeedId);
 
             AttackDistanceData distanceData = entity.GetData<AttackDistanceData>();
-            float attackRange = distanceData.AttackRange;
-            float stopDistance = distanceData.StopDistance;
+            float attackRange = distanceData.AttackRange.Value;
+            float stopDistance = distanceData.StopDistance.Value;
 
             TargetData targetData = entity.GetData<TargetData>();
-            BattleEntity target = targetData.Target;
+            BattleEntity target = targetData.Target.Value;
             if (target == null)
             {
                 return;
