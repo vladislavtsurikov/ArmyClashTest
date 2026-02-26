@@ -10,9 +10,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
     [ExecuteInEditMode]
     public partial class EntityMonoBehaviour : SerializedMonoBehaviour
     {
-        private bool _actionsAwakeCalled;
-        private bool _actionsStartCalled;
-
         [OdinSerialize]
         private Entity _entity;
 
@@ -97,60 +94,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             Entity.ActionTypesProvider = ActionTypesToCreate;
             Entity.AfterCreateDataAndActionsCallback = _ => OnAfterCreateDataAndActions();
             Entity.SetupEntityCallback = _ => OnSetupEntity();
-        }
-
-        private void InvokeAwakeIfNeeded()
-        {
-            if (_actionsAwakeCalled)
-            {
-                return;
-            }
-
-            _actionsAwakeCalled = true;
-            ForEachLifecycleAction(action => action.InvokeAwake());
-        }
-
-        private void InvokeStartIfNeeded()
-        {
-            if (_actionsStartCalled)
-            {
-                return;
-            }
-
-            _actionsStartCalled = true;
-            ForEachLifecycleAction(action => action.InvokeStart());
-        }
-
-        private void InvokeIfActive(Action<EntityLifecycleAction> handler)
-        {
-            if (!Active)
-            {
-                return;
-            }
-
-            ForEachLifecycleAction(handler);
-        }
-
-        private void ForEachLifecycleAction(Action<EntityLifecycleAction> handler)
-        {
-            if (handler == null)
-            {
-                return;
-            }
-
-            EntityActionCollection actions = Entity.Actions;
-            if (actions == null)
-            {
-                return;
-            }
-
-            for (int i = 0; i < actions.ElementList.Count; i++)
-            {
-                if (actions.ElementList[i] is EntityLifecycleAction action)
-                {
-                    handler(action);
-                }
-            }
         }
     }
 }

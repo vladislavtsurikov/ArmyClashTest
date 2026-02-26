@@ -19,7 +19,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration
             if (Root.panel != null)
             {
                 _isAttached = true;
-                Enable();
+                Setup();
             }
         }
 
@@ -40,7 +40,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration
 
             _isAttached = true;
 
-            Enable();
+            Setup();
         }
 
         private void OnDetachFromPanel(DetachFromPanelEvent evt)

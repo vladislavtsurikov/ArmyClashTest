@@ -3,7 +3,7 @@ using VladislavTsurikov.EntityDataAction.Runtime.Core;
 
 namespace VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration
 {
-    public abstract class UIToolkitAction : EntityLifecycleAction
+    public abstract class UIToolkitAction : EntityAction
     {
         protected VisualElement Root { get; private set; }
 

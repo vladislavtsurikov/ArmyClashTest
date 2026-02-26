@@ -16,11 +16,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 
         protected T Get<T>() where T : ComponentData
         {
-            if (Entity == null)
-            {
-                return null;
-            }
-
             return (T)Entity.Data.GetElement(typeof(T));
         }
     }

@@ -19,7 +19,7 @@ namespace ArmyClash.Battle.UI.Actions
         [Inject]
         private BattleStateService _state;
 
-        protected override void OnEnable()
+        protected override void SetupComponent(object[] setupData = null)
         {
             _subscriptions.Clear();
 
@@ -35,7 +35,7 @@ namespace ArmyClash.Battle.UI.Actions
             ApplyState(_state.SimulationState);
         }
 
-        protected override void OnDisable() => _subscriptions.Clear();
+        protected override void OnDisableElement() => _subscriptions.Clear();
 
         private void ApplyState(SimulationState state)
         {

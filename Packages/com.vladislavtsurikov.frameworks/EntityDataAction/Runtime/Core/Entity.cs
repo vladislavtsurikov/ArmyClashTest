@@ -152,22 +152,8 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             _actions.SyncToTypes(types);
         }
 
-        public void Enable()
-        {
-            Setup();
-
-            if (!Active)
-            {
-                return;
-            }
-
-            InvokeOnEnable();
-        }
-
         public void Disable()
         {
-            InvokeOnDisable();
-
             EntityDataActionGlobalSettings.ActiveChanged -= HandleActiveChanged;
             _data.ElementAdded -= HandleDataChanged;
             _data.ElementRemoved -= HandleDataChanged;
@@ -185,30 +171,11 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             if (_localActive && EntityDataActionGlobalSettings.Active)
             {
                 Disable();
-                Enable();
+                Setup();
             }
             else
             {
                 Disable();
-            }
-        }
-
-        private void InvokeOnEnable() => ForEachLifecycleAction(action => action.InvokeOnEnable());
-        private void InvokeOnDisable() => ForEachLifecycleAction(action => action.InvokeOnDisable());
-
-        private void ForEachLifecycleAction(Action<EntityLifecycleAction> handler)
-        {
-            if (handler == null || _actions == null)
-            {
-                return;
-            }
-
-            for (int i = 0; i < _actions.ElementList.Count; i++)
-            {
-                if (_actions.ElementList[i] is EntityLifecycleAction action)
-                {
-                    handler(action);
-                }
             }
         }
     }

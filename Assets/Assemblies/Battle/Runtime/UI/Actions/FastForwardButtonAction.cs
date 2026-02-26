@@ -19,7 +19,7 @@ namespace ArmyClash.Battle.UI.Actions
             view.FastForwardButton.clicked += OnClicked;
         }
 
-        protected override void OnDisable()
+        protected override void OnDisableElement()
         {
             BattleUIViewData view = Get<BattleUIViewData>();
             view.FastForwardButton.clicked -= OnClicked;

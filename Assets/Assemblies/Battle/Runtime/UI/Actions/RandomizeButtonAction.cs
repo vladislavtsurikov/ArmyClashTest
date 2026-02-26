@@ -24,7 +24,7 @@ namespace ArmyClash.Battle.UI.Actions
             view.RandomizeButton.clicked += OnClicked;
         }
 
-        protected override void OnDisable()
+        protected override void OnDisableElement()
         {
             BattleUIViewData view = Get<BattleUIViewData>();
             view.RandomizeButton.clicked -= OnClicked;

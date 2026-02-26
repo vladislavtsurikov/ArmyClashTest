@@ -34,18 +34,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
         {
         }
 
-        protected virtual void OnValidate()
-        {
-        }
-
-        protected virtual void OnApplicationFocus(bool hasFocus)
-        {
-        }
-
-        protected virtual void OnApplicationPause(bool pauseStatus)
-        {
-        }
-
         internal void InvokeAwake()
         {
             if (Active)
@@ -107,30 +95,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             if (Active)
             {
                 OnDestroy();
-            }
-        }
-
-        internal void InvokeOnValidate()
-        {
-            if (Active)
-            {
-                OnValidate();
-            }
-        }
-
-        internal void InvokeOnApplicationFocus(bool hasFocus)
-        {
-            if (Active)
-            {
-                OnApplicationFocus(hasFocus);
-            }
-        }
-
-        internal void InvokeOnApplicationPause(bool pauseStatus)
-        {
-            if (Active)
-            {
-                OnApplicationPause(pauseStatus);
             }
         }
     }

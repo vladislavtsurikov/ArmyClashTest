@@ -20,7 +20,7 @@ namespace ArmyClash.Battle.UI.Actions
             view.StartButton.clicked += OnClicked;
         }
 
-        protected override void OnDisable()
+        protected override void OnDisableElement()
         {
             BattleUIViewData view = Get<BattleUIViewData>();
             view.StartButton.clicked -= OnClicked;

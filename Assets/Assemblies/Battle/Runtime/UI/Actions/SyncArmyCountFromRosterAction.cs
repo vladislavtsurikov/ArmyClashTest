@@ -19,7 +19,7 @@ namespace ArmyClash.Battle.UI.Actions
         [Inject]
         private BattleTeamRoster _roster;
 
-        protected override void OnEnable()
+        protected override void SetupComponent(object[] setupData = null)
         {
             _subscriptions.Clear();
 
@@ -30,7 +30,7 @@ namespace ArmyClash.Battle.UI.Actions
             UpdateArmyCount();
         }
 
-        protected override void OnDisable() => _subscriptions.Clear();
+        protected override void OnDisableElement() => _subscriptions.Clear();
 
         protected override UniTask<bool> Run(CancellationToken token)
         {

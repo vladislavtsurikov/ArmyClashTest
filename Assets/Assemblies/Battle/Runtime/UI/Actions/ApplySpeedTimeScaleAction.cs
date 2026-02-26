@@ -30,6 +30,6 @@ namespace ArmyClash.Battle.UI.Actions
             return UniTask.FromResult(true);
         }
 
-        protected override void OnDisable() => Time.timeScale = 1f;
+        protected override void OnDisableElement() => Time.timeScale = 1f;
     }
 }

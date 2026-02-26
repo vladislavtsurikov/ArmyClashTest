@@ -1,64 +1,53 @@
+using System;
+using Action = VladislavTsurikov.ActionFlow.Runtime.Actions.Action;
+
 namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 {
     public partial class EntityMonoBehaviour
     {
-        protected void Update() => InvokeIfActive(action => action.InvokeUpdate());
-
-        protected void FixedUpdate() => InvokeIfActive(action => action.InvokeFixedUpdate());
-
-        protected void LateUpdate() => InvokeIfActive(action => action.InvokeLateUpdate());
-
-        protected void OnEnable()
+        private void Awake()
         {
             SetupEntityBindings();
             Entity.SetSetupData(new object[] { this });
+            Entity.Setup();
+            ForEachLifecycleAction(action => action.InvokeAwake());
+        }
 
-            if (!Active)
-            {
-                return;
-            }
+        private void Start()
+        {
+            ForEachLifecycleAction(action => action.InvokeStart());
+        }
 
-            InvokeAwakeIfNeeded();
-            Entity.Enable();
-            InvokeStartIfNeeded();
+        protected void OnEnable()
+        {
+            Entity.Setup();
+            ForEachLifecycleAction(action => action.InvokeOnEnable());
         }
 
         protected void OnDisable()
         {
-            if (_entity == null)
-            {
-                return;
-            }
-
             Entity.Disable();
         }
 
-        protected void OnDestroy()
+        protected void OnDestroy() => ForEachLifecycleAction(action => action.InvokeOnDestroy());
+
+        protected void Update() => ForEachLifecycleAction(action => action.InvokeUpdate());
+
+        protected void FixedUpdate() => ForEachLifecycleAction(action => action.InvokeFixedUpdate());
+
+        protected void LateUpdate() => ForEachLifecycleAction(action => action.InvokeLateUpdate());
+
+        private void ForEachLifecycleAction(Action<EntityLifecycleAction> handler)
         {
-            if (_entity == null)
+            EntityActionCollection actions = Entity.Actions;
+
+            foreach (Action action in actions.ElementList)
             {
-                return;
+                if (action is EntityLifecycleAction entityLifecycleAction)
+                {
+                    handler(entityLifecycleAction);
+                }
             }
-
-            ForEachLifecycleAction(action => action.InvokeOnDestroy());
         }
-
-        protected void OnApplicationFocus(bool hasFocus) =>
-            InvokeIfActive(action => action.InvokeOnApplicationFocus(hasFocus));
-
-        protected void OnApplicationPause(bool pauseStatus) =>
-            InvokeIfActive(action => action.InvokeOnApplicationPause(pauseStatus));
-
-#if UNITY_EDITOR
-        protected void OnValidate()
-        {
-            if (_entity == null)
-            {
-                return;
-            }
-
-            ForEachLifecycleAction(action => action.InvokeOnValidate());
-        }
-#endif
     }
 }
