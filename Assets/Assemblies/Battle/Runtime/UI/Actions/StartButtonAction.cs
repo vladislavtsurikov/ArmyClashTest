@@ -14,7 +14,7 @@ namespace ArmyClash.Battle.UI.Actions
         [Inject]
         private BattleStateService _state;
 
-        protected override void OnFirstSetupComponentUi(object[] setupData = null)
+        protected override void OnFirstSetupComponentUI(object[] setupData = null)
         {
             BattleUIViewData view = Get<BattleUIViewData>();
             view.StartButton.clicked += OnClicked;

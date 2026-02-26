@@ -2253,7 +2253,7 @@ MonoBehaviour:
         VladislavTsurikov.MegaWorld
     - Name: _selected
       Entry: 5
-      Data: false
+      Data: true
     - Name: Active
       Entry: 5
       Data: true
@@ -3996,7 +3996,7 @@ MonoBehaviour:
         VladislavTsurikov.MegaWorld
     - Name: _selected
       Entry: 5
-      Data: true
+      Data: false
     - Name: Active
       Entry: 5
       Data: true
@@ -4045,7 +4045,7 @@ MonoBehaviour:
       Data: 
     - Name: SuccessValue
       Entry: 4
-      Data: 100
+      Data: 29.2
     - Name: 
       Entry: 8
       Data: 

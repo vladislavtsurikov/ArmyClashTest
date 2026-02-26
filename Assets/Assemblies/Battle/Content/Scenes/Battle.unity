@@ -598,6 +598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dba9d93215cb0b4ab1e21e12df0a114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: ArmyClash.Battle::ArmyClash.MegaWorldGrid.GridSpawnerPairInstaller
+  _pair: {fileID: 670830764}
 --- !u!114 &1228870216
 MonoBehaviour:
   m_ObjectHideFlags: 0

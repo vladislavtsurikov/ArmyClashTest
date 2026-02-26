@@ -13,7 +13,7 @@ namespace ArmyClash.Battle.UI.Actions
     [Name("UI/ArmyClash/FastForwardButtonAction")]
     public sealed class FastForwardButtonAction : UIToolkitAction
     {
-        protected override void OnFirstSetupComponentUi(object[] setupData = null)
+        protected override void OnFirstSetupComponentUI(object[] setupData = null)
         {
             BattleUIViewData view = Get<BattleUIViewData>();
             view.FastForwardButton.clicked += OnClicked;

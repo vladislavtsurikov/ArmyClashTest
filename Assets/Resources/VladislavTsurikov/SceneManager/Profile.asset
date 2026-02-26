@@ -273,10 +273,41 @@ MonoBehaviour:
         VladislavTsurikov.ActionFlow]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 18|ArmyClash.SceneManager.SpawnBattleArmiesOperation, ArmyClash.SceneManager
+      Data: 18|VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.OperationSystem.SetActiveSceneOperation,
+        VladislavTsurikov.SceneManagerTool
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: false
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 62066492-e84b-460e-b784-bc21a9bb12f9
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 19|ArmyClash.SceneManager.SpawnBattleArmiesOperation, ArmyClash.SceneManager
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -327,7 +358,7 @@ MonoBehaviour:
       Data: 
     - Name: SceneReference
       Entry: 7
-      Data: 19|VladislavTsurikov.SceneUtility.Runtime.SceneReference, VladislavTsurikov.SceneUtility
+      Data: 20|VladislavTsurikov.SceneUtility.Runtime.SceneReference, VladislavTsurikov.SceneUtility
     - Name: _cachedScene
       Entry: 5
       Data: false
@@ -354,11 +385,11 @@ MonoBehaviour:
       Data: 
     - Name: SettingsStack
       Entry: 7
-      Data: 20|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.SettingsComponent,
+      Data: 21|VladislavTsurikov.Nody.Runtime.AdvancedNodeStack.NodeStackOnlyDifferentTypes`1[[VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.SettingsComponent,
         VladislavTsurikov.SceneManagerTool]], VladislavTsurikov.ComponentStack
     - Name: _elementList
       Entry: 7
-      Data: 21|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.SettingsComponent,
+      Data: 22|VladislavTsurikov.Utility.Runtime.ObservableList`1[[VladislavTsurikov.SceneManagerTool.Runtime.SettingsSystem.SettingsComponent,
         VladislavTsurikov.SceneManagerTool]], VladislavTsurikov.Utility
     - Name: 
       Entry: 12
@@ -407,7 +438,7 @@ MonoBehaviour:
       Data: 
     - Name: BuildSceneCollectionStackEditor
       Entry: 7
-      Data: 22|VladislavTsurikov.SceneManagerTool.Editor.BuildSceneCollectionSystem.BuildSceneCollectionStackEditor,
+      Data: 23|VladislavTsurikov.SceneManagerTool.Editor.BuildSceneCollectionSystem.BuildSceneCollectionStackEditor,
         VladislavTsurikov.SceneManagerTool
     - Name: 
       Entry: 8

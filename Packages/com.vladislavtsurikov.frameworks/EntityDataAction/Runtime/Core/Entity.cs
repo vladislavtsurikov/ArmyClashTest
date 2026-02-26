@@ -87,12 +87,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             DirtyRunner ??= new DirtyActionRunner(this, _data, _actions);
             DirtyRunner.Setup();
 
-            CreateDefaultData();
-            CreateDefaultActions();
-
-            AfterCreateDataAndActionsCallback?.Invoke(this);
-            OnAfterCreateDataAndActions();
-
             if (SetupEntityCallback != null)
             {
                 SetupEntityCallback(this);
@@ -101,6 +95,12 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
             {
                 OnSetupEntity();
             }
+
+            CreateDefaultData();
+            CreateDefaultActions();
+
+            AfterCreateDataAndActionsCallback?.Invoke(this);
+            OnAfterCreateDataAndActions();
 
             IsSetup = true;
         }

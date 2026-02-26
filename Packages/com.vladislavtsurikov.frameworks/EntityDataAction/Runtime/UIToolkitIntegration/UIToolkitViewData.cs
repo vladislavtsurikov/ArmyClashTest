@@ -14,7 +14,7 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration
         }
 
         protected TElement Query<TElement>(string name) where TElement : VisualElement =>
-            Root == null ? null : Root.Q<TElement>(name);
+            Root?.Q<TElement>(name);
 
         protected abstract void BindElements();
 

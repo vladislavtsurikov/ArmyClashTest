@@ -10,10 +10,10 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.UIToolkitIntegration
         protected sealed override void OnFirstSetupComponent(object[] setupData = null)
         {
             Root = Entity is UIToolkitEntity uiEntity ? uiEntity.Root : null;
-            OnFirstSetupComponentUi(setupData);
+            OnFirstSetupComponentUI(setupData);
         }
 
-        protected virtual void OnFirstSetupComponentUi(object[] setupData = null)
+        protected virtual void OnFirstSetupComponentUI(object[] setupData = null)
         {
         }
 
