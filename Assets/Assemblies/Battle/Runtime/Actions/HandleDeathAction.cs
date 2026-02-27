@@ -12,13 +12,14 @@ namespace ArmyClash.Battle.Actions
     [Name("Battle/Actions/HandleDeath")]
     public sealed class HandleDeathAction : EntityMonoBehaviourAction
     {
-        private readonly CompositeDisposable _subscriptions = new();
+        private CompositeDisposable _subscriptions = new();
 
         [Inject]
         private BattleStateService _state;
 
         protected override void OnEnable()
         {
+            _subscriptions ??= new CompositeDisposable();
             _subscriptions.Clear();
 
             LifeData life = Entity.GetData<LifeData>();

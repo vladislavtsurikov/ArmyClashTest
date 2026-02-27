@@ -21,9 +21,9 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
                 return;
             }
 
-            for (int i = 0; i < setupData.Length; i++)
+            foreach (object t in setupData)
             {
-                if (setupData[i] is GridGenerator gridGenerator)
+                if (t is GridGenerator gridGenerator)
                 {
                     _gridGenerator = gridGenerator;
                     return;
@@ -36,20 +36,10 @@ namespace VladislavTsurikov.MegaWorld.Runtime.Common.Settings.ScatterSystem
         {
             samples.Clear();
 
-            if (_gridGenerator.Slots == null)
-            {
-                return;
-            }
-
             IReadOnlyList<GridSlot> slots = _gridGenerator.Slots;
             for (int i = 0; i < slots.Count; i++)
             {
                 token.ThrowIfCancellationRequested();
-
-                if (ScatterStack.IsWaitForNextFrame())
-                {
-                    await UniTask.Yield();
-                }
 
                 Vector3 position = slots[i].Position;
                 Vector3 sample = position;

@@ -20,6 +20,13 @@ namespace ArmyClash.Battle.States
         [Inject]
         private BattleStateService _state;
 
+        private Rigidbody _rigidbody;
+
+        protected override void SetupComponentState(object[] setupData = null)
+        {
+            _rigidbody = EntityMonoBehaviour.GetComponent<Rigidbody>();
+        }
+
         protected override bool Conditional() => CanMove();
 
         protected override void Tick(float deltaTime) => MoveStep();
@@ -84,7 +91,7 @@ namespace ArmyClash.Battle.States
             if (distance > Mathf.Max(0f, attackRange - stopDistance))
             {
                 Vector3 next = Vector3.MoveTowards(current, targetPosition, speed * Time.deltaTime);
-                battleEntity.transform.position = next;
+                _rigidbody.MovePosition(next);
             }
         }
 

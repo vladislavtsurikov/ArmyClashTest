@@ -10,11 +10,12 @@ namespace VladislavTsurikov.StateMachine.Runtime.Actions
     [Name("StateMachine/StateMachineAction")]
     public sealed class StateMachineAction : EntityMonoBehaviourAction
     {
-        private readonly CompositeDisposable _subscriptions = new CompositeDisposable();
+        private CompositeDisposable _subscriptions = new CompositeDisposable();
         private StateMachineData _data;
 
         protected override void OnEnable()
         {
+            _subscriptions ??= new CompositeDisposable();
             _data = Get<StateMachineData>();
 
             if (_data.CurrentState.Value == null)

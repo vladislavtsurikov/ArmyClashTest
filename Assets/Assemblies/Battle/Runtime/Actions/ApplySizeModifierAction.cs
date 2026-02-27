@@ -35,10 +35,7 @@ namespace ArmyClash.Battle.Actions
                 return;
             }
 
-            Transform target = EntityMonoBehaviour.transform.childCount > 0
-                ? EntityMonoBehaviour.transform.GetChild(0)
-                : EntityMonoBehaviour.transform;
-            target.localScale = sizeModifier.Scale;
+            EntityMonoBehaviour.transform.localScale = sizeModifier.Scale;
         }
     }
 }

@@ -92,6 +92,13 @@ namespace VladislavTsurikov.StateMachine.Runtime.Definitions
                     }
                 })
                 .AddTo(_subscriptions);
+
+            SetupComponentState(setupData);
+        }
+
+        protected virtual void SetupComponentState(object[] setupData = null)
+        {
+
         }
 
         protected override void OnDisableElement()

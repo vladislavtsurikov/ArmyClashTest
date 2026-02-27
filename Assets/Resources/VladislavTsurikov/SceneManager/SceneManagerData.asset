@@ -43,7 +43,7 @@ MonoBehaviour:
       Data: 3|UnityEditor.SceneManagement.SceneSetup, UnityEditor.CoreModule
     - Name: m_Path
       Entry: 1
-      Data: Assets/Assemblies/Battle/Content/Scenes/Battle.unity
+      Data: Assets/Resources/VladislavTsurikov/SceneManager/Scene Manager.unity
     - Name: m_IsLoaded
       Entry: 5
       Data: true

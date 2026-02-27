@@ -17,13 +17,14 @@ namespace ArmyClash.Battle.Actions
     {
         private const string RegenId = "REGEN";
         private const string HealthId = "HP";
-        private readonly CompositeDisposable _subscriptions = new();
+        private CompositeDisposable _subscriptions = new();
 
         [Inject]
         private BattleStateService _state;
 
         protected override void OnEnable()
         {
+            _subscriptions ??= new CompositeDisposable();
             _subscriptions.Clear();
 
             StateMachineData stateMachine = Entity.GetData<StateMachineData>();
