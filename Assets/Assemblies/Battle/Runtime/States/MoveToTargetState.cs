@@ -1,7 +1,5 @@
-using System;
 using ArmyClash.Battle.Data;
 using ArmyClash.Battle.Services;
-using UniRx;
 using UnityEngine;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats;
@@ -22,34 +20,19 @@ namespace ArmyClash.Battle.States
         [Inject]
         private BattleStateService _state;
 
-        protected override void Conditional()
-        {
-            IObservable<bool> canMove =
-                Observable.EveryUpdate()
-                    .Select(_ => CanMove())
-                    .DistinctUntilChanged();
+        protected override bool Conditional() => CanMove();
 
-            BindEligibility(canMove);
-
-            canMove
-                .Select(active =>
-                    active
-                        ? Observable.EveryUpdate()
-                        : Observable.Empty<long>())
-                .Switch()
-                .Subscribe(_ => MoveStep())
-                .AddTo(Subscriptions);
-        }
+        protected override void Tick(float deltaTime) => MoveStep();
 
         private bool CanMove()
         {
-            LifeData life = Entity.GetData<LifeData>();
+            LifeData life = EntityMonoBehaviour.GetData<LifeData>();
             if (_state.SimulationState != SimulationState.Running || life.IsDead.Value)
             {
                 return false;
             }
 
-            TargetData targetData = Entity.GetData<TargetData>();
+            TargetData targetData = EntityMonoBehaviour.GetData<TargetData>();
             BattleEntity target = targetData.Target.Value;
             if (target == null)
             {
@@ -62,8 +45,8 @@ namespace ArmyClash.Battle.States
                 return false;
             }
 
-            BattleEntity battleEntity = (BattleEntity)Entity;
-            AttackDistanceData distanceData = Entity.GetData<AttackDistanceData>();
+            BattleEntity battleEntity = (BattleEntity)EntityMonoBehaviour;
+            AttackDistanceData distanceData = EntityMonoBehaviour.GetData<AttackDistanceData>();
             float attackRange = distanceData.AttackRange.Value;
             float stopDistance = distanceData.StopDistance.Value;
 
@@ -72,7 +55,7 @@ namespace ArmyClash.Battle.States
 
         private void MoveStep()
         {
-            EntityMonoBehaviour entity = Entity;
+            EntityMonoBehaviour entity = EntityMonoBehaviour;
             if (entity == null)
             {
                 return;
@@ -92,7 +75,7 @@ namespace ArmyClash.Battle.States
                 return;
             }
 
-            BattleEntity battleEntity = (BattleEntity)Entity;
+            BattleEntity battleEntity = (BattleEntity)EntityMonoBehaviour;
             Vector3 current = battleEntity.transform.position;
             Vector3 targetPosition = target.transform.position;
             Vector3 direction = targetPosition - current;

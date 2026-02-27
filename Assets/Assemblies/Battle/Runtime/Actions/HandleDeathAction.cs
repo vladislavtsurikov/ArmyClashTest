@@ -32,9 +32,9 @@ namespace ArmyClash.Battle.Actions
 
         private void HandleDeath()
         {
-            Object.Destroy(Host.gameObject);
+            Object.Destroy(EntityMonoBehaviour.gameObject);
 
-            _state.UnregisterEntity(Host);
+            _state.UnregisterEntity(EntityMonoBehaviour);
         }
     }
 }

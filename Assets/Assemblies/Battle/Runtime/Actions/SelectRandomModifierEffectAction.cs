@@ -12,7 +12,7 @@ namespace ArmyClash.Battle.Actions
 {
     [RequiresData(typeof(ModifiersData))]
     [Name("Battle/Modifiers/SelectRandomModifierEffect")]
-    public sealed class SelectRandomModifierEffectAction : EntityLifecycleAction
+    public sealed class SelectRandomModifierEffectAction : EntityMonoBehaviourAction
     {
         [OdinSerialize]
         private List<ModifierStatEffect> _options = new();

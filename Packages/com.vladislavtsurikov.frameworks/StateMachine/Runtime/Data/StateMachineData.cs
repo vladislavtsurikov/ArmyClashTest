@@ -24,9 +24,7 @@ namespace VladislavTsurikov.StateMachine.Runtime.Data
         private State _previousState;
 
         [NonSerialized]
-        private readonly List<State> _activeStates = new List<State>();
-
-        public event Action ActiveStatesChanged;
+        private readonly ReactiveCollection<State> _eligibleStates = new ReactiveCollection<State>();
 
         public ReactiveProperty<State> CurrentState
         {
@@ -79,7 +77,7 @@ namespace VladislavTsurikov.StateMachine.Runtime.Data
 
         public NodeStackOnlyDifferentTypes<State> StateStack => _stateStack;
 
-        public IReadOnlyList<State> ActiveStates => _activeStates;
+        public IReadOnlyReactiveCollection<State> EligibleStates => _eligibleStates;
 
         protected override void SetupComponent(object[] setupData = null)
         {
@@ -100,18 +98,14 @@ namespace VladislavTsurikov.StateMachine.Runtime.Data
 
             if (eligible)
             {
-                if (!_activeStates.Contains(state))
+                if (!_eligibleStates.Contains(state))
                 {
-                    _activeStates.Add(state);
-                    ActiveStatesChanged?.Invoke();
+                    _eligibleStates.Add(state);
                 }
             }
             else
             {
-                if (_activeStates.Remove(state))
-                {
-                    ActiveStatesChanged?.Invoke();
-                }
+                _eligibleStates.Remove(state);
             }
         }
     }

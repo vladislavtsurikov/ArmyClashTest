@@ -37,13 +37,13 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 
         protected void LateUpdate() => ForEachLifecycleAction(action => action.InvokeLateUpdate());
 
-        private void ForEachLifecycleAction(Action<EntityLifecycleAction> handler)
+        private void ForEachLifecycleAction(Action<EntityMonoBehaviourAction> handler)
         {
             EntityActionCollection actions = Entity.Actions;
 
             foreach (Action action in actions.ElementList)
             {
-                if (action is EntityLifecycleAction entityLifecycleAction)
+                if (action is EntityMonoBehaviourAction entityLifecycleAction)
                 {
                     handler(entityLifecycleAction);
                 }

@@ -31,7 +31,7 @@ namespace ArmyClash.Battle.Actions
         private void Apply(ModifierStatEffect effect)
         {
             ColorModifier colorModifier = (ColorModifier)effect.Modifier;
-            Renderer renderer = Host.GetComponentInChildren<Renderer>();
+            Renderer renderer = EntityMonoBehaviour.GetComponentInChildren<Renderer>();
             renderer.material.color = colorModifier.Color;
         }
     }

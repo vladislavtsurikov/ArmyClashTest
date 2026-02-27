@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using ArmyClash.Battle.Data;
 using ArmyClash.Battle.Services;
-using UniRx;
 using UnityEngine;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.ReflectionUtility;
@@ -21,35 +19,31 @@ namespace ArmyClash.Battle.States
         [Inject]
         private BattleStateService _state;
 
-        protected override void Conditional()
+        protected override bool Conditional()
         {
             LifeData life = GetData<LifeData>();
             TargetData targetData = GetData<TargetData>();
 
-            IObservable<bool> canAcquire = _state.SimulationStateReactive
-                .Select(state => state == SimulationState.Running)
-                .CombineLatest(life.IsDead, targetData.Target,
-                    (running, isDead, target) => running && !isDead && target == null);
+            bool running = _state.SimulationState == SimulationState.Running;
+            bool isDead = life.IsDead.Value;
+            bool hasTarget = targetData.Target.Value != null;
 
-            BindEligibility(canAcquire);
-
-            canAcquire
-                .Where(can => can)
-                .Subscribe(_ => FindClosestOpponent())
-                .AddTo(Subscriptions);
+            return running && !isDead && !hasTarget;
         }
+
+        protected override void Tick(float deltaTime) => FindClosestOpponent();
 
         private void FindClosestOpponent()
         {
-            TargetData targetData = Entity.GetData<TargetData>();
+            TargetData targetData = EntityMonoBehaviour.GetData<TargetData>();
 
-            TeamData team = Entity.GetData<TeamData>();
+            TeamData team = EntityMonoBehaviour.GetData<TeamData>();
 
             IReadOnlyList<EntityMonoBehaviour> list = team.TeamId == 0
                 ? _roster.RightEntities
                 : _roster.LeftEntities;
 
-            Vector3 position = Entity.transform.position;
+            Vector3 position = EntityMonoBehaviour.transform.position;
 
             targetData.Target.Value = list
                 .Where(candidate => !candidate.GetData<LifeData>().IsDead.Value)

@@ -38,7 +38,7 @@ namespace ArmyClash.Battle.Actions
             UnityEngine.Object.Destroy(_instance);
             _instance = null;
 
-            Transform root = _root != null ? _root : Host.transform;
+            Transform root = _root != null ? _root : EntityMonoBehaviour.transform;
             _instance = UnityEngine.Object.Instantiate(((ShapeModifier)effect.Modifier).Prefab, root, false);
         }
     }

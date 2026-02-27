@@ -1,5 +1,4 @@
 using System.Linq;
-using UnityEngine;
 using UniRx;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.StateMachine.Runtime.Data;
@@ -9,7 +8,7 @@ using VladislavTsurikov.ReflectionUtility;
 namespace VladislavTsurikov.StateMachine.Runtime.Actions
 {
     [Name("StateMachine/StateMachineAction")]
-    public sealed class StateMachineAction : EntityLifecycleAction
+    public sealed class StateMachineAction : EntityMonoBehaviourAction
     {
         private readonly CompositeDisposable _subscriptions = new CompositeDisposable();
         private StateMachineData _data;
@@ -23,19 +22,10 @@ namespace VladislavTsurikov.StateMachine.Runtime.Actions
                 EvaluateConditions();
             }
 
-            _data.ActiveStatesChanged += EvaluateConditions;
-
-            Observable.EveryUpdate()
-                .Subscribe(_ =>
-                {
-                    var current = _data.CurrentState.Value;
-                    if (current == null)
-                    {
-                        return;
-                    }
-
-                    current.Update(Entity, Time.deltaTime);
-                })
+            _data.EligibleStates.ObserveAdd().Select(_ => Unit.Default)
+                .Merge(_data.EligibleStates.ObserveRemove().Select(_ => Unit.Default))
+                .Merge(_data.EligibleStates.ObserveReset())
+                .Subscribe(_ => EvaluateConditions())
                 .AddTo(_subscriptions);
         }
 
@@ -44,7 +34,6 @@ namespace VladislavTsurikov.StateMachine.Runtime.Actions
             _subscriptions?.Clear();
             if (_data != null)
             {
-                _data.ActiveStatesChanged -= EvaluateConditions;
                 for (int i = 0; i < _data.StateStack.ElementList.Count; i++)
                 {
                     var state = _data.StateStack.ElementList[i];
@@ -62,14 +51,13 @@ namespace VladislavTsurikov.StateMachine.Runtime.Actions
 
         public void EvaluateConditions()
         {
-            var entity = Entity;
             var data = Get<StateMachineData>();
-            if (entity == null || data == null)
+            if (data == null)
             {
                 return;
             }
 
-            var best = data.ActiveStates
+            var best = data.EligibleStates
                 .Where(state => state != null && !ReferenceEquals(state, data.CurrentState.Value))
                 .OrderByDescending(state => state.Priority)
                 .FirstOrDefault();
@@ -80,10 +68,6 @@ namespace VladislavTsurikov.StateMachine.Runtime.Actions
         public bool TrySwitchState(State nextState)
         {
             var data = Get<StateMachineData>();
-            if (data == null || nextState == null)
-            {
-                return false;
-            }
 
             if (ReferenceEquals(data.CurrentState.Value, nextState))
             {
@@ -91,20 +75,20 @@ namespace VladislavTsurikov.StateMachine.Runtime.Actions
             }
 
             var current = data.CurrentState.Value;
-            if (current != null && !current.CanExit(Entity, nextState))
+            if (current != null && !current.CanExit(EntityMonoBehaviour, nextState))
             {
                 return false;
             }
 
-            if (!nextState.CanEnter(Entity, current))
+            if (!nextState.CanEnter(EntityMonoBehaviour, current))
             {
                 return false;
             }
 
-            current?.Exit(Entity);
+            current?.Exit(EntityMonoBehaviour);
             data.PreviousState = current;
             data.SetState(nextState);
-            nextState.Enter(Entity);
+            nextState.Enter(EntityMonoBehaviour);
             return true;
         }
     }

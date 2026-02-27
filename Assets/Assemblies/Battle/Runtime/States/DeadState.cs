@@ -1,11 +1,8 @@
 using ArmyClash.Battle.Data;
-using ArmyClash.Battle.Services;
-using UniRx;
 using VladislavTsurikov.EntityDataAction.Runtime.Core;
 using VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats;
 using VladislavTsurikov.ReflectionUtility;
 using VladislavTsurikov.StateMachine.Runtime.Definitions;
-using Zenject;
 
 namespace ArmyClash.Battle.States
 {
@@ -14,24 +11,20 @@ namespace ArmyClash.Battle.States
     {
         private const string HealthId = "HP";
 
-        [Inject]
-        private BattleStateService _state;
-
         public DeadState() => Priority = int.MaxValue;
 
-        protected override void Conditional()
+        protected override bool Conditional()
         {
             LifeData life = GetData<LifeData>();
             StatsEntityData stats = GetData<StatsEntityData>();
             RuntimeStat health = stats.GetRuntimeStatById(HealthId);
 
-            BindEligibility(life.IsDead
-                .CombineLatest(health.Value, (isDead, hp) => isDead || hp <= 0f));
+            return life.IsDead.Value || health.Value.Value <= 0f;
         }
 
-        public override void Enter(Entity entity)
+        protected override void Tick(float delta)
         {
-            LifeData life = entity.GetData<LifeData>();
+            LifeData life = EntityMonoBehaviour.GetData<LifeData>();
             if (!life.IsDead.Value)
             {
                 life.IsDead.Value = true;

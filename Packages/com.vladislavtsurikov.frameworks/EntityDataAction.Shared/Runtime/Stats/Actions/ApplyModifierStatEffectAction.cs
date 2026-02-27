@@ -10,7 +10,7 @@ namespace VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats
 {
     [RequiresData(typeof(StatsEntityData), typeof(ArmyClash.Battle.Data.ModifiersData))]
     [Name("Stats/Apply Modifier Stat Effect")]
-    public sealed class ApplyModifierStatEffectAction : EntityLifecycleAction
+    public sealed class ApplyModifierStatEffectAction : EntityMonoBehaviourAction
     {
         private IDisposable _subscription;
 
