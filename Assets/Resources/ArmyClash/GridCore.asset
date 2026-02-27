@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   ShowGizmos: 1
-  GizmoColor: {r: 0.1, g: 0.6, b: 1, a: 0.8}
-  GizmoHeight: 0.02
+  GizmoColor: {r: 1, g: 0.0032806438, b: 0, a: 0.8}
+  GizmoHeight: 0.2
   GizmoSizeScale: 1
-  LinePixelWidth: 2
+  LinePixelWidth: 5

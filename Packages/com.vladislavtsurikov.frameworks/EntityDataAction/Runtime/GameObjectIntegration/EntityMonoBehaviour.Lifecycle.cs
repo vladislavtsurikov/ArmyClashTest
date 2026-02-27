@@ -39,6 +39,11 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 
         private void ForEachLifecycleAction(Action<EntityMonoBehaviourAction> handler)
         {
+            if (!Active)
+            {
+                return;
+            }
+
             EntityActionCollection actions = Entity.Actions;
 
             foreach (Action action in actions.ElementList)

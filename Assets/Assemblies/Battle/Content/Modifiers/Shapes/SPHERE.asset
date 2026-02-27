@@ -42,4 +42,4 @@ MonoBehaviour:
       Entry: 8
       Data: 
   _id: SPHERE
-  _prefab: {fileID: 0}
+  _prefab: {fileID: 9160305334210603074, guid: e2e37beaf294a8044b31f669c9c54d8c, type: 3}

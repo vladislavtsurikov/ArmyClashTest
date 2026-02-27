@@ -42,7 +42,6 @@ namespace VladislavTsurikov.ActionFlow.Editor.Stats
 
             if (EditorGUI.EndChangeCheck())
             {
-                Debug.Log("SetDirty");
                 EditorUtility.SetDirty(_stat);
             }
         }

@@ -48,11 +48,11 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: d4ce7acd419d7cb40a0f72d4ef0c5c40, type: 2}
-    - {fileID: 11400000, guid: 3786426bf8499714b8996e09a8da47ba, type: 2}
+    - {fileID: 2728825304569137108}
     - {fileID: 11400000, guid: 8aa68654b7d839d4c9a7318d8c90ebef, type: 2}
     - {fileID: 11400000, guid: 038172f5884705a44bc2ca6235713b99, type: 2}
-    - {fileID: 2728825304569137108}
+    - {fileID: 11400000, guid: 3786426bf8499714b8996e09a8da47ba, type: 2}
+    - {fileID: 11400000, guid: d4ce7acd419d7cb40a0f72d4ef0c5c40, type: 2}
     - {fileID: 11400000, guid: f6389f926fc14cb4bb0a9be923dda1d1, type: 2}
     - {fileID: 11400000, guid: 0bafa3464dd336c46b4b75d95faaab96, type: 2}
     - {fileID: 11400000, guid: 6206e55167bbcf64f87f9831a321f584, type: 2}
@@ -80,148 +80,7 @@ MonoBehaviour:
       Data: 10
     - Name: 
       Entry: 7
-      Data: 3|ArmyClash.Battle.Actions.SelectRandomModifierEffectAction, ArmyClash.Battle
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: true
-    - Name: _nodeId
-      Entry: 1
-      Data: 915aec5d-6be8-440b-b6b3-f1332aa83298
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _options
-      Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[VladislavTsurikov.ActionFlow.Runtime.Stats.ModifierStatEffect,
-        VladislavTsurikov.ActionFlow]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 10
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 5|ArmyClash.Battle.Actions.SelectRandomModifierEffectAction, ArmyClash.Battle
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: false
-    - Name: _nodeId
-      Entry: 1
-      Data: d6fa114f-9c1a-4c29-8b75-60da088a267a
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _options
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[VladislavTsurikov.ActionFlow.Runtime.Stats.ModifierStatEffect,
-        VladislavTsurikov.ActionFlow]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 10
-      Data: 1
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 7|ArmyClash.Battle.Actions.SelectRandomModifierEffectAction, ArmyClash.Battle
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: false
-    - Name: _nodeId
-      Entry: 1
-      Data: 2e658769-8196-4a0b-ad90-3e9773e08122
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _options
-      Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[VladislavTsurikov.ActionFlow.Runtime.Stats.ModifierStatEffect,
-        VladislavTsurikov.ActionFlow]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 10
-      Data: 2
-    - Name: 
-      Entry: 10
-      Data: 3
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 9|VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats.ApplyModifierStatEffectAction,
+      Data: 3|VladislavTsurikov.EntityDataAction.Shared.Runtime.Stats.ApplyModifierStatEffectAction,
         VladislavTsurikov.EntityDataAction.Shared
     - Name: SelectSettingsFoldout
       Entry: 5
@@ -252,7 +111,40 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 10|ArmyClash.Battle.Actions.ApplyColorModifierAction, ArmyClash.Battle
+      Data: 4|ArmyClash.Battle.Actions.ApplyShapeModifierAction, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 1c60fa0f-484f-4864-8be4-d10d1ceab47a
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _root
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|ArmyClash.Battle.Actions.ApplyColorModifierAction, ArmyClash.Battle
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -282,7 +174,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 11|ArmyClash.Battle.Actions.ApplySizeModifierAction, ArmyClash.Battle
+      Data: 6|ArmyClash.Battle.Actions.ApplySizeModifierAction, ArmyClash.Battle
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -312,7 +204,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|ArmyClash.Battle.Actions.ApplyShapeModifierAction, ArmyClash.Battle
+      Data: 7|ArmyClash.Battle.Actions.SelectRandomModifierEffectAction, ArmyClash.Battle
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -321,10 +213,10 @@ MonoBehaviour:
       Data: true
     - Name: _selected
       Entry: 5
-      Data: false
+      Data: true
     - Name: _nodeId
       Entry: 1
-      Data: 1c60fa0f-484f-4864-8be4-d10d1ceab47a
+      Data: 915aec5d-6be8-440b-b6b3-f1332aa83298
     - Name: _graphPosition
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
@@ -337,9 +229,117 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: _root
+    - Name: _options
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[VladislavTsurikov.ActionFlow.Runtime.Stats.ModifierStatEffect,
+        VladislavTsurikov.ActionFlow]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|ArmyClash.Battle.Actions.SelectRandomModifierEffectAction, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: d6fa114f-9c1a-4c29-8b75-60da088a267a
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _options
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[VladislavTsurikov.ActionFlow.Runtime.Stats.ModifierStatEffect,
+        VladislavTsurikov.ActionFlow]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|ArmyClash.Battle.Actions.SelectRandomModifierEffectAction, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 2e658769-8196-4a0b-ad90-3e9773e08122
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _options
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[VladislavTsurikov.ActionFlow.Runtime.Stats.ModifierStatEffect,
+        VladislavTsurikov.ActionFlow]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
       Entry: 10
       Data: 4
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -769,7 +769,7 @@ MonoBehaviour:
       Data: 36|ArmyClash.Battle.Data.LifeData, ArmyClash.Battle
     - Name: SelectSettingsFoldout
       Entry: 5
-      Data: false
+      Data: true
     - Name: _active
       Entry: 5
       Data: true

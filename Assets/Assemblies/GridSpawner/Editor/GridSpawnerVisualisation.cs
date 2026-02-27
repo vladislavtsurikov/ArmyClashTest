@@ -7,7 +7,7 @@ namespace VladislavTsurikov.MegaWorld.Editor.GridSpawner
 {
     public static class GridSpawnerVisualisation
     {
-        [DrawGizmo(GizmoType.InSelectionHierarchy | GizmoType.Selected)]
+        [DrawGizmo(GizmoType.Selected | GizmoType.NonSelected)]
         private static void DrawGizmoForArea(Runtime.GridSpawner.GridSpawner spawner, GizmoType gizmoType)
         {
             GridConfig config = spawner.Config;

@@ -30,10 +30,15 @@ namespace ArmyClash.Battle.Actions
 
         private void Apply(ModifierStatEffect effect)
         {
+            if (effect.Modifier is not SizeModifier sizeModifier)
+            {
+                return;
+            }
+
             Transform target = EntityMonoBehaviour.transform.childCount > 0
                 ? EntityMonoBehaviour.transform.GetChild(0)
                 : EntityMonoBehaviour.transform;
-            target.localScale = ((SizeModifier)effect.Modifier).Scale;
+            target.localScale = sizeModifier.Scale;
         }
     }
 }

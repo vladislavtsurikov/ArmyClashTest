@@ -1,6 +1,7 @@
 using System;
 using Cysharp.Threading.Tasks;
 using OdinSerializer;
+using UnityEngine;
 using VladislavTsurikov.Nody.Runtime.Core;
 
 namespace VladislavTsurikov.EntityDataAction.Runtime.Core
@@ -94,11 +95,13 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 
             OnSetupEntity();
 
-            CreateDefaultData();
-            CreateDefaultActions();
+            if (!Application.isPlaying)
+            {
+                CreateDefaultData();
+                CreateDefaultActions();
 
-            AfterCreateDataAndActionsCallback?.Invoke(this);
-            OnAfterCreateDataAndActions();
+                AfterCreateDataAndActionsCallback?.Invoke(this);
+            }
 
             IsSetup = true;
         }
@@ -106,10 +109,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
         protected virtual Type[] ComponentDataTypesToCreate() => null;
 
         protected virtual Type[] ActionTypesToCreate() => null;
-
-        protected virtual void OnAfterCreateDataAndActions()
-        {
-        }
 
         public T GetData<T>() where T : ComponentData => Data.GetElement<T>();
 

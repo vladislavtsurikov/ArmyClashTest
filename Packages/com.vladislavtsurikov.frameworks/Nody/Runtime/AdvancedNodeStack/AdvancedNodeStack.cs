@@ -95,6 +95,9 @@ namespace VladislavTsurikov.Nody.Runtime.AdvancedNodeStack
                 }
             }
 
+            Clear();
+
+
             _elementList.Clear();
             _elementList.AddRange(newList);
         }

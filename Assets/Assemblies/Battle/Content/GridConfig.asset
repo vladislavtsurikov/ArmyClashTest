@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1345ecc614cac4eacd70af814b96fe, type: 3}
   m_Name: GridConfig
   m_EditorClassIdentifier: ArmyClash.GridGenerator::ArmyClash.Grid.GridConfig
-  Rows: 4
-  Columns: 5
+  Rows: 5
+  Columns: 4
   CellSize: 1
-  RowSpacing: 0.2
-  ColumnSpacing: 0.2
+  RowSpacing: 0.8
+  ColumnSpacing: 0.7

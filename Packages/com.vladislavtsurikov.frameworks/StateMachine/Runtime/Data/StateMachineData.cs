@@ -24,7 +24,7 @@ namespace VladislavTsurikov.StateMachine.Runtime.Data
         private State _previousState;
 
         [NonSerialized]
-        private readonly ReactiveCollection<State> _eligibleStates = new ReactiveCollection<State>();
+        private ReactiveCollection<State> _eligibleStates = new ReactiveCollection<State>();
 
         public ReactiveProperty<State> CurrentState
         {
@@ -56,8 +56,6 @@ namespace VladislavTsurikov.StateMachine.Runtime.Data
             {
                 value.Active = true;
             }
-
-            MarkDirty();
         }
 
         public State PreviousState
@@ -67,17 +65,23 @@ namespace VladislavTsurikov.StateMachine.Runtime.Data
             {
                 if (_previousState == value)
                 {
-                    return;
-                }
-
-                _previousState = value;
-                MarkDirty();
+                return;
             }
+
+            _previousState = value;
+        }
         }
 
         public NodeStackOnlyDifferentTypes<State> StateStack => _stateStack;
 
-        public IReadOnlyReactiveCollection<State> EligibleStates => _eligibleStates;
+        public IReadOnlyReactiveCollection<State> EligibleStates
+        {
+            get
+            {
+                _eligibleStates ??= new ReactiveCollection<State>();
+                return _eligibleStates;
+            }
+        }
 
         protected override void SetupComponent(object[] setupData = null)
         {

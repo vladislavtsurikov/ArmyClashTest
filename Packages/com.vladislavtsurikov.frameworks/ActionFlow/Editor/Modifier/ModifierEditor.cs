@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using System;
 using UnityEditor;
 using UnityEngine;
 using VladislavTsurikov.CustomInspector.Editor.IMGUI;
@@ -14,39 +15,31 @@ namespace VladislavTsurikov.ActionFlow.Editor.Modifier
         private Runtime.Modifier.Modifier _modifier;
         private ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor> _stackEditor;
 
-        public override void OnInspectorGUI()
+        private void OnEnable()
         {
-            _modifier ??= target as Runtime.Modifier.Modifier;
-            if (_modifier == null)
-            {
-                return;
-            }
-
-            float fieldsHeight = _fieldsDrawer.GetFieldsHeight(_modifier);
-            Rect fieldsRect = EditorGUILayout.GetControlRect(false, fieldsHeight);
-            _fieldsDrawer.DrawFields(_modifier, fieldsRect);
-
-            EnsureStackEditor();
-            _stackEditor.OnGUI();
-        }
-
-        private void EnsureStackEditor()
-        {
-            if (_modifier.ComponentStack == null)
-            {
-                return;
-            }
-
-            if (_stackEditor != null && ReferenceEquals(_stackEditor.Stack, _modifier.ComponentStack))
-            {
-                return;
-            }
+            _modifier = target as Runtime.Modifier.Modifier;
 
             _stackEditor =
                 new ReorderableListStackEditor<ComponentData, ReorderableListComponentEditor>(_modifier.ComponentStack)
                 {
                     DisplayHeaderText = true
                 };
+        }
+
+        public override void OnInspectorGUI()
+        {
+            EditorGUI.BeginChangeCheck();
+
+            float fieldsHeight = _fieldsDrawer.GetFieldsHeight(_modifier);
+            Rect fieldsRect = EditorGUILayout.GetControlRect(false, fieldsHeight);
+            _fieldsDrawer.DrawFields(_modifier, fieldsRect);
+
+            _stackEditor.OnGUI();
+
+            if (EditorGUI.EndChangeCheck())
+            {
+                EditorUtility.SetDirty(target);
+            }
         }
     }
 }

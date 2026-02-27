@@ -24,9 +24,9 @@ namespace ArmyClash.Battle
             new[]
             {
                 typeof(ApplyModifierStatEffectAction),
+                typeof(ApplyShapeModifierAction),
                 typeof(ApplyColorModifierAction),
                 typeof(ApplySizeModifierAction),
-                typeof(ApplyShapeModifierAction),
                 typeof(SelectRandomModifierEffectAction),
                 typeof(SelectRandomModifierEffectAction),
                 typeof(SelectRandomModifierEffectAction),

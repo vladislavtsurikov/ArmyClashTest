@@ -35,11 +35,16 @@ namespace ArmyClash.Battle.Actions
 
         private void Apply(ModifierStatEffect effect)
         {
+            if (effect.Modifier is not ShapeModifier shapeModifier)
+            {
+                return;
+            }
+
             UnityEngine.Object.Destroy(_instance);
             _instance = null;
 
             Transform root = _root != null ? _root : EntityMonoBehaviour.transform;
-            _instance = UnityEngine.Object.Instantiate(((ShapeModifier)effect.Modifier).Prefab, root, false);
+            _instance = UnityEngine.Object.Instantiate(shapeModifier.Prefab, root, false);
         }
     }
 }

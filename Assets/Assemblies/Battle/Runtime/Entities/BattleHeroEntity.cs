@@ -10,13 +10,13 @@ namespace ArmyClash.Battle
         protected override Type[] ActionTypesToCreate() =>
             new[]
             {
-                typeof(SelectRandomModifierEffectAction),
-                typeof(SelectRandomModifierEffectAction),
-                typeof(SelectRandomModifierEffectAction),
                 typeof(ApplyModifierStatEffectAction),
+                typeof(ApplyShapeModifierAction),
                 typeof(ApplyColorModifierAction),
                 typeof(ApplySizeModifierAction),
-                typeof(ApplyShapeModifierAction),
+                typeof(SelectRandomModifierEffectAction),
+                typeof(SelectRandomModifierEffectAction),
+                typeof(SelectRandomModifierEffectAction),
                 typeof(StateMachineAction),
                 typeof(HandleDeathAction),
                 typeof(RegenHealthAction)

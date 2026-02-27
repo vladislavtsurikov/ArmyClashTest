@@ -39,7 +39,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6453394263857975662}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 814c6cf0a6efc9e4f8b50fe3ec906fdc, type: 3}
   m_Name: 
@@ -49,12 +49,12 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 2965136457541741491}
-    - {fileID: 11400000, guid: d389630f381e34945949aafd577ae03f, type: 2}
-    - {fileID: 11400000, guid: 51fb16e41abb94c4a91665f00dfc2ce7, type: 2}
-    - {fileID: 11400000, guid: 3786426bf8499714b8996e09a8da47ba, type: 2}
-    - {fileID: 11400000, guid: 00890c1609f18b34b8b12e74d7475405, type: 2}
     - {fileID: 11400000, guid: 8aa68654b7d839d4c9a7318d8c90ebef, type: 2}
     - {fileID: 11400000, guid: 038172f5884705a44bc2ca6235713b99, type: 2}
+    - {fileID: 11400000, guid: 3786426bf8499714b8996e09a8da47ba, type: 2}
+    - {fileID: 11400000, guid: 00890c1609f18b34b8b12e74d7475405, type: 2}
+    - {fileID: 11400000, guid: d389630f381e34945949aafd577ae03f, type: 2}
+    - {fileID: 11400000, guid: 51fb16e41abb94c4a91665f00dfc2ce7, type: 2}
     - {fileID: 11400000, guid: f6a4e569148f7294599ce0197a0b6f4b, type: 2}
     - {fileID: 11400000, guid: 6206e55167bbcf64f87f9831a321f584, type: 2}
     - {fileID: 11400000, guid: 24f1337d1bfc6894e84eb6db1bc5529b, type: 2}
@@ -112,7 +112,40 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 4|ArmyClash.Battle.Actions.ApplyColorModifierAction, ArmyClash.Battle
+      Data: 4|ArmyClash.Battle.Actions.ApplyShapeModifierAction, ArmyClash.Battle
+    - Name: SelectSettingsFoldout
+      Entry: 5
+      Data: true
+    - Name: _active
+      Entry: 5
+      Data: true
+    - Name: _selected
+      Entry: 5
+      Data: false
+    - Name: _nodeId
+      Entry: 1
+      Data: 08f1db9f-2145-48b5-b89a-b9b283a2a228
+    - Name: _graphPosition
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _root
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|ArmyClash.Battle.Actions.ApplyColorModifierAction, ArmyClash.Battle
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: true
@@ -142,7 +175,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 5|ArmyClash.Battle.Actions.ApplySizeModifierAction, ArmyClash.Battle
+      Data: 6|ArmyClash.Battle.Actions.ApplySizeModifierAction, ArmyClash.Battle
     - Name: SelectSettingsFoldout
       Entry: 5
       Data: false
@@ -167,39 +200,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 6|ArmyClash.Battle.Actions.ApplyShapeModifierAction, ArmyClash.Battle
-    - Name: SelectSettingsFoldout
-      Entry: 5
-      Data: true
-    - Name: _active
-      Entry: 5
-      Data: true
-    - Name: _selected
-      Entry: 5
-      Data: false
-    - Name: _nodeId
-      Entry: 1
-      Data: 08f1db9f-2145-48b5-b89a-b9b283a2a228
-    - Name: _graphPosition
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _root
-      Entry: 10
-      Data: 0
     - Name: 
       Entry: 8
       Data: 
