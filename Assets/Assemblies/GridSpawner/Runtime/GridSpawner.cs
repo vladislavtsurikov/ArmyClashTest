@@ -22,8 +22,7 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
     [SupportedPrototypeTypes(new[] { typeof(PrototypeGameObject) })]
     [AddMonoBehaviourComponents(new[] { typeof(GridStamperControllerSettings) })]
     [AddGeneralPrototypeComponents(typeof(PrototypeGameObject), new[] { typeof(SuccessSettings) })]
-    [AddGeneralGroupComponents(new[] { typeof(PrototypeGameObject) },
-        new[] { typeof(RandomSeedSettings), typeof(ScatterComponentSettings) })]
+    [AddGeneralGroupComponents(new[] { typeof(PrototypeGameObject) }, new[] { typeof(RandomSeedSettings), typeof(ScatterComponentSettings) })]
     public class GridSpawner : StamperTool
     {
         private GridGenerator _gridGenerator;
@@ -122,6 +121,6 @@ namespace VladislavTsurikov.MegaWorld.Runtime.GridSpawner
             }
         }
 
-        
+
     }
 }

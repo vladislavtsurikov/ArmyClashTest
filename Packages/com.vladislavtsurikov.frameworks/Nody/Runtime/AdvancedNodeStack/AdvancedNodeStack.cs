@@ -37,6 +37,16 @@ namespace VladislavTsurikov.Nody.Runtime.AdvancedNodeStack
 
         public void SyncToTypes(Type[] types)
         {
+            if (_elementList.Count == 0)
+            {
+                foreach (var type in types)
+                {
+                    Create(type);
+                }
+
+                return;
+            }
+
             RemoveInvalidElements();
 
             if (types == null)
@@ -94,9 +104,6 @@ namespace VladislavTsurikov.Nody.Runtime.AdvancedNodeStack
                     Remove(i);
                 }
             }
-
-            Clear();
-
 
             _elementList.Clear();
             _elementList.AddRange(newList);

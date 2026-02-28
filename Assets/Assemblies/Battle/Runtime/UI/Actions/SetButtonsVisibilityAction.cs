@@ -39,10 +39,12 @@ namespace ArmyClash.Battle.UI.Actions
 
         private void ApplyState(SimulationState state)
         {
-            bool show = state != SimulationState.Running;
+            bool showSetupButtons = state != SimulationState.Running;
+            bool showFastForwardButton = state == SimulationState.Running;
             BattleUIViewData view = Get<BattleUIViewData>();
-            SetVisible(view.RandomizeButton, show);
-            SetVisible(view.StartButton, show);
+            SetVisible(view.RandomizeButton, showSetupButtons);
+            SetVisible(view.StartButton, showSetupButtons);
+            SetVisible(view.FastForwardButton, showFastForwardButton);
         }
 
         private static void SetVisible(VisualElement element, bool visible) =>

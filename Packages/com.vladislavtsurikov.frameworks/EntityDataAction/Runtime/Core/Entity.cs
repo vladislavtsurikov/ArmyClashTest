@@ -56,20 +56,6 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
 
         public void SetSetupData(object[] setupData) => SetupData = setupData;
 
-        protected virtual void OnSetupEntity()
-        {
-            if (Active)
-            {
-                _data.Setup(true, SetupData);
-                _actions.Setup(true, SetupData);
-
-                _data.ElementAdded += HandleDataChanged;
-                _data.ElementRemoved += HandleDataChanged;
-
-                _actions.Run().Forget();
-            }
-        }
-
         public void Setup()
         {
             if (IsSetup)
@@ -93,14 +79,23 @@ namespace VladislavTsurikov.EntityDataAction.Runtime.Core
                 BeforeOnSetupEntity(this);
             }
 
-            OnSetupEntity();
-
-            if (!Application.isPlaying)
+            if (Active)
             {
-                CreateDefaultData();
-                CreateDefaultActions();
+                _data.Setup(true, SetupData);
+                _actions.Setup(true, SetupData);
+            }
 
-                AfterCreateDataAndActionsCallback?.Invoke(this);
+            CreateDefaultData();
+            CreateDefaultActions();
+
+            AfterCreateDataAndActionsCallback?.Invoke(this);
+
+            _data.ElementAdded += HandleDataChanged;
+            _data.ElementRemoved += HandleDataChanged;
+
+            if (Active)
+            {
+                _actions.Run().Forget();
             }
 
             IsSetup = true;

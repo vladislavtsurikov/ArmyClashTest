@@ -1,19 +1,17 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:ac="ArmyClash.Battle.Ui" editor-extension-mode="False">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/Assemblies/Battle/Content/UI/ArmyClashBattle.uss?fileID=7433441132597879392&amp;guid=506b1d9f18416d3479cc7ea2088f1876&amp;type=3#ArmyClashBattle"/>
-    <ac:BattleUIView name="battleView" class="root">
-        <ui:Button name="fastForwardButton" text="FAST &#10;FORWARD ▶▶" class="fast-forward" style="height: 50px;"/>
-        <ui:VisualElement name="topCenter" class="top-center">
-            <ui:VisualElement name="leftCountPill" class="count-pill left">
-                <ui:Label name="leftCount" text="20" class="count-text"/>
-            </ui:VisualElement>
-            <ui:Label name="vsLabel" text="VS" class="vs-text"/>
-            <ui:VisualElement name="rightCountPill" class="count-pill right">
-                <ui:Label name="rightCount" text="20" class="count-text"/>
-            </ui:VisualElement>
+    <ui:Button name="fastForwardButton" text="FAST &#10;FORWARD ▶▶" class="fast-forward" style="height: 50px;"/>
+    <ui:VisualElement name="topCenter" class="top-center">
+        <ui:VisualElement name="leftCountPill" class="count-pill left">
+            <ui:Label name="leftCount" text="20" class="count-text"/>
         </ui:VisualElement>
-        <ui:VisualElement name="bottomBar" class="bottom-bar">
-            <ui:Button name="randomizeButton" text="RANDOMIZE" class="primary-button blue" style="min-width: 15%;"/>
-            <ui:Button name="startButton" text="START" class="primary-button orange" style="min-width: 15%;"/>
+        <ui:Label name="vsLabel" text="VS" class="vs-text"/>
+        <ui:VisualElement name="rightCountPill" class="count-pill right">
+            <ui:Label name="rightCount" text="20" class="count-text"/>
         </ui:VisualElement>
-    </ac:BattleUIView>
+    </ui:VisualElement>
+    <ui:VisualElement name="bottomBar" class="bottom-bar">
+        <ui:Button name="randomizeButton" text="RANDOMIZE" class="primary-button blue" style="min-width: 15%;"/>
+        <ui:Button name="startButton" text="START" class="primary-button orange" style="min-width: 15%;"/>
+    </ui:VisualElement>
 </ui:UXML>

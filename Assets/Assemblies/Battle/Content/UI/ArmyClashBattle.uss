@@ -1,7 +1,5 @@
 .root {
     padding: 18px;
-    gap: 14px;
-    font-family: "Arial";
     flex-grow: 1;
     border-bottom-width: 8px;
     border-top-width: 8px;
@@ -41,17 +39,16 @@
 .count-text {
     color: rgb(255, 255, 255);
     font-size: 28px;
-    unity-font-style: bold;
     -unity-font-style: bold;
 }
 
 .vs-text {
     color: rgb(255, 255, 255);
     font-size: 30px;
-    unity-font-style: bold;
     margin-left: 8px;
     margin-right: 8px;
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+    -unity-font-style: bold;
 }
 
 .fast-forward {
@@ -65,10 +62,8 @@
     border-radius: 12px;
     border-width: 3px;
     border-color: rgb(255, 255, 255);
-    unity-font-style: bold;
     min-width: 170px;
     font-size: 27px;
-    unity-text-align: middle-center;
     -unity-font-style: bold;
     width: 15%;
     min-height: 10%;
@@ -84,8 +79,26 @@
     -unity-font-definition: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=e1f2728ae60ebaf498ea2f511e3a1173&type=3#NotInter-Regular");
 }
 
+.fast-forward:hover {
+    background-color: rgb(125, 125, 125);
+    border-bottom-width: 6px;
+}
+
+.fast-forward:active {
+    background-color: rgb(90, 90, 90);
+    border-bottom-width: 4px;
+}
+
 .fast-forward.is-fast {
     background-color: rgb(76, 76, 76);
+}
+
+.fast-forward.is-fast:hover {
+    background-color: rgb(90, 90, 90);
+}
+
+.fast-forward.is-fast:active {
+    background-color: rgb(70, 70, 70);
 }
 
 .bottom-bar {
@@ -108,12 +121,10 @@
     border-color: rgba(255, 255, 255, 0.95);
     border-bottom-width: 8px;
     border-bottom-color: rgba(0, 0, 0, 0.3);
-    unity-font-style: bold;
     font-size: 30px;
     color: rgb(255, 255, 255);
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
-    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.28);
-    unity-text-align: middle-center;
+    -unity-text-align: middle-center;
     opacity: 1;
     -unity-font-style: bold;
 }
@@ -124,4 +135,14 @@
 
 .primary-button.orange {
     background-color: rgb(242, 139, 45);
+}
+
+.primary-button:hover {
+    border-bottom-width: 10px;
+    opacity: 0.95;
+}
+
+.primary-button:active {
+    border-bottom-width: 3px;
+    opacity: 0.9;
 }

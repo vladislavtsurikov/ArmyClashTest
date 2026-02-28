@@ -365,10 +365,10 @@ MonoBehaviour:
       Data: 
     - Name: GenerateRandomSeed
       Entry: 5
-      Data: false
+      Data: true
     - Name: RandomSeed
       Entry: 3
-      Data: 0
+      Data: 2012212379
     - Name: 
       Entry: 8
       Data: 
